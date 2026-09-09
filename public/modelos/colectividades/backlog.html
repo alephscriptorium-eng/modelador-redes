@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Backlog — Colectivizaciones 1936-37 frente a la República Pura</title>
+<script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>  <link rel="stylesheet" href="../../assets/doc.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="../../index.html" class="brand">Modelador de Redes</a>
+      <p class="tag">Colectivizaciones 1936-37 frente a la República Pura · v0.1.0</p>
+      <nav aria-label="Modelo colectividades">
+        <a href="index.html" class="">Estado</a>
+        <a href="backlog.html" class="active">Backlog</a>
+        <hr>
+        <p class="nav-h">Drafts</p>
+        <a href="drafts/draft.html" class="">draft <span class="badge badge-latest">latest</span></a>
+        <hr>
+        <p class="nav-h">Revisión</p>
+        <hr>
+        <p class="nav-h">Descargas</p>
+        <a href="downloads/colectividades-drafts.zip">drafts.zip</a>
+        <a href="downloads/colectividades-revision.zip">revision.zip</a>
+        <a href="downloads/colectividades-todo.zip">todo.zip</a>
+        <a href="backlog.json">backlog.json</a>
+        <hr>
+        <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/colectividades" class="nav-external">GitHub ↗</a>
+        <a href="../../index.html" class="nav-external">Catálogo ↗</a>
+        <a href="../../foss/index.html" class="nav-external">Artefacto (FOSS) ↗</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
+    </aside>
+    <main>
+<div class="doc-head">
+  <h1>Backlog</h1>
+  <p class="lead">Oportunidades (vista comprimida) y tareas a detalle, extraídas de los drafts. El draft vigente es <a href="drafts/draft.html">draft.md</a>; lo anterior se conserva con su etiqueta de origen. Datos: <a href="backlog.json">backlog.json</a>.</p>
+</div>
+<div class="resumen">
+  <span><strong>0</strong> tareas TK en draft</span>
+  <span><strong>0</strong> oportunidades en 1 drafts</span>
+</div>
+
+<h2 id="oportunidades">Oportunidades</h2>
+<p class="note">Ningún draft define oportunidades (encabezados <code>OP-nn</code>).</p>
+
+<h2 id="tareas">Tareas a detalle</h2>
+<div class="tabla-head">
+  <h3 id="tabla-1">draft · carril CL</h3>
+  <span class="badge badge-latest">draft</span>
+  <span class="seccion">3.5 Parches previsibles (`CL-n`, para `c0 §4`; se cierran en `c2`)</span>
+</div>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>#</th><th>Parche</th><th>Seam</th><th>Crit.</th></tr></thead>
+  <tbody>
+  <tr><td>CL-1</td><td>Gobierno de la tribu por su asamblea: <code>STRUCTURAL_FIELDS</code> y expulsión pasan de autor raíz a <code>tribeParliamentRule</code> con quórum</td><td><code>tribes_model.js:159-166</code>, <code>:533</code></td><td>1, 2</td></tr>
+  <tr><td>CL-2</td><td><code>steward</code> de Industry electo por los miembros, rotatorio, revocable</td><td><code>industry_model.js:163</code>, <code>:462</code>, <code>:978</code></td><td>2</td></tr>
+  <tr><td>CL-3</td><td><code>disposition:&quot;needs&quot;</code> en <code>computeDistributionPlan</code>: reparto por necesidades declaradas y validadas por asamblea, no por puntos</td><td><code>industry_model.js:960-965</code></td><td>4</td></tr>
+  <tr><td>CL-4</td><td>RBU: sustituir peso por karma por <strong>coeficiente de necesidad</strong> (unidad familiar, dependientes)</td><td><code>banking_model.js:931-932</code></td><td>4</td></tr>
+  <tr><td>CL-5</td><td>Tesoro de tribu (hoy inexistente): wallet colectiva multisig k-de-n; épocas ejecutadas por la asamblea, no por <code>isPubNode()</code></td><td><code>banking_model.js:207-217</code>, <code>:1004</code></td><td>1, 3</td></tr>
+  <tr><td>CL-6</td><td>Precio 0 / categoría don y trueque en Market y Shops; vales = <code>transfers</code> <code>TIME</code></td><td><code>market_model.js:181</code>, <code>shops_model.js:414</code>, <code>transfers_model.js:25</code></td><td>7</td></tr>
+  <tr><td>CL-7</td><td>Quórum y umbral en polls de tribu; duración mínima</td><td><code>polls_model.js</code>, <code>votes_model.js:10</code></td><td>1</td></tr>
+  <tr><td>CL-8</td><td>Federación: <code>parentTribeId</code> deja de ser solo herencia de privacidad; delegado con mandato de la asamblea</td><td><code>tribes_model.js:379</code>, <code>:477</code></td><td>6</td></tr>
+  <tr><td>CL-9</td><td>Unidad familiar declarada (<code>household</code>) sobre feeds individuales</td><td><code>inhabitants_model.js</code></td><td>4</td></tr>
+  </tbody>
+</table>
+</div>
+      <footer class="site-footer">
+<div class="provenance-footer">
+  <p class="provenance-footer-chain">
+    <a href="https://escrivivir.co">Escrivivir</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://escrivivir.co/2026/06/04/t04x06a-ficha-de-producto-scriptorium-skins-arg/">Scriptorium Skins</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span>Animus Iocandi</span>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../index.html">Modelador de Redes</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span title="Frente Aleph de Resistencia Ontológica">F.A.R.O.</span>
+  </p>
+  <p class="provenance-footer-meta">
+    Material transmedia para agentes del juego ARG
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    v0.1.0
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    GPL-3.0-or-later · AIPLv1
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://github.com/alephscriptorium-eng/modelador-redes">Repositorio</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../index.html">Inicio</a>
+  </p>
+</div>      </footer>
+    </main>
+  </div>
+  <script src="../../assets/theme.js"></script>
+</body>
+</html>

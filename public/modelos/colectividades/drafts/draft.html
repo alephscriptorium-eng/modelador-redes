@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan: comprender dev/respublica y replicar su método en dev/colectividades — Colectivizaciones 1936-37 frente a la República Pura</title>
+<script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>  <link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="../../../index.html" class="brand">Modelador de Redes</a>
+      <p class="tag">Colectivizaciones 1936-37 frente a la República Pura · v0.1.0</p>
+      <nav aria-label="Modelo colectividades">
+        <a href="../index.html" class="">Estado</a>
+        <a href="../backlog.html" class="">Backlog</a>
+        <hr>
+        <p class="nav-h">Drafts</p>
+        <a href="../drafts/draft.html" class="active">draft <span class="badge badge-latest">latest</span></a>
+        <hr>
+        <p class="nav-h">Revisión</p>
+        <hr>
+        <p class="nav-h">Descargas</p>
+        <a href="../downloads/colectividades-drafts.zip">drafts.zip</a>
+        <a href="../downloads/colectividades-revision.zip">revision.zip</a>
+        <a href="../downloads/colectividades-todo.zip">todo.zip</a>
+        <a href="../backlog.json">backlog.json</a>
+        <hr>
+        <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/colectividades" class="nav-external">GitHub ↗</a>
+        <a href="../../../index.html" class="nav-external">Catálogo ↗</a>
+        <a href="../../../foss/index.html" class="nav-external">Artefacto (FOSS) ↗</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
+    </aside>
+    <main>
+<div class="doc-head">
+  <h1>Plan: comprender dev/respublica y replicar su método en dev/colectividades
+<span class="badge">draft</span><span class="badge badge-latest">latest</span>  </h1>
+<p class="doc-links">
+  <a href="https://github.com/alephscriptorium-eng/modelador-redes/blob/main/modelos/colectividades/drafts/draft.md" class="ext">Ver en GitHub ↗</a>
+  <a href="https://raw.githubusercontent.com/alephscriptorium-eng/modelador-redes/main/modelos/colectividades/drafts/draft.md" class="ext">raw ↗</a>
+<a href="../downloads/colectividades-drafts.zip">zip</a><code>draft.md</code></p>
+</div>
+<nav class="toc" aria-label="Contenido">
+  <p>Contenido</p>
+  <ul>
+<li class="n2"><a href="#-bloque-i-referencias-sobre-las-colectivizaciones-1936-1937">🧱 BLOQUE I: REFERENCIAS SOBRE LAS COlectivizaciones (1936-1937)</a></li><li class="n3"><a href="#-fuentes-primarias-testimonios-de-la-época">📚 Fuentes Primarias (Testimonios de la época)</a></li><li class="n3"><a href="#-estudios-académicos-y-monografías">📖 Estudios Académicos y Monografías</a></li><li class="n3"><a href="#-artículos-y-análisis">📄 Artículos y Análisis</a></li><li class="n3"><a href="#-marco-geográfico-y-cronológico">🗺️ Marco Geográfico y Cronológico</a></li><li class="n3"><a href="#-características-del-modelo-colectivista">⚙️ Características del Modelo Colectivista</a></li><li class="n2"><a href="#-bloque-ii-referencias-sobre-la-república-pura-trevijano">🏛️ BLOQUE II: REFERENCIAS SOBRE LA REPÚBLICA PURA (TREVIJANO)</a></li><li class="n3"><a href="#-obras-fundamentales">📚 Obras Fundamentales</a></li><li class="n3"><a href="#-conceptos-clave-de-la-república-pura">🔑 Conceptos Clave de la República Pura</a></li><li class="n2"><a href="#-bloque-iii-contraste---colectivizaciones-vs-república-pura">⚔️ BLOQUE III: CONTRASTE - COLECTIVIZACIONES vs. REPÚBLICA PURA</a></li><li class="n3"><a href="#tabla-comparativa-para-el-agente">Tabla Comparativa para el Agente</a></li><li class="n2"><a href="#-bloque-iv-modelización-tecnológica-con-snh--faircoin">🛠️ BLOQUE IV: MODELIZACIÓN TECNOLÓGICA CON SNH + FAIRCOIN</a></li><li class="n3"><a href="#correspondencias-para-el-agente">Correspondencias para el Agente</a></li><li class="n3"><a href="#preguntas-para-el-agente-modelización">Preguntas para el Agente (Modelización)</a></li><li class="n2"><a href="#-enlaces-rápidos-para-el-agente">🔗 ENLACES RÁPIDOS PARA EL AGENTE</a></li><li class="n2"><a href="#-nota-para-el-agente">📝 NOTA PARA EL AGENTE</a></li><li class="n2"><a href="#contexto">Contexto</a></li><li class="n2"><a href="#1-lo-que-hay-en-devres_publica-lectura">1. Lo que hay en dev/res_publica (lectura)</a></li><li class="n3"><a href="#11-la-cadena-documental">1.1 La cadena documental</a></li><li class="n3"><a href="#12-el-método-la-tecnología-en-seis-pasos">1.2 El método («la tecnología»), en seis pasos</a></li><li class="n3"><a href="#13-hallazgos-de-la-lectura-que-conviene-señalar">1.3 Hallazgos de la lectura que conviene señalar</a></li><li class="n2"><a href="#2-lo-que-pide-iberian-dev-7md">2. Lo que pide iberian-dev-7.md</a></li><li class="n2"><a href="#3-diseño-de-devcolectividades">3. Diseño de dev/colectividades</a></li><li class="n3"><a href="#31-supuestos-no-bloqueantes-el-usuario-puede-cambiarlos">3.1 Supuestos (no bloqueantes; el usuario puede cambiarlos)</a></li><li class="n3"><a href="#32-estructura-propuesta">3.2 Estructura propuesta</a></li><li class="n3"><a href="#33-criterios-colectivistas-propuestos-para-c0-1-a-validar-en-revision">3.3 Criterios colectivistas propuestos (para c0 §1; a validar en revision/)</a></li><li class="n3"><a href="#34-confrontación-preliminar-verificada-hoy-en-el-código-base-de-c0-2-3">3.4 Confrontación preliminar (verificada hoy en el código; base de c0 §2-3)</a></li><li class="n3"><a href="#35-parches-previsibles-cl-n-para-c0-4-se-cierran-en-c2">3.5 Parches previsibles (CL-n, para c0 §4; se cierran en c2)</a></li><li class="n3"><a href="#36-carriles-de-c2-backlogmd">3.6 Carriles de c2-backlog.md</a></li><li class="n2"><a href="#4-pasos-de-ejecución-cuando-se-salga-de-read-only">4. Pasos de ejecución (cuando se salga de read-only)</a></li><li class="n2"><a href="#5-verificación">5. Verificación</a></li><li class="n2"><a href="#6-preguntas-abiertas-para-el-usuario-no-bloquean">6. Preguntas abiertas para el usuario (no bloquean)</a></li>  </ul>
+</nav>
+<article class="md">
+<blockquote>
+<p><strong>Nota (2026-09-09, rama <code>dev/colectividades</code>).</strong> Draft semilla del modelo <code>colectividades</code>. Layout vigente: <code>modelos/colectividades/drafts/draftvN.md</code> (el sufijo mayor es el draft vigente) y <code>modelos/colectividades/revision/NN-*.md</code>; los ficheros <code>c0…c3</code> que propone el plan de abajo se escriben como <code>draftv0</code>, <code>draftv1</code>, … La rama solo toca <code>modelos/colectividades/</code>. Ver <code>llms.md</code>.</p>
+</blockquote>
+<p>Aquí tienes el <strong>chuletario de referencias</strong> para que tu agente pueda modelizar el contraste entre las colectivizaciones de 1936-37 y la República Pura de Trevijano, usando SolarNET.HuB y Faircoin como infraestructura.</p>
+<hr />
+<h2 id="-bloque-i-referencias-sobre-las-colectivizaciones-1936-1937">🧱 BLOQUE I: REFERENCIAS SOBRE LAS COlectivizaciones (1936-1937)</h2>
+<h3 id="-fuentes-primarias-testimonios-de-la-época">📚 Fuentes Primarias (Testimonios de la época)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Referencia</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Enlace / Localización</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Souchy, Augustin (1937)</strong></td>
+<td style="text-align:left"><em>Colectivizaciones. La obra constructiva de la Revolución Española. Ensayos, documentos, reportajes.</em> Publicado en Barcelona por &quot;Tierra y Libertad&quot; en 1937. Testigo directo que consideró las colectividades &quot;el experimento social más significativo del siglo XX&quot;</td>
+<td style="text-align:left">https://hdl.handle.net/10622/CC47E3DD-9</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Leval, Gaston (1972)</strong></td>
+<td style="text-align:left"><em>Colectividades libertarias en España.</em> Testigo directo que las vio como &quot;la realización más importante de la historia social de la humanidad&quot;</td>
+<td style="text-align:left">Buscar en archive.org / bibliotecas</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Carrasquer, Félix</strong></td>
+<td style="text-align:left">Anarquista español que afirmó: <em>&quot;Por una vez, la realización de lo 'imposible' se hizo posible gracias a un puñado de hombres cuya confianza en el ser humano pudo más que todos los estereotipos&quot;</em></td>
+<td style="text-align:left">Citado en Redalyc</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="-estudios-académicos-y-monografías">📖 Estudios Académicos y Monografías</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Referencia</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Enlace / Localización</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Casanova, Julián (coord.) (1988)</strong></td>
+<td style="text-align:left"><em>El sueño igualitario: campesinado y colectivizaciones en la España republicana, 1936-1939.</em> Obra de referencia sobre el movimiento colectivista. Zaragoza: Institución Fernando el Católico. ISBN: 84-7820-021-5</td>
+<td style="text-align:left">https://datos.bne.es (buscar ISBN)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Ovejero Bernal, Anastasio (2015)</strong></td>
+<td style="text-align:left"><em>Autogestión obrera: las colectivizaciones libertarias (España 1936-1938).</em> Trabajo Fin de Grado, Universidad de Valladolid. Analiza el fenómeno protagonizado mayoritariamente por CNT y en menor medida por UGT</td>
+<td style="text-align:left">http://uvadoc.uva.es/handle/10324/15147</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Vela Sevilla, David (2013)</strong></td>
+<td style="text-align:left"><em>¿Economía de guerra o revolución social? Las colectividades agrarias libertarias durante la Guerra Civil en Aragón, 1936-1938.</em> TFM, Universidad de Zaragoza. Dirigido por Julián Casanova</td>
+<td style="text-align:left">https://zaguan.unizar.es/record/12724</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Gutiérrez Molina, José Luis</strong></td>
+<td style="text-align:left"><em>Colectividades libertarias en Castilla: punto de partida para un estudio del movimiento colectivista en la Región Centro (Castilla la Nueva) durante el período 1936-1939</em></td>
+<td style="text-align:left">Buscar en bibliotecas</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Gómez, Miguel G.</strong></td>
+<td style="text-align:left"><em>La CNT y la Nueva Economía: del colectivismo empresarial a la planificación de la economía confederal (1936-1939)</em></td>
+<td style="text-align:left">Buscar en Marcial Pons</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="-artículos-y-análisis">📄 Artículos y Análisis</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Referencia</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Enlace / Localización</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Redalyc (2016)</strong></td>
+<td style="text-align:left"><em>Las colectividades libertarias en España (1936-1938): un caso de autogestión obrera único en la historia moderna.</em> Analiza extensión, características, eficacia y funcionamiento interno</td>
+<td style="text-align:left">https://www.redalyc.org/journal/537/53751755008/</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Simoni, Encarna (1984)</strong></td>
+<td style="text-align:left"><em>Cretas: la colectivización de un pueblo aragonés durante la guerra civil española, 1936-1937.</em> Estudio de caso local</td>
+<td style="text-align:left">Centro de Estudios Bajoaragoneses</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Zomeño Merino, Julian (1981)</strong></td>
+<td style="text-align:left"><em>Colectivizaciones y cooperativas de Castellón de la Plana (1936-1939)</em></td>
+<td style="text-align:left">Universitat de València / Dialnet</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="-marco-geográfico-y-cronológico">🗺️ Marco Geográfico y Cronológico</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Aspecto</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Fuente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Regiones clave</strong></td>
+<td style="text-align:left">Cataluña, Valencia, Aragón, y también Castilla (Madrid, Cuenca, Ciudad Real, Guadalajara, Toledo)</td>
+<td style="text-align:left">CECLM Digital</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Tipos de tierras colectivizadas</strong></td>
+<td style="text-align:left">1) comunales; 2) incautadas a propietarios huidos; 3) de medianos propietarios que no podían cultivar; 4) aportadas voluntariamente</td>
+<td style="text-align:left">Redalyc / Casanova</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Punto de inflexión</strong></td>
+<td style="text-align:left">Los <strong>sucesos de mayo de 1937</strong> marcaron el inicio de la decadencia del movimiento colectivista, con ataques legales y políticos</td>
+<td style="text-align:left">Dialnet / TDX</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Marco legal</strong></td>
+<td style="text-align:left"><strong>Decreto de Colectivizaciones</strong> de la Generalitat, 24 de octubre de 1936, tras acuerdo CNT-FAI, PSUC y UGT el 22 de octubre</td>
+<td style="text-align:left">VSCW / BOGC</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="-características-del-modelo-colectivista">⚙️ Características del Modelo Colectivista</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Característica</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Fuente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Principio rector</strong></td>
+<td style="text-align:left"><em>&quot;De cada uno según sus facultades; a cada uno según sus necesidades&quot;</em> - comunismo libertario</td>
+<td style="text-align:left">Redalyc / Casanova</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Gobernanza</strong></td>
+<td style="text-align:left"><strong>Asamblea</strong> como órgano soberano de decisión; elección de comisiones administrativas, consejos económicos, comités de trabajo, con cargos rotatorios y revocables</td>
+<td style="text-align:left">Redalyc / CECLM</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Salario familiar</strong></td>
+<td style="text-align:left">Salario basado en necesidades familiares (nº de hijos, ancianos a cargo), no en rendimiento o categoría</td>
+<td style="text-align:left">Redalyc / Ovejero</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Derechos sociales</strong></td>
+<td style="text-align:left">Seguro de enfermedad y jubilación, prohibición trabajo menores de 14-16 años y mayores de 65, educación y sanidad gratuitas, semana laboral de 40 horas</td>
+<td style="text-align:left">Redalyc / Saña</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Espontaneidad</strong></td>
+<td style="text-align:left">Movimiento &quot;espontáneo y sin coerción&quot;, sin preparación teórica ni dirección práctica</td>
+<td style="text-align:left">Redalyc / CECLM</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="-bloque-ii-referencias-sobre-la-república-pura-trevijano">🏛️ BLOQUE II: REFERENCIAS SOBRE LA REPÚBLICA PURA (TREVIJANO)</h2>
+<h3 id="-obras-fundamentales">📚 Obras Fundamentales</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Referencia</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Enlace / Localización</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>García-Trevijano, Antonio (2010)</strong></td>
+<td style="text-align:left"><em>Teoría Pura de la República.</em> Editorial El Buey Mudo, Madrid, 699 páginas. Obra principal donde desarrolla su modelo de República Constitucional</td>
+<td style="text-align:left">https://www.antoniogarciatrevijano.info</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>García-Trevijano, Antonio</strong></td>
+<td style="text-align:left"><em>Teoría Pura de la Democracia.</em> Concepto clave: <strong>&quot;libertad política colectiva&quot;</strong> como eje del sistema</td>
+<td style="text-align:left">Wikipedia / Obras completas</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>García-Trevijano, Antonio</strong></td>
+<td style="text-align:left"><em>Pasiones de servidumbre, El discurso de la República, Ateísmo estético, Frente a la Gran Mentira</em></td>
+<td style="text-align:left">Wikipedia</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="-conceptos-clave-de-la-república-pura">🔑 Conceptos Clave de la República Pura</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Concepto</th>
+<th style="text-align:left">Definición según Trevijano</th>
+<th style="text-align:left">Fuente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>&quot;Teoría Pura&quot;</strong></td>
+<td style="text-align:left">Eliminación de <strong>todos los elementos ideológicos</strong>. No hay ideología en la teoría pura de la república</td>
+<td style="text-align:left">antoniogarciatrevijano.info</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Libertad política colectiva</strong></td>
+<td style="text-align:left">Concepto central: ausencia de libertad política colectiva y falta de representación de la sociedad ante el Estado son las causas del fracaso moral</td>
+<td style="text-align:left">Teoría Pura de la República</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Separación de poderes en origen</strong></td>
+<td style="text-align:left">Democracia representativa garantizada por la más estricta separación de poderes en su origen</td>
+<td style="text-align:left">Wilcastell / Wikipedia</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Igualdad social y económica</strong></td>
+<td style="text-align:left">&quot;Es <strong>utópica por imposible</strong>, como lo es el autogobierno de la sociedad política&quot;</td>
+<td style="text-align:left">antoniogarciatrevijano.info</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Propiedad y economía</strong></td>
+<td style="text-align:left">Rechazo del <strong>colectivismo económico</strong> como solución política. La economía política se transformó en &quot;economía de guerra&quot;. Crítica al socialismo por &quot;reducir los problemas y conflictos colectivos a la economía&quot;</td>
+<td style="text-align:left">Dialnet</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="-bloque-iii-contraste---colectivizaciones-vs-república-pura">⚔️ BLOQUE III: CONTRASTE - COLECTIVIZACIONES vs. REPÚBLICA PURA</h2>
+<h3 id="tabla-comparativa-para-el-agente">Tabla Comparativa para el Agente</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Dimensión</th>
+<th style="text-align:left">Colectivizaciones 1936-37</th>
+<th style="text-align:left">República Pura (Trevijano)</th>
+<th style="text-align:left">Tensión / Observación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Propiedad</strong></td>
+<td style="text-align:left">Colectivización de tierras y medios de producción (expropiación/incautación)</td>
+<td style="text-align:left">Propiedad privada como derecho fundamental; igualdad económica &quot;utópica por imposible&quot;</td>
+<td style="text-align:left"><strong>Antagonismo radical</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Poder</strong></td>
+<td style="text-align:left">Asamblea soberana; cargos revocables y rotatorios</td>
+<td style="text-align:left">Separación estricta de poderes en origen; representación política auténtica</td>
+<td style="text-align:left"><strong>Coincidencia parcial</strong>: ambos rechazan el poder concentrado</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Ideología</strong></td>
+<td style="text-align:left">Comunismo libertario explícito (CNT-FAI)</td>
+<td style="text-align:left">&quot;Teoría Pura&quot; = <strong>eliminación de ideologías</strong></td>
+<td style="text-align:left"><strong>Antagonismo radical</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Economía</strong></td>
+<td style="text-align:left">Economía autogestionada, salario familiar, planificación comunitaria</td>
+<td style="text-align:left">Crítica al &quot;reduccionismo económico&quot; del socialismo; la república resuelve la crisis política, no la económica</td>
+<td style="text-align:left"><strong>Desencuentro</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Sujeto político</strong></td>
+<td style="text-align:left">Colectivo / clase obrera / campesinado</td>
+<td style="text-align:left"><strong>Individuo</strong> como centro de poder social</td>
+<td style="text-align:left"><strong>Antagonismo radical</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Cambio social</strong></td>
+<td style="text-align:left">Revolución espontánea y rupturista</td>
+<td style="text-align:left">Reforma constitucional desde la legalidad; &quot;República Constitucional&quot;</td>
+<td style="text-align:left"><strong>Antagonismo metodológico</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Libertad</strong></td>
+<td style="text-align:left">Libertad entendida como autogestión y solidaridad</td>
+<td style="text-align:left"><strong>&quot;Libertad política colectiva&quot;</strong> como libertad de representación, no económica</td>
+<td style="text-align:left"><strong>Definiciones opuestas</strong></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="-bloque-iv-modelización-tecnológica-con-snh--faircoin">🛠️ BLOQUE IV: MODELIZACIÓN TECNOLÓGICA CON SNH + FAIRCOIN</h2>
+<h3 id="correspondencias-para-el-agente">Correspondencias para el Agente</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Capa</th>
+<th style="text-align:left">Tecnología SNH/Faircoin</th>
+<th style="text-align:left">Función en el modelo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Comunicación</strong></td>
+<td style="text-align:left">SolarNET.HuB / SSB / Oasis</td>
+<td style="text-align:left">Red soberana, resistente a censura, con <strong>asambleas digitales</strong> (feeds firmados)【Wiki SNH】</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Gobernanza</strong></td>
+<td style="text-align:left">Sigchains + PUBs + nodos autónomos</td>
+<td style="text-align:left"><strong>Separación de poderes en origen</strong>: cada identidad su propia cadena; nodo central con control limitado【Wiki SNH Engineering】</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Economía</strong></td>
+<td style="text-align:left">Faircoin (PoC) + Bank of the Commons</td>
+<td style="text-align:left">Moneda cooperativa sin especulación; <strong>salario familiar</strong> programable en smart contracts【Faircoin PoC】</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Identidad</strong></td>
+<td style="text-align:left">Sin email/teléfono; identidades aleatorias</td>
+<td style="text-align:left"><strong>Individuo como centro</strong>: soberanía digital plena【Oasis】</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Confianza</strong></td>
+<td style="text-align:left">Red de invitaciones (invite-only)</td>
+<td style="text-align:left">Comunidad de confianza, no masa anónima【SSB】</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="preguntas-para-el-agente-modelización">Preguntas para el Agente (Modelización)</h3>
+<ol>
+<li><strong>¿Cómo implementar la &quot;asamblea soberana&quot; de las colectivizaciones en SSB?</strong> (votaciones con feeds firmados, quórums, revocabilidad)</li>
+<li><strong>¿El &quot;salario familiar&quot; de las colectividades es programable en Faircoin?</strong> (contratos inteligentes que distribuyan según necesidades)</li>
+<li><strong>¿La &quot;teoría pura&quot; de Trevijano (sin ideología) es compatible con un ecosistema construido por anarquistas?</strong> (tensión fundamental)</li>
+<li><strong>¿Puede el nodo central de SNH cumplir la función de &quot;Poder Ejecutivo&quot; sin violar la soberanía de los nodos locales?</strong> (separación de poderes)</li>
+<li><strong>¿Cómo evitar que el &quot;colectivismo&quot; económico de Faircoin entre en conflicto con la propiedad privada que defiende Trevijano?</strong> (modelos híbridos)</li>
+</ol>
+<hr />
+<h2 id="-enlaces-rápidos-para-el-agente">🔗 ENLACES RÁPIDOS PARA EL AGENTE</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Recurso</th>
+<th style="text-align:left">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Wiki SNH Engineering</td>
+<td style="text-align:left">https://wiki.solarnethub.com/socialnet/engineering</td>
+</tr>
+<tr>
+<td style="text-align:left">Repositorio Oasis</td>
+<td style="text-align:left">https://github.com/epsylon/oasis</td>
+</tr>
+<tr>
+<td style="text-align:left">Faircoin PoC Documentation</td>
+<td style="text-align:left">https://github.com/faircoin/faircoin/blob/master/doc/on-proof-of-cooperation.md</td>
+</tr>
+<tr>
+<td style="text-align:left">Faircoin White Paper</td>
+<td style="text-align:left">https://fair-coin.org</td>
+</tr>
+<tr>
+<td style="text-align:left">Web Antonio García-Trevijano</td>
+<td style="text-align:left">https://www.antoniogarciatrevijano.info</td>
+</tr>
+<tr>
+<td style="text-align:left">Redalyc - Colectividades libertarias</td>
+<td style="text-align:left">https://www.redalyc.org/journal/537/53751755008/</td>
+</tr>
+<tr>
+<td style="text-align:left">UVaDOC - Autogestión obrera</td>
+<td style="text-align:left">http://uvadoc.uva.es/handle/10324/15147</td>
+</tr>
+<tr>
+<td style="text-align:left">ZAGUAN - Colectividades agrarias Aragón</td>
+<td style="text-align:left">https://zaguan.unizar.es/record/12724</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="-nota-para-el-agente">📝 NOTA PARA EL AGENTE</h2>
+<p>Este chuletario <strong>no es el diseño</strong>, sino el <strong>arsenal de referencias</strong> para que puedas:</p>
+<ol>
+<li><strong>Contrastar</strong> las dos tradiciones (colectivismo libertario vs. republicanismo puro).</li>
+<li><strong>Identificar tensiones</strong> (propiedad, ideología, sujeto político).</li>
+<li><strong>Mapear</strong> cada principio a una funcionalidad de SNH o Faircoin.</li>
+<li><strong>Generar</strong> el backlog de tareas que permita modelizar ambas visiones en una misma infraestructura.</li>
+</ol>
+<hr />
+<h1>Plan: comprender dev/res_publica y replicar su método en dev/colectividades</h1>
+<h2 id="contexto">Contexto</h2>
+<p>La rama <code>dev/res_publica</code> modeliza la <strong>República Pura de Trevijano</strong> sobre <strong>Oasis/SSB</strong> (SolarNET.HuB). El usuario pide, en modo lectura: (1) entender qué se ha hecho con <code>draft*.md</code> y cómo se trabaja con <code>revision/</code>; (2) entender la petición de usar <strong>la misma tecnología</strong> (el mismo método y el mismo código auditado) para modelar una red distinta, la de las <strong>colectivizaciones libertarias de 1936-37</strong>, cuyo chuletario es <code>iberian-dev-7.md</code>, en la rama <code>dev/colectividades</code>.</p>
+<p>Estado del repo verificado: <strong>cero commits</strong>; HEAD apunta a <code>dev/res_publica</code> (rama aún no nacida); todo está untracked; no hay <code>.gitignore</code>, así que <code>vendor/oasis</code> (clon shallow, commit <code>9a657b7</code>, 1.0.7, AGPL-3.0, ~33k líneas en 70 modelos) tampoco está ignorado.</p>
+<hr />
+<h2 id="1-lo-que-hay-en-devres_publica-lectura">1. Lo que hay en dev/res_publica (lectura)</h2>
+<h3 id="11-la-cadena-documental">1.1 La cadena documental</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Fichero</th>
+<th style="text-align:left">Nombre con que lo citan otros docs</th>
+<th style="text-align:left">Qué es</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>draft.md</code></td>
+<td style="text-align:left"><code>contexto.md</code></td>
+<td style="text-align:left">Transcripción de un chat externo (2025): prompt de activación v1 + backlog OP-01…05 / TK-01…25 sobre SNH + Faircoin.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>draftv0.md</code></td>
+<td style="text-align:left"><code>pura.md</code> (rev. 2)</td>
+<td style="text-align:left"><strong>Auditoría de Oasis 1.0.7 contra 7 criterios trevijanistas</strong>, con fichero:línea. Anatomía de Parliament, Courts, Banking/karma, L.A.R.P. Tabla de confrontación, hallazgos A…G, parches <strong>RP-1…RP-10</strong>, backlog v2 con estados (✅ hecho upstream · ♻️ reformulada · ☠️ obsoleta · ▶️ vigente). v1 anexada íntegra en §7.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>draftv1.md</code></td>
+<td style="text-align:left"><code>draftv1.md</code></td>
+<td style="text-align:left">Informe <strong>«¿Clon o parecido?»</strong>: 14 (+1) elementos del modelo con certeza A/B/C, veredicto hoy / tras parches; tabla de intraducibles; dónde Oasis es más republicano. Recibe <strong>notas fechadas</strong> desde <code>revision/</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>draftv2.md</code></td>
+<td style="text-align:left">plan de <code>backlog.md</code> (v3)</td>
+<td style="text-align:left">Backlog por <strong>carriles</strong> D (doctrina) → G (gobernanza) → C (cadena Faircoin3) → B (banking) → F (federación) → E (economía real) → L (legal). Cada tarea D: <em>buscar · dónde · default · alternativas · desbloquea</em>. Cada tarea G: <em>depende · seam fichero:línea · T · P</em>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>revision/01…06-*.md</code></td>
+<td style="text-align:left">—</td>
+<td style="text-align:left"><strong>Un fichero por capítulo del Libro III</strong> (I Lealtad, II Mónada, III Cámara, IV Legislación, V Justicia, VI Gobierno). Formato fijo: tabla de tesis con certeza → ficha de confirmación del mapeo (mapeado / huecos / tensiones / contradicciones) → veredicto → <strong>correcciones aplicadas</strong> con enlace a la línea de <code>draftv1</code>/<code>draftv2</code> tocada. Pendientes: cap. VII (acción constituyente, p. 467), VIII (República Constitucional, p. 494), Epílogo.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>base_web.md</code></td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">Plan aparte: repo público <code>modelador-redes</code> (generador Python/Jinja2 calcado de <code>medidor-lawfare</code>) para publicar auditoría + backlog. <strong>No forma parte del modelo.</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="12-el-método-la-tecnología-en-seis-pasos">1.2 El método («la tecnología»), en seis pasos</h3>
+<ol>
+<li><strong>Corpus doctrinal → criterios auditables numerados</strong>, con grado de certeza (A tesis nuclear / B conocida sin verbatim / C reconstrucción) y marca <code>[doctrina, sin verbatim]</code>.</li>
+<li><strong>Auditoría del código real</strong>, no de su documentación: constantes «constitucionales», anatomía por módulo, siempre con <code>fichero:línea</code> sobre <code>vendor/oasis</code> @ <code>9a657b7</code>.</li>
+<li><strong>Confrontación criterio × código</strong> → tabla de veredictos (Cumple / Falla / Parcial / Ortogonal) + hallazgos estructurales con letra.</li>
+<li><strong>Parches</strong> (<code>RP-n</code>) con <em>punto de intervención</em> (seam) y <em>criterio que repara</em>, más «lo que no se toca y por qué».</li>
+<li><strong>Backlog por carriles</strong>: tareas de investigación con camino por defecto (para que el carril siguiente avance sin esperar) y tareas de código con seam, tamaño y prioridad; mapeo de versiones anteriores.</li>
+<li><strong>Revisión por capítulos</strong> que retroalimenta los documentos anteriores con correcciones fechadas y enlazadas (<code>../draftv2.md#L58</code>).</li>
+</ol>
+<p>Convenciones: fecha ISO en cabeceras y notas; enlaces relativos con ancla de línea; cuatro grados de fuente (verificado en código / fuente primaria del proyecto / inferido / paráfrasis); nada sobre Oasis sin fichero:línea.</p>
+<h3 id="13-hallazgos-de-la-lectura-que-conviene-señalar">1.3 Hallazgos de la lectura que conviene señalar</h3>
+<ul>
+<li><strong><code>base_web.md</code> está desalineado con el árbol actual</strong>: usa la nomenclatura antigua (<code>contexto.md</code>, <code>pura.md</code>) y describe <code>draftv1.md</code> como «backlog v3, OP-01…10, TK-01…90, riesgos R1…R13». Ese backlog v3 completo <strong>no está en este repo</strong>; <code>draftv2.md</code> lo cita como «versión anterior del plan» y solo trae los carriles D, G, C y L en detalle (B, F, E «se vuelcan tal cual»). Hay un documento fuente que falta o que se quedó en otro árbol (<code>IAIA_2000/base/teoria/</code>).</li>
+<li><code>draftv0.md</code> enlaza el código como <code>vendor/oasis/...</code>; aquí el vendor está en <code>vendor/oasis/...</code>. Los enlaces no resuelven en este repo.</li>
+<li>Decisiones ya tomadas en res_publica que la nueva rama <strong>hereda sin reabrir</strong>: Faircoin muerto (último commit 2022-02-05) → <strong>Faircoin3 génesis nuevo</strong> o ECOin + módulo <code>Banking</code>; no hay «nodo central» en SSB; no hay smart contracts en Faircoin (Bitcoin 0.12). <code>iberian-dev-7.md</code> Bloque IV asume las tres cosas y hay que corregirlo.</li>
+</ul>
+<hr />
+<h2 id="2-lo-que-pide-iberian-dev-7md">2. Lo que pide <code>iberian-dev-7.md</code></h2>
+<p>Es un <strong>chuletario de referencias, no un diseño</strong> (lo dice él mismo). Bloque I: fuentes sobre las colectivizaciones (Souchy 1937, Leval 1972, Casanova 1988, Ovejero 2015, Vela 2013, Decreto de Colectivizaciones 24-10-1936, sucesos de mayo de 1937) y sus características (asamblea soberana, cargos rotatorios y revocables, salario familiar, derechos sociales, espontaneidad). Bloque II: Trevijano (ya cubierto por res_publica). Bloque III: <strong>tabla de contraste</strong> en 7 dimensiones (propiedad, poder, ideología, economía, sujeto, cambio, libertad). Bloque IV: mapeo tecnológico ingenuo. Pregunta de fondo: <em>¿pueden coexistir la autogestión colectivista y la república constitucional en una misma red técnico-política?</em></p>
+<p>Lectura: <code>dev/colectividades</code> debe producir para el modelo colectivista <strong>lo mismo que res_publica produjo para el trevijanista</strong> (criterios → auditoría → confrontación → parches → backlog → revisión por fuentes). El contraste del Bloque III es un <strong>tercer producto</strong> que solo puede escribirse cuando ambas ramas tengan sus parches: mismo código, dos constituciones.</p>
+<hr />
+<h2 id="3-diseño-de-devcolectividades">3. Diseño de dev/colectividades</h2>
+<h3 id="31-supuestos-no-bloqueantes-el-usuario-puede-cambiarlos">3.1 Supuestos (no bloqueantes; el usuario puede cambiarlos)</h3>
+<ul>
+<li>La rama nace <strong>desde <code>dev/res_publica</code></strong> y conserva sus ficheros: así <code>c0</code> puede enlazar la anatomía ya hecha en <code>draftv0.md §2</code> en vez de repetirla, y el contraste final tiene ambos lados a mano.</li>
+<li>Los documentos nuevos van en carpeta <strong><code>modelos/colectividades/</code></strong> para no colisionar con <code>draft*.md</code> ni con <code>revision/</code> y facilitar el merge posterior. <code>iberian-dev-7.md</code> se queda en raíz como fuente, sin editar.</li>
+<li>Mismo vendor, mismo commit <code>9a657b7</code>, misma escala de certeza, mismas convenciones.</li>
+<li>Unidad de <code>revision/</code> = <strong>tema</strong> (no capítulo de un libro, porque el corpus es plural): asamblea, cargos, propiedad, salario familiar, federación, intercambio.</li>
+</ul>
+<h3 id="32-estructura-propuesta">3.2 Estructura propuesta</h3>
+<pre><code>modelos/colectividades/
+├── c0-auditoria.md        ≈ draftv0: criterios CL, anatomía de los módulos NO auditados aún, confrontación, parches CL-n, backlog
+├── c1-clon-o-parecido.md  ≈ draftv1: elementos del modelo colectivista con certeza, hoy / tras parches, intraducibles
+├── c2-backlog.md          ≈ draftv2: carriles D' (fuentes) → G' (autogobierno) → B' (reparto) → E' (intercambio) → F' (federación)
+├── revision/
+│   ├── 01-asamblea.md  02-cargos.md  03-propiedad.md
+│   ├── 04-salario-familiar.md  05-federacion.md  06-intercambio.md
+└── c3-contraste.md        Bloque III: las dos constituciones sobre el mismo código (se escribe al final)
+</code></pre>
+<h3 id="33-criterios-colectivistas-propuestos-para-c0-1-a-validar-en-revision">3.3 Criterios colectivistas propuestos (para <code>c0 §1</code>; a validar en <code>revision/</code>)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Criterio</th>
+<th style="text-align:left">Fuente del chuletario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left"><strong>Asamblea soberana</strong>: toda decisión nace de la asamblea de miembros</td>
+<td style="text-align:left">Redalyc / CECLM</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><strong>Cargos rotatorios y revocables</strong>; comisiones sin poder propio</td>
+<td style="text-align:left">Redalyc / CECLM</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><strong>Propiedad colectiva</strong> de los medios de producción; entrada voluntaria</td>
+<td style="text-align:left">Casanova, Decreto 24-10-1936</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left"><strong>Distribución según necesidades</strong> (salario familiar), no según rendimiento</td>
+<td style="text-align:left">Redalyc / Ovejero</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left"><strong>Derechos sociales garantizados</strong>: educación y sanidad gratuitas, jubilación, jornada</td>
+<td style="text-align:left">Redalyc / Saña</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left"><strong>Federación de abajo arriba</strong> (colectividad → comarcal → regional) con delegados mandatados</td>
+<td style="text-align:left">Casanova (Consejo de Aragón)</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left"><strong>Intercambio sin moneda o con vales locales</strong>; compensación entre colectividades</td>
+<td style="text-align:left">Leval, Souchy</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left"><strong>Voluntariedad</strong>: sin coerción de entrada (tensión histórica de las colectivizaciones forzadas)</td>
+<td style="text-align:left">Redalyc / Casanova</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="34-confrontación-preliminar-verificada-hoy-en-el-código-base-de-c0-2-3">3.4 Confrontación preliminar (verificada hoy en el código; base de <code>c0 §2-3</code>)</h3>
+<p>Módulos que <code>draftv0</code> <strong>no</strong> auditó y que aquí son el centro:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Módulo / seam</th>
+<th style="text-align:left">Encaja</th>
+<th style="text-align:left">Choca</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>tribes_model.js</code> — tribu = colectividad; <code>parentTribeId</code> (:11); rotación de clave al expulsar (:753)</td>
+<td style="text-align:left">Estructura de pertenencia cifrada, anidable</td>
+<td style="text-align:left"><strong>El autor raíz es monarca</strong>: solo él edita <code>STRUCTURAL_FIELDS</code> (:159-166), no puede irse (:721), solo él expulsa (:533). Sin tesoro de tribu (cero referencias a wallet). Crit. 2</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>parliament_model.js:1354</code> <code>tribeParliamentTerm</code> con <code>method:'ANARCHY'</code>, <code>leaderId:null</code>; quórum <code>max(2, ceil(miembros·0.25))</code> (:1376)</td>
+<td style="text-align:left"><strong>Asamblea sin líder por defecto</strong> = crit. 1</td>
+<td style="text-align:left">El parlamento de tribu no gobierna los campos estructurales de la tribu</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>industry_model.js</code> — instalación con <code>license:&quot;copyleft&quot;</code> (:437); admisión y disolución por voto quórum+mayoría (:98, :212-223); libro de puntos trabajo/material/eco (:306)</td>
+<td style="text-align:left"><strong>Medios de producción colectivizados</strong> = crit. 3</td>
+<td style="text-align:left"><code>steward</code> único, irremovible (:462, :509), firma solo el reparto (:978). Reparto <strong>pro rata a puntos</strong> (:965) = lo contrario del salario familiar. Crit. 2 y 4</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>banking_model.js</code> — RBU por épocas (:14-21, :920)</td>
+<td style="text-align:left">Suelo incondicional <code>floor_user:1</code></td>
+<td style="text-align:left">Peso <code>w = 1 + karma/100</code> (:931-932): renta por notoriedad, no por necesidad; sin hogar ni dependientes; tesoro = wallet privada del pub <code>isPubNode()</code> (:207-217) sin multisig ni voto; tribus no cobran (:923-924). Crit. 4</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>market_model.js:181</code>, <code>shops_model.js:414</code></td>
+<td style="text-align:left">—</td>
+<td style="text-align:left"><strong>Precio &gt; 0 obligatorio</strong>: el don y el trueque no son representables; sin escrow (:547, :712). Crit. 7</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>transfers_model.js:25</code> <code>CATEGORIES [&quot;ECONOMIC&quot;,&quot;TIME&quot;,&quot;TRUST&quot;]</code></td>
+<td style="text-align:left">Único carril no monetario: <strong>vales de tiempo / crédito mutuo</strong></td>
+<td style="text-align:left">Importe &gt; 0 (:230); confirmación bilateral, no escrow</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>school_model.js</code> — precio por defecto 0 (:392); cualquiera enseña</td>
+<td style="text-align:left">Educación gratuita = crit. 5</td>
+<td style="text-align:left">Certificado solo del autor (:1222); cursos de pago cifrados como función de primera clase</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>housing_model.js:317</code> couchsurfing forzado a precio 0; <code>events_model.js</code> precio 0 posible</td>
+<td style="text-align:left">Únicos intercambios gratuitos del sistema</td>
+<td style="text-align:left">—</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>jobs_model.js</code> (<code>job_type:&quot;exchange&quot;</code> :191), <code>tasks_model.js</code> autoasignación (:297)</td>
+<td style="text-align:left">Bolsa de trabajo voluntaria</td>
+<td style="text-align:left">Sin asignación por asamblea</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>polls_model.js</code> con <code>tribeId</code> cifrado (:263-269)</td>
+<td style="text-align:left">Deliberación interna de la colectividad</td>
+<td style="text-align:left">Sin duración mínima, quórum ni umbral; <code>votes_model.js</code> solo cuenta (7 d mín., :10)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>inhabitants_model.js:86</code> censo = quien ha publicado</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left"><strong>Sin unidad familiar</strong>: 1 feed = 1 persona. Crit. 4</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Punto de cruce con res_publica</strong>: allí la tribu se degrada a sociedad civil (TK-D11, D13) y la unidad es la mónada por hash; aquí la tribu <strong>se promueve a unidad soberana</strong>. Y la «anarquía calculada» que res_publica celebra como constituyente permanente es, para las colectividades, el <strong>estado normal</strong>. El mandato imperativo del delegado federal (crit. 6) coincide con el mandato imperativo trevijanista (TK-D02): primer material para <code>c3</code>.</p>
+<h3 id="35-parches-previsibles-cl-n-para-c0-4-se-cierran-en-c2">3.5 Parches previsibles (<code>CL-n</code>, para <code>c0 §4</code>; se cierran en <code>c2</code>)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Parche</th>
+<th style="text-align:left">Seam</th>
+<th style="text-align:left">Crit.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CL-1</td>
+<td style="text-align:left">Gobierno de la tribu por su asamblea: <code>STRUCTURAL_FIELDS</code> y expulsión pasan de autor raíz a <code>tribeParliamentRule</code> con quórum</td>
+<td style="text-align:left"><code>tribes_model.js:159-166</code>, <code>:533</code></td>
+<td style="text-align:left">1, 2</td>
+</tr>
+<tr>
+<td style="text-align:left">CL-2</td>
+<td style="text-align:left"><code>steward</code> de Industry electo por los miembros, rotatorio, revocable</td>
+<td style="text-align:left"><code>industry_model.js:163</code>, <code>:462</code>, <code>:978</code></td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left">CL-3</td>
+<td style="text-align:left"><code>disposition:&quot;needs&quot;</code> en <code>computeDistributionPlan</code>: reparto por necesidades declaradas y validadas por asamblea, no por puntos</td>
+<td style="text-align:left"><code>industry_model.js:960-965</code></td>
+<td style="text-align:left">4</td>
+</tr>
+<tr>
+<td style="text-align:left">CL-4</td>
+<td style="text-align:left">RBU: sustituir peso por karma por <strong>coeficiente de necesidad</strong> (unidad familiar, dependientes)</td>
+<td style="text-align:left"><code>banking_model.js:931-932</code></td>
+<td style="text-align:left">4</td>
+</tr>
+<tr>
+<td style="text-align:left">CL-5</td>
+<td style="text-align:left">Tesoro de tribu (hoy inexistente): wallet colectiva multisig k-de-n; épocas ejecutadas por la asamblea, no por <code>isPubNode()</code></td>
+<td style="text-align:left"><code>banking_model.js:207-217</code>, <code>:1004</code></td>
+<td style="text-align:left">1, 3</td>
+</tr>
+<tr>
+<td style="text-align:left">CL-6</td>
+<td style="text-align:left">Precio 0 / categoría don y trueque en Market y Shops; vales = <code>transfers</code> <code>TIME</code></td>
+<td style="text-align:left"><code>market_model.js:181</code>, <code>shops_model.js:414</code>, <code>transfers_model.js:25</code></td>
+<td style="text-align:left">7</td>
+</tr>
+<tr>
+<td style="text-align:left">CL-7</td>
+<td style="text-align:left">Quórum y umbral en polls de tribu; duración mínima</td>
+<td style="text-align:left"><code>polls_model.js</code>, <code>votes_model.js:10</code></td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">CL-8</td>
+<td style="text-align:left">Federación: <code>parentTribeId</code> deja de ser solo herencia de privacidad; delegado con mandato de la asamblea</td>
+<td style="text-align:left"><code>tribes_model.js:379</code>, <code>:477</code></td>
+<td style="text-align:left">6</td>
+</tr>
+<tr>
+<td style="text-align:left">CL-9</td>
+<td style="text-align:left">Unidad familiar declarada (<code>household</code>) sobre feeds individuales</td>
+<td style="text-align:left"><code>inhabitants_model.js</code></td>
+<td style="text-align:left">4</td>
+</tr>
+</tbody>
+</table></div>
+<p>Lo que no se toca: ANARCHY por defecto, <code>canPropose</code> para todos bajo ANARCHY, copyleft de blueprints, cifrado de tribu, censo por actividad.</p>
+<h3 id="36-carriles-de-c2-backlogmd">3.6 Carriles de <code>c2-backlog.md</code></h3>
+<ul>
+<li><strong>D'</strong> investigación en fuentes (formato de draftv2): qué buscar · dónde (Souchy / Leval / Casanova / Decreto, con capítulo si se conoce) · default · alternativas · desbloquea. Ejemplos: D'01 quién forma la asamblea y con qué quórum; D'02 salario familiar: fórmula real (por miembro, por edad); D'03 vales y cajas de compensación; D'04 delegados comarcales: mandato y revocación; D'05 entrada/salida de «individualistas»; D'06 Decreto de Colectivizaciones vs práctica aragonesa.</li>
+<li><strong>G'</strong> autogobierno (CL-1, 2, 7, 8) · <strong>B'</strong> reparto (CL-3, 4, 5, 9) · <strong>E'</strong> intercambio (CL-6) · <strong>F'</strong> federación (CL-8, tesoro federado). Carril C (cadena) se <strong>hereda</strong> de res_publica sin reabrir.</li>
+</ul>
+<hr />
+<h2 id="4-pasos-de-ejecución-cuando-se-salga-de-read-only">4. Pasos de ejecución (cuando se salga de read-only)</h2>
+<ol>
+<li><strong>Primer commit en <code>dev/res_publica</code></strong> (hoy no existe la rama porque no hay commits). Añadir <code>.gitignore</code> con <code>vendor/</code>. Commitear <code>draft*.md</code>, <code>revision/</code>, <code>iberian-dev-7.md</code>, <code>base_web.md</code>. Sin esto no se puede ramificar.</li>
+<li><code>git checkout -b dev/colectividades</code>.</li>
+<li>Escribir <code>modelos/colectividades/c0-auditoria.md</code> a partir de §3.3-3.5 de este plan, verificando cada <code>fichero:línea</code> contra <code>vendor/oasis</code> y enlazando <code>../draftv0.md#L…</code> para lo ya auditado.</li>
+<li>Escribir <code>modelos/colectividades/c1-clon-o-parecido.md</code> (elementos, certeza, hoy/tras CL-n, intraducibles: p. ej. la tierra, la jornada, la guerra como contexto).</li>
+<li>Escribir <code>modelos/colectividades/c2-backlog.md</code> con carriles D', G', B', E', F'.</li>
+<li>Abrir <code>modelos/colectividades/revision/01-asamblea.md</code> con el formato de <code>revision/01-lealtad.md</code> y seguir por temas.</li>
+<li><code>c3-contraste.md</code> al final, cuando ambas ramas tengan parches cerrados.</li>
+</ol>
+<h2 id="5-verificación">5. Verificación</h2>
+<ul>
+<li>Script de comprobación (lectura): cada <code>fichero:línea</code> citado en <code>modelos/colectividades/*.md</code> existe en <code>vendor/oasis</code> y la línea contiene el símbolo nombrado; IDs <code>CL-n</code>, <code>TK-D'nn</code> únicos; enlaces relativos <code>../draftv0.md#L…</code> resuelven.</li>
+<li><code>git diff dev/res_publica..dev/colectividades</code> solo añade <code>modelos/colectividades/</code>; no toca <code>draft*.md</code>, <code>revision/</code> ni <code>iberian-dev-7.md</code>.</li>
+<li>Cada tabla de <code>c0 §3</code> tiene un veredicto por criterio (1-8) y cada <code>CL-n</code> nombra el criterio que repara.</li>
+</ul>
+<h2 id="6-preguntas-abiertas-para-el-usuario-no-bloquean">6. Preguntas abiertas para el usuario (no bloquean)</h2>
+<ul>
+<li>¿Carpeta <code>modelos/colectividades/</code> o ficheros en raíz (<code>draftc0.md</code>…)?</li>
+<li>¿Revisión por <strong>tema</strong> o por <strong>fuente</strong> (Souchy / Leval / Casanova)?</li>
+<li>¿Dónde vive <code>c3-contraste.md</code>: en esta rama o en una rama de integración?</li>
+<li>¿Se recupera el backlog v3 completo (TK-01…90) que cita <code>base_web.md</code> y falta aquí?</li>
+</ul>
+
+</article>
+      <footer class="site-footer">
+<div class="provenance-footer">
+  <p class="provenance-footer-chain">
+    <a href="https://escrivivir.co">Escrivivir</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://escrivivir.co/2026/06/04/t04x06a-ficha-de-producto-scriptorium-skins-arg/">Scriptorium Skins</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span>Animus Iocandi</span>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Modelador de Redes</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span title="Frente Aleph de Resistencia Ontológica">F.A.R.O.</span>
+  </p>
+  <p class="provenance-footer-meta">
+    Material transmedia para agentes del juego ARG
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    v0.1.0
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    GPL-3.0-or-later · AIPLv1
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://github.com/alephscriptorium-eng/modelador-redes">Repositorio</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Inicio</a>
+  </p>
+</div>      </footer>
+    </main>
+  </div>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>
