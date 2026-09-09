@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Backlog — Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB</title>
+<script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>  <link rel="stylesheet" href="../../assets/doc.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="../../index.html" class="brand">Modelador de Redes</a>
+      <p class="tag">Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB · v0.1.0</p>
+      <nav aria-label="Modelo clase">
+        <a href="index.html" class="">Estado</a>
+        <a href="backlog.html" class="active">Backlog</a>
+        <hr>
+        <p class="nav-h">Drafts</p>
+        <a href="drafts/draft.html" class="">draft <span class="badge badge-latest">latest</span></a>
+        <hr>
+        <p class="nav-h">Revisión</p>
+        <hr>
+        <p class="nav-h">Descargas</p>
+        <a href="downloads/clase-drafts.zip">drafts.zip</a>
+        <a href="downloads/clase-revision.zip">revision.zip</a>
+        <a href="downloads/clase-todo.zip">todo.zip</a>
+        <a href="backlog.json">backlog.json</a>
+        <hr>
+        <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/clase" class="nav-external">GitHub ↗</a>
+        <a href="../../index.html" class="nav-external">Catálogo ↗</a>
+        <a href="../../foss/index.html" class="nav-external">Artefacto (FOSS) ↗</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
+    </aside>
+    <main>
+<div class="doc-head">
+  <h1>Backlog</h1>
+  <p class="lead">Oportunidades (vista comprimida) y tareas a detalle, extraídas de los drafts. El draft vigente es <a href="drafts/draft.html">draft.md</a>; lo anterior se conserva con su etiqueta de origen. Datos: <a href="backlog.json">backlog.json</a>.</p>
+</div>
+<div class="resumen">
+  <span><strong>0</strong> tareas TK en draft</span>
+  <span><strong>0</strong> oportunidades en 1 drafts</span>
+</div>
+
+<h2 id="oportunidades">Oportunidades</h2>
+<p class="note">Ningún draft define oportunidades (encabezados <code>OP-nn</code>).</p>
+
+<h2 id="tareas">Tareas a detalle</h2>
+<div class="tabla-head">
+  <h3 id="tabla-1">draft · carril EU</h3>
+  <span class="badge badge-latest">draft</span>
+  <span class="seccion">5.5 Carril EU · parches de eutaxia (opcional; único lugar donde Bueno licencia prescribir)</span>
+</div>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>#</th><th>Parche</th><th>Seam</th><th>Qué persistencia repara</th></tr></thead>
+  <tbody>
+  <tr><td>EU-1</td><td>Órgano para la capa cortical: puentes Multiverse, invites del PUB y hops bajo decisión registrada en el log (no bajo shell)</td><td><code>backend.js:4651</code>, <code>oasis-pub.js:41</code>, <code>server-config.json</code></td><td>Poder sin rama → rama</td></tr>
+  <tr><td>EU-2</td><td>Respaldo real de identidad: export con <code>secret</code> cifrado por passphrase; <code>backup</code> del onboarding verificado</td><td><code>exportmode_model.js:24</code>, <code>onboarding_model.js:118</code></td><td>Muerte de identidad por accidente</td></tr>
+  <tr><td>EU-3</td><td><code>POST /update</code> sin <code>git reset --hard</code> sobre <code>src/configs/</code>; token CSRF</td><td><code>backend.js:9552</code></td><td>Destrucción de config al actualizar</td></tr>
+  <tr><td>EU-4</td><td>Métrica de uptime/recurrencia de la red en <code>stats</code></td><td><code>stats_model.js</code></td><td>La red se mide en el tiempo</td></tr>
+  <tr><td>EU-5</td><td>Constantes de carbono y de RBU como parámetros con procedencia y cambio registrado, no magia</td><td><code>banking_model.js:31-37</code>, <code>:14-21</code></td><td>Parámetros basales sin sujeto</td></tr>
+  <tr><td>EU-6</td><td>Confirmación en dos pasos para modo pánico</td><td><code>backend.js:8050</code></td><td>Irreversibilidad sin fricción</td></tr>
+  </tbody>
+</table>
+</div>
+      <footer class="site-footer">
+<div class="provenance-footer">
+  <p class="provenance-footer-chain">
+    <a href="https://escrivivir.co">Escrivivir</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://escrivivir.co/2026/06/04/t04x06a-ficha-de-producto-scriptorium-skins-arg/">Scriptorium Skins</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span>Animus Iocandi</span>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../index.html">Modelador de Redes</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span title="Frente Aleph de Resistencia Ontológica">F.A.R.O.</span>
+  </p>
+  <p class="provenance-footer-meta">
+    Material transmedia para agentes del juego ARG
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    v0.1.0
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    GPL-3.0-or-later · AIPLv1
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://github.com/alephscriptorium-eng/modelador-redes">Repositorio</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../index.html">Inicio</a>
+  </p>
+</div>      </footer>
+    </main>
+  </div>
+  <script src="../../assets/theme.js"></script>
+</body>
+</html>

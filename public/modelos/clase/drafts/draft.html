@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan: modelar el materialismo filosófico de Bueno sobre Oasis/SSB (rama propia, independiente) — Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB</title>
+<script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>  <link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="../../../index.html" class="brand">Modelador de Redes</a>
+      <p class="tag">Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB · v0.1.0</p>
+      <nav aria-label="Modelo clase">
+        <a href="../index.html" class="">Estado</a>
+        <a href="../backlog.html" class="">Backlog</a>
+        <hr>
+        <p class="nav-h">Drafts</p>
+        <a href="../drafts/draft.html" class="active">draft <span class="badge badge-latest">latest</span></a>
+        <hr>
+        <p class="nav-h">Revisión</p>
+        <hr>
+        <p class="nav-h">Descargas</p>
+        <a href="../downloads/clase-drafts.zip">drafts.zip</a>
+        <a href="../downloads/clase-revision.zip">revision.zip</a>
+        <a href="../downloads/clase-todo.zip">todo.zip</a>
+        <a href="../backlog.json">backlog.json</a>
+        <hr>
+        <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/clase" class="nav-external">GitHub ↗</a>
+        <a href="../../../index.html" class="nav-external">Catálogo ↗</a>
+        <a href="../../../foss/index.html" class="nav-external">Artefacto (FOSS) ↗</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
+    </aside>
+    <main>
+<div class="doc-head">
+  <h1>Plan: modelar el materialismo filosófico de Bueno sobre Oasis/SSB (rama propia, independiente)
+<span class="badge">draft</span><span class="badge badge-latest">latest</span>  </h1>
+<p class="doc-links">
+  <a href="https://github.com/alephscriptorium-eng/modelador-redes/blob/main/modelos/clase/drafts/draft.md" class="ext">Ver en GitHub ↗</a>
+  <a href="https://raw.githubusercontent.com/alephscriptorium-eng/modelador-redes/main/modelos/clase/drafts/draft.md" class="ext">raw ↗</a>
+<a href="../downloads/clase-drafts.zip">zip</a><code>draft.md</code></p>
+</div>
+<nav class="toc" aria-label="Contenido">
+  <p>Contenido</p>
+  <ul>
+<li class="n2"><a href="#-panorámica-del-sistema-de-gustavo-bueno-el-materialismo-filosófico">🌌 Panorámica del Sistema de Gustavo Bueno: El Materialismo Filosófico</a></li><li class="n3"><a href="#-los-tres-pilares-del-sistema">🧱 Los Tres Pilares del Sistema</a></li><li class="n3"><a href="#-la-teoría-política-de-bueno">🏛️ La Teoría Política de Bueno</a></li><li class="n3"><a href="#-bueno-vs-trevijano-vs-colectivizaciones">⚔️ Bueno vs. Trevijano vs. Colectivizaciones</a></li><li class="n2"><a href="#-modelización-con-solarnethub--ecosistema-faircoin">🛠️ Modelización con SolarNET.HuB + Ecosistema Faircoin</a></li><li class="n3"><a href="#principio-general">Principio General</a></li><li class="n3"><a href="#-mapeo-ontológico-los-tres-géneros-de-materialidad-en-snh--faircoin">🔷 Mapeo Ontológico: Los Tres Géneros de Materialidad en SNH + Faircoin</a></li><li class="n3"><a href="#-mapeo-gnoseológico-la-teoría-del-cierre-categorial">🔷 Mapeo Gnoseológico: La Teoría del Cierre Categorial</a></li><li class="n3"><a href="#-mapeo-del-espacio-antropológico-los-tres-ejes">🔷 Mapeo del Espacio Antropológico: Los Tres Ejes</a></li><li class="n3"><a href="#-modelización-política-el-estado-la-eutaxia-y-las-capas">🔷 Modelización Política: El Estado, la Eutaxia y las Capas</a></li><li class="n3"><a href="#-la-crítica-bueniana-a-las-otras-dos-modelizaciones">🔷 La Crítica Bueniana a las Otras Dos Modelizaciones</a></li><li class="n3"><a href="#-esquema-síntesis-la-arquitectura-trimembre-de-snh--faircoin-según-bueno">🗺️ Esquema Síntesis: La Arquitectura Trimembre de SNH + Faircoin según Bueno</a></li><li class="n2"><a href="#-chuletario-de-referencias-para-el-agente">📚 Chuletario de Referencias para el Agente</a></li><li class="n3"><a href="#obras-fundamentales-de-gustavo-bueno">Obras Fundamentales de Gustavo Bueno</a></li><li class="n3"><a href="#fuentes-secundarias-y-de-contexto">Fuentes Secundarias y de Contexto</a></li><li class="n3"><a href="#conceptos-clave-para-el-agente">Conceptos Clave para el Agente</a></li><li class="n2"><a href="#-nota-para-el-agente">💎 Nota para el Agente</a></li><li class="n2"><a href="#contexto">Contexto</a></li><li class="n2"><a href="#1-lo-que-trae-bueno-dev-7md-y-lo-que-hay-que-corregir-antes-de-usarlo">1. Lo que trae bueno-dev-7.md y lo que hay que corregir antes de usarlo</a></li><li class="n2"><a href="#2-método-adaptado-la-misma-tecnología-con-la-diferencia-que-impone-bueno">2. Método adaptado («la misma tecnología», con la diferencia que impone Bueno)</a></li><li class="n2"><a href="#3-coordenadas-propuestas-para-b0-1-a-validar-en-revision">3. Coordenadas propuestas (para b0 §1; a validar en revision/)</a></li><li class="n2"><a href="#4-trituración-preliminar-verificada-hoy-en-el-código-base-de-b0-2-3">4. Trituración preliminar (verificada hoy en el código; base de b0 §2-3)</a></li><li class="n3"><a href="#41-k5--las-nueve-ramas-contra-oasis--el-producto-central">4.1 K5 · Las nueve ramas contra Oasis — el producto central</a></li><li class="n3"><a href="#42-k6--indicadores-de-eutaxiadistaxia-en-el-código">4.2 K6 · Indicadores de eutaxia/distaxia en el código</a></li><li class="n3"><a href="#43-k1--materialidades">4.3 K1 · Materialidades</a></li><li class="n3"><a href="#44-k2--cierres">4.4 K2 · Cierres</a></li><li class="n3"><a href="#45-k3--espacio-antropológico">4.5 K3 · Espacio antropológico</a></li><li class="n3"><a href="#46-k7--holización">4.6 K7 · Holización</a></li><li class="n2"><a href="#5-diseño-de-la-rama">5. Diseño de la rama</a></li><li class="n3"><a href="#51-supuestos-no-bloqueantes">5.1 Supuestos (no bloqueantes)</a></li><li class="n3"><a href="#52-estructura">5.2 Estructura</a></li><li class="n3"><a href="#53-carril-d--investigación-en-fuentes-formato-de-draftv2-buscar--dónde--default--alternativas--desbloquea">5.3 Carril D · investigación en fuentes (formato de draftv2: buscar · dónde · default · alternativas · desbloquea)</a></li><li class="n3"><a href="#54-carril-t--trituración-tareas-de-documento-una-por-coordenada">5.4 Carril T · trituración (tareas de documento, una por coordenada)</a></li><li class="n3"><a href="#55-carril-eu--parches-de-eutaxia-opcional-único-lugar-donde-bueno-licencia-prescribir">5.5 Carril EU · parches de eutaxia (opcional; único lugar donde Bueno licencia prescribir)</a></li><li class="n2"><a href="#6-pasos-de-ejecución-al-salir-de-read-only">6. Pasos de ejecución (al salir de read-only)</a></li><li class="n2"><a href="#7-verificación">7. Verificación</a></li><li class="n2"><a href="#8-preguntas-abiertas-no-bloquean">8. Preguntas abiertas (no bloquean)</a></li>  </ul>
+</nav>
+<article class="md">
+<blockquote>
+<p><strong>Nota (2026-09-09, rama <code>dev/clase</code>).</strong> Draft semilla del modelo <code>clase</code> (materialismo filosófico de Gustavo Bueno). La rama se llama <code>dev/clase</code>, no <code>dev/materialismo</code>. Layout vigente: <code>modelos/clase/drafts/draftvN.md</code> (el sufijo mayor es el draft vigente) y <code>modelos/clase/revision/NN-*.md</code>; los ficheros <code>b0…b2</code> que propone el plan de abajo se escriben como <code>draftv0</code>, <code>draftv1</code>, … La rama solo toca <code>modelos/clase/</code>. Ver <code>llms.md</code>.</p>
+</blockquote>
+<h2 id="-panorámica-del-sistema-de-gustavo-bueno-el-materialismo-filosófico">🌌 Panorámica del Sistema de Gustavo Bueno: El Materialismo Filosófico</h2>
+<p>El sistema de Gustavo Bueno (1924-2016) es uno de los proyectos filosóficos más ambiciosos y sistemáticos de la filosofía española del siglo XX. Lo llamó <strong>Materialismo Filosófico</strong>, y no es un materialismo vulgar o reduccionista, sino una <strong>ontología, gnoseología, antropología y teoría política</strong> articuladas en un todo coherente.</p>
+<h3 id="-los-tres-pilares-del-sistema">🧱 Los Tres Pilares del Sistema</h3>
+<h4>1. Ontología: Los Tres Géneros de Materialidad</h4>
+<p>Bueno rompe con el monismo materialista clásico (todo es materia física) y propone una ontología <strong>trimembre</strong>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Género</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Ejemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>M₁ (Materialidad física)</strong></td>
+<td style="text-align:left">Cuerpos, cosas, procesos físicos y biológicos</td>
+<td style="text-align:left">Átomos, células, máquinas, redes de ordenadores</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>M₂ (Materialidad fenomenológica)</strong></td>
+<td style="text-align:left">Vivencias internas, conciencia, experiencias subjetivas</td>
+<td style="text-align:left">Percepciones, emociones, pensamientos</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>M₃ (Materialidad abstracta)</strong></td>
+<td style="text-align:left">Estructuras, relaciones, leyes, ideas objetivadas</td>
+<td style="text-align:left">Lenguaje, matemáticas, instituciones, sistemas normativos</td>
+</tr>
+</tbody>
+</table></div>
+<p>Estos tres géneros son <strong>inconmensurables</strong>: ninguno se reduce a los otros. La realidad es siempre una <strong>involucración mutua</strong> de los tres.</p>
+<h4>2. Gnoseología: La Teoría del Cierre Categorial (TCC)</h4>
+<p>Es la teoría de la ciencia de Bueno. Su tesis central:</p>
+<blockquote>
+<p><strong>Una categoría es una totalidad atributiva en la que ha sido posible concatenar, por cierres operatorios, unas partes con otras</strong></p>
+</blockquote>
+<p>En cristiano:</p>
+<ul>
+<li>Las <strong>categorías</strong> son los &quot;recintos&quot; o &quot;círculos&quot; donde se constituyen las ciencias particulares</li>
+<li>Una ciencia alcanza su <strong>&quot;cierre categorial&quot;</strong> cuando logra organizar autónomamente su campo de fenómenos</li>
+<li><strong>Categoría y ciencia positiva son prácticamente sinónimos</strong></li>
+<li>La filosofía es un <strong>saber de segundo grado</strong>: no trata directamente de la realidad, sino que <strong>analiza, clasifica y coordina</strong> los saberes de primer grado (ciencias, técnicas, políticas)</li>
+</ul>
+<p>Bueno distingue dos órdenes de categorías:</p>
+<ul>
+<li><strong>Categorías del ser</strong>: describen la realidad (física, biología, etc.)</li>
+<li><strong>Categorías del hacer</strong>: implican fines intencionales (política, técnica, etc.)</li>
+</ul>
+<h4>3. Espacio Antropológico: Los Tres Ejes</h4>
+<p>Bueno organiza la condición humana en tres ejes:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Eje</th>
+<th style="text-align:left">Función</th>
+<th style="text-align:left">Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Eje radial</strong></td>
+<td style="text-align:left">Relación con el mundo objetivo</td>
+<td style="text-align:left">Entidades impersonales, cosas, naturaleza</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Eje circular</strong></td>
+<td style="text-align:left">Relación entre sujetos humanos</td>
+<td style="text-align:left">Sujetos humanos, instrumentos, interacciones sociales</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Eje angular</strong></td>
+<td style="text-align:left">Relación con lo trascendente</td>
+<td style="text-align:left">Sujetos no humanos (dioses, animales, máquinas) con capacidad de conocimiento o apetición</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="-la-teoría-política-de-bueno">🏛️ La Teoría Política de Bueno</h3>
+<p>Bueno desarrolló una <strong>teoría política materialista</strong> con varios elementos clave:</p>
+<ul>
+<li><strong>El Estado como unidad de análisis central</strong>: rechaza disolver el Estado en &quot;sociedad civil&quot; o &quot;mercado&quot;</li>
+<li><strong>Eutaxia como fundamento moral</strong>: concepto que designa el <strong>buen orden</strong> o la <strong>constitución justa</strong> del cuerpo político</li>
+<li><strong>Crítica a la democracia formal</strong>: Bueno no es un demócrata en el sentido convencional; analiza las <strong>capas del Estado</strong> (Estado de derecho, sociedad civil, democracia) como ideologías envolventes</li>
+<li><strong>Rechazo del estatuto científico de la ciencia política</strong>: pero exige su <strong>elaboración sistemática</strong></li>
+</ul>
+<h3 id="-bueno-vs-trevijano-vs-colectivizaciones">⚔️ Bueno vs. Trevijano vs. Colectivizaciones</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Dimensión</th>
+<th style="text-align:left">Bueno</th>
+<th style="text-align:left">Trevijano</th>
+<th style="text-align:left">Colectivizaciones 1936-37</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Fundamento</strong></td>
+<td style="text-align:left">Materialismo ontológico</td>
+<td style="text-align:left">Republicanismo constitucional</td>
+<td style="text-align:left">Comunismo libertario</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Sujeto político</strong></td>
+<td style="text-align:left">Individuo en su materialidad corporal</td>
+<td style="text-align:left">Ciudadano como sujeto de derechos</td>
+<td style="text-align:left">Colectivo / clase obrera</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Economía</strong></td>
+<td style="text-align:left">No es el eje central; el Estado es lo primero</td>
+<td style="text-align:left">Propiedad privada como derecho</td>
+<td style="text-align:left">Colectivización de medios</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Ideología</strong></td>
+<td style="text-align:left">Crítica de las ideologías desde el materialismo</td>
+<td style="text-align:left">&quot;Teoría Pura&quot; = eliminar ideología</td>
+<td style="text-align:left">Ideología anarquista explícita</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Método</strong></td>
+<td style="text-align:left">Filosofía sistemática de segundo grado</td>
+<td style="text-align:left">Teoría constitucional</td>
+<td style="text-align:left">Revolución espontánea</td>
+</tr>
+</tbody>
+</table></div>
+<p>Bueno <strong>no es ni anarquista ni republicano trevijaniano</strong>. Su materialismo es una <strong>tercera vía</strong> que critica tanto el idealismo político como el economicismo marxista.</p>
+<hr />
+<h2 id="-modelización-con-solarnethub--ecosistema-faircoin">🛠️ Modelización con SolarNET.HuB + Ecosistema Faircoin</h2>
+<h3 id="principio-general">Principio General</h3>
+<p>El materialismo filosófico de Bueno es una <strong>filosofía de la mediación y la articulación</strong>. No busca eliminar la complejidad, sino <strong>organizarla sistemáticamente</strong>. Por eso, una modelización con SNH + Faircoin no sería ni la &quot;comuna digital&quot; de las colectivizaciones ni la &quot;república constitucional&quot; de Trevijano, sino una <strong>arquitectura que refleje la trimembración ontológica y la articulación categorial</strong>.</p>
+<hr />
+<h3 id="-mapeo-ontológico-los-tres-géneros-de-materialidad-en-snh--faircoin">🔷 Mapeo Ontológico: Los Tres Géneros de Materialidad en SNH + Faircoin</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Género Bueniano</th>
+<th style="text-align:left">Capa Tecnológica</th>
+<th style="text-align:left">Función en SNH + Faircoin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>M₁ (Materialidad física)</strong></td>
+<td style="text-align:left">Hardware + nodos SNH + CVNs</td>
+<td style="text-align:left">Los servidores, ordenadores, discos duros, cables, energía que sostienen la red</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>M₂ (Materialidad fenomenológica)</strong></td>
+<td style="text-align:left">Interfaz Oasis + experiencia de usuario</td>
+<td style="text-align:left">Las vivencias, percepciones, interacciones de los usuarios; el &quot;mundo de la vida&quot; digital</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>M₃ (Materialidad abstracta)</strong></td>
+<td style="text-align:left">Protocolos SSB + blockchain Faircoin + código</td>
+<td style="text-align:left">Las estructuras lógicas, reglas, algoritmos, contratos inteligentes, sigchains</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Principio bueniano aplicado</strong>: Ninguna de estas capas se reduce a las otras. La red no es &quot;solo hardware&quot; (M₁), ni &quot;solo experiencia&quot; (M₂), ni &quot;solo código&quot; (M₃). Es la <strong>involucración mutua</strong> de las tres.</p>
+<hr />
+<h3 id="-mapeo-gnoseológico-la-teoría-del-cierre-categorial">🔷 Mapeo Gnoseológico: La Teoría del Cierre Categorial</h3>
+<p>Bueno diría que <strong>cada &quot;categoría&quot; o ciencia debe alcanzar su propio cierre</strong>. En términos de SNH + Faircoin:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Categoría / Ciencia</th>
+<th style="text-align:left">Cierre Categorial en SNH + Faircoin</th>
+<th style="text-align:left">Indicador de &quot;cierre&quot;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Criptografía</strong></td>
+<td style="text-align:left">Ed25519, SHA256, Secret Handshake【Wiki SNH】</td>
+<td style="text-align:left">Algoritmos formalizados, estandarizados, auditables</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Protocolo de red</strong></td>
+<td style="text-align:left">SSB + Gossip protocol【Wiki SNH】</td>
+<td style="text-align:left">Replicación consistente, resolución de conflictos</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Economía monetaria</strong></td>
+<td style="text-align:left">Faircoin + Proof-of-Cooperation【Faircoin PoC】</td>
+<td style="text-align:left">Emisión controlada, consenso descentralizado</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Gobernanza comunitaria</strong></td>
+<td style="text-align:left">Feeds + sigchains + PUBs</td>
+<td style="text-align:left">Toma de decisiones trazable, revocable, asincrónica</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Interfaz humana</strong></td>
+<td style="text-align:left">Oasis (HTML+CSS puro, sin JS)【Wiki SNH】</td>
+<td style="text-align:left">Usabilidad, seguridad, privacidad</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Principio bueniano aplicado</strong>: La filosofía (el &quot;saber de segundo grado&quot;) consistiría en <strong>analizar, clasificar y coordinar</strong> estas categorías, identificando sus relaciones, solapamientos y tensiones. No se trata de imponer una &quot;teoría unificada&quot;, sino de <strong>mantener la tensión dialéctica</strong> entre ellas.</p>
+<hr />
+<h3 id="-mapeo-del-espacio-antropológico-los-tres-ejes">🔷 Mapeo del Espacio Antropológico: Los Tres Ejes</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Eje Bueniano</th>
+<th style="text-align:left">Implementación en SNH + Faircoin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Eje radial</strong> (relación con el mundo objetivo)</td>
+<td style="text-align:left">La relación del usuario con la <strong>infraestructura técnica</strong>: nodos, blockchain, almacenamiento de datos. El &quot;mundo&quot; de la red</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Eje circular</strong> (relación entre sujetos humanos)</td>
+<td style="text-align:left">La <strong>red social</strong> SSB: seguimientos, feeds, mensajes, interacciones entre usuarios. La comunidad</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Eje angular</strong> (relación con lo trascendente no humano)</td>
+<td style="text-align:left">La relación con los <strong>algoritmos, la IA, los CVNs</strong> (nodos validadores cooperativos), que son &quot;sujetos&quot; no humanos con capacidad de proceso y decisión</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Principio bueniano aplicado</strong>: El &quot;espacio antropológico&quot; de la red no es plano. Hay <strong>tres tipos de relaciones</strong> que deben ser articuladas, no confundidas. La política de la red debe considerar las tres dimensiones.</p>
+<hr />
+<h3 id="-modelización-política-el-estado-la-eutaxia-y-las-capas">🔷 Modelización Política: El Estado, la Eutaxia y las Capas</h3>
+<p>Bueno insiste en que el <strong>Estado es la unidad de análisis central</strong>. Pero en SNH + Faircoin no hay &quot;Estado&quot; en el sentido tradicional. ¿Cómo se modeliza?</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Concepto Bueniano</th>
+<th style="text-align:left">Traducción a SNH + Faircoin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Estado</strong></td>
+<td style="text-align:left">El <strong>conjunto de reglas y protocolos</strong> que organizan la red: SSB, Faircoin, Oasis, las PUBs. Es la <strong>constitución material</strong> de la red</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Capas del Estado</strong></td>
+<td style="text-align:left">1. <strong>Estado de derecho</strong>: el código fuente y los protocolos; 2. <strong>Sociedad civil</strong>: los usuarios y sus interacciones; 3. <strong>Democracia</strong>: los mecanismos de gobernanza (votaciones en SSB, asambleas)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Eutaxia</strong></td>
+<td style="text-align:left">El <strong>buen orden</strong> de la red: que los protocolos funcionen, que los datos se repliquen, que las transacciones sean válidas, que los usuarios confíen. Es la <strong>salud sistémica</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Razón de Estado</strong></td>
+<td style="text-align:left">La <strong>necesidad de mantener la red funcionando</strong> incluso si eso implica decisiones centralizadas (como el nodo central de SNH)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Principio bueniano aplicado</strong>: La red no es una &quot;anarquía pura&quot; ni una &quot;democracia directa&quot;. Es una <strong>estructura estratificada</strong> con diferentes capas (código, protocolo, comunidad, gobernanza) que deben ser <strong>coordinadas sistemáticamente</strong>.</p>
+<hr />
+<h3 id="-la-crítica-bueniana-a-las-otras-dos-modelizaciones">🔷 La Crítica Bueniana a las Otras Dos Modelizaciones</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Crítica</th>
+<th style="text-align:left">Colectivizaciones 1936-37</th>
+<th style="text-align:left">República Pura (Trevijano)</th>
+<th style="text-align:left">Modelización Bueniana con SNH+Faircoin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Al economicismo</strong></td>
+<td style="text-align:left">Reducen la política a la economía (colectivización de medios)</td>
+<td style="text-align:left">Trevijano critica el economicismo pero cae en el constitucionalismo formal</td>
+<td style="text-align:left">La red no es solo economía (Faircoin) ni solo código (SNH); es la <strong>articulación</strong> de ambas</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Al idealismo político</strong></td>
+<td style="text-align:left">Ideología anarquista como motor</td>
+<td style="text-align:left">&quot;Teoría Pura&quot; como eliminación de ideología = idealismo encubierto</td>
+<td style="text-align:left">El materialismo filosófico <strong>no elimina la ideología, la critica materialmente</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Al monismo</strong></td>
+<td style="text-align:left">Todo se resuelve en la colectividad</td>
+<td style="text-align:left">Todo se resuelve en la constitución</td>
+<td style="text-align:left">La red es <strong>trimembre</strong>: hardware, experiencia, código. Ninguna capa anula a las otras</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Al formalismo</strong></td>
+<td style="text-align:left">Asamblea como forma vacía</td>
+<td style="text-align:left">Constitución como forma vacía</td>
+<td style="text-align:left">Las <strong>categorías</strong> (SSB, Faircoin, Oasis) son <strong>cierres operatorios</strong>, no formas abstractas</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="-esquema-síntesis-la-arquitectura-trimembre-de-snh--faircoin-según-bueno">🗺️ Esquema Síntesis: La Arquitectura Trimembre de SNH + Faircoin según Bueno</h3>
+<pre><code class="language-mermaid">flowchart TD
+    subgraph Ontología[&quot;Ontología Trimembre (Bueno)&quot;]
+        M1[&quot;M₁: Materialidad Física&lt;br&gt;Hardware, nodos, CVNs&quot;]
+        M2[&quot;M₂: Materialidad Fenomenológica&lt;br&gt;Interfaz Oasis, experiencia usuario&quot;]
+        M3[&quot;M₃: Materialidad Abstracta&lt;br&gt;Protocolos SSB, blockchain Faircoin&quot;]
+    end
+
+    subgraph Gnoseología[&quot;Gnoseología: Cierres Categoriales&quot;]
+        C1[&quot;Criptografía&lt;br&gt;Ed25519, SHA256&quot;]
+        C2[&quot;Protocolo de red&lt;br&gt;SSB + Gossip&quot;]
+        C3[&quot;Economía monetaria&lt;br&gt;Faircoin + PoC&quot;]
+        C4[&quot;Gobernanza&lt;br&gt;Feeds + sigchains&quot;]
+        C5[&quot;Interfaz humana&lt;br&gt;Oasis&quot;]
+    end
+
+    subgraph Antropología[&quot;Espacio Antropológico&quot;]
+        R[&quot;Eje Radial&lt;br&gt;Relación con la infraestructura&quot;]
+        C[&quot;Eje Circular&lt;br&gt;Relación entre usuarios&quot;]
+        A[&quot;Eje Angular&lt;br&gt;Relación con algoritmos y CVNs&quot;]
+    end
+
+    subgraph Política[&quot;Teoría Política&quot;]
+        E[&quot;Estado = Protocolos + Reglas&quot;]
+        Capas[&quot;Capas: Derecho / Sociedad Civil / Democracia&quot;]
+        Eutaxia[&quot;Eutaxia = Buen orden de la red&quot;]
+    end
+
+    M1 --&gt; R
+    M2 --&gt; C
+    M3 --&gt; A
+    
+    C1 --&gt; E
+    C2 --&gt; E
+    C3 --&gt; E
+    C4 --&gt; E
+    C5 --&gt; E
+    
+    E --&gt; Capas
+    Capas --&gt; Eutaxia
+</code></pre>
+<hr />
+<h2 id="-chuletario-de-referencias-para-el-agente">📚 Chuletario de Referencias para el Agente</h2>
+<h3 id="obras-fundamentales-de-gustavo-bueno">Obras Fundamentales de Gustavo Bueno</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Obra</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Enlace / Localización</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>Ensayos materialistas</em> (1972)</td>
+<td style="text-align:left">Primera sistematización del materialismo filosófico</td>
+<td style="text-align:left">Buscar en bibliotecas / Fundación Gustavo Bueno</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>Teoría del cierre categorial</em> (5 vols., 1992-1993)</td>
+<td style="text-align:left">Obra gnoseológica central</td>
+<td style="text-align:left">https://archive.org (buscar)</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>¿Qué es la ciencia?</em> (1995)</td>
+<td style="text-align:left">Síntesis de su teoría de la ciencia</td>
+<td style="text-align:left">Editorial Pentalfa</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>El animal divino</em></td>
+<td style="text-align:left">Filosofía de la religión</td>
+<td style="text-align:left">Editorial Pentalfa</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>Primer ensayo sobre las categorías de las &quot;ciencias políticas&quot;</em></td>
+<td style="text-align:left">Teoría política materialista</td>
+<td style="text-align:left">https://archive.org</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="fuentes-secundarias-y-de-contexto">Fuentes Secundarias y de Contexto</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Recurso</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Enlace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Wikipedia - Materialismo filosófico</strong></td>
+<td style="text-align:left">Visión general del sistema</td>
+<td style="text-align:left">https://es.wikipedia.org/wiki/Materialismo_filosófico</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Enciclopedia Herder</strong></td>
+<td style="text-align:left">Criterios ontológicos del materialismo filosófico</td>
+<td style="text-align:left">https://encyclopaedia.herdereditorial.com</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Fundación Gustavo Bueno</strong></td>
+<td style="text-align:left">Web oficial con artículos y recursos</td>
+<td style="text-align:left">https://www.fgbueno.es</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Symploké</strong></td>
+<td style="text-align:left">Enciclopedia libre con entradas sobre Bueno</td>
+<td style="text-align:left">https://symploke.trujaman.org</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Dialnet - Tesis sobre teoría política</strong></td>
+<td style="text-align:left">Análisis de la filosofía política de Bueno</td>
+<td style="text-align:left">https://dialnet.unirioja.es</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Digibuo (Universidad de Oviedo)</strong></td>
+<td style="text-align:left">Archivo de documentos académicos</td>
+<td style="text-align:left">https://digibuo.uniovi.es</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="conceptos-clave-para-el-agente">Conceptos Clave para el Agente</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Concepto</th>
+<th style="text-align:left">Definición</th>
+<th style="text-align:left">Fuente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Materialismo filosófico</strong></td>
+<td style="text-align:left">Sistema filosófico de Bueno; ontología trimembre + gnoseología del cierre categorial</td>
+<td style="text-align:left">Wikipedia</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Tres géneros de materialidad</strong></td>
+<td style="text-align:left">M₁ (físico), M₂ (fenomenológico), M₃ (abstracto)</td>
+<td style="text-align:left">Herder</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Teoría del cierre categorial</strong></td>
+<td style="text-align:left">Las ciencias se constituyen por &quot;cierres&quot; de sus campos categoriales</td>
+<td style="text-align:left">Documat</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Espacio antropológico</strong></td>
+<td style="text-align:left">Tres ejes: radial, circular, angular</td>
+<td style="text-align:left">Symploké</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Eutaxia</strong></td>
+<td style="text-align:left">&quot;Buen orden&quot; como fundamento moral de la política</td>
+<td style="text-align:left">Dialnet</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Filosofía como saber de segundo grado</strong></td>
+<td style="text-align:left">La filosofía analiza y coordina los saberes de primer grado</td>
+<td style="text-align:left">Digibuo</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="-nota-para-el-agente">💎 Nota para el Agente</h2>
+<p>El sistema de Bueno es el <strong>más difícil de modelizar</strong> de los tres porque:</p>
+<ol>
+<li><strong>No es una ideología política</strong> (como el anarquismo o el republicanismo), sino un <strong>sistema filosófico total</strong> que incluye ontología, gnoseología, antropología, ética y política.</li>
+<li><strong>No prescribe</strong> un modelo político concreto, sino que ofrece <strong>herramientas críticas</strong> para analizar cualquier modelo.</li>
+<li>Su materialismo es <strong>anti-reduccionista</strong>: ninguna capa (ni la económica, ni la legal, ni la técnica) agota la realidad.</li>
+</ol>
+<p>Por eso, la modelización con SNH + Faircoin no sería una &quot;implementación del buenismo&quot; (no existe tal cosa), sino un <strong>ejercicio de &quot;trituración&quot;</strong> de la arquitectura SNH+Faircoin con las coordenadas del materialismo filosófico.</p>
+<p>Las preguntas que debe responder tu modelo son:</p>
+<ol>
+<li><strong>¿Cómo se articulan las tres materialidades</strong> (hardware, experiencia, código) en SNH+Faircoin?</li>
+<li><strong>¿Qué &quot;cierres categoriales&quot;</strong> se han alcanzado y cuáles están abiertos?</li>
+<li><strong>¿Cómo se organiza el espacio antropológico</strong> de la red (relaciones con las cosas, con los otros, con los algoritmos)?</li>
+<li><strong>¿Cuál es la &quot;eutaxia&quot;</strong> de esta red? ¿Qué la hace un &quot;buen orden&quot;?</li>
+<li><strong>¿Qué capas del Estado</strong> (derecho, sociedad civil, democracia) se pueden identificar?</li>
+</ol>
+<hr />
+<h1>Plan: modelar el materialismo filosófico de Bueno sobre Oasis/SSB (rama propia, independiente)</h1>
+<h2 id="contexto">Contexto</h2>
+<p><code>bueno-dev-7.md</code> es el chuletario para un tercer modelo: el <strong>materialismo filosófico de Gustavo Bueno</strong> sobre la misma infraestructura (Oasis/SSB @ <code>9a657b7</code>). El usuario pide un plan <strong>independiente</strong> de los otros dos (república de Trevijano en <code>dev/res_publica</code>, colectividades en <code>dev/colectividades</code>): no un contraste a tres, sino el modelo de Bueno por sí solo, con el mismo método de trabajo.</p>
+<p>El propio chuletario lo advierte: Bueno <strong>no prescribe</strong> un modelo político; ofrece <strong>coordenadas de análisis</strong>. Eso obliga a adaptar el método. En res_publica el paso central es <em>criterio → código → veredicto Cumple/Falla → parche que repara</em>. Aquí no hay nada que «cumplir»: el producto es una <strong>trituración</strong> (término de Bueno para el análisis crítico) de Oasis con sus coordenadas, y la única norma que Bueno sí ofrece, la <strong>eutaxia</strong>, es la que puede convertirse en prueba de aceptación.</p>
+<p>Estado del repo: cero commits; HEAD en <code>dev/res_publica</code> (no nacida); <code>bueno-dev-7.md</code> untracked; sin <code>.gitignore</code>. La rama para este modelo no está nombrada por el usuario: se propone <strong><code>dev/clase</code></strong> (a confirmar).</p>
+<hr />
+<h2 id="1-lo-que-trae-bueno-dev-7md-y-lo-que-hay-que-corregir-antes-de-usarlo">1. Lo que trae <code>bueno-dev-7.md</code> y lo que hay que corregir antes de usarlo</h2>
+<p>Es un resumen generado por un LLM, útil como índice de fuentes, con <strong>errores doctrinales</strong> que el carril D debe verificar. Grado de certeza según la escala de <code>draftv1</code> (A nuclear / B conocida sin verbatim / C reconstrucción del revisor):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Afirmación del chuletario</th>
+<th style="text-align:left">Estado</th>
+<th style="text-align:left">Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Tres géneros de materialidad M1/M2/M3, inconmensurables, en <em>symploké</em></td>
+<td style="text-align:left"><strong>A</strong></td>
+<td style="text-align:left">Correcto. <em>Ensayos materialistas</em> (1972)</td>
+</tr>
+<tr>
+<td style="text-align:left">Teoría del cierre categorial; filosofía como saber de segundo grado; categorías del ser / del hacer</td>
+<td style="text-align:left"><strong>A</strong></td>
+<td style="text-align:left">Correcto. <em>TCC</em> (1992-93), <em>¿Qué es la ciencia?</em> (1995)</td>
+</tr>
+<tr>
+<td style="text-align:left">Espacio antropológico: ejes radial, circular, angular</td>
+<td style="text-align:left"><strong>A</strong></td>
+<td style="text-align:left">Correcto. El eje angular es la relación con <strong>númenes</strong> (animales, dioses); extenderlo a «máquinas/algoritmos» es lectura nuestra: <strong>C</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">«Capas del Estado: Estado de derecho, sociedad civil, democracia»</td>
+<td style="text-align:left"><strong>Error</strong></td>
+<td style="text-align:left">No son las capas de Bueno. Las capas del <strong>cuerpo político</strong> son <strong>conjuntiva, basal y cortical</strong> (<em>Primer ensayo sobre las categorías de las ciencias políticas</em>, 1991). «Sociedad civil» es para Bueno un concepto ideológico a triturar, no una capa</td>
+</tr>
+<tr>
+<td style="text-align:left">«Eutaxia como fundamento moral»</td>
+<td style="text-align:left"><strong>Impreciso</strong></td>
+<td style="text-align:left">Eutaxia = buen orden entendido como <strong>capacidad de la sociedad política para persistir en el tiempo</strong> (recurrencia), no un fundamento moral. <strong>B</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">«Sujeto político: individuo en su materialidad corporal»</td>
+<td style="text-align:left"><strong>Error probable</strong></td>
+<td style="text-align:left">Bueno es antiindividualista: el sujeto es el cuerpo político y sus partes; el individuo aparece como resultado de la <strong>holización</strong>. <strong>B</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">«Razón de Estado → nodo central de SNH»</td>
+<td style="text-align:left"><strong>Error técnico</strong></td>
+<td style="text-align:left">SSB no tiene nodo central. Heredado de la v1 de res_publica y ya desmentido en <code>draftv0 §1.1</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Faircoin PoC + «smart contracts» + Bank of the Commons</td>
+<td style="text-align:left"><strong>Obsoleto</strong></td>
+<td style="text-align:left">Faircoin sin commits desde 2022-02-05 (<code>draftv0 §1.2</code>); Bitcoin 0.12 no tiene contratos. Se sustituye por ECOin + <code>Banking</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Diagrama mermaid: M1→radial, M2→circular, M3→angular</td>
+<td style="text-align:left"><strong>Confusión de categorías</strong></td>
+<td style="text-align:left">Géneros de materialidad y ejes antropológicos son cortes distintos; Bueno no los identifica. Se descarta</td>
+</tr>
+<tr>
+<td style="text-align:left">Tabla «Bueno vs Trevijano vs Colectivizaciones»</td>
+<td style="text-align:left">Fuera de alcance</td>
+<td style="text-align:left">El usuario pide independencia</td>
+</tr>
+</tbody>
+</table></div>
+<p>Lo que falta en el chuletario y sí hace falta: las <strong>nueve ramas del poder</strong> (tres por capa), la <strong>holización</strong>, la crítica del <strong>fundamentalismo democrático</strong> (2010) y <em>Panfleto contra la democracia realmente existente</em> (2004), que es donde Bueno habla de democracia como forma y no como valor.</p>
+<hr />
+<h2 id="2-método-adaptado-la-misma-tecnología-con-la-diferencia-que-impone-bueno">2. Método adaptado («la misma tecnología», con la diferencia que impone Bueno)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Paso en res_publica</th>
+<th style="text-align:left">Equivalente aquí</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1. Corpus → criterios numerados con certeza</td>
+<td style="text-align:left">Corpus → <strong>coordenadas</strong> numeradas con certeza (no criterios normativos)</td>
+</tr>
+<tr>
+<td style="text-align:left">2. Auditoría del código con fichero:línea</td>
+<td style="text-align:left">Igual. Se reutilizan los <strong>hechos</strong> de <code>draftv0 §2</code> y de las exploraciones de hoy; no se reutilizan sus veredictos</td>
+</tr>
+<tr>
+<td style="text-align:left">3. Confrontación → Cumple/Falla</td>
+<td style="text-align:left"><strong>Trituración</strong> → para cada rama/coordenada: <em>implementada / ausente / fusionada / en manos del operador</em></td>
+</tr>
+<tr>
+<td style="text-align:left">4. Parches RP-n que «reparan»</td>
+<td style="text-align:left">Solo <strong>parches de eutaxia</strong> (<code>EU-n</code>): lo que aumenta la capacidad de la red para persistir. Bueno no manda nada más</td>
+</tr>
+<tr>
+<td style="text-align:left">5. Backlog por carriles con defaults</td>
+<td style="text-align:left">Igual: carril D (fuentes de Bueno) → T (trituración) → EU (eutaxia)</td>
+</tr>
+<tr>
+<td style="text-align:left">6. Revisión por capítulos</td>
+<td style="text-align:left">Revisión por <strong>conceptos</strong> (no hay un libro único): materialidades, cierre, espacio antropológico, cuerpo político, eutaxia, holización</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="3-coordenadas-propuestas-para-b0-1-a-validar-en-revision">3. Coordenadas propuestas (para <code>b0 §1</code>; a validar en <code>revision/</code>)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Coordenada</th>
+<th style="text-align:left">Fuente</th>
+<th style="text-align:left">Cert.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">K1</td>
+<td style="text-align:left"><strong>Tres géneros de materialidad</strong> (M1 físico, M2 fenomenológico, M3 abstracto) en symploké</td>
+<td style="text-align:left"><em>Ensayos materialistas</em></td>
+<td style="text-align:left">A</td>
+</tr>
+<tr>
+<td style="text-align:left">K2</td>
+<td style="text-align:left"><strong>Cierre categorial</strong>: qué capas de la red son ciencia cerrada, técnica abierta o dependencia externa</td>
+<td style="text-align:left"><em>TCC</em>, <em>¿Qué es la ciencia?</em></td>
+<td style="text-align:left">A</td>
+</tr>
+<tr>
+<td style="text-align:left">K3</td>
+<td style="text-align:left"><strong>Espacio antropológico</strong>: ejes radial, circular, angular</td>
+<td style="text-align:left"><em>Ensayos materialistas</em>, <em>El animal divino</em></td>
+<td style="text-align:left">A (angular→IA: C)</td>
+</tr>
+<tr>
+<td style="text-align:left">K4</td>
+<td style="text-align:left"><strong>Capas del cuerpo político</strong>: conjuntiva, basal, cortical</td>
+<td style="text-align:left"><em>Primer ensayo…</em> (1991)</td>
+<td style="text-align:left">B</td>
+</tr>
+<tr>
+<td style="text-align:left">K5</td>
+<td style="text-align:left"><strong>Nueve ramas del poder</strong>: conjuntiva = ejecutiva, legislativa, judicial · basal = planificadora, redistribuidora, gestora · cortical = militar, diplomática, federativa</td>
+<td style="text-align:left"><em>Primer ensayo…</em></td>
+<td style="text-align:left">B</td>
+</tr>
+<tr>
+<td style="text-align:left">K6</td>
+<td style="text-align:left"><strong>Eutaxia / distaxia</strong>: buen orden como capacidad de recurrencia de la sociedad política</td>
+<td style="text-align:left"><em>Primer ensayo…</em></td>
+<td style="text-align:left">B</td>
+</tr>
+<tr>
+<td style="text-align:left">K7</td>
+<td style="text-align:left"><strong>Holización</strong>: reducción de la sociedad a partes homogéneas (ciudadanos iguales) como condición de la democracia; democracia como forma, no como valor</td>
+<td style="text-align:left"><em>El fundamentalismo democrático</em> (2010), <em>Panfleto…</em> (2004)</td>
+<td style="text-align:left">B</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="4-trituración-preliminar-verificada-hoy-en-el-código-base-de-b0-2-3">4. Trituración preliminar (verificada hoy en el código; base de <code>b0 §2-3</code>)</h2>
+<h3 id="41-k5--las-nueve-ramas-contra-oasis--el-producto-central">4.1 K5 · Las nueve ramas contra Oasis — el producto central</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Capa</th>
+<th style="text-align:left">Rama</th>
+<th style="text-align:left">Módulo / seam</th>
+<th style="text-align:left">Estado</th>
+<th style="text-align:left">Quién la controla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Conjuntiva</td>
+<td style="text-align:left">Legislativa</td>
+<td style="text-align:left"><code>parliament_model.js</code> (constantes :17-26, <code>canPropose</code> :1298, <code>enactApprovedChanges</code> :1102)</td>
+<td style="text-align:left">Implementada</td>
+<td style="text-align:left">Voto del censo / gobierno del ciclo</td>
+</tr>
+<tr>
+<td style="text-align:left">Conjuntiva</td>
+<td style="text-align:left">Judicial</td>
+<td style="text-align:left"><code>courts_model.js</code> (métodos :139, <code>DICTATOR</code> :140-155)</td>
+<td style="text-align:left">Implementada; <strong>fusionada</strong> con la legislativa bajo <code>DICTATORSHIP</code></td>
+<td style="text-align:left">Jueces electos / dictador</td>
+</tr>
+<tr>
+<td style="text-align:left">Conjuntiva</td>
+<td style="text-align:left">Ejecutiva</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left"><strong>Ausente</strong>: nada se ejecuta, las leyes son texto en el log</td>
+<td style="text-align:left">Nadie</td>
+</tr>
+<tr>
+<td style="text-align:left">Basal</td>
+<td style="text-align:left">Planificadora</td>
+<td style="text-align:left"><code>industry_model.js</code> (blueprints :278-286, builds :755, <code>passesThreshold</code> :98)</td>
+<td style="text-align:left">Implementada</td>
+<td style="text-align:left"><code>steward</code> único (:163, :462)</td>
+</tr>
+<tr>
+<td style="text-align:left">Basal</td>
+<td style="text-align:left">Redistribuidora</td>
+<td style="text-align:left"><code>banking_model.js</code> RBU (:14-21, <code>computeEpoch</code> :920); tasa de carbono (:31-37)</td>
+<td style="text-align:left">Implementada; <strong>autónoma</strong> (epoch engine cada 30 min, <code>backend.js:10271</code>)</td>
+<td style="text-align:left">Nodo autodeclarado pub (<code>walletPub.pubId === ssb.id</code>, :215-221); constantes sin voto</td>
+</tr>
+<tr>
+<td style="text-align:left">Basal</td>
+<td style="text-align:left">Gestora</td>
+<td style="text-align:left"><code>market_model.js</code>, <code>shops_model.js</code>, <code>transfers_model.js</code>, <code>projects_model.js</code>, <code>wallet_model.js</code></td>
+<td style="text-align:left">Implementada, sin escrow (<code>market:547</code>, <code>shops:712</code>, <code>projects:162</code>)</td>
+<td style="text-align:left">Autor del feed</td>
+</tr>
+<tr>
+<td style="text-align:left">Cortical</td>
+<td style="text-align:left">Militar (defensa)</td>
+<td style="text-align:left"><code>crypto.js</code> (AES-GCM :146, box :319), <code>caps.shs</code> en <code>server-config.json</code>, <code>friends.hops</code>, block (<code>backend.js:7306</code>), <code>panicmode_model.js:7</code></td>
+<td style="text-align:left">Existe como <strong>técnica</strong>, no como poder político</td>
+<td style="text-align:left"><strong>Operador del nodo</strong> (fichero de config, loopback)</td>
+</tr>
+<tr>
+<td style="text-align:left">Cortical</td>
+<td style="text-align:left">Diplomática</td>
+<td style="text-align:left"><code>fediverse_model.js</code> (Multiverse: Mastodon/Telegram, cuenta única por nodo :87; rutas <code>backend.js:4651</code>, <code>:4669</code> sin guard)</td>
+<td style="text-align:left">Existe, <strong>sin órgano</strong></td>
+<td style="text-align:left">Operador del nodo; cualquier petición no-loopback</td>
+</tr>
+<tr>
+<td style="text-align:left">Cortical</td>
+<td style="text-align:left">Federativa</td>
+<td style="text-align:left"><code>scripts/oasis-pub.js:41</code> (invites N usos), <code>snh-invite-code.json</code> (La Plaza), <code>autofollow.feeds</code>, <code>parentTribeId</code> (<code>tribes_model.js:11</code>)</td>
+<td style="text-align:left">Existe, <strong>sin órgano</strong></td>
+<td style="text-align:left">Quien tiene shell en el PUB; el proyecto upstream (La Plaza viene de fábrica)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Hallazgo estructural</strong>: Oasis politiza solo la capa conjuntiva (parlamento, tribunales) y una rama basal; <strong>toda la capa cortical y los parámetros constitutivos de la basal</strong> (constantes de carbono, <code>walletPub</code>, hops, caps) están en manos del <strong>operador del nodo</strong>, que no es una rama del cuerpo político sino un poder exterior a él. En términos de Bueno: la red tiene poderes sin ramas.</p>
+<h3 id="42-k6--indicadores-de-eutaxiadistaxia-en-el-código">4.2 K6 · Indicadores de eutaxia/distaxia en el código</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Mecanismo</th>
+<th style="text-align:left">Seam</th>
+<th style="text-align:left">Lectura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Calendario fijo desde <code>TERM_EPOCH</code>; retorno a ANARCHY</td>
+<td style="text-align:left"><code>parliament_model.js:17-38</code>, <code>:373-393</code></td>
+<td style="text-align:left">Eutaxia: recurrencia sin convocante</td>
+</tr>
+<tr>
+<td style="text-align:left">Rotación de claves de tribu al expulsar</td>
+<td style="text-align:left"><code>tribes_model.js:753</code></td>
+<td style="text-align:left">Eutaxia: frontera de pertenencia que se repara sola</td>
+</tr>
+<tr>
+<td style="text-align:left">Export <strong>sin</strong> <code>secret</code>; onboarding marca <code>backup</code> sin exportar nada</td>
+<td style="text-align:left"><code>exportmode_model.js:24-26</code>, <code>onboarding_model.js:5</code>, <code>:118-124</code></td>
+<td style="text-align:left"><strong>Distaxia</strong>: no hay camino de respaldo de identidad</td>
+</tr>
+<tr>
+<td style="text-align:left">Modo pánico borra <code>~/.ssb</code> con la clave</td>
+<td style="text-align:left"><code>panicmode_model.js:7</code>, <code>backend.js:8050</code></td>
+<td style="text-align:left">Muerte voluntaria de la identidad sin confirmación</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>POST /update</code> = <code>git reset --hard</code> sobre <code>src/configs/*.json</code></td>
+<td style="text-align:left"><code>backend.js:9552-9561</code></td>
+<td style="text-align:left"><strong>Distaxia</strong>: la actualización destruye la configuración local (caps, hops, wallet)</td>
+</tr>
+<tr>
+<td style="text-align:left">Sin métrica de uptime; almacenamiento y pares sí</td>
+<td style="text-align:left"><code>stats_model.js:438</code>, <code>:24</code></td>
+<td style="text-align:left">La red no se mide a sí misma en el tiempo</td>
+</tr>
+<tr>
+<td style="text-align:left">Buckets verde/naranja/rojo de inhabitants</td>
+<td style="text-align:left"><code>inhabitants_model.js:65-73</code></td>
+<td style="text-align:left">Única medida de recurrencia social</td>
+</tr>
+<tr>
+<td style="text-align:left">Tasa de carbono como único mecanismo de sostenibilidad a largo plazo</td>
+<td style="text-align:left"><code>banking_model.js:31-37</code> (0,095 g/MiB, sin cita)</td>
+<td style="text-align:left">Eutaxia ecológica con constante mágica</td>
+</tr>
+<tr>
+<td style="text-align:left">Epoch engine autónomo cada 30 min</td>
+<td style="text-align:left"><code>backend.js:10266-10271</code></td>
+<td style="text-align:left">Redistribución sin humano: eutaxia o automatismo, a decidir en D</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="43-k1--materialidades">4.3 K1 · Materialidades</h3>
+<ul>
+<li><strong>M1</strong>: bytes del feed (<code>banking_model.js:609-637</code>), <code>~/.ssb</code> (<code>stats_model.js:438</code>), CO₂. <strong>M2</strong>: opiniones (<code>opinions_model.js</code>), L.A.R.P., melodía. <strong>M3</strong>: constantes, tipos de mensaje, leyes.</li>
+<li>Hallazgo: <code>karmaScore = rawKarma − carbonGrams</code> (<code>banking_model.js:839-840</code>) <strong>reduce M3 (peso político) a M1 (bytes)</strong>. Es la única reducción entre géneros que la red ejecuta, y va contra la inconmensurabilidad de K1. Para Bueno no es materialismo: es fisicalismo.</li>
+</ul>
+<h3 id="44-k2--cierres">4.4 K2 · Cierres</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Capa</th>
+<th style="text-align:left">Veredicto</th>
+<th style="text-align:left">Motivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Criptografía (ed25519, secret handshake, AES-GCM)</td>
+<td style="text-align:left">Cerrada (importada)</td>
+<td style="text-align:left">Ciencia ajena, estandarizada</td>
+</tr>
+<tr>
+<td style="text-align:left">Replicación (EBT, hops)</td>
+<td style="text-align:left">Cerrada</td>
+<td style="text-align:left">Determinista, <code>SSB_server.js:61-73</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Gobernanza</td>
+<td style="text-align:left">Cerrada en el log, <strong>abierta en la ejecución</strong></td>
+<td style="text-align:left">La derogación es tombstone de cliente (<code>draftv0 §2.1</code>); nada obliga fuera de la interfaz</td>
+</tr>
+<tr>
+<td style="text-align:left">Banca/RBU</td>
+<td style="text-align:left"><strong>Dependiente</strong></td>
+<td style="text-align:left">RPC de una wallet externa en un solo nodo autodeclarado</td>
+</tr>
+<tr>
+<td style="text-align:left">IA «42»</td>
+<td style="text-align:left">Abierta</td>
+<td style="text-align:left">Llama-2-7B en puerto 4001 sin auth (<code>ai_service.mjs:89</code>); defensa contra inyección = regex (<code>:51</code>)</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="45-k3--espacio-antropológico">4.5 K3 · Espacio antropológico</h3>
+<ul>
+<li>Radial: infraestructura, bytes, carbono. Circular: follows, hops, tribus. <strong>Angular</strong>: la IA «42» (sujeto no humano que publica hasta 40 mensajes <code>log</code> por clic, <code>logs_model.js:235-270</code>), el calendario L.A.R.P. (año 10.000.000, <code>larp_model.js</code>), la esteganografía de <code>melody_model.js:124-146</code>. Lectura nuestra (C): Oasis tiene un eje angular poblado y sin gobernar.</li>
+</ul>
+<h3 id="46-k7--holización">4.6 K7 · Holización</h3>
+<ul>
+<li>El log holiza: 1 feed = 1 inhabitant, censo por actividad (<code>inhabitants_model.js:86</code>). El karma <strong>des-holiza</strong>: reintroduce partes heterogéneas por notoriedad. Las tribus y las 9 casas re-agregan. Oasis es una sociedad que se holiza por el log y se re-estratifica por el karma. Material para D: ¿qué diría Bueno de una democracia cuyo demos se define por haber publicado?</li>
+</ul>
+<hr />
+<h2 id="5-diseño-de-la-rama">5. Diseño de la rama</h2>
+<h3 id="51-supuestos-no-bloqueantes">5.1 Supuestos (no bloqueantes)</h3>
+<ul>
+<li>Rama <strong><code>dev/clase</code></strong> desde <code>dev/res_publica</code> (para tener <code>vendor/</code> y los hechos de <code>draftv0 §2</code> a mano). Se reutilizan hechos de código, nunca veredictos ni parches de las otras ramas.</li>
+<li>Documentos en carpeta <strong><code>modelos/clase/</code></strong>; <code>bueno-dev-7.md</code> queda en raíz como fuente, sin editar.</li>
+<li>Mismo commit <code>9a657b7</code>, misma escala A/B/C, mismas convenciones (fecha ISO, enlaces relativos con ancla, fichero:línea obligatorio).</li>
+<li>Sin contraste a tres. Si más adelante se quiere, será otro documento en otra rama.</li>
+</ul>
+<h3 id="52-estructura">5.2 Estructura</h3>
+<pre><code>modelos/clase/
+├── b0-trituracion.md      ≈ draftv0: coordenadas K1-K7 (§3), anatomía de la capa cortical y basal (§4), trituración por coordenada, parches EU-n, backlog
+├── b1-nueve-ramas.md      producto central: tabla 4.1 en limpio, una fila por rama, con fichero:línea y «quién controla»; sustituye al «clon o parecido» (no hay modelo que clonar)
+├── b2-backlog.md          ≈ draftv2: carriles D (fuentes de Bueno) → T (trituración) → EU (eutaxia)
+└── revision/
+    ├── 00-indice.md
+    ├── 01-materialidades.md  02-cierre-categorial.md  03-espacio-antropologico.md
+    ├── 04-cuerpo-politico.md (capas y nueve ramas)  05-eutaxia.md  06-holizacion-democracia.md
+</code></pre>
+<h3 id="53-carril-d--investigación-en-fuentes-formato-de-draftv2-buscar--dónde--default--alternativas--desbloquea">5.3 Carril D · investigación en fuentes (formato de <code>draftv2</code>: buscar · dónde · default · alternativas · desbloquea)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Buscar</th>
+<th style="text-align:left">Dónde</th>
+<th style="text-align:left">Default si no se investiga</th>
+<th style="text-align:left">Desbloquea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">D01</td>
+<td style="text-align:left">Nombres exactos y definición de las <strong>nueve ramas</strong>; si la ejecutiva es la «rama» o el «poder»</td>
+<td style="text-align:left"><em>Primer ensayo…</em> (1991)</td>
+<td style="text-align:left">Tabla K5 tal cual</td>
+<td style="text-align:left">T01, b1</td>
+</tr>
+<tr>
+<td style="text-align:left">D02</td>
+<td style="text-align:left">Definición de <strong>eutaxia</strong>: ¿duración, recurrencia, prudencia?; ¿es medible?</td>
+<td style="text-align:left"><em>Primer ensayo…</em></td>
+<td style="text-align:left">Eutaxia = capacidad de recurrencia; indicadores de §4.2</td>
+<td style="text-align:left">T05, EU-*</td>
+</tr>
+<tr>
+<td style="text-align:left">D03</td>
+<td style="text-align:left"><strong>Holización</strong> y democracia como forma; crítica al «fundamentalismo democrático»</td>
+<td style="text-align:left"><em>El fundamentalismo democrático</em> (2010), <em>Panfleto…</em> (2004)</td>
+<td style="text-align:left">Holización por el log; karma como des-holización</td>
+<td style="text-align:left">T06</td>
+</tr>
+<tr>
+<td style="text-align:left">D04</td>
+<td style="text-align:left">Eje <strong>angular</strong>: ¿admite Bueno sujetos no humanos artificiales?</td>
+<td style="text-align:left"><em>El animal divino</em>, <em>Ensayos materialistas</em></td>
+<td style="text-align:left">IA 42 y L.A.R.P. en el eje angular (C, marcado como extensión nuestra)</td>
+<td style="text-align:left">T03</td>
+</tr>
+<tr>
+<td style="text-align:left">D05</td>
+<td style="text-align:left">¿Es la «gobernanza digital» una categoría del hacer con cierre posible, o una ideología?</td>
+<td style="text-align:left"><em>TCC</em>, <em>¿Qué es la ciencia?</em></td>
+<td style="text-align:left">Técnica (categoría del hacer) sin cierre; solo la criptografía y la replicación están cerradas</td>
+<td style="text-align:left">T02</td>
+</tr>
+<tr>
+<td style="text-align:left">D06</td>
+<td style="text-align:left">Capa <strong>cortical</strong> y «imperio generador/depredador»: ¿aplica a puentes con otras redes (Mastodon, Telegram)?</td>
+<td style="text-align:left"><em>España frente a Europa</em> (1999)</td>
+<td style="text-align:left">Los puentes son diplomacia sin órgano; no se abre la cuestión imperial</td>
+<td style="text-align:left">T04</td>
+</tr>
+<tr>
+<td style="text-align:left">D07</td>
+<td style="text-align:left">Qué dice Bueno del <strong>operador</strong> de una institución (el que sostiene la capa basal sin ser parte formal)</td>
+<td style="text-align:left"><em>Primer ensayo…</em></td>
+<td style="text-align:left">El operador es poder exterior al cuerpo político</td>
+<td style="text-align:left">T01, EU-1</td>
+</tr>
+<tr>
+<td style="text-align:left">D08</td>
+<td style="text-align:left">Rastreo de divulgación: fgbueno.es, <em>El Catoblepas</em>, Symploké; contraste con los libros</td>
+<td style="text-align:left">web</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">todas D</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="54-carril-t--trituración-tareas-de-documento-una-por-coordenada">5.4 Carril T · trituración (tareas de documento, una por coordenada)</h3>
+<p>T01 nueve ramas (b1) · T02 cierres · T03 espacio antropológico · T04 capa cortical completa (Multiverse, PUB, hops, panic, update) · T05 eutaxia con indicadores · T06 holización y karma · T07 materialidades y la reducción M3→M1 del karma.</p>
+<h3 id="55-carril-eu--parches-de-eutaxia-opcional-único-lugar-donde-bueno-licencia-prescribir">5.5 Carril EU · parches de eutaxia (opcional; único lugar donde Bueno licencia prescribir)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Parche</th>
+<th style="text-align:left">Seam</th>
+<th style="text-align:left">Qué persistencia repara</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">EU-1</td>
+<td style="text-align:left">Órgano para la capa cortical: puentes Multiverse, invites del PUB y hops bajo decisión registrada en el log (no bajo shell)</td>
+<td style="text-align:left"><code>backend.js:4651</code>, <code>oasis-pub.js:41</code>, <code>server-config.json</code></td>
+<td style="text-align:left">Poder sin rama → rama</td>
+</tr>
+<tr>
+<td style="text-align:left">EU-2</td>
+<td style="text-align:left">Respaldo real de identidad: export con <code>secret</code> cifrado por passphrase; <code>backup</code> del onboarding verificado</td>
+<td style="text-align:left"><code>exportmode_model.js:24</code>, <code>onboarding_model.js:118</code></td>
+<td style="text-align:left">Muerte de identidad por accidente</td>
+</tr>
+<tr>
+<td style="text-align:left">EU-3</td>
+<td style="text-align:left"><code>POST /update</code> sin <code>git reset --hard</code> sobre <code>src/configs/</code>; token CSRF</td>
+<td style="text-align:left"><code>backend.js:9552</code></td>
+<td style="text-align:left">Destrucción de config al actualizar</td>
+</tr>
+<tr>
+<td style="text-align:left">EU-4</td>
+<td style="text-align:left">Métrica de uptime/recurrencia de la red en <code>stats</code></td>
+<td style="text-align:left"><code>stats_model.js</code></td>
+<td style="text-align:left">La red se mide en el tiempo</td>
+</tr>
+<tr>
+<td style="text-align:left">EU-5</td>
+<td style="text-align:left">Constantes de carbono y de RBU como parámetros con procedencia y cambio registrado, no magia</td>
+<td style="text-align:left"><code>banking_model.js:31-37</code>, <code>:14-21</code></td>
+<td style="text-align:left">Parámetros basales sin sujeto</td>
+</tr>
+<tr>
+<td style="text-align:left">EU-6</td>
+<td style="text-align:left">Confirmación en dos pasos para modo pánico</td>
+<td style="text-align:left"><code>backend.js:8050</code></td>
+<td style="text-align:left">Irreversibilidad sin fricción</td>
+</tr>
+</tbody>
+</table></div>
+<p>Decisión para el usuario: si el carril EU se hace o la rama se queda en trituración pura (D + T). Default: <strong>se documenta EU, no se implementa</strong>.</p>
+<hr />
+<h2 id="6-pasos-de-ejecución-al-salir-de-read-only">6. Pasos de ejecución (al salir de read-only)</h2>
+<ol>
+<li>Primer commit en <code>dev/res_publica</code> con <code>.gitignore</code> (<code>vendor/</code>) — hoy la rama no existe.</li>
+<li><code>git checkout -b dev/clase</code> (nombre a confirmar).</li>
+<li><code>modelos/clase/b0-trituracion.md</code> desde §1, §3 y §4 de este plan; cada fichero:línea verificado contra <code>vendor/oasis</code>.</li>
+<li><code>modelos/clase/b1-nueve-ramas.md</code> (tabla 4.1 en limpio, con columna de certeza de la rama y de la lectura).</li>
+<li><code>modelos/clase/b2-backlog.md</code> con D, T, EU.</li>
+<li><code>modelos/clase/revision/00-indice.md</code> y <code>01-materialidades.md</code> con el formato de <code>revision/01-lealtad.md</code>; seguir por conceptos.</li>
+</ol>
+<h2 id="7-verificación">7. Verificación</h2>
+<ul>
+<li>Cada fichero:línea citado en <code>modelos/clase/*.md</code> existe en <code>vendor/oasis</code> y la línea contiene el símbolo nombrado (script de lectura, como en <code>draftv2 §Verificación</code>).</li>
+<li>Cada rama de <code>b1</code> tiene módulo o «ausente», estado y controlador; ninguna fila sin seam.</li>
+<li>Cada coordenada K1-K7 tiene ficha en <code>revision/</code> con certeza y al menos un hueco o un «sin hueco».</li>
+<li>IDs D01-08, T01-07, EU-1…6 únicos; todo «desbloquea» apunta a un ID existente.</li>
+<li><code>git diff dev/res_publica..dev/clase</code> solo añade <code>modelos/clase/</code>; no toca <code>draft*.md</code>, <code>revision/</code>, <code>iberian-dev-7.md</code> ni <code>bueno-dev-7.md</code>.</li>
+</ul>
+<h2 id="8-preguntas-abiertas-no-bloquean">8. Preguntas abiertas (no bloquean)</h2>
+<ul>
+<li>Nombre de la rama: <code>dev/clase</code>, <code>dev/bueno</code>, otro.</li>
+<li>¿Carril EU documentado solo, o también con tareas de código?</li>
+<li>¿Se conserva la tabla «Bueno vs Trevijano vs Colectivizaciones» del chuletario como anexo, o se elimina por la independencia pedida? Default: se omite.</li>
+</ul>
+
+</article>
+      <footer class="site-footer">
+<div class="provenance-footer">
+  <p class="provenance-footer-chain">
+    <a href="https://escrivivir.co">Escrivivir</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://escrivivir.co/2026/06/04/t04x06a-ficha-de-producto-scriptorium-skins-arg/">Scriptorium Skins</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span>Animus Iocandi</span>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Modelador de Redes</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span title="Frente Aleph de Resistencia Ontológica">F.A.R.O.</span>
+  </p>
+  <p class="provenance-footer-meta">
+    Material transmedia para agentes del juego ARG
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    v0.1.0
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    GPL-3.0-or-later · AIPLv1
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://github.com/alephscriptorium-eng/modelador-redes">Repositorio</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Inicio</a>
+  </p>
+</div>      </footer>
+    </main>
+  </div>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

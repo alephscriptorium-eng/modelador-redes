@@ -1,0 +1,70 @@
+{
+  "modelo": "clase",
+  "latest": "draft",
+  "drafts": [
+    "draft"
+  ],
+  "ops": [],
+  "tablas": [
+    {
+      "draft": "draft",
+      "seccion": "5.5 Carril EU · parches de eutaxia (opcional; único lugar donde Bueno licencia prescribir)",
+      "op": null,
+      "kind": "tk",
+      "carril": "EU",
+      "headers": [
+        "#",
+        "Parche",
+        "Seam",
+        "Qué persistencia repara"
+      ],
+      "rows": [
+        [
+          "EU-1",
+          "Órgano para la capa cortical: puentes Multiverse, invites del PUB y hops bajo decisión registrada en el log (no bajo shell)",
+          "`backend.js:4651`, `oasis-pub.js:41`, `server-config.json`",
+          "Poder sin rama → rama"
+        ],
+        [
+          "EU-2",
+          "Respaldo real de identidad: export con `secret` cifrado por passphrase; `backup` del onboarding verificado",
+          "`exportmode_model.js:24`, `onboarding_model.js:118`",
+          "Muerte de identidad por accidente"
+        ],
+        [
+          "EU-3",
+          "`POST /update` sin `git reset --hard` sobre `src/configs/`; token CSRF",
+          "`backend.js:9552`",
+          "Destrucción de config al actualizar"
+        ],
+        [
+          "EU-4",
+          "Métrica de uptime/recurrencia de la red en `stats`",
+          "`stats_model.js`",
+          "La red se mide en el tiempo"
+        ],
+        [
+          "EU-5",
+          "Constantes de carbono y de RBU como parámetros con procedencia y cambio registrado, no magia",
+          "`banking_model.js:31-37`, `:14-21`",
+          "Parámetros basales sin sujeto"
+        ],
+        [
+          "EU-6",
+          "Confirmación en dos pasos para modo pánico",
+          "`backend.js:8050`",
+          "Irreversibilidad sin fricción"
+        ]
+      ],
+      "avisos": []
+    }
+  ],
+  "resumen": {
+    "total_tk": 0,
+    "por_carril": {},
+    "por_prioridad": {},
+    "ops_latest": 0,
+    "ops_total": 0,
+    "tablas_total": 1
+  }
+}
