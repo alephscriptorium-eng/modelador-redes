@@ -1,15 +1,21 @@
 # Revisión · clase
 
-**Draft vigente:** [draft.md](../drafts/draft.md)
+**Draft vigente:** [draftv0.md](../drafts/draftv0.md)
 
-Modelo en fase de semilla: existe la panorámica del materialismo filosófico y el plan (en el draft vigente), no hay trituración propia ni fichas todavía.
+**2026-09-10.** Trituración de Oasis 1.0.7 con el materialismo filosófico de Gustavo Bueno (`draftv0.md`): 260 citas fichero:línea comprobadas en rango por script; **sin verificación adversarial** (modo restricción). Las notas de costuras que la alimentaron están en `01-costuras.md`.
 
-| Concepto | Ficha | Hallazgo principal | Tareas tocadas |
-| :-- | :-- | :-- | :-- |
-| — | — | sin fichas | — |
+| Tema | Ficha | Fuente | Hallazgo principal | Tareas tocadas |
+| :-- | :-- | :-- | :-- | :-- |
+| Costuras (notas) | [01-costuras.md](01-costuras.md) | código | 30-40 costuras por categoría (M1/M2/M3, ejes, eutaxia, holización) | draftv0 §2 |
+| Materialidades M1/M2/M3 | 02-materialidades.md | Bueno, *Ensayos materialistas* | pendiente | — |
+| Espacio antropológico (ejes) | 03-ejes.md | Bueno, *El animal divino* | pendiente | — |
+| Eutaxia y capas de la sociedad política | 04-eutaxia.md | Bueno, *Primer ensayo sobre las categorías de las ciencias políticas* | pendiente | — |
+| Cierre categorial | 05-cierre.md | Bueno, *Teoría del cierre categorial* | pendiente | — |
+| Holización | 06-holizacion.md | Bueno | pendiente | — |
 
-**Estado tras la revisión:** sin fichas.
+**Estado tras la revisión:** 0 fichas doctrinales de 5; auditoría escrita, no revisada.
 
-**Deuda pendiente:**
-- Escribir `draftv0.md` (trituración de Oasis con M₁/M₂/M₃ y las nueve ramas) siguiendo el método de `modelos/res_publica/drafts/draftv0.md`.
-- Abrir la primera ficha (`01-materialidades.md`) con el formato de `modelos/res_publica/revision/01-lealtad.md`.
+**Deuda pendiente (modo restricción, 2026-09-10):**
+- Verificación adversarial de `draftv0.md` (símbolos citados, no solo rangos) y de la parseabilidad de sus tablas.
+- Ficha `02-materialidades.md` con el formato de `modelos/res_publica/revision/01-lealtad.md`, y las cuatro siguientes.
+- Carril D del propio draftv0 (verificar la doctrina de Bueno en sus textos).
