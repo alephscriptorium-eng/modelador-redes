@@ -81,6 +81,7 @@
     "total_tk": 0,
     "por_carril": {},
     "por_prioridad": {},
+    "ops": 0,
     "ops_latest": 0,
     "ops_total": 0,
     "tablas_total": 1

@@ -1508,19 +1508,23 @@
     }
   ],
   "resumen": {
-    "total_tk": 50,
+    "total_tk": 83,
     "por_carril": {
       "C": 1,
       "D": 18,
       "G": 11,
       "P": 2,
-      "num": 18
+      "num": 51
     },
     "por_prioridad": {
+      "Alta": 6,
+      "Baja": 3,
       "C": 1,
       "H": 18,
-      "M": 4
+      "M": 4,
+      "Media": 5
     },
+    "ops": 6,
     "ops_latest": 0,
     "ops_total": 16,
     "tablas_total": 21

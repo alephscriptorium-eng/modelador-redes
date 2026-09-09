@@ -644,11 +644,22 @@
     }
   ],
   "resumen": {
-    "total_tk": 8,
+    "total_tk": 36,
     "por_carril": {
-      "D'": 8
+      "B'": 6,
+      "D'": 9,
+      "E'": 4,
+      "F'": 5,
+      "G'": 7,
+      "S'": 3,
+      "V'": 2
     },
-    "por_prioridad": {},
+    "por_prioridad": {
+      "C": 3,
+      "H": 13,
+      "M": 11
+    },
+    "ops": 6,
     "ops_latest": 0,
     "ops_total": 6,
     "tablas_total": 10
