@@ -22,4 +22,4 @@
 - Draftv1 se ha corregido por notas al margen, no reescrito: sus veredictos originales conviven con las notas. Cuando D esté hecho, reescribir la Tabla 1 en limpio.
 - El carril G de draftv2 ha crecido (G10, G11, D17, D18) y las tablas de sprints ([draftv2.md línea 131](../drafts/draftv2.md#L131)) no los incluyen todavía.
 
-**Verificación en fuentes (modo restricción, 2026-09-10):** fichas con sección «Verificación en fuentes» añadida desde fuentes en línea (texto íntegro de la edición 2010 en dokumen.pub, extractos del MCRC Alicante, nodulo.org): 01-lealtad, 02-monada, 04-legislacion. Pendiente: 03-camara, 05-justicia, 06-gobierno, 07-constituyente, 08-republica; y la Tabla 1 de draftv1 en limpio (draftv3), que no se ha escrito.
+**Verificación en fuentes (modo restricción, 2026-09-10):** fichas con sección «Verificación en fuentes» añadida desde fuentes en línea (texto íntegro de la edición 2010 en dokumen.pub, extractos del MCRC Alicante, nodulo.org): 01-lealtad, 02-monada, 03-camara, 04-legislacion. Pendiente: 05-justicia, 06-gobierno, 07-constituyente, 08-republica; y la Tabla 1 de draftv1 en limpio (draftv3), que no se ha escrito.
