@@ -82,7 +82,18 @@ Instalación: `python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"` (Pyth
 | :-- | :-- | :-- | :-- |
 | Deploy GitHub Pages | `.github/workflows/pages.yml` | push a `main` | sube `public/` **tal cual**; no construye |
 
-Pages debe tener origen **GitHub Actions** (`gh api -X POST repos/alephscriptorium-eng/modelador-redes/pages -f build_type=workflow`). Si un run falla con `Get Pages site failed`, activa Pages y relanza (`gh api -X POST repos/…/actions/workflows/pages.yml/dispatches -f ref=main`). No hay CI de pytest: ejecutar en local antes de push.
+Pages tiene origen **GitHub Actions** (`build_type=workflow`). No hay CI de pytest: ejecutar en local antes de push.
+
+**Gotcha verificado (2026-09-09):** al activar Pages por API con varias ramas ya subidas, GitHub creó el entorno `github-pages` con una política de despliegue restringida a la primera rama que vio (`dev/clase`), y el job `deploy` fallaba **sin ejecutar ningún paso**. Arreglo:
+
+```bash
+R=repos/alephscriptorium-eng/modelador-redes
+gh api -X POST $R/environments/github-pages/deployment-branch-policies -f name=main   # permitir main
+gh api $R/environments/github-pages/deployment-branch-policies -q '.branch_policies[].name'  # debe listar solo main
+gh api -X POST $R/actions/workflows/pages.yml/dispatches -f ref=main                # relanzar
+```
+
+El primer push de `main` tampoco disparó el workflow (Actions aún no estaba inicializado): usar el `dispatch` de arriba. `gh 1.12.1` no tiene `gh run list --json`; consultar `gh api $R/actions/runs`.
 
 ---
 
