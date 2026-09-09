@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """Reescritura de enlaces markdown, siempre fuera de bloques de código.
 
-- Oasis: `](base/teoria/vendor/oasis/ruta#L1-L2)` → blob/tree en GitHub al SHA auditado.
+- Oasis: `](vendor/oasis/ruta#L1-L2)` (o con el prefijo antiguo `base/teoria/`) → blob/tree en GitHub al SHA auditado.
 - Inline code: `` `base/teoria/vendor/oasis/...` `` → `` `vendor/oasis/...` ``.
 - Internos: `](x.md)` → `](x.html)` relativo a la página de salida; con `#L…` → blob en main.
 """
@@ -55,7 +55,7 @@ def normalizar_ancla(ancla: str) -> str:
     return f"#L{m.group(1)}-L{m.group(2)}" if m else ancla
 
 
-OASIS_RE = re.compile(r"\]\(base/teoria/vendor/oasis/?([^)#\s]*)(#L\d+(?:-L?\d+)?)?\)")
+OASIS_RE = re.compile(r"\]\((?:base/teoria/)?vendor/oasis/?([^)#\s]*)(#L\d+(?:-L?\d+)?)?\)")
 
 
 def reescribir_oasis(md: str, repo: str = OASIS_REPO, sha: str = OASIS_SHA) -> str:

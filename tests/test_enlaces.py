@@ -18,6 +18,11 @@ def test_fichero_y_anclas():
     assert reescribir_oasis("[x](base/teoria/vendor/oasis/src/a.js#L17-L26)") == f"[x]({B}src/a.js#L17-L26)"
 
 
+def test_prefijo_nuevo_sin_base_teoria():
+    assert reescribir_oasis("[x](vendor/oasis/src/a.js#L5)") == f"[x]({B}src/a.js#L5)"
+    assert reescribir_oasis("[d](vendor/oasis/src/models/)") == f"[d]({T}src/models/)"
+
+
 def test_ancla_sin_L_se_normaliza():
     assert reescribir_oasis("[x](base/teoria/vendor/oasis/src/a.js#L28-38)") == f"[x]({B}src/a.js#L28-L38)"
 
