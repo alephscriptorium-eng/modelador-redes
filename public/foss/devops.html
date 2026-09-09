@@ -31,10 +31,11 @@
 <h1>DevOps y ramas</h1>
 <h2>Una rama por modelo</h2>
 <div class="table-wrap"><table>
-<thead><tr><th>Rama</th><th>Toca</th><th>Modelo</th></tr></thead>
+<thead><tr><th>Rama</th><th>Toca</th><th>Tipo</th><th>Modelo</th></tr></thead>
 <tbody>
-<tr><td><code>dev/clase</code></td><td><code>modelos/clase/</code></td><td><a href="../modelos/clase/index.html">Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB</a></td></tr><tr><td><code>dev/colectividades</code></td><td><code>modelos/colectividades/</code></td><td><a href="../modelos/colectividades/index.html">Colectivizaciones 1936-37 frente a la República Pura</a></td></tr><tr><td><code>dev/res_publica</code></td><td><code>modelos/res_publica/</code></td><td><a href="../modelos/res_publica/index.html">República Pura (Trevijano) sobre Oasis/SSB</a></td></tr><tr><td><code>main</code></td><td>todo lo demás + <code>public/</code> + <code>data/</code></td><td>integración y publicación</td></tr>
+<tr><td><code>dev/clase</code></td><td><code>modelos/clase/</code></td><td>nodo</td><td><a href="../modelos/clase/index.html">Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB</a></td></tr><tr><td><code>dev/colectivizaciones</code></td><td><code>modelos/colectivizaciones/</code></td><td>nodo</td><td><a href="../modelos/colectivizaciones/index.html">Colectivizaciones libertarias 1936-37 sobre Oasis/SSB</a></td></tr><tr><td><code>dev/res_publica</code></td><td><code>modelos/res_publica/</code></td><td>nodo</td><td><a href="../modelos/res_publica/index.html">República Pura (Trevijano) sobre Oasis/SSB</a></td></tr><tr><td><code>dev/res_publica+colectivizaciones</code></td><td><code>modelos/res_publica+colectivizaciones/</code></td><td>arista (res_publica ↔ colectivizaciones)</td><td><a href="../modelos/res_publica+colectivizaciones/index.html">Contraste: República Pura ↔ colectivizaciones 1936-37</a></td></tr><tr><td><code>main</code></td><td>todo lo demás + <code>public/</code> + <code>data/</code></td><td>integración y publicación</td></tr>
 </tbody></table></div>
+<p>Los modelos son <strong>nodos</strong> (doctrina pura) o <strong>aristas</strong> (híbrido o contraste entre dos nodos). El id de una arista es <code>nodoA+nodoB</code>; carpeta <code>modelos/nodoA+nodoB/</code> y rama <code>dev/nodoA+nodoB</code>. Una arista se crea desde <code>main</code> y nunca reescribe a sus nodos.</p>
 <p>Cada rama <code>dev/&lt;modelo&gt;</code> solo modifica su carpeta, así <code>main</code> las integra con <code>git merge --no-ff</code> sin conflictos. El generador, las plantillas, la documentación y <code>public/</code> se tocan únicamente en <code>main</code>.</p>
 
 <h2>Ciclo operativo</h2>

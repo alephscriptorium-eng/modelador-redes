@@ -28,9 +28,15 @@
       <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
     </header>
     <p class="lead">Catálogo de modelizaciones políticas sobre redes distribuidas (Oasis/SSB + Faircoin): drafts, revisiones y backlogs. Juguete-pasatiempo de la serie Animus Iocandi, para pasar el rato calculando y reflexionando sobre cosas de sociedad, cultura y ecología. Cada modelización audita el mismo código (Oasis 1.0.7, commit <code>9a657b7</code>) desde una doctrina distinta y crece en su propia rama.</p>
-    <section class="catalogo" aria-label="Catálogo de modelizaciones">
-      <article class="modelo-card">
-        <h2><a href="modelos/clase/index.html">Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB</a> <span class="badge badge-latest">draft</span></h2>
+    <section class="grafo" aria-label="Grafo de modelizaciones">
+      <h2 class="seccion-h">Grafo</h2>
+      <p class="modelo-meta">Un <strong>nodo</strong> es una doctrina pura auditada contra el mismo código. Una <strong>arista</strong> es un modelo híbrido o de contraste que combina dos nodos; su id es <code>nodoA+nodoB</code> y tiene carpeta y rama propias. Datos: <a href="catalogo.json">catalogo.json</a>.</p>
+      <svg class="grafo-svg" viewBox="0 0 640 360" role="img" aria-label="Grafo de modelizaciones: 3 nodos y 1 aristas" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><a href="modelos/res_publica+colectivizaciones/index.html" class="arista arista-pausa"><line x1="214.0" y1="241.2" x2="426.0" y2="241.2"/><text x="320.0" y="235.2" text-anchor="middle" class="arista-label">contraste</text></a><a href="modelos/clase/index.html" class="nodo"><title>Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB</title><circle cx="320.0" cy="57.6" r="22"/><text x="320.0" y="97.6" text-anchor="middle" class="nodo-label">clase</text></a><a href="modelos/colectivizaciones/index.html" class="nodo"><title>Colectivizaciones libertarias 1936-37 sobre Oasis/SSB</title><circle cx="426.0" cy="241.2" r="22"/><text x="426.0" y="281.2" text-anchor="middle" class="nodo-label">colectivizaciones</text></a><a href="modelos/res_publica/index.html" class="nodo"><title>República Pura (Trevijano) sobre Oasis/SSB</title><circle cx="214.0" cy="241.2" r="22"/><text x="214.0" y="281.2" text-anchor="middle" class="nodo-label">res_publica</text></a></svg>
+    </section>
+    <section class="catalogo" aria-label="Nodos">
+      <h2 class="seccion-h">Nodos</h2>
+      <article class="modelo-card ">
+        <h2><a href="modelos/clase/index.html">Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB</a> <span class="badge">nodo</span> <span class="badge badge-latest">draft</span></h2>
         <p>Panorámica del sistema de Gustavo Bueno (M₁/M₂/M₃, teoría del cierre categorial, espacio antropológico, eutaxia) y plan para triturar Oasis/SSB con sus categorías, en contraste con Trevijano y con las colectivizaciones. Carriles D (fuentes) → T (trituración) → EU (eutaxia).</p>
         <p class="modelo-meta">estado: semilla · rama <code>dev/clase</code> · 1 draft · 0 fichas de revisión · 0 tareas · 0 oportunidades en el draft vigente</p>
         <p class="modelo-actions">
@@ -40,26 +46,43 @@
           <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/clase">GitHub ↗</a>
         </p>
       </article>
-      <article class="modelo-card">
-        <h2><a href="modelos/colectividades/index.html">Colectivizaciones 1936-37 frente a la República Pura</a> <span class="badge badge-latest">draft</span></h2>
-        <p>Contraste entre las colectivizaciones anarcosindicalistas de 1936-37 (Souchy, Leval, Casanova…) y la República Pura de Trevijano, modelado sobre Oasis/SSB y Faircoin. Chuletario de fuentes, tabla de contraste en siete dimensiones y plan para replicar el método de res_publica (carriles D&#39; → G&#39; → B&#39; → E&#39; → F&#39;).</p>
-        <p class="modelo-meta">estado: semilla · rama <code>dev/colectividades</code> · 1 draft · 0 fichas de revisión · 0 tareas · 0 oportunidades en el draft vigente</p>
+      <article class="modelo-card ">
+        <h2><a href="modelos/colectivizaciones/index.html">Colectivizaciones libertarias 1936-37 sobre Oasis/SSB</a> <span class="badge">nodo</span> <span class="badge badge-latest">draftv0</span></h2>
+        <p>Modelo puro de las colectivizaciones anarcosindicalistas de 1936-37 (asamblea soberana, cargos rotatorios y revocables, propiedad colectiva, salario familiar, federación de abajo arriba, intercambio sin precio) auditado contra Oasis 1.0.7: ocho criterios, parches CL-1…CL-11 y backlog por carriles D&#39; → G&#39; → B&#39; → E&#39; → F&#39;.</p>
+        <p class="modelo-meta">estado: en revisión · rama <code>dev/colectivizaciones</code> · 2 drafts · 1 ficha de revisión · 29 tareas · 6 oportunidades en el draft vigente</p>
+        <p class="modelo-meta">aristas: <a href="modelos/res_publica+colectivizaciones/index.html"><code>res_publica+colectivizaciones</code></a></p>
         <p class="modelo-actions">
-          <a href="modelos/colectividades/index.html">Estado</a>
-          <a href="modelos/colectividades/backlog.html">Backlog</a>
-<a href="modelos/colectividades/drafts/draft.html">Draft vigente</a>          <a href="modelos/colectividades/downloads/colectividades-todo.zip">zip</a>
-          <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/colectividades">GitHub ↗</a>
+          <a href="modelos/colectivizaciones/index.html">Estado</a>
+          <a href="modelos/colectivizaciones/backlog.html">Backlog</a>
+<a href="modelos/colectivizaciones/drafts/draftv0.html">Draft vigente</a>          <a href="modelos/colectivizaciones/downloads/colectivizaciones-todo.zip">zip</a>
+          <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/colectivizaciones">GitHub ↗</a>
         </p>
       </article>
-      <article class="modelo-card">
-        <h2><a href="modelos/res_publica/index.html">República Pura (Trevijano) sobre Oasis/SSB</a> <span class="badge badge-latest">draftv2</span></h2>
+      <article class="modelo-card ">
+        <h2><a href="modelos/res_publica/index.html">República Pura (Trevijano) sobre Oasis/SSB</a> <span class="badge">nodo</span> <span class="badge badge-latest">draftv2</span></h2>
         <p>Auditoría de Oasis 1.0.7 contra los siete criterios trevijanistas, parches RP-1…10, backlog v3 por carriles (D → G → C → B → F → E → L) y revisión capítulo a capítulo del Libro III de Teoría pura de la República.</p>
         <p class="modelo-meta">estado: en revisión · rama <code>dev/res_publica</code> · 4 drafts · 8 fichas de revisión · 50 tareas · 0 oportunidades en el draft vigente</p>
+        <p class="modelo-meta">aristas: <a href="modelos/res_publica+colectivizaciones/index.html"><code>res_publica+colectivizaciones</code></a></p>
         <p class="modelo-actions">
           <a href="modelos/res_publica/index.html">Estado</a>
           <a href="modelos/res_publica/backlog.html">Backlog</a>
 <a href="modelos/res_publica/drafts/draftv2.html">Draft vigente</a>          <a href="modelos/res_publica/downloads/res_publica-todo.zip">zip</a>
           <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/res_publica">GitHub ↗</a>
+        </p>
+      </article>
+    </section>
+    <section class="catalogo" aria-label="Aristas">
+      <h2 class="seccion-h">Aristas</h2>
+      <article class="modelo-card arista-card">
+        <h2><a href="modelos/res_publica+colectivizaciones/index.html">Contraste: República Pura ↔ colectivizaciones 1936-37</a> <span class="badge">arista</span> <span class="badge badge-pausa">pausa</span> <span class="badge badge-latest">draft</span></h2>
+        <p class="modelo-meta">combina <a href="modelos/res_publica/index.html"><code>res_publica</code></a> ↔ <a href="modelos/colectivizaciones/index.html"><code>colectivizaciones</code></a> · relación: contraste</p>
+        <p>Arista entre el nodo res_publica (Trevijano) y el nodo colectivizaciones: las dos constituciones sobre el mismo código. Chuletario de contraste en siete dimensiones y plan para replicar el método. En pausa hasta que el nodo colectivizaciones tenga su auditoría propia; el material doctrinal puro vive allí.</p>
+        <p class="modelo-meta">estado: pausa · rama <code>dev/res_publica+colectivizaciones</code> · 1 draft · 0 fichas de revisión · 0 tareas · 0 oportunidades en el draft vigente</p>
+        <p class="modelo-actions">
+          <a href="modelos/res_publica+colectivizaciones/index.html">Estado</a>
+          <a href="modelos/res_publica+colectivizaciones/backlog.html">Backlog</a>
+<a href="modelos/res_publica+colectivizaciones/drafts/draft.html">Draft vigente</a>          <a href="modelos/res_publica+colectivizaciones/downloads/res_publica+colectivizaciones-todo.zip">zip</a>
+          <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/res_publica+colectivizaciones">GitHub ↗</a>
         </p>
       </article>
     </section>

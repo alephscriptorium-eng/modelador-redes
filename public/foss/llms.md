@@ -9,7 +9,7 @@ Web: https://alephscriptorium-eng.github.io/modelador-redes
 
 ## Qué es este proyecto
 
-**Modelador de Redes** (`modelador-redes` v0.1.0) es un **catálogo de modelizaciones** políticas sobre redes distribuidas (Oasis/SSB + Faircoin) y el generador de sitio estático que lo publica.
+**Modelador de Redes** (`modelador-redes` v0.2.0) es un **catálogo de modelizaciones** políticas sobre redes distribuidas (Oasis/SSB + Faircoin) y el generador de sitio estático que lo publica.
 
 - **No se implementa ningún producto.** No hay fork de Oasis, no hay cadena Faircoin3. Hay auditorías, drafts, fichas de revisión y backlogs. Cualquier tarea `TK-*` de un backlog es una especificación, no código.
 - Todas las modelizaciones auditan **el mismo código**: `epsylon/oasis` @ `9a657b776fcafc7c24bf3ad61825316385ecf513` (release 1.0.7, AGPL-3.0). Vive en `vendor/oasis`, ignorado por git; ver `THIRD_PARTY.md`.
@@ -17,13 +17,24 @@ Web: https://alephscriptorium-eng.github.io/modelador-redes
 
 ---
 
-## Los tres modelos
+## Nodos y aristas
 
-| id | Rama | Nombre | Draft vigente | Estado |
-| :-- | :-- | :-- | :-- | :-- |
-| `res_publica` | `dev/res_publica` | República Pura (Trevijano) sobre Oasis/SSB | `draftv2` | en revisión (8 fichas del Libro III cerradas; carril D pendiente de verificar contra el libro) |
-| `colectividades` | `dev/colectividades` | Colectivizaciones 1936-37 frente a la República Pura | `draft` | semilla (chuletario + plan) |
-| `clase` | `dev/clase` | Materialismo filosófico de Gustavo Bueno sobre Oasis | `draft` | semilla (panorámica + plan) |
+El catálogo es un **grafo**:
+
+- **Nodo** = doctrina pura auditada contra Oasis (`tipo: "nodo"`). Sin tensión con otros nodos: no cita a otro nodo como autoridad, solo hechos verificados del código.
+- **Arista** = modelo híbrido o de contraste entre **dos** nodos (`tipo: "arista"`, `nodos: ["a", "b"]`, `relacion` libre: contraste, síntesis…). Id = `a+b`, carpeta `modelos/a+b/`, rama `dev/a+b`. Una arista se crea desde `main` y **nunca reescribe a sus nodos**; cuando un nodo cambia, la arista se revisa.
+- `modelador check` valida el grafo (nodos existentes, id bien formado). La portada dibuja el SVG y publica `catalogo.json`.
+
+Crear un nodo nuevo: `git checkout -b dev/<id> main` → `modelos/<id>/{modelo.json, drafts/draft.md, revision/00-indice.md}` → `modelador indice --modelo <id>` → commit → merge en main. Crear una arista: igual con `tipo: "arista"` y `nodos`.
+
+## Los modelos
+
+| id | Tipo | Rama | Nombre | Draft vigente | Estado |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| `res_publica` | nodo | `dev/res_publica` | República Pura (Trevijano) sobre Oasis/SSB | `draftv2` | en revisión (8 fichas del Libro III cerradas; carril D pendiente de verificar contra el libro) |
+| `colectivizaciones` | nodo | `dev/colectivizaciones` | Colectivizaciones libertarias 1936-37 sobre Oasis/SSB | `draftv0` | en revisión (auditoría CL-1…11; ficha 01-asamblea) |
+| `clase` | nodo | `dev/clase` | Materialismo filosófico de Gustavo Bueno sobre Oasis | `draft` | semilla (panorámica + plan) |
+| `res_publica+colectivizaciones` | arista (contraste) | `dev/res_publica+colectivizaciones` | Las dos constituciones sobre el mismo código | `draft` | **pausa** hasta que el nodo `colectivizaciones` tenga auditoría |
 
 Fuente de verdad de esta tabla: `modelos/*/modelo.json` y el disco. Si difieren, manda el disco.
 
@@ -103,7 +114,8 @@ El primer push de `main` tampoco disparó el workflow (Actions aún no estaba in
 modelos/<modelo>/{modelo.json, drafts/, revision/}   # contenido (ramas dev/*)
 modelador_redes/
   paths.py                 constantes (repo, SHA de Oasis, rutas)
-  modelos/catalogo.py      descubre modelos, ordena drafts, draft vigente
+  modelos/catalogo.py      descubre modelos, ordena drafts, draft vigente; grafo nodos/aristas
+  site/grafo.py            SVG del grafo
   modelos/indice.py        línea «Draft vigente»
   modelos/enlaces.py       reescritura de enlaces (Oasis → blob/<sha>; .md → .html; #L → blob main)
   modelos/markdown.py      markdown-it-py + anclas h2/h3 + .table-wrap

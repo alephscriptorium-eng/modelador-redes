@@ -254,3 +254,17 @@ footer {
 }
 .badge-latest { border-color: var(--emphasis); color: var(--emphasis); }
 .portals { margin-top: 1.25rem; }
+
+/* —— Grafo nodos/aristas —— */
+.seccion-h { font-size: 1.05rem; margin: 1.5rem 0 0.5rem; text-align: left; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-family: system-ui, sans-serif; }
+.grafo { text-align: left; }
+.grafo-svg { width: 100%; height: auto; max-height: 360px; display: block; margin: 0.5rem 0 1rem; color: var(--text); font-family: system-ui, sans-serif; }
+.grafo-svg .nodo circle { fill: var(--surface); stroke: var(--emphasis); stroke-width: 2; }
+.grafo-svg .nodo:hover circle { fill: var(--emphasis); }
+.grafo-svg .nodo-label { font-size: 12px; fill: var(--text); }
+.grafo-svg .arista line { stroke: var(--muted); stroke-width: 2; }
+.grafo-svg .arista-pausa line { stroke-dasharray: 6 5; }
+.grafo-svg .arista-label { font-size: 11px; fill: var(--muted); }
+.grafo-svg a { text-decoration: none; }
+.arista-card { border-style: dashed; }
+.badge-pausa { border-style: dashed; }

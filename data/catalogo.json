@@ -1,0 +1,143 @@
+{
+  "generador": "modelador-redes 0.1.0",
+  "oasis": {
+    "repo": "https://github.com/epsylon/oasis",
+    "sha": "9a657b776fcafc7c24bf3ad61825316385ecf513"
+  },
+  "convencion": {
+    "nodo": "modelos/<id>/",
+    "arista": "modelos/<nodoA>+<nodoB>/",
+    "rama": "dev/<id>"
+  },
+  "nodos": [
+    {
+      "id": "clase",
+      "nombre": "Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB",
+      "rama": "dev/clase",
+      "estado": "semilla",
+      "latest": "draft",
+      "aristas": []
+    },
+    {
+      "id": "colectivizaciones",
+      "nombre": "Colectivizaciones libertarias 1936-37 sobre Oasis/SSB",
+      "rama": "dev/colectivizaciones",
+      "estado": "en revisión",
+      "latest": "draftv0",
+      "aristas": [
+        "res_publica+colectivizaciones"
+      ]
+    },
+    {
+      "id": "res_publica",
+      "nombre": "República Pura (Trevijano) sobre Oasis/SSB",
+      "rama": "dev/res_publica",
+      "estado": "en revisión",
+      "latest": "draftv2",
+      "aristas": [
+        "res_publica+colectivizaciones"
+      ]
+    }
+  ],
+  "aristas": [
+    {
+      "id": "res_publica+colectivizaciones",
+      "nombre": "Contraste: República Pura ↔ colectivizaciones 1936-37",
+      "nodos": [
+        "res_publica",
+        "colectivizaciones"
+      ],
+      "relacion": "contraste",
+      "rama": "dev/res_publica+colectivizaciones",
+      "estado": "pausa",
+      "latest": "draft"
+    }
+  ],
+  "modelos": [
+    {
+      "id": "clase",
+      "nombre": "Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB",
+      "tipo": "nodo",
+      "nodos": [],
+      "relacion": "",
+      "aristas": [],
+      "rama": "dev/clase",
+      "estado": "semilla",
+      "descripcion": "Panorámica del sistema de Gustavo Bueno (M₁/M₂/M₃, teoría del cierre categorial, espacio antropológico, eutaxia) y plan para triturar Oasis/SSB con sus categorías, en contraste con Trevijano y con las colectivizaciones. Carriles D (fuentes) → T (trituración) → EU (eutaxia).",
+      "latest": "draft",
+      "n_drafts": 1,
+      "n_fichas": 0,
+      "total_tk": 0,
+      "ops": 0,
+      "github": "https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/clase"
+    },
+    {
+      "id": "colectivizaciones",
+      "nombre": "Colectivizaciones libertarias 1936-37 sobre Oasis/SSB",
+      "tipo": "nodo",
+      "nodos": [],
+      "relacion": "",
+      "aristas": [
+        {
+          "id": "res_publica+colectivizaciones",
+          "nombre": "Contraste: República Pura ↔ colectivizaciones 1936-37",
+          "relacion": "contraste",
+          "estado": "pausa"
+        }
+      ],
+      "rama": "dev/colectivizaciones",
+      "estado": "en revisión",
+      "descripcion": "Modelo puro de las colectivizaciones anarcosindicalistas de 1936-37 (asamblea soberana, cargos rotatorios y revocables, propiedad colectiva, salario familiar, federación de abajo arriba, intercambio sin precio) auditado contra Oasis 1.0.7: ocho criterios, parches CL-1…CL-11 y backlog por carriles D' → G' → B' → E' → F'.",
+      "latest": "draftv0",
+      "n_drafts": 2,
+      "n_fichas": 1,
+      "total_tk": 29,
+      "ops": 6,
+      "github": "https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/colectivizaciones"
+    },
+    {
+      "id": "res_publica",
+      "nombre": "República Pura (Trevijano) sobre Oasis/SSB",
+      "tipo": "nodo",
+      "nodos": [],
+      "relacion": "",
+      "aristas": [
+        {
+          "id": "res_publica+colectivizaciones",
+          "nombre": "Contraste: República Pura ↔ colectivizaciones 1936-37",
+          "relacion": "contraste",
+          "estado": "pausa"
+        }
+      ],
+      "rama": "dev/res_publica",
+      "estado": "en revisión",
+      "descripcion": "Auditoría de Oasis 1.0.7 contra los siete criterios trevijanistas, parches RP-1…10, backlog v3 por carriles (D → G → C → B → F → E → L) y revisión capítulo a capítulo del Libro III de Teoría pura de la República.",
+      "latest": "draftv2",
+      "n_drafts": 4,
+      "n_fichas": 8,
+      "total_tk": 50,
+      "ops": 0,
+      "github": "https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/res_publica"
+    },
+    {
+      "id": "res_publica+colectivizaciones",
+      "nombre": "Contraste: República Pura ↔ colectivizaciones 1936-37",
+      "tipo": "arista",
+      "nodos": [
+        "res_publica",
+        "colectivizaciones"
+      ],
+      "relacion": "contraste",
+      "aristas": [],
+      "rama": "dev/res_publica+colectivizaciones",
+      "estado": "pausa",
+      "descripcion": "Arista entre el nodo res_publica (Trevijano) y el nodo colectivizaciones: las dos constituciones sobre el mismo código. Chuletario de contraste en siete dimensiones y plan para replicar el método. En pausa hasta que el nodo colectivizaciones tenga su auditoría propia; el material doctrinal puro vive allí.",
+      "latest": "draft",
+      "n_drafts": 1,
+      "n_fichas": 0,
+      "total_tk": 0,
+      "ops": 0,
+      "github": "https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/res_publica+colectivizaciones"
+    }
+  ]
+}
