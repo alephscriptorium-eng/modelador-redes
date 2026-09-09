@@ -2,21 +2,21 @@
 
 **Draft vigente:** [draftv0.md](../drafts/draftv0.md)
 
-**2026-09-09.** Fichas por **tema** (el corpus es plural, no hay capítulos de un libro): cada ficha reconstruye las tesis del tema con grado de certeza (A/B/C, escala de `draft.md` §2), confirma qué está mapeado en `draftv0.md` (criterios, parches CL-n, tareas) y lista las correcciones aplicadas. **Nada está verificado contra las fuentes**: la certeza es la del revisor. Confirmar en Leval, Souchy y Casanova antes de citar.
+**2026-09-09.** Fichas por **tema** (el corpus es plural, no hay capítulos de un libro): cada ficha reconstruye las tesis del tema con grado de certeza (A/B/C, escala de `draft.md` §2), confirma qué está mapeado en `draftv0.md` (criterios, parches CL-n, tareas) y lista las correcciones aplicadas. **Nada está verificado contra las fuentes** salvo lo que diga el carril D': la certeza es la del revisor. Confirmar en Leval, Souchy y Casanova antes de citar.
 
-| Tema | Ficha | Fuente | Hallazgo principal | Tareas tocadas |
+| Tema | Ficha | Fuente | Veredicto | Correcciones a draftv0 |
 | :-- | :-- | :-- | :-- | :-- |
-| Asamblea soberana | [01-asamblea.md](01-asamblea.md) | Leval, Souchy, Simoni | La asamblea existe en el código y no manda; podía abdicar en un líder; el reparto no pasaba por ella | CL-1, CL-3, TK-D'01, TK-B'03, **TK-G'06** nueva |
-| Cargos rotatorios y revocables | 02-cargos.md | Leval, Redalyc | pendiente | CL-2, CL-11 |
-| Propiedad colectiva | 03-propiedad.md | Casanova, Decreto 24-10-1936 | pendiente | CL-2, CL-5 |
-| Salario familiar | 04-salario-familiar.md | Ovejero, Leval | pendiente | CL-3, CL-4, CL-9 |
-| Federación | 05-federacion.md | Casanova (Consejo de Aragón), Vela | pendiente | CL-8 |
-| Intercambio sin moneda | 06-intercambio.md | Leval, Souchy, Gómez | pendiente | CL-6 |
-| Derechos sociales | 07-derechos-sociales.md | Redalyc, Ovejero | pendiente | CL-10 |
+| Asamblea soberana | [01-asamblea.md](01-asamblea.md) | Leval, Souchy, Simoni | la asamblea está mapeada en su existencia (hallazgos B y G) y en sus competencias sobre miembros y tesoro, no en su procedimiento (convocatoria, forma del voto) ni en su límite (no puede abdicar ni ceder el reparto). | TK-D'01, CL-1, CL-3, TK-G'06, hallazgo B |
+| Cargos rotatorios y revocables | [02-cargos.md](02-cargos.md) | Leval, Redalyc, Decreto 24-10-1936 | los cargos están mapeados en el steward de la instalación (elección, mandato y revocación en CL-2 y TK-G'03; salida en CL-11), no en el índice que decide a quién obedecer, ni en los cargos de la tribu (custodia de claves | §2.4 «Lo decisivo», hallazgo C, CL-2, CL-11, TK-D'09, TK-G'03, TK-G'07, resumen de prioridades |
+| Propiedad colectiva | [03-propiedad.md](03-propiedad.md) | Casanova, Decreto 24-10-1936 | la propiedad está mapeada en el propietario (steward que pasa a electo, CL-2) y en el reparto del producto (necesidades y tesoro, CL-3 y CL-5), no en el patrimonio: qué posee la tribu, qué pasa con lo aportado y con quie | hallazgo C, CL-5, «Lo que no se toca», §2.6 housing, TK-D'09, TK-G'07, resumen de prioridades |
+| Salario familiar | [04-salario-familiar.md](04-salario-familiar.md) | Ovejero, Leval | el salario familiar está mapeado en su fórmula (coeficiente de hogar, escala votada) y en su unidad (hogar declarado), no en su condición (cobrar sin aportar y sin reclamar) ni en sus límites (techo por hogar, censo que  | TK-D'02, CL-3, CL-4, hallazgo D, hallazgo F, §2.3, «Lo que no se toca», TK-B'06 |
+| Federación | [05-federacion.md](05-federacion.md) | Casanova (Consejo de Aragón), Vela | la federación está mapeada en su principio (delegados mandatados, voto por colectividad, compensación), no en su dirección: en Oasis la jerarquía de tribus es descendente (el padre crea la hija, la hija hereda su privaci | §2.1, §2.4, §3 fila 6, CL-8, TK-D'04, TK-F'04, TK-F'05, resumen de prioridades |
+| Intercambio sin moneda | [06-intercambio.md](06-intercambio.md) | Leval, Souchy, Gómez | el intercambio sin moneda está mapeado en su prohibición (precio cero, CL-6, TK-E'01) y en su carril de escape (`TIME`), no en su mecánica: el carnet de consumo no tiene costura, la caja de compensación no cabe en `Trans | hallazgo 5, fila 7, hallazgo E, CL-6, TK-D'03, TK-E'01, TK-E'02, TK-E'03, TK-E'04, TK-F'02, resumen de prioridades |
+| Derechos sociales | [07-derechos-sociales.md](07-derechos-sociales.md) | Redalyc, Ovejero | los derechos sociales están mapeados en su fuente de pago (tesoro de tribu, CL-5/CL-10) y en la gratuidad de la escuela (§2.7), no en su mecánica: quién mantiene al maestro y al médico, qué pasa con la renta que no se re | TK-D'07, CL-10, TK-B'05, TK-S'01, TK-S'02, TK-S'03, §2.6, §2.7, §2.3, §3 fila 5 |
 
-**Estado tras la revisión:** 1 ficha de 7. Veredictos de `draftv0.md` §3: 0 cumplen, 3 parciales, 5 fallan; con CL-1…CL-11 aplicados, los ocho criterios tendrían parche.
+**Estado tras la revisión:** 7 fichas de 7. Veredictos de `draftv0.md` §3: 0 cumplen, 3 parciales, 5 fallan; los parches CL-1…CL-11 se han precisado desde las fichas y la tabla de prioridades se regenera desde las tablas de tareas.
 
 **Deuda pendiente:**
-- Verificar las tesis de la ficha 01 en Leval y Simoni (carril D', TK-D'01).
-- Escribir las fichas 02-07 con el mismo formato.
-- El carril de cadena no se abre en este nodo; si una arista lo necesita (tesoro en cadena), se hereda del nodo que lo tenga.
+- Verificar las tesis en Leval, Souchy y Casanova (carril D'; TK-D'01…D'04 en curso, D'05…D'08 con default).
+- Las fichas se escribieron en paralelo sobre el mismo draftv0: los cruces entre parches (CL-1/CL-2, CL-3/CL-5) se han resuelto en secuencia; releer §4 de draftv0 de corrido.
+- El carril de cadena no se abre en este nodo; si una arista lo necesita, se hereda del nodo que lo tenga.
