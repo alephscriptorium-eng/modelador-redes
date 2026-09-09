@@ -47,3 +47,14 @@ def test_build_grafo(grafo_dir, tmp_path):
     arista = (public / "modelos" / "alfa+beta" / "index.html").read_text()
     assert 'href="../alfa/index.html"' in arista and "contraste" in arista
     assert check(public_dir=public, modelos_dir=grafo_dir) == []
+
+
+def test_build_poda_modelos_obsoletos(modelos_dir, tmp_path):
+    public = tmp_path / "public"
+    data = tmp_path / "data"
+    (public / "modelos" / "viejo").mkdir(parents=True)
+    (public / "modelos" / "viejo" / "index.html").write_text("x")
+    (data / "viejo").mkdir(parents=True)
+    run_build("all", public_dir=public, data_dir=data, modelos_dir=modelos_dir)
+    assert not (public / "modelos" / "viejo").exists() and not (data / "viejo").exists()
+    assert (public / "modelos" / "prueba" / "index.html").is_file()

@@ -162,6 +162,21 @@ def build_modelo(m: Modelo, public_dir: Path, data_dir: Path, modelos: list[Mode
     return paginas
 
 
+def _podar_obsoletos(modelos: list[Modelo], public_dir: Path, data_dir: Path) -> list[Path]:
+    """Elimina public/modelos/<x> y data/<x> de modelos que ya no existen (renombrados o borrados)."""
+    vivos = {m.id for m in modelos}
+    borrados: list[Path] = []
+    for base in (public_dir / "modelos", data_dir):
+        if not base.is_dir():
+            continue
+        for d in sorted(base.iterdir()):
+            if d.is_dir() and d.name not in vivos:
+                shutil.rmtree(d)
+                borrados.append(d)
+                print(f"  podado: {d}")
+    return borrados
+
+
 def build_root(modelos: list[Modelo], resumenes: list[dict], public_dir: Path, data_dir: Path) -> None:
     env = _jinja_env("root")
     g = grafo(modelos)
@@ -208,6 +223,7 @@ def run_build(target: str = "all", public_dir: Path | None = None, data_dir: Pat
         raise FileNotFoundError("No hay modelos en modelos/")
     public_dir.mkdir(parents=True, exist_ok=True)
     _copiar_assets(public_dir)
+    _podar_obsoletos(modelos, public_dir, data_dir)
     resumenes = [_resumen_modelo(m, extraer(m), modelos) for m in modelos]
     conteo = {"paginas": 0, "zips": 0, "modelos": len(modelos)}
     if target in ("all", "catalogo"):
