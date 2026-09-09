@@ -188,13 +188,15 @@ def extraer(modelo: Modelo) -> dict:
         md = reescribir_para_zip(d.read_text(encoding="utf-8"))
         ops.extend(ops_de_headings(md, d.stem))
         tablas.extend(t for t in parse_tablas(md, d.stem) if es_backlog(t))
+    # El backlog es acumulativo: un draft posterior no reescribe el anterior, solo
+    # sustituye las tareas que vuelve a declarar. Se recorre del draft más reciente
+    # al más antiguo y cada ID cuenta una sola vez, con su declaración más reciente.
     latest = modelo.latest
+    orden = {d.stem: i for i, d in enumerate(modelo.drafts)}
     vistos: set[str] = set()
     por_carril: Counter = Counter()
     por_prioridad: Counter = Counter()
-    for t in tablas:
-        if t.draft != latest:
-            continue
+    for t in sorted(tablas, key=lambda t: orden.get(t.draft, -1), reverse=True):
         pcol = _col_prioridad(t.headers)
         for r in t.rows:
             id_ = _limpiar_id(r[0])
@@ -204,10 +206,14 @@ def extraer(modelo: Modelo) -> dict:
             por_carril[carril(id_)] += 1
             if pcol is not None:
                 por_prioridad[_limpiar_id(r[pcol]) or "—"] += 1
+    ops_unicos: set[str] = set()
+    for o in sorted(ops, key=lambda o: orden.get(o.draft, -1), reverse=True):
+        ops_unicos.add(o.id)
     resumen = {
         "total_tk": len(vistos),
         "por_carril": dict(sorted(por_carril.items())),
         "por_prioridad": dict(sorted(por_prioridad.items())),
+        "ops": len(ops_unicos),
         "ops_latest": sum(1 for o in ops if o.draft == latest),
         "ops_total": len(ops),
         "tablas_total": len(tablas),

@@ -34,13 +34,13 @@ def test_fence_no_produce_tablas():
     assert parse_tablas("```\n| ID | x |\n| :-- | :-- |\n| TK-9 | y |\n```\n", "d") == []
 
 
-def test_extraer_resumen_solo_latest(modelos_dir):
+def test_extraer_resumen_acumulado(modelos_dir):
     m = cargar_modelo("prueba", modelos_dir)
     b = extraer(m)
     assert b["latest"] == "draftv1"
-    assert b["resumen"]["total_tk"] == 4
+    assert b["resumen"]["total_tk"] == 6  # acumulado: TK-01/02 de draftv0 + 4 de draftv1
     assert not any(_r[0].strip("*") == "TK-99" for t in b["tablas"] for _r in t["rows"])
-    assert b["resumen"]["por_carril"] == {"D": 2, "G": 2}
-    assert b["resumen"]["por_prioridad"] == {"C": 1, "H": 1}
-    assert b["resumen"]["ops_total"] == 1 and b["resumen"]["ops_latest"] == 0
+    assert b["resumen"]["por_carril"] == {"D": 2, "G": 2, "num": 2}
+    assert b["resumen"]["por_prioridad"] == {"C": 1, "H": 2, "M": 1}
+    assert b["resumen"]["ops"] == 1 and b["resumen"]["ops_total"] == 1 and b["resumen"]["ops_latest"] == 0
     assert {t["draft"] for t in b["tablas"]} == {"draftv0", "draftv1"}

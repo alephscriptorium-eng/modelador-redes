@@ -79,7 +79,7 @@ def _resumen_modelo(m: Modelo, backlog: dict, modelos: list[Modelo]) -> dict:
         "n_drafts": len(m.drafts),
         "n_fichas": len(m.fichas),
         "total_tk": backlog["resumen"]["total_tk"],
-        "ops": backlog["resumen"]["ops_latest"],
+        "ops": backlog["resumen"]["ops"],
         "github": GITHUB_TREE + m.rel_dir,
     }
 

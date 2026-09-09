@@ -16,7 +16,7 @@
   <div><dt>Draft vigente</dt><dd>{% if modelo.latest %}<a href="drafts/{{ modelo.latest }}.html">{{ modelo.latest }}.md</a>{% else %}—{% endif %}</dd></div>
   <div><dt>Drafts</dt><dd>{{ nav.drafts | length }}</dd></div>
   <div><dt>Fichas de revisión</dt><dd>{{ nav.fichas | length }}</dd></div>
-  <div><dt>Tareas (draft vigente)</dt><dd>{{ resumen.total_tk }}</dd></div>
+  <div><dt>Tareas de backlog</dt><dd>{{ resumen.total_tk }}</dd></div>
   <div><dt>Descargas</dt><dd>{% for z in nav.zips %}<a href="downloads/{{ z.nombre }}">{{ z.kind }}</a>{{ ' · ' if not loop.last }}{% endfor %}</dd></div>
   <div><dt>Fuente</dt><dd><a href="{{ modelo_github }}">GitHub ↗</a></dd></div>
 </dl>

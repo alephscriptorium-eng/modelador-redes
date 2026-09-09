@@ -3,13 +3,14 @@
 {% block content %}
 <div class="doc-head">
   <h1>Backlog</h1>
-  <p class="lead">Oportunidades (vista comprimida) y tareas a detalle, extraídas de los drafts. El draft vigente es <a href="drafts/{{ modelo.latest }}.html">{{ modelo.latest }}.md</a>; lo anterior se conserva con su etiqueta de origen. Datos: <a href="backlog.json">backlog.json</a>.</p>
+  <p class="lead">Oportunidades (vista comprimida) y tareas a detalle, extraídas de los drafts. El backlog es acumulativo: cada tarea cuenta una vez, en su declaración más reciente, incluidas las que un draft anterior marca como hechas, obsoletas o reformuladas. El draft vigente es <a href="drafts/{{ modelo.latest }}.html">{{ modelo.latest }}.md</a>; lo anterior se conserva con su etiqueta de origen. Datos: <a href="backlog.json">backlog.json</a>.</p>
 </div>
 <div class="resumen">
-  <span><strong>{{ resumen.total_tk }}</strong> tareas TK en {{ modelo.latest }}</span>
+  <span><strong>{{ resumen.total_tk }}</strong> tareas TK</span>
   {% for c, n in resumen.por_carril.items() %}<span>carril {{ c }}: <strong>{{ n }}</strong></span>{% endfor %}
   {% for p, n in resumen.por_prioridad.items() %}<span>prioridad {{ p }}: <strong>{{ n }}</strong></span>{% endfor %}
-  <span><strong>{{ resumen.ops_total }}</strong> oportunidades en {{ nav.drafts | length }} drafts</span>
+  <span><strong>{{ resumen.ops }}</strong> oportunidades</span>
+  <span>{{ nav.drafts | length }} draft{{ 's' if nav.drafts | length != 1 }}, el vigente es {{ modelo.latest }}</span>
 </div>
 
 <h2 id="oportunidades">Oportunidades</h2>

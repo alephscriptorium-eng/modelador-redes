@@ -34,7 +34,7 @@
         <p class="modelo-meta">combina <a href="modelos/{{ m.nodos[0] }}/index.html"><code>{{ m.nodos[0] }}</code></a> ↔ <a href="modelos/{{ m.nodos[1] }}/index.html"><code>{{ m.nodos[1] }}</code></a>{% if m.relacion %} · relación: {{ m.relacion }}{% endif %}</p>
         {% endif %}
         <p>{{ m.descripcion }}</p>
-        <p class="modelo-meta">estado: {{ m.estado }} · rama <code>{{ m.rama }}</code> · {{ m.n_drafts }} draft{{ 's' if m.n_drafts != 1 }} · {{ m.n_fichas }} ficha{{ 's' if m.n_fichas != 1 }} de revisión · {{ m.total_tk }} tareas · {{ m.ops }} oportunidades en el draft vigente</p>
+        <p class="modelo-meta">estado: {{ m.estado }} · rama <code>{{ m.rama }}</code> · {{ m.n_drafts }} draft{{ 's' if m.n_drafts != 1 }} · {{ m.n_fichas }} ficha{{ 's' if m.n_fichas != 1 }} de revisión · {{ m.total_tk }} tareas · {{ m.ops }} oportunidades de backlog</p>
         {% if m.tipo == 'nodo' and m.aristas %}
         <p class="modelo-meta">aristas: {% for a in m.aristas %}<a href="modelos/{{ a.id }}/index.html"><code>{{ a.id }}</code></a>{{ ', ' if not loop.last }}{% endfor %}</p>
         {% endif %}
