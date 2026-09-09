@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan: backlog v3 — reflotar Faircoin (génesis nuevo) con Oasis/Banking, carriles enlazados y camino por defecto trevijanista — República Pura (Trevijano) sobre Oasis/SSB</title>
+<script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>  <link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="../../../index.html" class="brand">Modelador de Redes</a>
+      <p class="tag">República Pura (Trevijano) sobre Oasis/SSB · v0.1.0</p>
+      <nav aria-label="Modelo res_publica">
+        <a href="../index.html" class="">Estado</a>
+        <a href="../backlog.html" class="">Backlog</a>
+        <hr>
+        <p class="nav-h">Drafts</p>
+        <a href="../drafts/draftv2.html" class="active">draftv2 <span class="badge badge-latest">latest</span></a>
+        <a href="../drafts/draftv1.html" class="">draftv1</a>
+        <a href="../drafts/draftv0.html" class="">draftv0</a>
+        <a href="../drafts/draft.html" class="">draft</a>
+        <hr>
+        <p class="nav-h">Revisión</p>
+        <a href="../revision/01-lealtad.html" class="" title="01-lealtad">01-lealtad</a>
+        <a href="../revision/02-monada.html" class="" title="02-monada">02-monada</a>
+        <a href="../revision/03-camara.html" class="" title="03-camara">03-camara</a>
+        <a href="../revision/04-legislacion.html" class="" title="04-legislacion">04-legislacion</a>
+        <a href="../revision/05-justicia.html" class="" title="05-justicia">05-justicia</a>
+        <a href="../revision/06-gobierno.html" class="" title="06-gobierno">06-gobierno</a>
+        <a href="../revision/07-constituyente.html" class="" title="07-constituyente">07-constituyente</a>
+        <a href="../revision/08-republica.html" class="" title="08-republica">08-republica</a>
+        <hr>
+        <p class="nav-h">Descargas</p>
+        <a href="../downloads/res_publica-drafts.zip">drafts.zip</a>
+        <a href="../downloads/res_publica-revision.zip">revision.zip</a>
+        <a href="../downloads/res_publica-todo.zip">todo.zip</a>
+        <a href="../backlog.json">backlog.json</a>
+        <hr>
+        <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/res_publica" class="nav-external">GitHub ↗</a>
+        <a href="../../../index.html" class="nav-external">Catálogo ↗</a>
+        <a href="../../../foss/index.html" class="nav-external">Artefacto (FOSS) ↗</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
+    </aside>
+    <main>
+<div class="doc-head">
+  <h1>Plan: backlog v3 — reflotar Faircoin (génesis nuevo) con Oasis/Banking, carriles enlazados y camino por defecto trevijanista
+<span class="badge">draft</span><span class="badge badge-latest">latest</span>  </h1>
+<p class="doc-links">
+  <a href="https://github.com/alephscriptorium-eng/modelador-redes/blob/main/modelos/res_publica/drafts/draftv2.md" class="ext">Ver en GitHub ↗</a>
+  <a href="https://raw.githubusercontent.com/alephscriptorium-eng/modelador-redes/main/modelos/res_publica/drafts/draftv2.md" class="ext">raw ↗</a>
+<a href="../downloads/res_publica-drafts.zip">zip</a><code>draftv2.md</code></p>
+</div>
+<nav class="toc" aria-label="Contenido">
+  <p>Contenido</p>
+  <ul>
+<li class="n2"><a href="#contexto">Contexto</a></li><li class="n3"><a href="#lo-que-la-divulgación-ya-fija-verificado-hoy-en-mcrcalicantewordpresscom-y-noduloorgec2011n118p13--a-confirmar-en-el-libro">Lo que la divulgación ya fija (verificado hoy en mcrcalicante.wordpress.com y nodulo.org/ec/2011/n118p13) — a confirmar en el libro</a></li><li class="n3"><a href="#hechos-técnicos-verificados-resumen-detalle-en-puramd-y-sesión">Hechos técnicos verificados (resumen; detalle en pura.md y sesión)</a></li><li class="n2"><a href="#ficheros">Ficheros</a></li><li class="n2"><a href="#estructura-del-entregable-backlogmd">Estructura del entregable backlog.md</a></li><li class="n2"><a href="#carril-d--investigación-doctrinal-nuevo">Carril D · Investigación doctrinal (nuevo)</a></li><li class="n2"><a href="#carril-g--gobernanza-republicana-rediseño-por-defecto">Carril G · Gobernanza republicana (rediseño por defecto)</a></li><li class="n2"><a href="#carril-c--cadena-faircoin3--sin-cambios-respecto-al-plan-anterior-tk-3949-tk-90-más">Carril C · Cadena Faircoin3 — sin cambios respecto al plan anterior (TK-39…49, TK-90), más:</a></li><li class="n2"><a href="#carril-b--banking-multi-moneda--tk-5060-sin-cambios-carril-f--tk-6167-carril-e--tk-6873">Carril B · Banking multi-moneda — TK-50…60 sin cambios. Carril F · TK-61…67. Carril E · TK-68…73.</a></li><li class="n2"><a href="#carril-l--legal-marca-comunidad-proyecto">Carril L · Legal, marca, comunidad, proyecto</a></li><li class="n2"><a href="#mapa-de-carriles-para-backlog-2">Mapa de carriles (para backlog §2)</a></li><li class="n2"><a href="#verificación">Verificación</a></li>  </ul>
+</nav>
+<article class="md">
+<h1>Plan: backlog v3 — reflotar Faircoin (génesis nuevo) con Oasis/Banking, carriles enlazados y camino por defecto trevijanista</h1>
+<h2 id="contexto">Contexto</h2>
+<p><code>contexto.md</code> produjo el backlog v1 (SNH + Faircoin al servicio de la República Pura). <code>pura.md</code> (rev. 2) auditó Oasis 1.0.7 y propuso RP-1…10. <code>draftv1.md</code> concluyó que no hay clon: hay auditoría + parches sin implementar, y que faltan piezas (materia del ejecutivo, ideología, verificación doctrinal).</p>
+<p>Decisiones del usuario: <strong>génesis nuevo (Faircoin3)</strong> · <strong>Banking multi-moneda</strong> (ECOin y FAIR) · alcance <strong>moneda + banco + economía real + gobernanza</strong> · entregable <strong>nuevo <code>base/teoria/backlog.md</code></strong>, <code>pura.md §5</code> → puntero · <strong>menos decisiones mías, más hilado</strong>: cada incógnita es una tarea de investigación con <em>camino por defecto</em> y <em>alternativas</em>, y los carriles se enlazan para que tras investigar se pueda seguir.</p>
+<p>El usuario tiene el libro (edición en un tomo: Libro I <em>Actualidad de la Revolución Francesa</em> · Libro II <em>El factor republicano</em> · Libro III <em>Teoría pura de la República</em>, caps. I Lealtad republicana p.340 · II Mónada republicana 363 · III Cámara de Representantes Monádicos 381 · IV Presidencia del Consejo de Legislación 404 · V Presidencia del Consejo de Justicia 421 · VI Presidencia del Consejo de Gobierno 442 · VII Filosofía de la acción constituyente 467 · VIII República Constitucional 494 · Epílogo (el índice impreso dice 426: errata, va tras la p. 494) · Índice de nombres 536).</p>
+<h3 id="lo-que-la-divulgación-ya-fija-verificado-hoy-en-mcrcalicantewordpresscom-y-noduloorgec2011n118p13--a-confirmar-en-el-libro">Lo que la divulgación ya fija (verificado hoy en mcrcalicante.wordpress.com y nodulo.org/ec/2011/n118p13) — a confirmar en el libro</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Pieza</th>
+<th style="text-align:left">Divulgación</th>
+<th style="text-align:left">Cap. del libro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Mónada</strong> = distrito electoral (~100.000 hab.); &quot;la primera unidad de poder sería el colegio electoral, no la familia ni el individuo ni el municipio&quot;</td>
+<td style="text-align:left">mcrcalicante</td>
+<td style="text-align:left">II (363)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Representante monádico</strong>: uninominal, <strong>mayoría absoluta a doble vuelta</strong>, distritos de tamaño similar, <strong>mandato imperativo del electorado</strong>, <strong>revocable &quot;en caso de deslealtad&quot;</strong></td>
+<td style="text-align:left">mcrcalicante</td>
+<td style="text-align:left">I (340), III (381)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Cámara de Representantes</strong> da a la ley su <em>fuerza directiva</em>; el <strong>Consejo de Legislación</strong> (elegido por la Cámara) le confiere la <em>fuerza coactiva</em></td>
+<td style="text-align:left">nodulo, mcrcalicante</td>
+<td style="text-align:left">III–IV</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Presidente</strong> (del Consejo de Gobierno) por <strong>sufragio universal directo</strong>; no legisla por decreto; <strong>no disuelve la Cámara sin dimitir</strong>; designa su Consejo</td>
+<td style="text-align:left">nodulo</td>
+<td style="text-align:left">VI (442)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Consejo de Justicia</strong>: su presidente elegido por mayoría absoluta del mundo judicial; nombra su Consejo; control de constitucionalidad; &quot;misma legitimidad de origen&quot;</td>
+<td style="text-align:left">nodulo, MCRC</td>
+<td style="text-align:left">V (421)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Partidos</strong>: asociaciones de la sociedad civil sin financiación pública</td>
+<td style="text-align:left">nodulo</td>
+<td style="text-align:left">Libro II &quot;Partidos estatales&quot; (289)</td>
+</tr>
+<tr>
+<td style="text-align:left">Crítica externa (Giménez): formalismo, mandato imperativo = Antiguo Régimen, utopismo</td>
+<td style="text-align:left">nodulo</td>
+<td style="text-align:left">—</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="hechos-técnicos-verificados-resumen-detalle-en-puramd-y-sesión">Hechos técnicos verificados (resumen; detalle en pura.md y sesión)</h3>
+<ul>
+<li>FairCoop/BotC/FairMarket: DNS muertos. fair-coin.org: &quot;Cooling down FairCoin&quot; 2024-06-17. Explorador offline. <code>seed1:40404</code> abierto.</li>
+<li><code>faircoin/faircoin</code>: Bitcoin 0.12 + PoC, MIT, último commit 2022-02-05, <code>depends/</code>, <code>--with-cvn</code>, <strong><code>-cvn=file</code></strong> (<code>cvn.pem</code>), RPC admin <code>addcvn/removecvn/bancvn/setchainparameters/addcoinsupply/getactivecvns/getactiveadmins</code>, <code>getinfo.coinsupply</code> (no <code>moneysupply</code>), <strong>sin <code>getmininginfo</code></strong>. Chain-admin y CVN pubkeys hardcodeadas en <code>chainparams.cpp</code>.</li>
+<li>Oasis Banking: seam de 14 métodos RPC; dinero solo en <code>sendtoaddress</code> (banking_model.js:1004, :1416); regex <code>^E</code> ×12; <code>coin:&quot;ECO&quot;</code> ×7; timeout 1500 ms → doble envío; <code>processPendingClaims</code> ≠ <code>computeEpoch</code>; hash de época no publicado; <code>POST /update</code> borra <code>src/configs/*.json</code> trackeados.</li>
+<li>Módulos Oasis: sin loader; adaptador dentro de Banking mejor que módulo nuevo.</li>
+</ul>
+<h2 id="ficheros">Ficheros</h2>
+<ol>
+<li><strong>Crear <code>base/teoria/backlog.md</code></strong> (estructura en §&quot;Estructura del entregable&quot;).</li>
+<li><strong>Modificar <code>base/teoria/pura.md</code></strong>: §5 → puntero de 5 líneas a <code>backlog.md</code>; §1.2 + 4 viñetas (DNS, cooling down, <code>-cvn=file</code>, <code>addcoinsupply</code>).</li>
+<li><code>contexto.md</code>, <code>draftv1.md</code>: sin cambios (draftv1 se enlaza desde backlog §0).</li>
+</ol>
+<h2 id="estructura-del-entregable-backlogmd">Estructura del entregable <code>backlog.md</code></h2>
+<ol start="0">
+<li>Estado y método (hechos, commit auditado <code>9a657b7</code>, enlaces a pura.md/draftv1.md).</li>
+<li>Prompt de activación v3.</li>
+<li><strong>Mapa de carriles</strong> (diagrama de dependencias entre carriles D → G → C → B → F → E → L) y regla de lectura: <em>toda tarea D tiene &quot;camino por defecto&quot;; si no se investiga, el carril siguiente usa el default; si se investiga y la respuesta difiere, la tarea D indica qué tareas aguas abajo cambian</em>.</li>
+<li>Carril <strong>D · Investigación doctrinal</strong> (libro + divulgación).</li>
+<li>Carril <strong>G · Gobernanza republicana</strong> (RP-1…12, rediseñado sobre Cámara + tres Consejos).</li>
+<li>Carril <strong>C · Cadena Faircoin3</strong>.</li>
+<li>Carril <strong>B · Banking multi-moneda</strong>.</li>
+<li>Carril <strong>F · Tesorería distribuida / federación CVN</strong>.</li>
+<li>Carril <strong>E · Economía real</strong>.</li>
+<li>Carril <strong>L · Legal, marca, comunidad, proyecto</strong>.</li>
+<li>Esqueleto andante · Sprints · Riesgos · Mapeos v1/v2 → v3 · Fuentes y certeza.</li>
+</ol>
+<h2 id="carril-d--investigación-doctrinal-nuevo">Carril D · Investigación doctrinal (nuevo)</h2>
+<p>Formato de cada tarea: <em>qué buscar · dónde (cap./pág. del índice; divulgación) · <strong>default</strong> si no se investiga · alternativas · desbloquea</em>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Buscar</th>
+<th style="text-align:left">Dónde</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Alternativas</th>
+<th style="text-align:left">Desbloquea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TK-D01</td>
+<td style="text-align:left">Definición y tamaño de la <strong>mónada</strong>; si es territorial por necesidad o por circunstancia</td>
+<td style="text-align:left">Cap. II (363); mcrcalicante 2014-10-15</td>
+<td style="text-align:left">Mónada = colegio electoral de tamaño fijo; en red sin territorio, colegio de <strong>M inhabitants asignado por hash determinista del feed con semilla estable entre ciclos</strong> (igualdad de tamaño, verificable, sin caciques; cada mónada es muestra aleatoria del censo y <strong>refleja el todo</strong>, cap. II). <strong>Criterio de decisión:</strong> el hash maximiza la igualdad y sacrifica la proximidad (el representante no es conocido por sus electores); (a) y (b) salvan la proximidad y sacrifican la igualdad</td>
+<td style="text-align:left">(a) mónada = PUB de pertenencia; (b) mónada = tribu-distrito; (c) sin mónadas, cámara = censo; (d) rebarajar la semilla cada ciclo (sin comunidad persistente que sostenga D02/D03)</td>
+<td style="text-align:left">TK-G01, TK-D03</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D02</td>
+<td style="text-align:left"><strong>Mandato imperativo</strong>: contenido, cómo se fija, quién lo custodia</td>
+<td style="text-align:left">Cap. III (381), Cap. I (340)</td>
+<td style="text-align:left">El candidato publica un <em>mandato</em> firmado (SSB <code>mandate</code>) antes de la 1ª vuelta; cada voto suyo se coteja contra él en el log</td>
+<td style="text-align:left">mandato = programa de tribu (rechazado: reintroduce lista)</td>
+<td style="text-align:left">TK-G03</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D03</td>
+<td style="text-align:left"><strong>Revocación por deslealtad</strong>: quién revoca, con qué mayoría, procedimiento</td>
+<td style="text-align:left">Cap. I, III</td>
+<td style="text-align:left">Mayoría absoluta del censo de la mónada; causa objetiva = voto contrario al mandato publicado; sin plazo de gracia</td>
+<td style="text-align:left">(a) revocación libre sin causa; (b) solo al final del mandato</td>
+<td style="text-align:left">TK-G04</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D04</td>
+<td style="text-align:left"><strong>Doble vuelta</strong>: mayoría absoluta ¿de votantes o de censo?; segunda vuelta ¿entre dos o abierta?</td>
+<td style="text-align:left">Cap. III</td>
+<td style="text-align:left">Ciclo de 60 d partido: días 1-30 primera vuelta; 31-60 segunda entre los dos más votados si nadie supera 50 % de votantes</td>
+<td style="text-align:left">mayoría del censo (más exigente, más ANARCHY)</td>
+<td style="text-align:left">TK-G02</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D05</td>
+<td style="text-align:left"><strong>Cámara vs Consejo de Legislación</strong>: qué es &quot;fuerza directiva&quot; vs &quot;coactiva&quot;; cómo elige la Cámara al Consejo; tamaño; ¿puede el Consejo vetar?; <strong>mayoría interna</strong> para aprobar ley (simple/absoluta); <strong>qué es una ley</strong> en la red (norma general vs cambio de constante vs medida); ¿tiene el Consejo iniciativa?; <strong>voto nominal público</strong></td>
+<td style="text-align:left">Cap. III–IV (381-420)</td>
+<td style="text-align:left">Cámara = representantes monádicos que <strong>proponen y votan</strong> (<code>parliamentProposal</code>). <strong>Presidente del Consejo de Legislación elegido por mayoría absoluta de la Cámara; nombra su Consejo (k)</strong>, mismo patrón que Justicia y Gobierno; deja el escaño (su mónada elige sustituto, D03). <strong>Fuerza coactiva = ejecutabilidad</strong>: solo la ley promulgada produce <code>lawId</code>, y solo un <code>lawId</code> cambia constantes o autoriza actos chain-admin (TK-84). Promulgación = acto firmado del Consejo en <strong>≤ 7 d</strong> desde la aprobación (hoy Oasis promulga al morir el gobierno, <code>enactApprovedChanges</code> L1102: se elimina esa espera); el Consejo <strong>no enmienda el texto</strong>: promulga o <strong>devuelve una vez con motivación</strong> (veto suspensivo); la Cámara reaprueba por absoluta y entonces promulgación obligada; silencio al vencer el plazo = promulgación tácita. El Consejo mantiene el <strong>índice consolidado</strong> de leyes (con RP-6). Ley por <strong>mayoría absoluta de la Cámara</strong>; ley = texto + cambio de constantes, nunca acto singular sobre un inhabitant; iniciativa solo de representantes; todo voto es mensaje SSB firmado y visible (ya lo es: se documenta como garantía, RP-10)</td>
+<td style="text-align:left">Consejo = k representantes en colegio sin presidente; sin veto (promulgación automática); mayoría simple; el presidente conserva el escaño</td>
+<td style="text-align:left">TK-G05, TK-G10, TK-84</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D06</td>
+<td style="text-align:left"><strong>Presidente del Consejo de Gobierno</strong>: mandato, reelección, incompatibilidad con la Cámara, qué <em>ejecuta</em>, límites (decreto, disolución); <strong>nombra su Consejo</strong> (¿qué carteras en una red?); <strong>&quot;no disuelve sin dimitir&quot;</strong>: ¿apelación al pueblo?; <strong>presupuesto</strong> como ley previa a toda tesorería; ¿reglamentos de ejecución?; ¿veto?; ¿jefatura del Estado separada?; ¿poderes de excepción?</td>
+<td style="text-align:left">Cap. VI (442)</td>
+<td style="text-align:left">Elección directa a doble vuelta, ciclo desfasado 30 d respecto a la Cámara; mandato 60 d, reelección libre, sin revocación (responde ante las urnas y ante el Consejo de Justicia, D07); <strong>nombra <code>governmentCouncil</code></strong> (carteras: tesorería, admin de cadena, puentes Multiverse; los PUB quedan en la sociedad civil, D11); incompatibilidad con el escaño. <strong>No puede proponer leyes ni vetarlas</strong> (la devolución es de Legislación, D05). <strong>Materia</strong> = claves chain-admin de Faircoin3 (<code>addcvn</code>, <code>addcoinsupply</code>, <code>setchainparameters</code>) y tesorería multisig k-de-n con el Consejo (TK-82), <strong>solo con ley promulgada</strong> (<code>lawId</code>, TK-84) y <strong>dentro de la <code>budgetLaw</code> del ciclo</strong> (sin presupuesto: prórroga del anterior). <code>executiveOrder</code> solo de ejecución, cita <code>lawId</code>, público, impugnable ante Justicia. <strong>Disolución solo con dimisión</strong>: <code>dissolutionAndResignation</code> lleva a Cámara y Presidencia a elecciones en el ciclo siguiente (el desfase de D15 se restablece después); nunca disolución sin dimitir. Sin jefatura de Estado separada; sin poderes de excepción (en una red no hay estado de sitio que declarar)</td>
+<td style="text-align:left">ejecutivo colegiado (Consejo elegido); sin disolución en ningún caso; máximo 3 ciclos consecutivos; veto suspensivo presidencial</td>
+<td style="text-align:left">TK-G06, TK-84, TK-66, TK-82, TK-D18</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D07</td>
+<td style="text-align:left"><strong>Consejo de Justicia</strong>: quién es &quot;el mundo judicial&quot; en la red; <strong>cómo se accede a la judicatura</strong> (Trevijano no elige jueces por sufragio: mérito + independencia); control de constitucionalidad (quién lo insta, cuándo, efecto); <strong>jurado</strong> vs voto popular del caso; ¿juzga el Consejo los actos de la Presidencia?; publicidad del proceso vs cifrado</td>
+<td style="text-align:left">Cap. V (421)</td>
+<td style="text-align:left"><strong>Acceso</strong>: juez = inhabitant nombrado por el Consejo de Justicia entre quienes tienen <strong>certificado de <code>School</code></strong> (curso de constitución de la red) y ≥ 2 ciclos de antigüedad; <code>courtsNomination</code> deja de ser elección popular (bootstrap: la constituyente D09 nombra el primer Consejo). &quot;Mundo judicial&quot; = jueces en activo + mediadores con ≥ 1 caso; eligen por mayoría absoluta al Presidente del Consejo de Justicia, que nombra su Consejo. <strong>Jurado</strong> = sorteo verificable (mecanismo RP-3) de J inhabitants por caso: el jurado da el veredicto, el juez la orden; <code>POPULAR</code> (plebiscito de 14 d sobre el caso) se elimina. <strong>Constitucionalidad</strong>: cualquier representante, la Presidencia o una parte pueden instar <code>constitutionalChallenge</code> contra una ley promulgada; el Consejo resuelve en 21 d con <code>lawAnnulment</code> motivado y público; la ley queda suspendida mientras tanto. El Consejo <strong>juzga los actos de la Presidencia</strong> (una <code>censureAct</code> de la Cámara, D18, vale como prueba, no como condena). Publicidad: RP-7 tal cual (instrucción cifrable, veredicto y órdenes en claro); divergencia asumida con el proceso público trevijanista por el riesgo real de las partes en una red</td>
+<td style="text-align:left">acceso por elección popular (actual <code>courtsNomination</code>); jueces por sorteo puro; mundo judicial = todo el censo; proceso público obligatorio</td>
+<td style="text-align:left">TK-G07, TK-76, TK-77, TK-D18, TK-D09</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D08</td>
+<td style="text-align:left"><strong>Lealtad republicana</strong>: definición; ¿es la lealtad al mandato, a la forma de Estado, a la mónada?; <strong>lealtad vs fidelidad</strong> (¿es la fidelidad de la tribu a su líder deslealtad republicana por definición?)</td>
+<td style="text-align:left">Cap. I (340)</td>
+<td style="text-align:left">Lealtad = compromiso con el mandato publicado + con la separación de poderes; deslealtad medible en el log (votos, propuestas). Fidelidad a persona/tribu no computa ni como lealtad ni como deslealtad: solo se cotejan actos contra mandato</td>
+<td style="text-align:left">lealtad como virtud no codificable → sin revocación automática; (b) voto disciplinado de tribu = deslealtad presunta</td>
+<td style="text-align:left">TK-G04, TK-G09, TK-D11, TK-D17</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D09</td>
+<td style="text-align:left"><strong>Acción constituyente</strong>: qué abre el período (¿por ausencia, como ANARCHY, o por <strong>acción</strong>, como la abstención activa?), quién redacta, ratificación (referéndum), ¿asamblea distinta de la Cámara?; <strong>ruptura vs reforma</strong>: ¿pueden los poderes constituidos tocar las constantes?; ¿siguen funcionando durante el período?; <strong>génesis</strong>: las constantes heredadas de Oasis (<code>TERM_DAYS</code> 60, umbral 25 %) nunca fueron constituidas por nadie; ¿se disuelve la asamblea al ratificar?; ¿elegibles sus miembros?</td>
+<td style="text-align:left">Cap. VII (467), VIII (494)</td>
+<td style="text-align:left"><strong>Apertura por acción, no solo por ausencia</strong>: (i) génesis del fork, (ii) 2 ciclos ANARCHY consecutivos, o (iii) <code>constituentCall</code> firmado por ≥ 25 % del censo dentro de un ciclo. <strong>Las constantes heredadas son régimen provisional</strong> (<code>provisionalConstants</code>) hasta la primera constituyente: el fork <strong>no reforma Oasis por ley, abre constituyente</strong> (ruptura, no reforma). Asamblea constituyente ≠ Cámara: elegida ad hoc por mónadas con la ley electoral ordinaria (G01/G02), de propósito único; los poderes constituidos siguen funcionando pero <strong>no pueden tocar constantes</strong> (rigidez, D07 anula); la asamblea <strong>solo redacta</strong>, no legisla. 80 % de la asamblea para el texto; <strong>ratificación por referéndum</strong>: mayoría de votantes con participación ≥ 50 % del censo (el referéndum decide la <em>forma</em>: sin menú de regímenes, TK-32). La asamblea se disuelve al ratificar; sus miembros elegibles. La constitución fija solo forma (órganos, ciclos, umbrales, quién es inhabitant), nunca programa (D12)</td>
+<td style="text-align:left">RP-9 tal cual (Cámara en ANARCHY, apertura solo por ausencia); apertura por abstención (participación &lt; 50 % dos ciclos); miembros inelegibles el primer ciclo; ratificación sin quórum</td>
+<td style="text-align:left">TK-78, TK-G08, TK-D12, TK-D07</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D10</td>
+<td style="text-align:left"><strong>Referéndum</strong>: ¿solo constituyente o también legislativo/abrogatorio?</td>
+<td style="text-align:left">Cap. VIII; Libro II &quot;Elecciones&quot; (302)</td>
+<td style="text-align:left">Solo constituyente y ratificatorio; <code>Polls</code>/<code>Opinions</code> quedan como consulta sin fuerza</td>
+<td style="text-align:left">referéndum abrogatorio → nueva tarea G</td>
+<td style="text-align:left">TK-G08</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D11</td>
+<td style="text-align:left"><strong>Partidos/tribus</strong>: estatuto, financiación, ¿pueden presentar candidatos aunque el mandato sea personal?</td>
+<td style="text-align:left">Libro II &quot;Partidos estatales&quot; (289), &quot;Unidad, consenso, pluralidad&quot; (271)</td>
+<td style="text-align:left">Tribus = asociaciones civiles: pueden apoyar candidatos, no presentarlos; <strong>sin RBU ni tesoro a tribus como tales</strong>; roles operativos (CVN, PUB) sí</td>
+<td style="text-align:left">tribus como distritos (=D01 alt. b)</td>
+<td style="text-align:left">TK-75, TK-63, R11</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D12</td>
+<td style="text-align:left"><strong>Ideología</strong>: pasaje donde niega que la república sea ideología; &quot;materia/forma/espíritu republicano&quot;; <strong>qué hace constitucional a una constitución</strong> (criterio del art. 16 de 1789: separación de poderes en origen + representación; tener constantes escritas no basta); ¿constitución breve y rígida, sin catálogo de derechos-programa?</td>
+<td style="text-align:left">Libro II (171-222), Cap. VIII (494)</td>
+<td style="text-align:left">El fork <strong>neutraliza el manifiesto</strong> de Oasis a texto de tribu opcional; la constitución técnica (TK-25 → G11) fija <strong>solo forma</strong>: órganos, ciclos, umbrales, quién es inhabitant, rigidez (D09); ningún programa económico ni social (la RBU, ECOin y la fiscalidad de carbono son <strong>leyes ordinarias</strong>, derogables, no constantes). <strong>Test de constitucionalidad</strong> ejecutable (G11): dos elecciones distintas para legislativo y ejecutivo, jueces no nombrados por poder político, mandato imperativo, constantes solo mutables en período constituyente, karma fuera de la política. Si falla, el fork no es república constitucional, sea cual sea su texto</td>
+<td style="text-align:left">conservar manifiesto como preámbulo (divergente); RBU como constante</td>
+<td style="text-align:left">TK-25, TK-G11, R14, TK-D09</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D13</td>
+<td style="text-align:left"><strong>Unitario vs federal</strong>; mónada y municipio</td>
+<td style="text-align:left">Cap. II, VIII</td>
+<td style="text-align:left">Parlamentos de tribu se conservan como <strong>autogobierno civil</strong>, sin potestad legislativa general</td>
+<td style="text-align:left">federación de parlamentos de tribu</td>
+<td style="text-align:left">TK-63, TK-67</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D14</td>
+<td style="text-align:left"><strong>Sufragio</strong>: universal e igual; ¿voto obligatorio?; ¿censo?</td>
+<td style="text-align:left">Libro II &quot;Elecciones&quot; (302)</td>
+<td style="text-align:left">Universal e igual; elegible = inhabitant con ≥1 ciclo de antigüedad; karma nunca pesa</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">TK-32, TK-31</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D15</td>
+<td style="text-align:left"><strong>Cronología</strong>: mandatos, escalonamiento entre poderes; ¿caduca el Consejo de Legislación con la Cámara que lo eligió?</td>
+<td style="text-align:left">Caps. III–VI</td>
+<td style="text-align:left">Cámara 60 d, <strong>Consejo de Legislación 60 d ligado a su Cámara</strong> (las leyes aprobadas y no promulgadas al expirar las promulga el Consejo entrante, sin caducidad), Presidencia 60 d desfasada 30 d, Consejo de Justicia 120 d</td>
+<td style="text-align:left">todos coincidentes; Legislación 120 d independiente de la Cámara</td>
+<td style="text-align:left">TK-74, TK-G05</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D17</td>
+<td style="text-align:left"><strong>Lealtad del ciudadano</strong> (no solo del representante): qué le debe el inhabitant a la República; ¿tiene consecuencias codificables (elegibilidad, censo) o es solo virtud cívica?</td>
+<td style="text-align:left">Cap. I (340); Libro II &quot;Espíritu republicano&quot; (208)</td>
+<td style="text-align:left">Sin consecuencia codificable: la lealtad ciudadana es virtud, no dato. Solo se registra la del representante (G09). El sufragio nunca se condiciona a ella (D14)</td>
+<td style="text-align:left">(a) elegibilidad ligada a antigüedad/actividad (ya en D14); (b) karma como proxy (rechazado: RP-4)</td>
+<td style="text-align:left">TK-D14, TK-G09</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D18</td>
+<td style="text-align:left"><strong>Control de la Cámara sobre la Presidencia</strong> sin poder derribarla: interpelación, comisiones, rendición de cuentas de tesorería y claves de cadena</td>
+<td style="text-align:left">Cap. III (381), VI (442)</td>
+<td style="text-align:left">Presidencia publica <strong>informe firmado por ciclo</strong> (tesorería, actos chain-admin); cualquier representante puede <strong>interpelar</strong> con respuesta obligatoria en 7 d; la Cámara puede <strong>reprobar</strong> un acto (sin efecto sobre el cargo, con efecto de publicidad y de prueba para el Consejo de Justicia); <strong>sin moción de censura</strong></td>
+<td style="text-align:left">(a) comisión de investigación con acceso a claves de solo lectura; (b) reprobación bloquea la siguiente ejecución de tesorería</td>
+<td style="text-align:left">TK-G10, TK-D06</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D16</td>
+<td style="text-align:left">Rastreo de <strong>divulgación</strong> adicional (diariorc.com, mcrcalicante, Octavio Plaza &quot;extracto república&quot;, vídeos) y contraste con el libro</td>
+<td style="text-align:left">web</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">todas D</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="carril-g--gobernanza-republicana-rediseño-por-defecto">Carril G · Gobernanza republicana (rediseño por defecto)</h2>
+<p>Arquitectura por defecto (de D01–D15): <strong>mónadas → Cámara de Representantes Monádicos → Consejo de Legislación (promulga)</strong> · <strong>Presidente del Consejo de Gobierno (directo, ejecuta cadena y tesoro)</strong> · <strong>Consejo de Justicia (elegido por el mundo judicial)</strong> · <strong>Asamblea constituyente ad hoc</strong>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Tarea</th>
+<th style="text-align:left">Depende</th>
+<th style="text-align:left">Seam</th>
+<th style="text-align:left">T</th>
+<th style="text-align:left">P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TK-G01</td>
+<td style="text-align:left">Mónadas: asignación determinista de censo a colegios de tamaño M (<code>monad_model.js</code>), publicada como <code>monadAssignment {cycle, seedHash, M}</code>; <code>seedHash</code> fijo desde el ciclo fundacional (D01 default; alt. (d) lo rota), altas nuevas entran por el mismo hash</td>
+<td style="text-align:left">D01 (default)</td>
+<td style="text-align:left">nuevo modelo; <code>inhabitants_model.js</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-G02</td>
+<td style="text-align:left">Doble vuelta dentro del ciclo de 60 d (primera 1-30, segunda 31-60)</td>
+<td style="text-align:left">D04, G01</td>
+<td style="text-align:left">parliament_model.js:28 <code>termWindowFor</code>, <code>resolveElectionImpl</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-G03</td>
+<td style="text-align:left">Mandato imperativo: <code>mandate</code> firmado por candidato; vista de cotejo voto-mandato</td>
+<td style="text-align:left">D02</td>
+<td style="text-align:left">nuevo tipo; parliament_view.js</td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-G04</td>
+<td style="text-align:left">Revocación por deslealtad (RP-11): <code>recall</code> iniciado por la mónada, mayoría absoluta del censo de la mónada</td>
+<td style="text-align:left">D03, D08, G03</td>
+<td style="text-align:left">nuevo tipo; <code>parliamentTerm</code> por representante</td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-G05</td>
+<td style="text-align:left">Cámara + Consejo de Legislación: propuestas solo de representantes monádicos; <code>legislationPresidentElection</code> por la Cámara (absoluta) y <code>legislationCouncil</code> nombrado por el Presidente; promulgación = <code>parliamentLaw</code> con <code>lawId</code>, <code>promulgatedBy[]</code> (Presidente + Consejo) en ≤ 7 d; <code>lawReturn</code> (devolución motivada, una vez); promulgación tácita al vencer plazo; <code>enactApprovedChanges</code> deja de esperar al fin de mandato; <code>lawIndex</code> consolidado</td>
+<td style="text-align:left">D05, D15, G01</td>
+<td style="text-align:left"><code>canPropose</code> L1298, <code>enactApprovedChanges</code> L1102</td>
+<td style="text-align:left">L</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-G06</td>
+<td style="text-align:left">Presidencia del Consejo de Gobierno (RP-1 rediseñada): elección directa, ciclo desfasado, sin iniciativa legislativa ni veto; <code>governmentCouncil</code> nombrado (carteras); <strong>materia</strong> = claves chain-admin + tesorería multisig k-de-n (TK-84, TK-82) bajo <code>budgetLaw</code> del ciclo; <code>executiveOrder{lawId}</code> público e impugnable; <code>dissolutionAndResignation</code> (elecciones dobles en el ciclo siguiente)</td>
+<td style="text-align:left">D06, D15, D18</td>
+<td style="text-align:left">parliament_model.js; <code>faircoin3-admin</code>; banking_model.js (tesoro)</td>
+<td style="text-align:left">L</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-G07</td>
+<td style="text-align:left">Consejo de Justicia: <code>judgeAppointment</code> por el Consejo (requiere certificado <code>School</code> + antigüedad); electorado del Presidente = mundo judicial; <code>justiceCouncil</code> nombrado por el Presidente; <code>juryDraw</code> (sorteo verificable por caso, veredicto de jurado + orden de juez); <code>constitutionalChallenge</code> / <code>lawAnnulment</code> (21 d, suspensión cautelar); eliminar <code>POPULAR</code> y <code>DICTATOR</code> de los métodos</td>
+<td style="text-align:left">D07, D09, G10</td>
+<td style="text-align:left">courts_model.js <code>nominateJudge</code>/<code>voteNomination</code> L139-155, L368; school_model.js (lectura de certificados)</td>
+<td style="text-align:left">L</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-G08</td>
+<td style="text-align:left">Referéndum solo constituyente/ratificatorio; <code>Polls</code> sin fuerza</td>
+<td style="text-align:left">D10</td>
+<td style="text-align:left">polls_model.js (sin cambio), doc</td>
+<td style="text-align:left">S</td>
+<td style="text-align:left">M</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-G09</td>
+<td style="text-align:left">Lealtad medible: informe automático mandato vs votos por representante</td>
+<td style="text-align:left">D08, G03</td>
+<td style="text-align:left">vista</td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">M</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-G11</td>
+<td style="text-align:left">Constitución técnica (absorbe TK-25): <code>constitutionDraft</code> inicial de <strong>solo forma</strong> que el equipo del fork <em>propone</em> a la primera constituyente (TK-78), nunca impone; suite <code>test/constitutional.js</code> con los 5 criterios de D12 como prueba de aceptación de todo el carril G</td>
+<td style="text-align:left">D12, D09, G05, G06, G07, G01</td>
+<td style="text-align:left">nuevo doc + test; parliament_model.js:17-26</td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-G10</td>
+<td style="text-align:left">Control sin derribo: <code>executiveReport</code> firmado por ciclo; <code>interpellation</code> con plazo; <code>censureAct</code> (reprobación de acto, no de cargo); vista de cuentas en Parliament</td>
+<td style="text-align:left">D18, D05, G06</td>
+<td style="text-align:left">nuevos tipos; parliament_view.js; banking_model.js (lectura)</td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-75</td>
+<td style="text-align:left">RP-2 solo personas al legislativo</td>
+<td style="text-align:left">D11</td>
+<td style="text-align:left"><code>resolveTarget</code></td>
+<td style="text-align:left">S</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-31</td>
+<td style="text-align:left">RP-3 sorteo verificable en empates</td>
+<td style="text-align:left">D14</td>
+<td style="text-align:left">L408-437</td>
+<td style="text-align:left">S</td>
+<td style="text-align:left">M</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-32</td>
+<td style="text-align:left">RP-4 karma fuera de la política; eliminar KARMATOCRACY/DICTATORSHIP del menú; karma fuera del orden de candidaturas a juez</td>
+<td style="text-align:left">D14</td>
+<td style="text-align:left">banking_model.js:832-840, parliament_model.js:23, courts_model.js:805</td>
+<td style="text-align:left">M</td>
+<td style="text-align:left"><strong>C</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">TK-76</td>
+<td style="text-align:left">RP-5 quitar DICTATOR de Courts</td>
+<td style="text-align:left">D07</td>
+<td style="text-align:left">courts_model.js:139-155</td>
+<td style="text-align:left">S</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-33</td>
+<td style="text-align:left">RP-6 derogación con memoria</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">L1145-1147</td>
+<td style="text-align:left">S</td>
+<td style="text-align:left">M</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-77</td>
+<td style="text-align:left">RP-7 sentencias públicas</td>
+<td style="text-align:left">D07</td>
+<td style="text-align:left"><code>issueVerdict</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-34</td>
+<td style="text-align:left">RP-8 reformulada: <strong>iniciativa de mónada</strong> (10 % del censo de la mónada obliga a su representante a presentar la propuesta, vía mandato imperativo); la iniciativa popular directa al 10 % del censo general pasa a alternativa (divergente: D10, draftv1 #13)</td>
+<td style="text-align:left">D02, D05, G01</td>
+<td style="text-align:left"><code>canPropose</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-78</td>
+<td style="text-align:left">RP-9 asamblea constituyente ad hoc: <code>provisionalConstants</code> en génesis; <code>constituentCall</code> (25 % del censo) o 2× ANARCHY abren <code>constituentPeriod</code>; elección de asamblea por mónadas; <code>constitutionDraft</code> (80 %); <code>ratificationReferendum</code> (mayoría, quórum 50 %); constantes solo mutables desde el período; disolución al ratificar</td>
+<td style="text-align:left">D09, D07, G01, G02, G08</td>
+<td style="text-align:left">nuevo modelo <code>constituent_model.js</code>; parliament_model.js:17-26 (constantes), L373-393 (<code>virtualAnarchyTerm</code>)</td>
+<td style="text-align:left">L</td>
+<td style="text-align:left"><strong>H</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">TK-36</td>
+<td style="text-align:left">RP-10 transparencia del gobernante</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">larp_model.js:576 → parliament_view.js</td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-79</td>
+<td style="text-align:left"><code>kind</code> + payload en propuestas (CVN_ADMISSION, COIN_SUPPLY, BANKING_RULES)</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left"><code>createProposal</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-84</td>
+<td style="text-align:left">Materia del ejecutivo: mapa acción-admin ↔ ley promulgada; CLI rechaza sin <code>lawId</code></td>
+<td style="text-align:left">D06, TK-79</td>
+<td style="text-align:left"><code>faircoin3-admin</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-26</td>
+<td style="text-align:left">Re-auditoría contra los 14 elementos de draftv1 tras los parches</td>
+<td style="text-align:left">todas G</td>
+<td style="text-align:left">doc</td>
+<td style="text-align:left">S</td>
+<td style="text-align:left">H</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Nota de hilado:</em> RP-1 (TK-74 en el plan anterior) se <strong>absorbe</strong> en TK-G05+TK-G06; TK-74 queda como alias.</p>
+<h2 id="carril-c--cadena-faircoin3--sin-cambios-respecto-al-plan-anterior-tk-3949-tk-90-más">Carril C · Cadena Faircoin3 — sin cambios respecto al plan anterior (TK-39…49, TK-90), más:</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Tarea</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Alternativas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TK-C00</td>
+<td style="text-align:left">Clonar <code>faircoin/faircoin</code> en <code>vendor/faircoin</code> para citar fichero:línea</td>
+<td style="text-align:left">sí (80 MB más, ignorado por git)</td>
+<td style="text-align:left">citar solo en línea</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-48</td>
+<td style="text-align:left">Distribución (v1 TK-12)</td>
+<td style="text-align:left"><strong>A) emisión solo a tesoro multisig vía <code>addcoinsupply</code>, por ley promulgada</strong></td>
+<td style="text-align:left">B) snapshot UTXO Faircoin2; C) híbrido</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-49</td>
+<td style="text-align:left">Puente asamblea→cadena</td>
+<td style="text-align:left">admin = Presidencia (G06); doble voto tribu+general para CVN</td>
+<td style="text-align:left">solo Cámara</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="carril-b--banking-multi-moneda--tk-5060-sin-cambios-carril-f--tk-6167-carril-e--tk-6873">Carril B · Banking multi-moneda — TK-50…60 sin cambios. Carril F · TK-61…67. Carril E · TK-68…73.</h2>
+<p>(Tablas completas ya redactadas en la versión anterior del plan; se vuelcan tal cual en backlog.md con la columna &quot;depende&quot; enlazando a D/G donde aplica: TK-60→D10/TK-79; TK-63/67→D11/D13; TK-66→D06.)</p>
+<h2 id="carril-l--legal-marca-comunidad-proyecto">Carril L · Legal, marca, comunidad, proyecto</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Tarea</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Alternativas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TK-80</td>
+<td style="text-align:left">Nombre/marca</td>
+<td style="text-align:left">contactar a rasos (fair-coin.org) y usar &quot;Faircoin3&quot; si no hay objeción en 30 días</td>
+<td style="text-align:left">ticker nuevo desde ya</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-81</td>
+<td style="text-align:left">Licencias</td>
+<td style="text-align:left">daemon+CLI MIT; Oasis AGPL</td>
+<td style="text-align:left">—</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-82</td>
+<td style="text-align:left">Custodia</td>
+<td style="text-align:left">multisig + topes + &quot;moneda social&quot;</td>
+<td style="text-align:left">—</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-83</td>
+<td style="text-align:left">Comunicación / antiguos tenedores</td>
+<td style="text-align:left">tras TK-48</td>
+<td style="text-align:left">—</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-P01</td>
+<td style="text-align:left">Operadores iniciales: ¿cuántas personas/tribus para 3 CVN + 2 PUB?</td>
+<td style="text-align:left">3 CVN, 2 PUB, 1 explorador</td>
+<td style="text-align:left">—</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-P02</td>
+<td style="text-align:left">Ideología del fork (D12)</td>
+<td style="text-align:left">neutralizar manifiesto</td>
+<td style="text-align:left">conservar</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="mapa-de-carriles-para-backlog-2">Mapa de carriles (para backlog §2)</h2>
+<pre><code>D (doctrina) ──defaults──▶ G (gobernanza) ──G06/TK-84──▶ C (cadena: admin = ejecutivo)
+                                  │                          │
+                                  └──TK-79──▶ B (banking) ◀──┘ TK-47/50
+                                                  │
+                                                  ▼
+                                            F (federación) ──▶ E (economía real)
+L (legal/proyecto) corre en paralelo; TK-48 y TK-80 bloquean TK-90 (mainnet)
+</code></pre>
+<p>Sprints: 0 rescate (TK-39, 40, 41, 57, C00, 80, 48, D16) · 1 esqueleto andante (B) · 2 endurecer B · 3 testnet + puente (C) ∥ 3' G con defaults (D pendientes no bloquean: cada G declara su default) · 4 F · 5 E · 6 constitución (D12, TK-25) + mainnet.</p>
+<h2 id="verificación">Verificación</h2>
+<ol>
+<li>Script sobre <code>backlog.md</code>: IDs únicos (TK-01…90, TK-D01…16, TK-G01…09, TK-C00, TK-P01…02); cada &quot;depende&quot; existe; cada ruta <code>vendor/oasis/...</code> citada existe y la línea contiene el símbolo.</li>
+<li>Cada TK-D tiene las 5 columnas (buscar/dónde/default/alternativas/desbloquea) y cada &quot;desbloquea&quot; apunta a un ID existente; cada TK-G tiene al menos un D o &quot;—&quot;.</li>
+<li>Mapeos v1 (25) y v2 (13 + RP-10) presentes una vez; TK-74 marcado alias de G05/G06.</li>
+<li><code>pura.md</code> §5 → puntero; referencias internas intactas.</li>
+<li><code>git status</code>: solo <code>backlog.md</code> nuevo y <code>pura.md</code> modificado; <code>vendor/</code> ignorado.</li>
+</ol>
+
+</article>
+      <footer class="site-footer">
+<div class="provenance-footer">
+  <p class="provenance-footer-chain">
+    <a href="https://escrivivir.co">Escrivivir</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://escrivivir.co/2026/06/04/t04x06a-ficha-de-producto-scriptorium-skins-arg/">Scriptorium Skins</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span>Animus Iocandi</span>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Modelador de Redes</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span title="Frente Aleph de Resistencia Ontológica">F.A.R.O.</span>
+  </p>
+  <p class="provenance-footer-meta">
+    Material transmedia para agentes del juego ARG
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    v0.1.0
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    GPL-3.0-or-later · AIPLv1
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://github.com/alephscriptorium-eng/modelador-redes">Repositorio</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Inicio</a>
+  </p>
+</div>      </footer>
+    </main>
+  </div>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teoría Pura de la República · Modelización sobre SolarNET.HuB / OASIS — República Pura (Trevijano) sobre Oasis/SSB</title>
+<script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>  <link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="../../../index.html" class="brand">Modelador de Redes</a>
+      <p class="tag">República Pura (Trevijano) sobre Oasis/SSB · v0.1.0</p>
+      <nav aria-label="Modelo res_publica">
+        <a href="../index.html" class="">Estado</a>
+        <a href="../backlog.html" class="">Backlog</a>
+        <hr>
+        <p class="nav-h">Drafts</p>
+        <a href="../drafts/draftv2.html" class="">draftv2 <span class="badge badge-latest">latest</span></a>
+        <a href="../drafts/draftv1.html" class="">draftv1</a>
+        <a href="../drafts/draftv0.html" class="active">draftv0</a>
+        <a href="../drafts/draft.html" class="">draft</a>
+        <hr>
+        <p class="nav-h">Revisión</p>
+        <a href="../revision/01-lealtad.html" class="" title="01-lealtad">01-lealtad</a>
+        <a href="../revision/02-monada.html" class="" title="02-monada">02-monada</a>
+        <a href="../revision/03-camara.html" class="" title="03-camara">03-camara</a>
+        <a href="../revision/04-legislacion.html" class="" title="04-legislacion">04-legislacion</a>
+        <a href="../revision/05-justicia.html" class="" title="05-justicia">05-justicia</a>
+        <a href="../revision/06-gobierno.html" class="" title="06-gobierno">06-gobierno</a>
+        <a href="../revision/07-constituyente.html" class="" title="07-constituyente">07-constituyente</a>
+        <a href="../revision/08-republica.html" class="" title="08-republica">08-republica</a>
+        <hr>
+        <p class="nav-h">Descargas</p>
+        <a href="../downloads/res_publica-drafts.zip">drafts.zip</a>
+        <a href="../downloads/res_publica-revision.zip">revision.zip</a>
+        <a href="../downloads/res_publica-todo.zip">todo.zip</a>
+        <a href="../backlog.json">backlog.json</a>
+        <hr>
+        <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/res_publica" class="nav-external">GitHub ↗</a>
+        <a href="../../../index.html" class="nav-external">Catálogo ↗</a>
+        <a href="../../../foss/index.html" class="nav-external">Artefacto (FOSS) ↗</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
+    </aside>
+    <main>
+<div class="doc-head">
+  <h1>Teoría Pura de la República · Modelización sobre SolarNET.HuB / OASIS
+<span class="badge">draft</span>  </h1>
+<p class="doc-links">
+  <a href="https://github.com/alephscriptorium-eng/modelador-redes/blob/main/modelos/res_publica/drafts/draftv0.md" class="ext">Ver en GitHub ↗</a>
+  <a href="https://raw.githubusercontent.com/alephscriptorium-eng/modelador-redes/main/modelos/res_publica/drafts/draftv0.md" class="ext">raw ↗</a>
+<a href="../downloads/res_publica-drafts.zip">zip</a><code>draftv0.md</code></p>
+</div>
+<nav class="toc" aria-label="Contenido">
+  <p>Contenido</p>
+  <ul>
+<li class="n2"><a href="#0-qué-cambia-respecto-de-la-v1">0. Qué cambia respecto de la v1</a></li><li class="n2"><a href="#1-estado-del-arte-verificado">1. Estado del arte verificado</a></li><li class="n3"><a href="#11-oasis-107">1.1 OASIS 1.0.7</a></li><li class="n3"><a href="#12-la-capa-económica-acta-de-defunción-de-faircoin">1.2 La capa económica: acta de defunción de Faircoin</a></li><li class="n3"><a href="#13-el-corpus-trevijanista-recordatorio-operativo">1.3 El corpus trevijanista (recordatorio operativo)</a></li><li class="n2"><a href="#2-anatomía-institucional-de-oasis-lo-que-el-código-hace-de-verdad">2. Anatomía institucional de OASIS (lo que el código hace de verdad)</a></li><li class="n3"><a href="#21-parliament--parliament_modeljs--1615-líneas">2.1 Parliament — parliament_model.js · 1.615 líneas</a></li><li class="n3"><a href="#22-courts--courts_modeljs--961-líneas">2.2 Courts — courts_model.js · 961 líneas</a></li><li class="n3"><a href="#23-banking-karma-y-ecoin--banking_modeljs--1479-líneas">2.3 Banking, karma y ECOin — banking_model.js · 1.479 líneas</a></li><li class="n3"><a href="#24-larp--larp_modeljs--953-líneas">2.4 L.A.R.P. — larp_model.js · 953 líneas</a></li><li class="n3"><a href="#25-lo-demás-en-una-línea">2.5 Lo demás, en una línea</a></li><li class="n2"><a href="#3-confrontación-los-siete-criterios-contra-el-código">3. Confrontación: los siete criterios contra el código</a></li><li class="n3"><a href="#a-la-fusión-de-poderes-es-una-feature">A. La fusión de poderes es una feature</a></li><li class="n3"><a href="#b-la-tribu-es-el-partido">B. La tribu es el partido</a></li><li class="n3"><a href="#c-el-karma-renta-y-poder-en-un-solo-escalar">C. El karma: renta y poder en un solo escalar</a></li><li class="n3"><a href="#d-la-ley-que-nace-muerta-y-el-olvido-como-derogación">D. La ley que nace muerta y el olvido como derogación</a></li><li class="n3"><a href="#e-la-justicia-secreta">E. La justicia secreta</a></li><li class="n3"><a href="#f-la-anarquía-calculada-donde-el-sistema-es-mejor-de-lo-que-pretende">F. La anarquía calculada (donde el sistema es mejor de lo que pretende)</a></li><li class="n3"><a href="#g-el-turno-como-forma-de-estado-larp">G. El turno como forma de Estado (L.A.R.P.)</a></li><li class="n2"><a href="#4-especificación-rp-oasis-la-bifurcación-republicana">4. Especificación RP-OASIS: la bifurcación republicana</a></li><li class="n2"><a href="#5-backlog-v2">5. Backlog v2</a></li><li class="n3"><a href="#op-01--infraestructura-de-red-y-comunicación-soberana">OP-01 · Infraestructura de red y comunicación soberana</a></li><li class="n3"><a href="#op-02--capa-económica-faircoin--ecoin--banking">OP-02 · Capa económica (Faircoin) → ECOin + Banking</a></li><li class="n3"><a href="#op-03--gobernanza-y-separación-de-poderes--auditoría-y-bifurcación">OP-03 · Gobernanza y separación de poderes → auditoría y bifurcación</a></li><li class="n3"><a href="#op-04--soberanía-y-autogestión">OP-04 · Soberanía y autogestión</a></li><li class="n3"><a href="#op-05--integración">OP-05 · Integración</a></li><li class="n3"><a href="#op-06--nueva-la-capa-larp-como-laboratorio-constitucional">OP-06 · Nueva: la capa L.A.R.P. como laboratorio constitucional</a></li><li class="n3"><a href="#resumen-de-prioridades-v2">Resumen de prioridades v2</a></li><li class="n2"><a href="#6-fuentes">6. Fuentes</a></li><li class="n2"><a href="#7-anexo--documento-v1-2025-conservado-íntegro">7. Anexo · Documento v1 (2025, conservado íntegro)</a></li><li class="n2"><a href="#1-prompt-de-activación-para-el-agente">1. PROMPT DE ACTIVACIÓN PARA EL AGENTE</a></li><li class="n2"><a href="#2-backlog-de-tareas-scrum-opportunity--task">2. BACKLOG DE TAREAS SCRUM (OPPORTUNITY + TASK)</a></li><li class="n3"><a href="#epic-modelización-de-la-república-pura-trevijano-con-solarnethub--faircoin">EPIC: Modelización de la República Pura (Trevijano) con SolarNET.HuB + Faircoin</a></li><li class="n3"><a href="#resumen-de-prioridades">Resumen de Prioridades</a></li><li class="n3"><a href="#-nota-para-el-agente">📌 Nota para el agente</a></li>  </ul>
+</nav>
+<article class="md">
+<h1>Teoría Pura de la República · Modelización sobre SolarNET.HuB / OASIS</h1>
+<p><strong>Revisión 2 — 2026-09-09.</strong> La v1 de este documento (backlog Scrum SNH + Faircoin) se conserva íntegra en la §7. Esta revisión la corrige y la amplía tras auditar el código real.</p>
+<hr />
+<h2 id="0-qué-cambia-respecto-de-la-v1">0. Qué cambia respecto de la v1</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Hallazgo</th>
+<th style="text-align:left">Consecuencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left"><strong>Oasis ya no es un cliente de SSB: es un Estado completo en software.</strong> Implementa Parlamento, Tribunales, Banca central con RBU, Industria, Escuela y una capa de rol (L.A.R.P.) con 9 casas.</td>
+<td style="text-align:left">La v1 pedía <em>diseñar</em> la gobernanza (TK-05, TK-13…). Ya está diseñada, y con decisiones tomadas. La tarea real es <strong>auditarla y bifurcarla</strong>, no inventarla.</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><strong>La capa Faircoin está muerta.</strong> El repositorio <code>faircoin/faircoin</code> no recibe un commit desde el <strong>2022-02-05</strong>: cuatro años y medio de silencio.</td>
+<td style="text-align:left">OP-02 entera (TK-07…TK-12) queda inoperativa. La sustituye <strong>ECOin</strong> + el módulo <code>Banking</code> nativo.</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><strong>Karma es a la vez peso político y peso económico.</strong> El mismo escalar desempata elecciones, decide leyes bajo KARMATOCRACY y pondera el reparto de la Renta Básica.</td>
+<td style="text-align:left">Es el hallazgo estructural más grave del informe: una fusión de poderes que ninguna separación posterior puede reparar. Ver §3.C.</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">El modelo trevijanista y el modelo Oasis <strong>coinciden en un punto inesperado</strong>: la ausencia de gobierno es el estado por defecto y se calcula, no se decide.</td>
+<td style="text-align:left">Ver §3.F — la anarquía virtual como período constituyente permanente.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Metodología.</strong> Todo lo que aquí se afirma sobre Oasis está verificado contra el código fuente, no contra su documentación ni su propaganda. El árbol auditado está en <code>vendor/oasis</code> (ignorado por git; clónalo con <code>git clone --depth 1 https://github.com/epsylon/oasis.git</code>). Commit auditado: <strong><code>9a657b7</code>, &quot;Oasis release 1.0.7&quot;, 2026-09-08</strong>. Cuando cito la web y no el disco, lo digo. Cuando afirmo doctrina trevijanista sin cita literal, lo marco como <strong>[doctrina, sin verbatim]</strong>.</p>
+<hr />
+<h2 id="1-estado-del-arte-verificado">1. Estado del arte verificado</h2>
+<h3 id="11-oasis-107">1.1 OASIS 1.0.7</h3>
+<ul>
+<li>Paquete <code>@krakenslab/oasis</code> v1.0.7, licencia <strong>AGPL-3.0</strong>, autor <code>psy &lt;epsylon@riseup.net&gt;</code>, espejo en <code>code.03c8.net</code>.</li>
+<li>Node.js + HTML5 + CSS. <strong>Cero JavaScript en el navegador</strong>: toda interacción es <code>&lt;form&gt;</code> y POST. Consecuencia política, no estética: no hay superficie para telemetría de cliente ni para lógica oculta al usuario.</li>
+<li>Frontend <code>hyperaxe</code> (constructores de DOM en servidor), Koa + Express, <code>ssb-*</code> clásico, <code>epidemic-broadcast-trees</code> para el gossip.</li>
+<li><strong>~70 modelos y ~68 vistas</strong> en <a href="https://github.com/epsylon/oasis/tree/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/">src/models/</a> y <a href="https://github.com/epsylon/oasis/tree/9a657b776fcafc7c24bf3ad61825316385ecf513/src/views/">src/views/</a>. La lista de módulos del README es fiel al árbol.</li>
+<li>Novedades recientes relevantes: <code>Industry</code> (medios de producción colectivos), <code>School</code> (certificados), <code>Multiverse</code> (puentes a Mastodon y Telegram sin escribir contenido de terceros en el log SSB), IA local &quot;42&quot; vía <code>node-llama-cpp</code> + <code>@xenova/transformers</code>, y huella de carbono medida por inhabitante.</li>
+<li>19 estrellas en GitHub. Esto no es una red social: es una <strong>maqueta institucional a escala 1:1</strong> con una población del tamaño de una asamblea de barrio. Conviene tenerlo presente antes de extraer conclusiones sobre &quot;democracia digital&quot;.</li>
+</ul>
+<h3 id="12-la-capa-económica-acta-de-defunción-de-faircoin">1.2 La capa económica: acta de defunción de Faircoin</h3>
+<p>La v1 apostaba el eje económico entero a Faircoin. Estado real, verificado vía API de GitHub el 2026-09-09:</p>
+<ul>
+<li><code>faircoin/faircoin</code>: último push <strong>2022-02-05</strong>. Sin archivar, sin mantener. Los últimos commits son documentación del <em>Fasito</em> (el token de firma de los CVN) y actas de una reunión de febrero de 2022.</li>
+<li>El white paper y las FAQ siguen en línea y siguen sin fecha: la última referencia temporal del FAQ es <em>&quot;in 2021 the governance is being transferred to the fair ecosystem group&quot;</em>. No hay comunicado de cierre. Tampoco hay señales de vida.</li>
+<li>Sobre la disolución formal de FairCoop no encuentro fuente concluyente; la literatura académica de 2023-2025 lo sigue tratando en presente. <strong>Probabilidad alta de proyecto de facto abandonado, certeza baja sobre su estatus jurídico.</strong> No lo afirmo: lo dejo como está para que se valide por cuenta propia.</li>
+</ul>
+<p>Lo que sí está vivo, y es lo que Oasis usa de verdad:</p>
+<ul>
+<li><strong>ECOin</strong> (<code>ecoin.03c8.net</code>), lanzada en 2014, <strong>v0.0.4 de febrero de 2026</strong>. Consenso híbrido: PoW (scrypt, halving cada 262.800 bloques) + PoS (interés por antigüedad de moneda) + <strong>PoT (Proof-of-Transaction</strong>: transacciones de más de 500 ECO capturan el 50% del subsidio de bloque por emparejamiento de hash). Coinbase estimado ~225 M ECO. Wallet Android v0.7.5.7.</li>
+<li>El módulo <strong><code>Banking</code></strong> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js">banking_model.js</a>), que no es un puente a un banco: <strong>es el banco</strong>. Calcula el valor de ECOin, mantiene un tesoro común y reparte una Renta Básica por épocas.</li>
+</ul>
+<blockquote>
+<p>Nota fría sobre PoT: premiar con la mitad del subsidio de bloque a quien mueve más de 500 ECO es, textualmente, un mecanismo de concentración. Es la única pieza del ecosistema cuyo diseño incentiva la acumulación. En un modelo que se reclama republicano conviene tenerla fichada.</p>
+</blockquote>
+<h3 id="13-el-corpus-trevijanista-recordatorio-operativo">1.3 El corpus trevijanista (recordatorio operativo)</h3>
+<p>Antonio García-Trevijano (1927-2018), fundador y presidente del <strong>MCRC</strong> (Movimiento de Ciudadanos hacia la República Constitucional, <strong>2006</strong>), asociación civil, prepolítica, que no concurre a elecciones y que se define como disoluble el día en que se abra la libertad constitucional. Obra de referencia: <em>Teoría Pura de la República</em> en tres volúmenes (<em>Sentido de la Revolución Francesa</em>, <em>El factor republicano</em>, <em>Teoría pura de la República Constitucional</em>) y <em>Teoría pura de la democracia</em>.</p>
+<p>Núcleo doctrinal utilizable como criterio de auditoría <strong>[doctrina, sin verbatim]</strong>:</p>
+<ol>
+<li><strong>Democracia formal, no material.</strong> La democracia es un <em>procedimiento</em> de constitución del poder, no un contenido ni un programa. Un sistema es democrático por cómo se origina el poder, no por lo que hace con él.</li>
+<li><strong>Separación de poderes en el origen.</strong> No basta que legislativo y ejecutivo se controlen: deben <strong>nacer de elecciones distintas</strong>. Si una sola votación produce ambos, no hay separación, hay reparto.</li>
+<li><strong>Representación auténtica.</strong> Distrito uninominal, candidatura personal, responsabilidad personal ante el elector. La lista de partido rompe el vínculo representativo: el diputado responde ante quien lo colocó en la lista, no ante quien lo votó.</li>
+<li><strong>Estado de partidos ≠ Estado de derecho.</strong> La partitocracia es un régimen oligárquico que se legitima por sufragio pero no representa.</li>
+<li><strong>Libertad política colectiva</strong> como bien distinto de las libertades individuales. Se puede ser individualmente libre en un pueblo políticamente esclavo.</li>
+<li><strong>La República es forma de Estado, no ideología.</strong> No es de izquierdas ni de derechas; es la alternativa a la monarquía y a la partitocracia.</li>
+<li><strong>Libertad constituyente primero, Constitución después.</strong> Sin un período de libertad constituyente previo, toda constitución es un pacto entre poderes constituidos.</li>
+</ol>
+<p>Con estos siete criterios se puede auditar cualquier institución. Los aplico al código en la §3.</p>
+<hr />
+<h2 id="2-anatomía-institucional-de-oasis-lo-que-el-código-hace-de-verdad">2. Anatomía institucional de OASIS (lo que el código hace de verdad)</h2>
+<h3 id="21-parliament--parliament_modeljs--1615-líneas">2.1 Parliament — <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js">parliament_model.js</a> · 1.615 líneas</h3>
+<p><strong>Constantes constitucionales</strong> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L17-L26">líneas 17-26</a>):</p>
+<pre><code>TERM_DAYS       = 60      // mandato
+PROPOSAL_DAYS   = 7       // vida de una proposición
+REVOCATION_DAYS = 15      // vida de una revocación
+PROPOSAL_QUORUM = 2       // suelo absoluto de quórum
+QUORUM_RATIO    = 0.25    // 25% del censo
+TERM_EPOCH      = 2020-01-01T00:00:00Z
+</code></pre>
+<p>Los mandatos <strong>no empiezan cuando alguien gana</strong>: se derivan de una época fija por aritmética modular (<code>termWindowFor</code>, <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L28-L38">L28-38</a>). Toda la red comparte el mismo calendario de ciclos de 60 días desde el 1 de enero de 2020, sin coordinación ni autoridad. Es un calendario litúrgico calculado. Elegante y, políticamente, importante: <strong>nadie puede convocar ni aplazar elecciones</strong>.</p>
+<p><strong>Métodos de gobierno</strong> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L22-L23">L22-23</a>): <code>DEMOCRACY</code>, <code>MAJORITY</code>, <code>MINORITY</code>, <code>DICTATORSHIP</code>, <code>KARMATOCRACY</code>, más <code>ANARCHY</code> como estado por defecto. El método <strong>no lo elige la red: lo elige el candidato al presentarse</strong>. Se vota una persona <em>y su forma de Estado</em> en la misma papeleta.</p>
+<p><strong>Umbrales</strong> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L240-L242">L240-242</a>):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Método</th>
+<th style="text-align:left">Umbral de aprobación</th>
+<th style="text-align:left">Lectura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">DEMOCRACY / ANARCHY</td>
+<td style="text-align:left"><code>floor(total/2)+1</code></td>
+<td style="text-align:left">mayoría simple de votantes</td>
+</tr>
+<tr>
+<td style="text-align:left">MAJORITY</td>
+<td style="text-align:left"><code>ceil(total*0.8)</code></td>
+<td style="text-align:left">supermayoría del 80%</td>
+</tr>
+<tr>
+<td style="text-align:left">MINORITY</td>
+<td style="text-align:left"><code>ceil(total*0.2)</code></td>
+<td style="text-align:left"><strong>el 20% legisla</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">DICTATORSHIP</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">no se abre votación: aprobado al vencer el plazo</td>
+</tr>
+<tr>
+<td style="text-align:left">KARMATOCRACY</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">gana la propuesta del proponente con más karma; el resto, <code>REJECTED</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Quórum: <code>max(2, ceil(censo * 0.25))</code>, donde el censo son todos los inhabitants con actividad (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L257-L260">L257-260</a>).</p>
+<p><strong>Elecciones.</strong> Cualquiera propone hasta 3 candidaturas por ciclo; cada inhabitant emite <strong>un único voto por ciclo</strong> entre todas las candidaturas abiertas (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L744-L761">L744-761</a>); no se puede votar a uno mismo. El candidato puede ser <strong>un inhabitant o una tribu</strong>.</p>
+<p>Cascada de desempate (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L408-L437">L408-437</a>): votos → <strong>karma</strong> → antigüedad del perfil → primera candidatura publicada → orden lexicográfico del feed ID. Determinista y auditable; también, en su segundo escalón, censitaria.</p>
+<p><strong>Quién legisla</strong> (<code>canPropose</code>, <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L1298">L1298</a>): bajo ANARCHY, todos. Con gobierno de inhabitant, <strong>solo él</strong>. Con gobierno de tribu, <strong>cualquier miembro de la tribu</strong>. El resto del censo no tiene iniciativa legislativa: solo vota lo que el poder propone (y ni eso bajo DICTATORSHIP o KARMATOCRACY).</p>
+<p><strong>Ciclo de vida de una ley.</strong> Proposición (<code>parliamentProposal</code>, 7 días, máx. 3 por mandato y persona) → votación asociada (<code>votes</code>) → <code>APPROVED</code>/<code>REJECTED</code> → y aquí lo notable: <strong>la ley no nace hasta que el gobierno muere</strong>. <code>enactApprovedChanges</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L1102">L1102</a>) se ejecuta al detectar el mandato expirado, revalida el umbral y solo entonces publica el <code>parliamentLaw</code>. El gobierno saliente legisla en el acto de expirar.</p>
+<p><strong>Revocación</strong> (<code>parliamentRevocation</code>, 15 días): revoca <strong>leyes</strong>, no mandatos. No existe revocatoria del cargo. Y su ejecución es un <code>tombstone</code> sobre el mensaje de la ley (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L1145-L1147">L1145-1147</a>) — es decir, la ley derogada <strong>desaparece de la interfaz</strong>. Matiz técnico que importa: SSB es un log de solo-anexado, el mensaje original sigue existiendo en cada réplica; el tombstone es una convención de cliente (<code>buildValidatedTombstoneSet</code>). La memoria no se destruye: se deja de mostrar. La distinción entre &quot;derogar&quot; y &quot;hacer invisible&quot; queda, hoy, del lado del cliente.</p>
+<p><strong>Parlamento de segundo nivel.</strong> Cada tribu tiene su propio ciclo de 60 días (<code>tribeParliamentTerm</code>, <code>tribeParliamentCandidature</code>, <code>tribeParliamentRule</code>, <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L1354-L1445">L1354-1445</a>), con quórum <code>max(2, ceil(miembros*0.25))</code> y ANARCHY por defecto. Federalismo real: hay tantos parlamentos como tribus, más uno general.</p>
+<h3 id="22-courts--courts_modeljs--961-líneas">2.2 Courts — <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js">courts_model.js</a> · 961 líneas</h3>
+<p>Plazos procesales fijos: <strong>contestación 7 días, prueba 14, resolución 21</strong>; voto popular 14 (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L8-L11">L8-11</a>).</p>
+<p>Cinco métodos de resolución (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L139">L139</a>): <code>JUDGE</code>, <code>MEDIATION</code>, <code>POPULAR</code>, <code>KARMATOCRACY</code>, <code>DICTATOR</code>.</p>
+<ul>
+<li><strong>Jueces electos</strong>: <code>courtsNomination</code> + <code>courtsNominationVote</code>. La judicatura se provee por elección, no por nombramiento — aunque el orden de las candidaturas se resuelve por apoyos y, en empate, por <strong>karma</strong> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L805">L805</a>).</li>
+<li><code>POPULAR</code> y <code>KARMATOCRACY</code> se resuelven ambos por <strong>votación pública de 14 días</strong> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L368">L368</a>, <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L694">L694</a>); en Tribunales, a diferencia del Parlamento, el karma no dicta sentencia.</li>
+<li><strong><code>DICTATOR</code> exige que el gobierno vigente sea <code>DICTATORSHIP</code></strong> y asigna como juez al inhabitant que gobierna (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L140-L155">L140-155</a>). El código lo verifica explícitamente contra <code>parliament.getGovernmentCard()</code>. Es decir: <strong>la fusión de poderes está implementada como una comprobación de integridad</strong>. No es un fallo; es una función.</li>
+<li><strong>Instrucción cifrada por defecto</strong>: título, acusador, acusado y mediadores viajan cifrados campo a campo con una clave por caso, distribuida solo al demandado (y al dictador, si lo hay). La publicidad del proceso es opt-in (<code>courtsVisibility</code>, <code>setPublicPreference</code>).</li>
+<li>Una parte no puede dictar veredicto sobre su propio caso; la validez del veredicto se comprueba contra el método (<code>verdictValid</code>, <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L361-L366">L361-366</a>).</li>
+</ul>
+<h3 id="23-banking-karma-y-ecoin--banking_modeljs--1479-líneas">2.3 Banking, karma y ECOin — <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js">banking_model.js</a> · 1.479 líneas</h3>
+<p><strong>Reglas de la Renta Básica</strong> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L14-L21">L14-21</a>): épocas mensuales, <code>alpha 0.2</code>, reserva mínima 500, tope por época 2.000, tope por usuario y época 50, suelo por usuario 1, pesos acotados entre 0,2 y 6, gracia de 30 días. El reparto es <strong>ponderado por karma</strong> dentro de esos topes.</p>
+<p><strong>Cómo se calcula el karma</strong> (<code>scoreFromActions</code>, <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L525-L607">L525-607</a>). Es un baremo de puntos por acto publicado, con decaimiento temporal (×1 hasta 30 días, ×0,5 hasta 90, ×0,25 después). Extracto significativo:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Acto</th>
+<th style="text-align:right">Puntos</th>
+<th style="text-align:left">Acto</th>
+<th style="text-align:right">Puntos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>parliamentTerm</code> (ganar el gobierno)</td>
+<td style="text-align:right"><strong>25</strong></td>
+<td style="text-align:left"><code>larpJoinHouse</code></td>
+<td style="text-align:right">15</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>parliamentLaw</code></td>
+<td style="text-align:right">16</td>
+<td style="text-align:left"><code>video</code></td>
+<td style="text-align:right">12</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>parliamentCandidature</code></td>
+<td style="text-align:right">12</td>
+<td style="text-align:left"><code>schoolCertificate</code></td>
+<td style="text-align:right">12</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>courtsVerdict</code></td>
+<td style="text-align:right">10</td>
+<td style="text-align:left"><code>post</code></td>
+<td style="text-align:right">10</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>parliamentRevocation</code></td>
+<td style="text-align:right">10</td>
+<td style="text-align:left"><code>comment</code></td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>industryAllocation</code></td>
+<td style="text-align:right">10</td>
+<td style="text-align:left"><code>like</code></td>
+<td style="text-align:right">2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Y el remate (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L840">L840</a>):</p>
+<pre><code class="language-js">const karmaScore = Math.max(0, Math.round(rawKarma - carbonGrams));
+</code></pre>
+<p><strong>La huella de carbono se resta del karma.</strong> Y el carbono se computa por bytes del propio feed: <code>0,095 g CO₂ por MiB</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L35">L35</a>), con un impuesto de <code>0,1 ECOin por gramo</code>. Quien más publica, más pesa; quien más pesa, más contamina; quien más contamina, menos cobra y menos desempata. Hay una teoría política entera comprimida en esa línea de código, y no es la de Trevijano.</p>
+<h3 id="24-larp--larp_modeljs--953-líneas">2.4 L.A.R.P. — <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/larp_model.js">larp_model.js</a> · 953 líneas</h3>
+<p>Nueve casas: <strong>ACADEMIA</strong> (donde todos entran) más <strong>SolarIS</strong> (gobierno, ley, diplomacia), <strong>ARRakis</strong> (ingeniería), <strong>TERRA.VErDE</strong> (salud, alimento, ecología), <strong>UNSYSTem</strong> (caos táctico), <strong>DogmA</strong> (conocimiento, información, IA), <strong>HeliX</strong> (cultura, humor, rito), <strong>QuarK</strong> (seguridad, defensa), <strong>HERmanDAD</strong> (construcción, logística, producción).</p>
+<p>Mecánica verificada:</p>
+<ul>
+<li><strong>La casa gobernante se determina por el mes del calendario</strong>: <code>HOUSE_KEYS[now.getMonth() % 9]</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/larp_model.js#L164-L166">L164-166</a>). No hay elección, ni sorteo, ni mérito. Hay <strong>turno</strong>. La wiki lo confirma: <em>&quot;no traditional elections occur — governance derives from this predetermined cyclical succession&quot;</em>.</li>
+<li>Nueve casas y doce meses: el ciclo <strong>no cierra con el año</strong>. La rotación se desfasa cada enero. Probablemente no es intencionado; políticamente es lo más interesante del mecanismo, porque impide que ninguna casa capture nunca el mismo mes.</li>
+<li><strong>Adscripción por test</strong>: 10 preguntas con pesos por casa (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/larp_model.js#L14-L136">L14-136</a>), reintento con <strong>30 días de enfriamiento</strong>. El resultado se pondera además por el número de miembros de cada casa (compensación de tamaño). Es un Sorting Hat con corrección demográfica.</li>
+<li><strong>Los muros son secretos salvo dos excepciones</strong> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/larp_model.js#L576"><code>wallIsPublic</code></a>): ACADEMIA, y <strong>la casa que gobierna ese mes</strong>. Gobernar cuesta transparencia. Es la única implementación de <em>publicidad del poder</em> que hay en todo el sistema, y está en la capa que se declara &quot;juego&quot;.</li>
+<li>Las casas son tribus reales etiquetadas <code>larp-&lt;Casa&gt;</code>, con auto-invitaciones y claves de tribu. La ficción se ejecuta sobre las mismas primitivas que lo &quot;serio&quot;.</li>
+<li>Calendario propio: <code>día.solsticio.edad_solar.casa.ciclo</code>, con <code>SOLAR_AGE_OFFSET = 10000000 - 2026</code> — el año 2026 es el año <strong>10.000.000</strong>. Datación de civilización larga.</li>
+</ul>
+<h3 id="25-lo-demás-en-una-línea">2.5 Lo demás, en una línea</h3>
+<p><code>Industry</code> (medios de producción con propiedad y voto de sus miembros), <code>School</code> (cursos, exámenes, certificados con karma), <code>Tribes</code> (grupos cifrados, invitación estricta o abierta, anidables), <code>Market</code>/<code>Shops</code>/<code>Projects</code> (economía real en ECOin), <code>Opinions</code>/<code>Polls</code>/<code>Votes</code> (opinión y consulta, mínimo 7 días de votación), <code>Blockchain</code>/<code>Melody</code> (explorar y <em>sonificar</em> el log), <code>AI 42</code> (LLM local entrenado con el contenido de la red), <code>Multiverse</code> (puentes a Mastodon y Telegram sin persistir contenido ajeno).</p>
+<hr />
+<h2 id="3-confrontación-los-siete-criterios-contra-el-código">3. Confrontación: los siete criterios contra el código</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Criterio trevijanista</th>
+<th style="text-align:left">Estado en Oasis 1.0.7</th>
+<th style="text-align:left">Veredicto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">Democracia <strong>formal</strong>, procedimiento antes que contenido</td>
+<td style="text-align:left">El procedimiento está codificado, es público, auditable y ejecutable. Nadie puede alterar plazos ni quórums sin bifurcar el software.</td>
+<td style="text-align:left">✅ <strong>Cumple</strong>, y con una literalidad que ninguna constitución en papel alcanza</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><strong>Separación de poderes en el origen</strong></td>
+<td style="text-align:left">Una sola votación produce el único poder. Bajo <code>DICTATORSHIP</code>, el mismo sujeto legisla y juzga, y el código lo comprueba. No existe ejecutivo separado.</td>
+<td style="text-align:left">❌ <strong>Falla en la raíz</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">Representación auténtica, distrito uninominal</td>
+<td style="text-align:left">Las <strong>tribus pueden ser candidatas</strong>; ganar una tribu otorga iniciativa legislativa a todos sus miembros. Es una lista de partido con otro nombre.</td>
+<td style="text-align:left">❌ <strong>Falla</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">Estado de partidos ≠ Estado de derecho</td>
+<td style="text-align:left">La tribu es el partido. Además concentra las claves de cifrado, las invitaciones y ahora el poder legislativo.</td>
+<td style="text-align:left">❌ <strong>Reproduce la partitocracia</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">Libertad política colectiva</td>
+<td style="text-align:left">Existe la salida (<code>publishLeaveLarp</code>, salir de una tribu, correr el propio nodo) pero la <strong>voz</strong> está racionada: 3 propuestas por mandato, y solo para quien gobierna.</td>
+<td style="text-align:left">⚠️ <strong>Parcial</strong>: mucha libertad de salida, poca libertad política</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">La República como forma, no ideología</td>
+<td style="text-align:left">El sistema es <strong>agnóstico de forma</strong>: ofrece democracia, dictadura, karmatocracia y anarquía como opciones de menú.</td>
+<td style="text-align:left">⚠️ <strong>Ortogonal</strong>: no es una república, es un <em>selector</em> de regímenes</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">Libertad constituyente previa</td>
+<td style="text-align:left">El estado por defecto es ANARCHY, y en ANARCHY <strong>todos pueden proponer</strong>. La libertad constituyente no es un momento fundacional: es la línea base a la que el sistema retorna cada 60 días si nadie alcanza quórum.</td>
+<td style="text-align:left">✅ <strong>Cumple, y por una vía que Trevijano no previó</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="a-la-fusión-de-poderes-es-una-feature">A. La fusión de poderes es una <em>feature</em></h3>
+<p><code>courts_model.js</code> verifica que el gobierno sea <code>DICTATORSHIP</code> <strong>antes de permitir</strong> que el gobernante juzgue. Un sistema que valida la concentración de poderes como precondición de una función no tiene un problema de diseño: tiene una doctrina. Es coherente consigo mismo y es exactamente lo que la Teoría Pura combate.</p>
+<h3 id="b-la-tribu-es-el-partido">B. La tribu es el partido</h3>
+<p>Los criterios trevijanistas 3 y 4 caen juntos. <code>canPropose()</code> devuelve <code>true</code> para <strong>todo miembro</strong> de la tribu gobernante. El vínculo representativo no va del elector al representante, sino del elector a la organización. Quien vota a una tribu no sabe quién legislará en su nombre — se lo dirán después, o no.</p>
+<h3 id="c-el-karma-renta-y-poder-en-un-solo-escalar">C. El karma: renta y poder en un solo escalar</h3>
+<p>Este es el hallazgo central.</p>
+<pre><code>karma  →  desempate electoral        (parliament_model.js:422)
+karma  →  quién legisla bajo KARMATOCRACY (parliament_model.js:560-588)
+karma  →  orden y desempate de las candidaturas a juez (courts_model.js:805)
+karma  →  cuánta Renta Básica cobras      (banking_model.js:938-958)
+</code></pre>
+<p>Un mismo número decide tu peso político y tu ingreso. En términos trevijanistas esto no es una separación de poderes imperfecta: <strong>es la abolición del problema</strong>, porque no hay dos fuentes que separar. Y como el karma se acumula por publicar, el sistema tiene un nombre clásico: <strong>sufragio censitario</strong>, donde el censo ya no es la renta ni la propiedad sino la actividad. La aristocracia de la notoriedad, con métrica pública y decaimiento exponencial.</p>
+<p>El agravante técnico: el karma <strong>se publica en el propio log</strong> (<code>karmaScore</code>, <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L501-L506">L501-506</a>). Es un rango visible, permanente y comparable. Un catastro moral.</p>
+<h3 id="d-la-ley-que-nace-muerta-y-el-olvido-como-derogación">D. La ley que nace muerta y el olvido como derogación</h3>
+<p>Las leyes se promulgan cuando expira el gobierno que las votó, y las revocadas se hacen invisibles con un tombstone. La nota final de la v1 de este documento exigía <em>&quot;transparencia y trazabilidad en todos sus procesos&quot;</em>. El mecanismo de derogación va justo en la dirección contraria — atenuado, eso sí, por la naturaleza append-only de SSB: el dato sobrevive aunque el cliente lo esconda. La reparación es barata (RP-6, §4) y merece la pena.</p>
+<h3 id="e-la-justicia-secreta">E. La justicia secreta</h3>
+<p>Los tribunales cifran la instrucción por defecto y la publicidad es opcional. Sin publicidad del proceso no hay control del juez por el pueblo, que es la razón última del jurado en toda la tradición liberal-republicana. Aquí el compromiso privacidad ↔ publicidad se resolvió por defecto a favor de la privacidad; para un modelo republicano hay que invertirlo al menos para la sentencia.</p>
+<h3 id="f-la-anarquía-calculada-donde-el-sistema-es-mejor-de-lo-que-pretende">F. La anarquía calculada (donde el sistema es mejor de lo que pretende)</h3>
+<p>Si ninguna candidatura alcanza el 25% del censo, <code>resolveElection</code> no proclama a nadie: devuelve un <code>virtualAnarchyTerm</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L373-L393">L373-393</a>) que <strong>ni siquiera se publica en el log</strong>. Un gobierno inexistente, con identificador (<code>anarchy:&lt;ciclo&gt;</code>), duración y efectos jurídicos: bajo él, todo el mundo recupera la iniciativa legislativa.</p>
+<p>Esto es, sin proponérselo, una implementación del <strong>período constituyente permanente</strong>. El poder constituyente no se delega ni se agota: vuelve al cuerpo político por defecto, cada 60 días, salvo que una mayoría cualificada lo constituya expresamente. Es la pieza más aprovechable del sistema para una variante republicana, y es la única que la v1 de este documento no había imaginado.</p>
+<h3 id="g-el-turno-como-forma-de-estado-larp">G. El turno como forma de Estado (L.A.R.P.)</h3>
+<p>La rotación mensual de las 9 casas no es representación ni sorteo: es <strong>turno estamental por función</strong> (los que saben, los que guardan, los que construyen, los que ríen, los que sabotean). El precedente no es la república moderna; es el gremio medieval y el organicismo corporativo. Trevijano lo rechazaría sin matices: no hay representación política donde el poder se adscribe por función social.</p>
+<p>Y aun así, esta capa contiene la única transparencia obligatoria del sistema (el muro del gobernante se abre mientras gobierna) y el único poder que <strong>nadie puede retener</strong>, porque lo quita el calendario. Que el juego sea más republicano que el parlamento es el chiste estructural de todo el ecosistema, y conviene no dejarlo pasar.</p>
+<hr />
+<h2 id="4-especificación-rp-oasis-la-bifurcación-republicana">4. Especificación RP-OASIS: la bifurcación republicana</h2>
+<p>No una red nueva: un <strong>conjunto de parches sobre 1.0.7</strong>, cada uno mapeado a su punto de intervención. La AGPL-3.0 lo permite y lo obliga a devolver.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Cambio</th>
+<th style="text-align:left">Punto de intervención</th>
+<th style="text-align:left">Criterio que repara</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>RP-1</strong></td>
+<td style="text-align:left"><strong>Dos poderes, dos elecciones.</strong> Añadir <code>powerBranch: 'LEGISLATIVE' | 'EXECUTIVE'</code> a <code>parliamentTerm</code>, con dos papeletas independientes y <strong>ciclos desfasados 30 días</strong> para que jamás coincidan en origen.</td>
+<td style="text-align:left"><code>termWindowFor</code>, <code>resolveElectionImpl</code>, <code>proposeCandidature</code></td>
+<td style="text-align:left">crit. 2</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>RP-2</strong></td>
+<td style="text-align:left"><strong>Solo personas al legislativo.</strong> Rechazar <code>targetType === 'tribe'</code> para la rama legislativa. Las tribus pueden concurrir al ejecutivo (donde la unidad de acción tiene sentido), nunca a la representación.</td>
+<td style="text-align:left"><code>resolveTarget</code>, <code>proposeCandidature</code></td>
+<td style="text-align:left">crit. 3 y 4</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>RP-3</strong></td>
+<td style="text-align:left"><strong>Sorteo verificable en lugar de karma</strong> para el desempate: hash del último mensaje del log al cierre del ciclo. Reproducible, impredecible, no censitario.</td>
+<td style="text-align:left"><code>chooseWinnerFromCandidaturesAsync</code> L422</td>
+<td style="text-align:left">crit. 3</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>RP-4</strong></td>
+<td style="text-align:left"><strong>Desacoplar el escalar.</strong> Dos métricas distintas y no convertibles: <code>contributionScore</code> (economía, RBU) y <strong>elegibilidad política binaria</strong> (censo: cumple / no cumple). Eliminar <code>KARMATOCRACY</code> de <code>METHODS</code>.</td>
+<td style="text-align:left"><code>banking_model.js</code>, <code>parliament_model.js:23</code></td>
+<td style="text-align:left">crit. 2 y 3</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>RP-5</strong></td>
+<td style="text-align:left"><strong>Romper la fusión judicial.</strong> Eliminar <code>DICTATOR</code> de los métodos de Courts. El juez es electo (ya existe <code>courtsNomination</code>) o sorteado entre el censo — jurado.</td>
+<td style="text-align:left"><code>courts_model.js:139-155</code></td>
+<td style="text-align:left">crit. 2</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>RP-6</strong></td>
+<td style="text-align:left"><strong>Derogación con memoria.</strong> Sustituir el <code>tombstone</code> sobre leyes por <code>parliamentLawRepeal</code> con <code>repealedAt</code>, <code>repealedBy</code> y motivación. La ley derogada se muestra tachada, no desaparece.</td>
+<td style="text-align:left"><code>enactApprovedChanges</code> L1145</td>
+<td style="text-align:left">crit. 1, trazabilidad</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>RP-7</strong></td>
+<td style="text-align:left"><strong>Publicidad de la sentencia.</strong> Cifrado permitido en instrucción; <strong>veredicto y órdenes siempre en claro</strong>.</td>
+<td style="text-align:left"><code>issueVerdict</code>, <code>courtsVisibility</code></td>
+<td style="text-align:left">crit. 1</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>RP-8</strong></td>
+<td style="text-align:left"><strong>Iniciativa legislativa popular.</strong> Una proposición avalada por el 10% del censo entra a votación sin pasar por <code>canPropose()</code>.</td>
+<td style="text-align:left"><code>canPropose</code> L1298, <code>createProposal</code></td>
+<td style="text-align:left">crit. 5</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>RP-9</strong></td>
+<td style="text-align:left"><strong>Formalizar el constituyente.</strong> Tipo <code>constituentAssembly</code> que, en ciclos ANARCHY consecutivos, habilite la modificación de las propias constantes (<code>TERM_DAYS</code>, umbrales) con supermayoría del 80%. Constitución rígida, reformable solo desde el estado de libertad constituyente.</td>
+<td style="text-align:left">nuevo modelo</td>
+<td style="text-align:left">crit. 7</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>RP-10</strong></td>
+<td style="text-align:left"><strong>Publicidad del poder, generalizada.</strong> Portar <code>wallIsPublic</code> del L.A.R.P. al parlamento: mientras gobiernas, tu actividad en la red es pública.</td>
+<td style="text-align:left"><code>larp_model.js:576</code> → <code>parliament_view.js</code></td>
+<td style="text-align:left">crit. 1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Lo que no se toca, y por qué.</strong> El calendario fijo desde <code>TERM_EPOCH</code> (nadie convoca elecciones), el voto único por ciclo, el tope de 3 propuestas, el quórum del 25%, el retorno automático a ANARCHY. Son buen derecho constitucional escrito en aritmética.</p>
+<hr />
+<h2 id="5-backlog-v2">5. Backlog v2</h2>
+<p>Estado de las tareas de la v1: <strong>✅ hecho por upstream</strong> · <strong>♻️ reformulada</strong> · <strong>☠️ obsoleta</strong> · <strong>▶️ vigente</strong>.</p>
+<h3 id="op-01--infraestructura-de-red-y-comunicación-soberana">OP-01 · Infraestructura de red y comunicación soberana</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Task</th>
+<th style="text-align:left">Estado</th>
+<th style="text-align:left">Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TK-01</td>
+<td style="text-align:left">Desplegar nodo SSB local</td>
+<td style="text-align:left">▶️</td>
+<td style="text-align:left">Sigue siendo el paso 1. <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/docs/install/install.md">docs/install/install.md</a></td>
+</tr>
+<tr>
+<td style="text-align:left">TK-02</td>
+<td style="text-align:left">Conectar a &quot;La Plaza&quot;</td>
+<td style="text-align:left">▶️</td>
+<td style="text-align:left"><code>pub.solarnethub.com</code>, stats en <code>laplaza.solarnethub.com</code></td>
+</tr>
+<tr>
+<td style="text-align:left">TK-03</td>
+<td style="text-align:left">Configurar cliente Oasis</td>
+<td style="text-align:left">▶️</td>
+<td style="text-align:left">v1.0.7. <code>install.sh</code> + <code>oasis.sh</code></td>
+</tr>
+<tr>
+<td style="text-align:left">TK-04</td>
+<td style="text-align:left">Identidad soberana (sigchain)</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">Automática al arrancar; onboarding de 7 pasos (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/onboarding_model.js#L5">onboarding_model.js:5</a>)</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-05</td>
+<td style="text-align:left">Diseñar gobernanza sobre SSB</td>
+<td style="text-align:left">☠️→♻️</td>
+<td style="text-align:left"><strong>Ya existe.</strong> Se convierte en TK-26 (auditoría)</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-06</td>
+<td style="text-align:left">Red de confianza &quot;amigos de amigos&quot;</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">Trustnet + invitaciones + modos <code>strict</code>/<code>open</code> en tribus</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="op-02--capa-económica-faircoin--ecoin--banking">OP-02 · Capa económica <s>(Faircoin)</s> → ECOin + Banking</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Task</th>
+<th style="text-align:left">Estado</th>
+<th style="text-align:left">Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TK-07…TK-12</td>
+<td style="text-align:left">Todo el eje Faircoin/CVN/BotC/FairMarket</td>
+<td style="text-align:left">☠️</td>
+<td style="text-align:left">Repositorio sin commits desde 2022-02-05</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-27</strong></td>
+<td style="text-align:left">Desplegar wallet ECOin y enlazarla a Oasis</td>
+<td style="text-align:left">▶️ Alta</td>
+<td style="text-align:left">v0.0.4 (feb 2026). <code>ecoin.03c8.net</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-28</strong></td>
+<td style="text-align:left">Auditar el reparto de RBU por épocas</td>
+<td style="text-align:left">▶️ Alta</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L930-L990">banking_model.js:930-990</a>. Verificar <code>alpha</code>, topes y <code>hash</code> del snapshot</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-29</strong></td>
+<td style="text-align:left">Documentar la fiscalidad de carbono</td>
+<td style="text-align:left">▶️ Media</td>
+<td style="text-align:left">0,095 g CO₂/MiB · 0,1 ECOin/g. ¿Quién fijó esas constantes y con qué legitimidad?</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-30</strong></td>
+<td style="text-align:left">Evaluar el sesgo concentrador de PoT</td>
+<td style="text-align:left">▶️ Media</td>
+<td style="text-align:left">El 50% del subsidio de bloque a transacciones &gt;500 ECO</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="op-03--gobernanza-y-separación-de-poderes--auditoría-y-bifurcación">OP-03 · Gobernanza y separación de poderes → <strong>auditoría y bifurcación</strong></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Task</th>
+<th style="text-align:left">Estado</th>
+<th style="text-align:left">Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>TK-26</strong></td>
+<td style="text-align:left">Auditoría formal de <code>parliament_model.js</code> contra los 7 criterios (§1.3, evaluados en §3)</td>
+<td style="text-align:left">▶️</td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-13</td>
+<td style="text-align:left">Definir poder legislativo</td>
+<td style="text-align:left">♻️ → <strong>RP-1, RP-2</strong></td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-14</td>
+<td style="text-align:left">Definir poder ejecutivo</td>
+<td style="text-align:left">♻️ → <strong>RP-1</strong></td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-15</td>
+<td style="text-align:left">Definir poder judicial</td>
+<td style="text-align:left">♻️ → <strong>RP-5, RP-7</strong></td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-16</td>
+<td style="text-align:left">Asamblea constituyente digital</td>
+<td style="text-align:left">♻️ → <strong>RP-9</strong></td>
+<td style="text-align:left">Media</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-17</td>
+<td style="text-align:left">Documentar la separación en origen</td>
+<td style="text-align:left">▶️</td>
+<td style="text-align:left">Baja</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-31</strong></td>
+<td style="text-align:left">Parche RP-3: sorteo verificable</td>
+<td style="text-align:left">▶️</td>
+<td style="text-align:left">Media</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-32</strong></td>
+<td style="text-align:left">Parche RP-4: desacoplar karma político de karma económico</td>
+<td style="text-align:left">▶️</td>
+<td style="text-align:left"><strong>Crítica</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-33</strong></td>
+<td style="text-align:left">Parche RP-6: derogación con memoria</td>
+<td style="text-align:left">▶️</td>
+<td style="text-align:left">Media</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-34</strong></td>
+<td style="text-align:left">Parche RP-8: iniciativa legislativa popular</td>
+<td style="text-align:left">▶️</td>
+<td style="text-align:left">Alta</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="op-04--soberanía-y-autogestión">OP-04 · Soberanía y autogestión</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Task</th>
+<th style="text-align:left">Estado</th>
+<th style="text-align:left">Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TK-18</td>
+<td style="text-align:left">Modo offline-first</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">Nativo en SSB</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-19</td>
+<td style="text-align:left">Sistema de invitaciones</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">PUBs y tribus, más auto-invitaciones L.A.R.P.</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-20</td>
+<td style="text-align:left">TOR / red onion</td>
+<td style="text-align:left">▶️ Media</td>
+<td style="text-align:left">Ver <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/docs/security.md">docs/security.md</a></td>
+</tr>
+<tr>
+<td style="text-align:left">TK-21</td>
+<td style="text-align:left">Documentar la autogestión</td>
+<td style="text-align:left">▶️ Baja</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="op-05--integración">OP-05 · Integración</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Task</th>
+<th style="text-align:left">Estado</th>
+<th style="text-align:left">Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TK-22</td>
+<td style="text-align:left">Wallet en la interfaz</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">Módulo <code>Wallet</code> + <code>wallet-addresses.json</code></td>
+</tr>
+<tr>
+<td style="text-align:left">TK-23</td>
+<td style="text-align:left">Dashboard de gobierno</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left"><code>parliamentGovernmentCard</code> en <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/views/parliament_view.js#L157">parliament_view.js:157</a></td>
+</tr>
+<tr>
+<td style="text-align:left">TK-24</td>
+<td style="text-align:left">Impuestos cooperativos</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">Implementado como <strong>impuesto de carbono</strong>, no como cuota</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-25</td>
+<td style="text-align:left">Constitución técnica</td>
+<td style="text-align:left">▶️ Baja</td>
+<td style="text-align:left">Debe escribirse <strong>después</strong> de RP-1…RP-10</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="op-06--nueva-la-capa-larp-como-laboratorio-constitucional">OP-06 · Nueva: la capa L.A.R.P. como laboratorio constitucional</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Task</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>TK-35</strong></td>
+<td style="text-align:left">Documentar la rotación de 9 casas sobre 12 meses y su desfase anual</td>
+<td style="text-align:left">Verificar si es intencionado; si no lo es, defenderlo igualmente</td>
+<td style="text-align:left">Media</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-36</strong></td>
+<td style="text-align:left">Portar <code>wallIsPublic</code> al parlamento (RP-10)</td>
+<td style="text-align:left">La transparencia del gobernante es la mejor idea del sistema y está en el juego</td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-37</strong></td>
+<td style="text-align:left">Contrastar el modelo estamental de casas con la crítica trevijanista al organicismo</td>
+<td style="text-align:left">Documento teórico</td>
+<td style="text-align:left">Baja</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-38</strong></td>
+<td style="text-align:left">Medir empíricamente el sesgo del test de 10 preguntas</td>
+<td style="text-align:left">¿La corrección por tamaño de casa basta?</td>
+<td style="text-align:left">Baja</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="resumen-de-prioridades-v2">Resumen de prioridades v2</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Prioridad</th>
+<th style="text-align:left">Tasks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Crítica</strong></td>
+<td style="text-align:left">TK-32</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Alta</strong></td>
+<td style="text-align:left">TK-01, TK-02, TK-03, TK-26, TK-27, TK-28, TK-34, TK-36, y los parches RP-1/RP-2/RP-5</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Media</strong></td>
+<td style="text-align:left">TK-20, TK-29, TK-30, TK-31, TK-33, TK-35</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Baja</strong></td>
+<td style="text-align:left">TK-17, TK-21, TK-25, TK-37, TK-38</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="6-fuentes">6. Fuentes</h2>
+<p><strong>Código auditado (disco).</strong> <a href="https://github.com/epsylon/oasis/tree/9a657b776fcafc7c24bf3ad61825316385ecf513/"><code>vendor/oasis</code></a> — commit <code>9a657b7</code>, release 1.0.7, 2026-09-08. Reproducible: <code>git clone --depth 1 https://github.com/epsylon/oasis.git</code>.</p>
+<p><strong>Red.</strong></p>
+<ul>
+<li>Oasis: https://github.com/epsylon/oasis · https://wiki.solarnethub.com/socialnet/overview</li>
+<li>Rol L.A.R.P.: https://wiki.solarnethub.com/socialnet/roleplaying</li>
+<li>ECOin: https://ecoin.03c8.net · https://wiki.solarnethub.com/ecoin/overview</li>
+<li>PUB &quot;La Plaza&quot;: https://pub.solarnethub.com · https://laplaza.solarnethub.com</li>
+<li>SNH: https://solarnethub.com · https://wiki.solarnethub.com</li>
+<li>Faircoin (histórico): https://github.com/faircoin/faircoin · https://fair-coin.org</li>
+<li>MCRC: https://mcrc.diarioerc.com · https://www.diariorc.com</li>
+<li>Trevijano: https://www.antoniogarciatrevijano.info</li>
+</ul>
+<p><strong>Grado de certeza.</strong> Lo dicho sobre Oasis: <strong>verificado en código</strong>, con fichero y línea. Lo dicho sobre ECOin y la wiki de SNH: <strong>fuente primaria del proyecto, no verificada de forma independiente</strong>. Lo dicho sobre el abandono de Faircoin: <strong>inferido de la actividad del repositorio</strong> (hecho duro: cero commits desde 2022-02-05) y no de un comunicado de cierre. Lo dicho sobre doctrina trevijanista: <strong>paráfrasis marcada</strong>, no cita.</p>
+<hr />
+<h2 id="7-anexo--documento-v1-2025-conservado-íntegro">7. Anexo · Documento v1 (2025, conservado íntegro)</h2>
+<blockquote>
+<p>Se conserva sin ediciones. Sus tablas OP/TK siguen siendo la referencia de numeración; la §5 indica cuáles quedan vivas.</p>
+</blockquote>
+<details>
+<summary>Desplegar v1</summary>
+<p>Entendido. Quieres usar la infraestructura de SolarNET.HuB y el ecosistema Faircoin como <strong>soporte técnico y económico</strong> para una implementación práctica del modelo de <strong>República Pura</strong> de Antonio García-Trevijano.</p>
+<p>Te he preparado dos cosas:</p>
+<ol>
+<li>Un <strong>prompt de activación</strong> listo para copiar y pegar a tu agente, con todas las fuentes y enlaces necesarios.</li>
+<li>Un <strong>backlog de tareas Scrum</strong> estructurado en <code>Opportunity</code> (visión) y <code>Task</code> (ejecución) para que el agente sepa por dónde empezar.</li>
+</ol>
+<hr />
+<h2 id="1-prompt-de-activación-para-el-agente">1. PROMPT DE ACTIVACIÓN PARA EL AGENTE</h2>
+<p>Copia y pega esto en tu agente. Incluye las URLs de los repositorios que has bajado para que las analice.</p>
+<pre><code class="language-markdown"># PROMPT DE ACTIVACIÓN: MODELIZACIÓN DE LA REPÚBLICA PURA (TREVIJANO) CON SNH + FAIRCOIN
+
+## OBJETIVO PRINCIPAL
+Modelizar una implementación práctica del modelo de &quot;República Pura&quot; de Antonio García-Trevijano utilizando como infraestructura:
+- **SolarNET.HuB (SNH)** para la capa de comunicación, red y gobernanza comunitaria.
+- **Ecosistema Faircoin-FairCoop-Bank of the Commons** para la capa económica, monetaria y financiera.
+
+## CONTEXTO FILOSÓFICO: MODELO DE TREVIJANO
+- **Fundamento**: La &quot;Teoría Pura de la República&quot; de Antonio García-Trevijano propone una República Constitucional basada en:
+  - **Soberanía popular** como poder constituyente.
+  - **Democracia formal**: representación política auténtica, elección directa del ejecutivo y separación de poderes en origen.
+  - **Ausencia de ideología**: la república se entiende como forma de Estado, no como ideología.
+  - **Libertad política colectiva** como eje del sistema.
+- **Fuentes primarias**:
+  - &quot;Teoría Pura de la República&quot; y &quot;Teoría Pura de la Democracia&quot; (Antonio García-Trevijano).
+  - Asociación MCRC (Movimiento por la Constitución y la República).
+  - Web de referencia: https://www.antoniogarciatrevijano.info
+
+## INFRAESTRUCTURA DISPONIBLE
+
+### SolarNET.HuB (SNH) - Capa de Comunicación y Gobernanza
+- **Arquitectura**: Red distribuida con nodo central de control + nodos autónomos【0†L5-L8 del documento del usuario】.
+- **Protocolo principal**: Gossip protocol (propagación epidémica de información)【0†L10-L16 del documento del usuario】.
+- **Red subyacente**: Secure Scuttlebutt (SSB) - malla P2P con &quot;sigchains&quot; (blockchains personales)【0†L18-L27 del documento del usuario】.
+- **Cliente**: Oasis - frontend HTML+CSS puro, sin JavaScript, cifrado extremo a extremo【0†L28-L38 del documento del usuario】.
+- **PUB desplegado**: &quot;La Plaza&quot; - uno de los mayores PUBs del mundo.
+- **Repositorio oficial**: https://github.com/epsylon/oasis
+- **Wiki técnica**: https://wiki.solarnethub.com
+
+### Ecosistema Faircoin - Capa Económica y Financiera
+- **FairCoin**: Criptomoneda con algoritmo de consenso **Proof-of-Cooperation (PoC)**.
+  - Bloques creados por CVNs (Cooperatively Validated Nodes) en turno rotatorio.
+  - Fork de Bitcoin 0.12.
+  - Documentación técnica: https://github.com/faircoin/faircoin/blob/master/doc/on-proof-of-cooperation.md
+  - White Paper: https://fair-coin.org
+- **FairCoop**: Cooperativa global que coordina el ecosistema.
+- **Bank of the Commons (BotC)**: Cooperativa bancaria alternativa, co-fundada por FairCoop.
+- **FreedomCoop**: Marco legal europeo para el ecosistema.
+- **FairMarket, Fairbnb**: Aplicaciones de economía real.
+
+## TAREA DEL AGENTE
+1. Analiza los repositorios de código que te he proporcionado (SNH/Oasis y Faircoin).
+2. Identifica los componentes técnicos que pueden mapearse a los principios de la República Pura de Trevijano.
+3. Genera un backlog de tareas Scrum con la siguiente estructura:
+   - **Epic**: Modelización de la República Pura con SNH + Faircoin.
+   - **Opportunity (OP)**: Grandes bloques de oportunidad (visión, qué se quiere lograr).
+   - **Task (TK)**: Tareas concretas de ejecución (código, configuración, documentación).
+4. Para cada tarea, indica:
+   - Dependencias técnicas.
+   - Fuentes de información relevantes (de las listadas arriba).
+   - Prioridad (Alta/Media/Baja).
+
+## FORMATO DE SALIDA ESPERADO
+- Lista numerada de Opportunities (OP-01, OP-02, ...).
+- Lista numerada de Tasks (TK-01, TK-02, ...) agrupadas por Opportunity.
+- Enlaces a documentación y repositorios en cada tarea.
+
+## RESTRICCIONES
+- El agente NO debe buscar información libremente. Solo debe usar:
+  - Los repositorios proporcionados.
+  - Las URLs y documentos citados en este prompt.
+  - El conocimiento incorporado en su entrenamiento sobre Trevijano, SNH y Faircoin.
+</code></pre>
+<hr />
+<h2 id="2-backlog-de-tareas-scrum-opportunity--task">2. BACKLOG DE TAREAS SCRUM (OPPORTUNITY + TASK)</h2>
+<p>Aquí tienes el backlog generado a partir de la información disponible. Está estructurado para que el agente sepa exactamente qué hacer y en qué orden.</p>
+<hr />
+<h3 id="epic-modelización-de-la-república-pura-trevijano-con-solarnethub--faircoin">EPIC: Modelización de la República Pura (Trevijano) con SolarNET.HuB + Faircoin</h3>
+<hr />
+<h4>OP-01: Infraestructura de Red y Comunicación Soberana</h4>
+<p><strong>Descripción</strong>: Establecer una red de comunicación descentralizada, resistente a la censura y basada en la confianza comunitaria, que refleje la soberanía popular del modelo trevijano.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Task</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Dependencias</th>
+<th style="text-align:left">Fuentes</th>
+<th style="text-align:left">Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>TK-01</strong></td>
+<td style="text-align:left">Desplegar nodo SSB local</td>
+<td style="text-align:left">Instalar y configurar un nodo Secure Scuttlebutt (SSB) siguiendo la documentación de SNH.</td>
+<td style="text-align:left">Repositorio Oasis</td>
+<td style="text-align:left"><a href="https://wiki.solarnethub.com/socialnet/engineering">Wiki SNH Engineering</a></td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-02</strong></td>
+<td style="text-align:left">Conectar a &quot;La Plaza&quot; (PUB)</td>
+<td style="text-align:left">Obtener un código de invitación para el PUB &quot;La Plaza&quot; y conectar el nodo a la red.</td>
+<td style="text-align:left">TK-01</td>
+<td style="text-align:left">https://laplaza.solarnethub.com</td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-03</strong></td>
+<td style="text-align:left">Configurar cliente Oasis</td>
+<td style="text-align:left">Compilar/instalar el cliente Oasis desde el repositorio <code>epsylon/oasis</code>.</td>
+<td style="text-align:left">TK-01</td>
+<td style="text-align:left">https://github.com/epsylon/oasis</td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-04</strong></td>
+<td style="text-align:left">Crear identidad soberana (sigchain)</td>
+<td style="text-align:left">Generar una identidad SSB (sigchain personal) sin email ni teléfono【0†L36-L38 del usuario】.</td>
+<td style="text-align:left">TK-02</td>
+<td style="text-align:left"><a href="https://wiki.solarnethub.com/socialnet/engineering">Wiki SNH Engineering</a></td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-05</strong></td>
+<td style="text-align:left">Documentar modelo de gobernanza en SSB</td>
+<td style="text-align:left">Diseñar un sistema de votación/consenso basado en los feeds de SSB para simular la &quot;representación política auténtica&quot;.</td>
+<td style="text-align:left">TK-04</td>
+<td style="text-align:left"><a href="https://wiki.solarnethub.com/socialnet/engineering">Wiki SNH Engineering</a></td>
+<td style="text-align:left">Media</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-06</strong></td>
+<td style="text-align:left">Implementar sistema de &quot;amigos de amigos&quot;</td>
+<td style="text-align:left">Configurar la red de confianza (trustnet) para que solo se repliquen feeds de miembros validados.</td>
+<td style="text-align:left">TK-04</td>
+<td style="text-align:left"><a href="https://wiki.solarnethub.com/socialnet/engineering">Wiki SNH Engineering</a></td>
+<td style="text-align:left">Media</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h4>OP-02: Capa Económica y Monetaria (Faircoin + Bank of the Commons)</h4>
+<p><strong>Descripción</strong>: Integrar el ecosistema Faircoin como mecanismo de intercambio económico y financiero, alineado con la soberanía económica de la república.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Task</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Dependencias</th>
+<th style="text-align:left">Fuentes</th>
+<th style="text-align:left">Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>TK-07</strong></td>
+<td style="text-align:left">Desplegar nodo Faircoin (CVN)</td>
+<td style="text-align:left">Configurar un nodo Faircoin2 como Cooperatively Validated Node (CVN).</td>
+<td style="text-align:left">Repositorio Faircoin</td>
+<td style="text-align:left"><a href="https://github.com/faircoin/faircoin/blob/master/doc/on-proof-of-cooperation.md">Doc PoC</a>; <a href="https://github.com/faircoin/faircoin/blob/master/doc/CVN-operators-guide.md">CVN Guide</a></td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-08</strong></td>
+<td style="text-align:left">Sincronizar blockchain Faircoin</td>
+<td style="text-align:left">Descargar y sincronizar la cadena de bloques Faircoin.</td>
+<td style="text-align:left">TK-07</td>
+<td style="text-align:left"><a href="https://fair-coin.org">Faircoin White Paper</a></td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-09</strong></td>
+<td style="text-align:left">Crear wallet Faircoin</td>
+<td style="text-align:left">Generar una cartera Faircoin para la tesorería de la república.</td>
+<td style="text-align:left">TK-08</td>
+<td style="text-align:left"><a href="https://github.com/faircoin/faircoin">Faircoin GitHub</a></td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-10</strong></td>
+<td style="text-align:left">Integrar Bank of the Commons</td>
+<td style="text-align:left">Configurar servicios bancarios cooperativos (cuentas, transferencias) usando la infraestructura de BotC.</td>
+<td style="text-align:left">TK-08</td>
+<td style="text-align:left"><a href="https://github.com/faircoin/faircoin/blob/master/doc/on-proof-of-cooperation.md">Faircoin PoC</a></td>
+<td style="text-align:left">Media</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-11</strong></td>
+<td style="text-align:left">Implementar sistema de &quot;FairMarket&quot; local</td>
+<td style="text-align:left">Desplegar una instancia de FairMarket para intercambio de bienes y servicios dentro de la comunidad.</td>
+<td style="text-align:left">TK-10</td>
+<td style="text-align:left"><a href="https://oce.gitbook.io">OCE GitBook</a></td>
+<td style="text-align:left">Media</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-12</strong></td>
+<td style="text-align:left">Documentar modelo de &quot;distribución igualitaria&quot;</td>
+<td style="text-align:left">Diseñar un mecanismo de distribución inicial de FairCoin basado en la participación comunitaria (no especulación).</td>
+<td style="text-align:left">TK-09</td>
+<td style="text-align:left"><a href="https://fair-coin.org">Faircoin Story</a></td>
+<td style="text-align:left">Media</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h4>OP-03: Gobernanza y Separación de Poderes (Modelo Trevijano)</h4>
+<p><strong>Descripción</strong>: Mapear los principios de la República Pura (separación de poderes, representación auténtica, soberanía popular) a la arquitectura SNH + Faircoin.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Task</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Dependencias</th>
+<th style="text-align:left">Fuentes</th>
+<th style="text-align:left">Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>TK-13</strong></td>
+<td style="text-align:left">Definir &quot;Poder Legislativo&quot; en SNH</td>
+<td style="text-align:left">Diseñar un sistema de propuestas y votación en SSB (feeds firmados) que simule la representación política.</td>
+<td style="text-align:left">TK-05</td>
+<td style="text-align:left"><a href="https://www.antoniogarciatrevijano.info">Teoría Pura Trevijano</a></td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-14</strong></td>
+<td style="text-align:left">Definir &quot;Poder Ejecutivo&quot; en SNH</td>
+<td style="text-align:left">Establecer un rol de administración central (nodo central de SNH) con capacidades limitadas y rotativas【0†L5-L8 del usuario】.</td>
+<td style="text-align:left">TK-13</td>
+<td style="text-align:left"><a href="https://wiki.solarnethub.com/socialnet/engineering">Wiki SNH Engineering</a></td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-15</strong></td>
+<td style="text-align:left">Definir &quot;Poder Judicial&quot; en SNH</td>
+<td style="text-align:left">Implementar un sistema de resolución de conflictos basado en la validación por pares (CVNs + feeds).</td>
+<td style="text-align:left">TK-14</td>
+<td style="text-align:left"><a href="https://www.antoniogarciatrevijano.info">Teoría Pura Trevijano</a></td>
+<td style="text-align:left">Media</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-16</strong></td>
+<td style="text-align:left">Crear &quot;Asamblea Constituyente&quot; digital</td>
+<td style="text-align:left">Utilizar la red SSB + Oasis para celebrar una asamblea virtual donde se debatan y voten las reglas de la república.</td>
+<td style="text-align:left">TK-04, TK-13</td>
+<td style="text-align:left"><a href="https://wiki.solarnethub.com">Wiki SNH Ecosystem</a></td>
+<td style="text-align:left">Media</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-17</strong></td>
+<td style="text-align:left">Documentar el modelo de &quot;separación en origen&quot;</td>
+<td style="text-align:left">Redactar un documento técnico que explique cómo la arquitectura SNH + Faircoin implementa la separación de poderes.</td>
+<td style="text-align:left">TK-13, TK-14, TK-15</td>
+<td style="text-align:left"><a href="https://www.antoniogarciatrevijano.info">Teoría Pura Trevijano</a></td>
+<td style="text-align:left">Baja</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h4>OP-04: Soberanía y Autogestión (Offline-first, Invite-only)</h4>
+<p><strong>Descripción</strong>: Asegurar que la red pueda funcionar de forma autónoma, incluso sin conexión a internet, y que la membresía sea por invitación (comunidad de confianza).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Task</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Dependencias</th>
+<th style="text-align:left">Fuentes</th>
+<th style="text-align:left">Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>TK-18</strong></td>
+<td style="text-align:left">Configurar modo offline-first</td>
+<td style="text-align:left">Asegurar que el nodo SSB pueda operar y sincronizarse cuando haya conectividad.</td>
+<td style="text-align:left">TK-02</td>
+<td style="text-align:left"><a href="https://solarnethub.com">SNH Digital Survival Kit</a></td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-19</strong></td>
+<td style="text-align:left">Implementar sistema de invitaciones</td>
+<td style="text-align:left">Crear un flujo de generación y distribución de códigos de invitación para nuevos miembros.</td>
+<td style="text-align:left">TK-04</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis">GitHub Oasis</a></td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-20</strong></td>
+<td style="text-align:left">Configurar TOR / red onion</td>
+<td style="text-align:left">Añadir capa de anonimato y resistencia a la censura mediante TOR.</td>
+<td style="text-align:left">TK-18</td>
+<td style="text-align:left"><a href="https://solarnethub.com">SNH Digital Survival Kit</a></td>
+<td style="text-align:left">Media</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-21</strong></td>
+<td style="text-align:left">Documentar el modelo de &quot;autogestión&quot;</td>
+<td style="text-align:left">Explicar cómo la combinación de SNH + Faircoin permite la autosuficiencia de la comunidad.</td>
+<td style="text-align:left">TK-19, TK-20</td>
+<td style="text-align:left"><a href="https://wiki.solarnethub.com">Wiki SNH</a></td>
+<td style="text-align:left">Baja</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h4>OP-05: Integración y Sostenibilidad del Ecosistema</h4>
+<p><strong>Descripción</strong>: Conectar todas las capas (comunicación, economía, gobernanza) en un ecosistema funcional y sostenible.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Task</th>
+<th style="text-align:left">Descripción</th>
+<th style="text-align:left">Dependencias</th>
+<th style="text-align:left">Fuentes</th>
+<th style="text-align:left">Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>TK-22</strong></td>
+<td style="text-align:left">Integrar wallet Faircoin con Oasis</td>
+<td style="text-align:left">Permitir que los usuarios de Oasis vean su saldo y realicen transferencias desde la interfaz.</td>
+<td style="text-align:left">TK-03, TK-09</td>
+<td style="text-align:left"><a href="https://oce.gitbook.io">OCE GitBook</a></td>
+<td style="text-align:left">Alta</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-23</strong></td>
+<td style="text-align:left">Crear dashboard de gobierno</td>
+<td style="text-align:left">Desarrollar un panel en Oasis que muestre propuestas activas, votaciones y estado de la red.</td>
+<td style="text-align:left">TK-16, TK-22</td>
+<td style="text-align:left"><a href="https://wiki.solarnethub.com">Wiki SNH</a></td>
+<td style="text-align:left">Media</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-24</strong></td>
+<td style="text-align:left">Implementar sistema de &quot;impuestos&quot; cooperativos</td>
+<td style="text-align:left">Diseñar un mecanismo de contribución voluntaria en FairCoin para el mantenimiento de la red (CVNs, PUBs).</td>
+<td style="text-align:left">TK-10</td>
+<td style="text-align:left"><a href="https://github.com/faircoin/faircoin/blob/master/doc/on-proof-of-cooperation.md">Faircoin PoC</a></td>
+<td style="text-align:left">Media</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TK-25</strong></td>
+<td style="text-align:left">Redactar &quot;Constitución Técnica&quot;</td>
+<td style="text-align:left">Documento final que integre todos los principios de Trevijano con la implementación técnica realizada.</td>
+<td style="text-align:left">Todas las anteriores</td>
+<td style="text-align:left"><a href="https://www.antoniogarciatrevijano.info">Teoría Pura Trevijano</a></td>
+<td style="text-align:left">Baja</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="resumen-de-prioridades">Resumen de Prioridades</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Prioridad</th>
+<th style="text-align:left">Tasks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Alta</strong></td>
+<td style="text-align:left">TK-01, TK-02, TK-03, TK-04, TK-07, TK-08, TK-09, TK-13, TK-14, TK-18, TK-19, TK-22</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Media</strong></td>
+<td style="text-align:left">TK-05, TK-06, TK-10, TK-11, TK-12, TK-15, TK-16, TK-20, TK-23, TK-24</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Baja</strong></td>
+<td style="text-align:left">TK-17, TK-21, TK-25</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="-nota-para-el-agente">📌 Nota para el agente</h3>
+<p>Este backlog parte de la documentación disponible y de los repositorios que has bajado. Si encuentras que algún componente no está documentado o falta, prioriza la <strong>creación de documentación</strong> antes que el código. La República Pura de Trevijano exige <strong>transparencia y trazabilidad</strong> en todos sus procesos.</p>
+</details>
+
+</article>
+      <footer class="site-footer">
+<div class="provenance-footer">
+  <p class="provenance-footer-chain">
+    <a href="https://escrivivir.co">Escrivivir</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://escrivivir.co/2026/06/04/t04x06a-ficha-de-producto-scriptorium-skins-arg/">Scriptorium Skins</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span>Animus Iocandi</span>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Modelador de Redes</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span title="Frente Aleph de Resistencia Ontológica">F.A.R.O.</span>
+  </p>
+  <p class="provenance-footer-meta">
+    Material transmedia para agentes del juego ARG
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    v0.1.0
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    GPL-3.0-or-later · AIPLv1
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://github.com/alephscriptorium-eng/modelador-redes">Repositorio</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Inicio</a>
+  </p>
+</div>      </footer>
+    </main>
+  </div>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

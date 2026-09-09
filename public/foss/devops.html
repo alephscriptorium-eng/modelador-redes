@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DevOps — Modelador de Redes</title>
+<script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>  <link rel="stylesheet" href="../assets/doc.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="../index.html" class="brand">Modelador de Redes</a>
+      <p class="tag">Artefacto · v0.1.0</p>
+      <nav aria-label="Documentación FOSS">
+        <a href="index.html" class="">Índice</a>
+        <a href="tecnico.html" class="">Técnico</a>
+        <a href="devops.html" class="active">DevOps y ramas</a>
+        <a href="LICENSE.html" class="">Licencia</a>
+        <a href="llms.md">llms.md</a>
+        <hr>
+        <a href="../index.html" class="nav-external">Catálogo ↗</a>
+        <a href="https://github.com/alephscriptorium-eng/modelador-redes" class="nav-external">Repositorio ↗</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
+    </aside>
+    <main>
+<h1>DevOps y ramas</h1>
+<h2>Una rama por modelo</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Rama</th><th>Toca</th><th>Modelo</th></tr></thead>
+<tbody>
+<tr><td><code>dev/res_publica</code></td><td><code>modelos/res_publica/</code></td><td><a href="../modelos/res_publica/index.html">República Pura (Trevijano) sobre Oasis/SSB</a></td></tr><tr><td><code>main</code></td><td>todo lo demás + <code>public/</code> + <code>data/</code></td><td>integración y publicación</td></tr>
+</tbody></table></div>
+<p>Cada rama <code>dev/&lt;modelo&gt;</code> solo modifica su carpeta, así <code>main</code> las integra con <code>git merge --no-ff</code> sin conflictos. El generador, las plantillas, la documentación y <code>public/</code> se tocan únicamente en <code>main</code>.</p>
+
+<h2>Ciclo operativo</h2>
+<pre># en la rama del modelo
+git checkout dev/&lt;modelo&gt;
+#   … añadir drafts/draftvN.md, fichas en revision/, actualizar 00-indice.md …
+modelador indice --modelo &lt;modelo&gt;        # línea «Draft vigente»
+git commit
+
+# en main
+git checkout main
+git merge --no-ff dev/&lt;modelo&gt;
+modelador build &amp;&amp; modelador check &amp;&amp; pytest
+git add public data &amp;&amp; git commit -m "build: public/ (+&lt;modelo&gt;)"
+git push origin main dev/&lt;modelo&gt;</pre>
+
+<h2>GitHub Pages</h2>
+<p>El workflow <code>.github/workflows/pages.yml</code> no construye nada: sube el <code>public/</code> commiteado en <code>main</code>. Pages debe tener como origen <em>GitHub Actions</em>. La web sirve en <a href="https://alephscriptorium-eng.github.io/modelador-redes/">https://alephscriptorium-eng.github.io/modelador-redes/</a>; los ficheros fuente se enlazan a <a href="https://github.com/alephscriptorium-eng/modelador-redes">github.com</a> (blob y raw) y se empaquetan en zip por modelo.</p>
+
+<h2>Agentes</h2>
+<p><a href="llms.md">llms.md</a> es el contrato de onboarding para cualquier LLM que trabaje en el repo: reglas de ramas, regla del draft vigente, qué no hacer. También en crudo: <code>https://github.com/alephscriptorium-eng/modelador-redes/raw/main/llms.md</code>.</p>
+      <footer class="site-footer">
+<div class="provenance-footer">
+  <p class="provenance-footer-chain">
+    <a href="https://escrivivir.co">Escrivivir</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://escrivivir.co/2026/06/04/t04x06a-ficha-de-producto-scriptorium-skins-arg/">Scriptorium Skins</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span>Animus Iocandi</span>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../index.html">Modelador de Redes</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span title="Frente Aleph de Resistencia Ontológica">F.A.R.O.</span>
+  </p>
+  <p class="provenance-footer-meta">
+    Material transmedia para agentes del juego ARG
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    v0.1.0
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    GPL-3.0-or-later · AIPLv1
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://github.com/alephscriptorium-eng/modelador-redes">Repositorio</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../index.html">Inicio</a>
+  </p>
+</div>      </footer>
+    </main>
+  </div>
+  <script src="../assets/theme.js"></script>
+</body>
+</html>

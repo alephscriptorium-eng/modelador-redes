@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Informe draft v1 · ¿Clon o parecido? El modelo de Trevijano frente a lo modelado — República Pura (Trevijano) sobre Oasis/SSB</title>
+<script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>  <link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="../../../index.html" class="brand">Modelador de Redes</a>
+      <p class="tag">República Pura (Trevijano) sobre Oasis/SSB · v0.1.0</p>
+      <nav aria-label="Modelo res_publica">
+        <a href="../index.html" class="">Estado</a>
+        <a href="../backlog.html" class="">Backlog</a>
+        <hr>
+        <p class="nav-h">Drafts</p>
+        <a href="../drafts/draftv2.html" class="">draftv2 <span class="badge badge-latest">latest</span></a>
+        <a href="../drafts/draftv1.html" class="active">draftv1</a>
+        <a href="../drafts/draftv0.html" class="">draftv0</a>
+        <a href="../drafts/draft.html" class="">draft</a>
+        <hr>
+        <p class="nav-h">Revisión</p>
+        <a href="../revision/01-lealtad.html" class="" title="01-lealtad">01-lealtad</a>
+        <a href="../revision/02-monada.html" class="" title="02-monada">02-monada</a>
+        <a href="../revision/03-camara.html" class="" title="03-camara">03-camara</a>
+        <a href="../revision/04-legislacion.html" class="" title="04-legislacion">04-legislacion</a>
+        <a href="../revision/05-justicia.html" class="" title="05-justicia">05-justicia</a>
+        <a href="../revision/06-gobierno.html" class="" title="06-gobierno">06-gobierno</a>
+        <a href="../revision/07-constituyente.html" class="" title="07-constituyente">07-constituyente</a>
+        <a href="../revision/08-republica.html" class="" title="08-republica">08-republica</a>
+        <hr>
+        <p class="nav-h">Descargas</p>
+        <a href="../downloads/res_publica-drafts.zip">drafts.zip</a>
+        <a href="../downloads/res_publica-revision.zip">revision.zip</a>
+        <a href="../downloads/res_publica-todo.zip">todo.zip</a>
+        <a href="../backlog.json">backlog.json</a>
+        <hr>
+        <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/res_publica" class="nav-external">GitHub ↗</a>
+        <a href="../../../index.html" class="nav-external">Catálogo ↗</a>
+        <a href="../../../foss/index.html" class="nav-external">Artefacto (FOSS) ↗</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
+    </aside>
+    <main>
+<div class="doc-head">
+  <h1>Informe draft v1 · ¿Clon o parecido? El modelo de Trevijano frente a lo modelado
+<span class="badge">draft</span>  </h1>
+<p class="doc-links">
+  <a href="https://github.com/alephscriptorium-eng/modelador-redes/blob/main/modelos/res_publica/drafts/draftv1.md" class="ext">Ver en GitHub ↗</a>
+  <a href="https://raw.githubusercontent.com/alephscriptorium-eng/modelador-redes/main/modelos/res_publica/drafts/draftv1.md" class="ext">raw ↗</a>
+<a href="../downloads/res_publica-drafts.zip">zip</a><code>draftv1.md</code></p>
+</div>
+<nav class="toc" aria-label="Contenido">
+  <p>Contenido</p>
+  <ul>
+<li class="n2"><a href="#tabla-1--el-modelo-elemento-a-elemento">Tabla 1 · El modelo, elemento a elemento</a></li><li class="n2"><a href="#tabla-2--lo-que-no-se-puede-clonar-y-por-qué">Tabla 2 · Lo que no se puede clonar (y por qué)</a></li><li class="n2"><a href="#tabla-3--dónde-oasis-es-más-republicano-que-el-modelo">Tabla 3 · Dónde Oasis es más republicano que el modelo</a></li><li class="n2"><a href="#conclusión">Conclusión</a></li><li class="n2"><a href="#fuentes-y-certeza">Fuentes y certeza</a></li>  </ul>
+</nav>
+<article class="md">
+<h1>Informe draft v1 · ¿Clon o parecido? El modelo de Trevijano frente a lo modelado</h1>
+<p><strong>2026-09-09.</strong> Respuesta corta: <strong>no hemos modelado un clon. Hemos auditado un sistema ajeno (Oasis 1.0.7) y propuesto diez parches.</strong> Lo que existe hoy en código se parece a la República Constitucional de Trevijano en 3 de 14 elementos; con los parches RP-1…10 aplicados subiría a 8; y hay 4 elementos que <strong>no admiten traducción</strong> a una red sin territorio. Nada de RP-1…10 está implementado: son especificaciones.</p>
+<p>Grado de certeza sobre la doctrina: <strong>A</strong> = tesis nuclear, repetida en toda la obra y en el ideario del MCRC; <strong>B</strong> = posición conocida pero sin verbatim a mano; <strong>C</strong> = reconstrucción probable, verificar en <em>Teoría Pura de la República Constitucional</em> antes de citar.</p>
+<hr />
+<h2 id="tabla-1--el-modelo-elemento-a-elemento">Tabla 1 · El modelo, elemento a elemento</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Elemento del modelo trevijanista</th>
+<th style="text-align:left">Cert.</th>
+<th style="text-align:left">Oasis 1.0.7 (código real)</th>
+<th style="text-align:left">Tras RP-1…10 (propuesto)</th>
+<th style="text-align:left">Veredicto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left"><strong>Libertad política colectiva</strong> como bien distinto de las libertades civiles: un pueblo puede ser civilmente libre y políticamente esclavo</td>
+<td style="text-align:left">A</td>
+<td style="text-align:left">Libertades civiles máximas (cifrado, salida, sin identidad real). Voz política racionada: solo gobierna quien gana, 3 propuestas/mandato</td>
+<td style="text-align:left">RP-8 (iniciativa popular 10 %) abre la voz a todos. <em>Nota 2026-09-09: draftv2 TK-34 la reformula como iniciativa de mónada a través del representante, para no chocar con #13</em></td>
+<td style="text-align:left"><strong>Parecido</strong> tras RP-8</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><strong>Democracia formal</strong>: la democracia es un <em>procedimiento</em> de origen del poder, no un contenido</td>
+<td style="text-align:left">A</td>
+<td style="text-align:left">El procedimiento está codificado, público y ejecutable (<code>parliament_model.js</code>)</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left"><strong>Clon</strong>, y más literal que cualquier constitución en papel</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><strong>Período de libertad constituyente</strong> previo a toda constitución; ruptura, no reforma</td>
+<td style="text-align:left">A</td>
+<td style="text-align:left">ANARCHY como estado por defecto cada 60 días si nadie alcanza el 25 %: constituyente latente y calculado</td>
+<td style="text-align:left">RP-9 lo formaliza (<code>constituentAssembly</code>, 80 %). <em>Nota 2026-09-09: draftv2 TK-D09 añade la apertura por <strong>acción</strong> (<code>constituentCall</code>), no solo por ausencia, y declara provisionales las constantes heredadas: el fork nace por constituyente, no por reforma</em></td>
+<td style="text-align:left"><strong>Clon accidental</strong> hoy → <strong>Clon</strong> con TK-78</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left"><strong>Separación de poderes en el origen</strong>: ejecutivo y legislativo nacen de <strong>dos elecciones distintas</strong></td>
+<td style="text-align:left">A</td>
+<td style="text-align:left">Una sola elección produce un solo poder; bajo DICTATORSHIP el mismo sujeto juzga</td>
+<td style="text-align:left">RP-1 (dos ramas, ciclos desfasados 30 d)</td>
+<td style="text-align:left"><strong>Ausente</strong> hoy → <strong>Parecido</strong> con RP-1</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left"><strong>Presidente elegido por sufragio directo</strong>, jefe del ejecutivo, no sale del parlamento; sin moción de censura ni disolución</td>
+<td style="text-align:left">A/B</td>
+<td style="text-align:left">No hay ejecutivo. El &quot;gobierno&quot; es quien legisla</td>
+<td style="text-align:left">RP-1 crea la rama, pero no define qué <em>ejecuta</em> (en una red: ¿claves admin de la cadena, tesorería?). <em>Nota 2026-09-09: draftv2 TK-D06/G06/TK-84 dan la materia (chain-admin + tesorería bajo ley y presupuesto), el Consejo nombrado y la regla &quot;no disuelve sin dimitir&quot;</em></td>
+<td style="text-align:left"><strong>Ausente</strong> hoy → <strong>Parecido</strong> con G06</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left"><strong>Representación por distrito uninominal</strong>, mayoritario a doble vuelta, candidato personal responsable ante sus electores</td>
+<td style="text-align:left">A</td>
+<td style="text-align:left">Candidaturas personales <strong>o de tribu</strong>; voto único por ciclo; sin distritos: el censo es uno</td>
+<td style="text-align:left">RP-2 (solo personas al legislativo)</td>
+<td style="text-align:left"><strong>Parecido a medias</strong>: cae la lista, pero <strong>no hay distrito</strong> — no hay territorio. <em>Nota 2026-09-09: draftv2 TK-D01/G01 traduce el distrito como colegio de M inhabitants por hash; con ello pasaría a <strong>Parecido</strong></em></td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left"><strong>Sin listas de partido</strong>; partidos como asociaciones privadas sin financiación pública; el Estado de partidos es oligarquía</td>
+<td style="text-align:left">A</td>
+<td style="text-align:left">La tribu es el partido: gana y todos sus miembros legislan; concentra claves, invitaciones y poder</td>
+<td style="text-align:left">RP-2 los saca del legislativo; el backlog los deja como operadores (CVN, tesoro)</td>
+<td style="text-align:left"><strong>Parecido</strong>, con el riesgo R11 abierto: la partitocracia vuelve por la economía</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left"><strong>Sufragio universal e igual</strong>; sin censo por renta ni mérito</td>
+<td style="text-align:left">A</td>
+<td style="text-align:left">Un voto por inhabitant, igual… hasta el desempate y KARMATOCRACY, donde decide el karma (actividad menos carbono)</td>
+<td style="text-align:left">RP-3 (sorteo verificable), RP-4 (karma separado de política)</td>
+<td style="text-align:left"><strong>Ausente</strong> hoy → <strong>Clon</strong> con RP-3+4</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left"><strong>Legislativo que controla al ejecutivo</strong> (comisiones, interpelación) sin poder derribarlo</td>
+<td style="text-align:left">B</td>
+<td style="text-align:left">No hay a quién controlar</td>
+<td style="text-align:left">Sin parche específico. <em>Nota 2026-09-09: draftv2 TK-D18/G10 (informe firmado, interpelación, reprobación de acto) lo cubre</em></td>
+<td style="text-align:left"><strong>Ausente</strong> hoy → <strong>Parecido</strong> con G06+G10</td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:left"><strong>Justicia independiente de los partidos</strong>; jueces no nombrados por el poder político; jurado</td>
+<td style="text-align:left">B</td>
+<td style="text-align:left">Jueces electos por la red (<code>courtsNomination</code>), juicio cifrado, <code>DICTATOR</code> fusiona poderes</td>
+<td style="text-align:left">RP-5 (fuera DICTATOR), RP-7 (sentencias públicas)</td>
+<td style="text-align:left"><strong>Parecido</strong>: la elección popular de jueces es más que lo que Trevijano pedía; el secreto es menos. <em>Nota 2026-09-09: draftv2 TK-D07 sustituye la elección por nombramiento del Consejo con certificado de <code>School</code>, añade jurado por sorteo y control de constitucionalidad; con G07 pasaría a <strong>Clon</strong> salvo en la publicidad del proceso</em></td>
+</tr>
+<tr>
+<td style="text-align:left">11</td>
+<td style="text-align:left"><strong>Publicidad del poder</strong>: el gobernante actúa a la vista; responsabilidad personal</td>
+<td style="text-align:left">B</td>
+<td style="text-align:left">Solo en L.A.R.P.: el muro de la casa gobernante se hace público</td>
+<td style="text-align:left">RP-10 lo porta al Parlamento</td>
+<td style="text-align:left"><strong>Parecido</strong> tras RP-10</td>
+</tr>
+<tr>
+<td style="text-align:left">12</td>
+<td style="text-align:left"><strong>Mandato definido</strong> con responsabilidad; <strong>revocable por deslealtad</strong> al mandato (cap. I; divulgación MCRC verificada, ver draftv2 §Divulgación) — <em>corregido 2026-09-09: antes decía «sin revocatoria del cargo»</em>; leyes derogables con memoria</td>
+<td style="text-align:left">A/B</td>
+<td style="text-align:left">60 días fijos por calendario; derogación = tombstone (ocultación)</td>
+<td style="text-align:left">RP-6 (derogación con memoria); RP-11/TK-G04 (revocación por la mónada)</td>
+<td style="text-align:left"><strong>Parecido</strong>: el calendario fijo es incluso mejor derecho; el olvido se corrige; la revocación llega con TK-G04</td>
+</tr>
+<tr>
+<td style="text-align:left">13</td>
+<td style="text-align:left"><strong>Referéndum</strong> solo constituyente; rechazo de la democracia directa como sustituto de la representación</td>
+<td style="text-align:left">A</td>
+<td style="text-align:left">Módulos <code>Polls</code>/<code>Opinions</code>/<code>Votes</code> = consulta permanente; ANARCHY = todos proponen</td>
+<td style="text-align:left">RP-9 restringe la reforma constitucional al 80 %. <em>Nota 2026-09-09: draftv2 D10/G08 dejan <code>Polls</code> sin fuerza, TK-34 canaliza la iniciativa por la mónada y D09 convierte ANARCHY en período constituyente: el asamblearismo queda donde Trevijano lo admite</em></td>
+<td style="text-align:left"><strong>Divergente</strong> hoy → <strong>Parecido</strong> con G08</td>
+</tr>
+<tr>
+<td style="text-align:left">15</td>
+<td style="text-align:left"><strong>Consejo de Legislación</strong> con presidente elegido por la Cámara: la ley recibe su fuerza coactiva de un órgano distinto del que la vota <em>(fila añadida 2026-09-09, fuera del recuento)</em></td>
+<td style="text-align:left">B</td>
+<td style="text-align:left">No existe: <code>enactApprovedChanges</code> promulga automáticamente al expirar el mandato, sin sujeto responsable</td>
+<td style="text-align:left">draftv2 TK-D05/G05: Presidente + Consejo, promulgación firmada en ≤ 7 d, devolución motivada</td>
+<td style="text-align:left"><strong>Ausente</strong> hoy → <strong>Parecido</strong> con G05</td>
+</tr>
+<tr>
+<td style="text-align:left">14</td>
+<td style="text-align:left"><strong>La República es forma de Estado, no ideología</strong>; no es de izquierdas ni de derechas</td>
+<td style="text-align:left">A</td>
+<td style="text-align:left">Oasis es un <em>selector</em> de regímenes (democracia, dictadura, karmatocracia, anarquía) con manifiesto explícitamente anticapitalista</td>
+<td style="text-align:left">Los parches eliminan DICTATORSHIP y KARMATOCRACY del menú. <em>Nota 2026-09-09: draftv2 D12 neutraliza el manifiesto a texto de tribu y deja RBU/ECOin/carbono como leyes ordinarias, no constantes</em></td>
+<td style="text-align:left"><strong>Divergente</strong> hoy → <strong>Parecido</strong> con D12/G11</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Recuento.</strong> Hoy: 2 clones (#2, #3), 1 parecido (#10), 6 ausentes o divergentes. Tras RP-1…10: 3 clones, 5 parecidos, 2 ausentes (#5 materia del ejecutivo, #9 control parlamentario), 2 divergentes (#13, #14), y 2 intraducibles (ver Tabla 2).</p>
+<p><em>Recuento tras la revisión capítulo a capítulo del Libro III (2026-09-09, ver <code>revision/</code>), condicionado a implementar todos los TK-G de draftv2: 4 clones (#2, #3, #8, #10), 11 parecidos (#1, #4, #5, #6, #7, #9, #11, #12, #13, #14, #15), 0 ausentes, 0 divergentes. De la Tabla 2 solo sigue intraducible la <strong>escala</strong>; distrito (D01), doble vuelta (D04) y materia del ejecutivo (TK-84) quedan traducidos.</em></p>
+<hr />
+<h2 id="tabla-2--lo-que-no-se-puede-clonar-y-por-qué">Tabla 2 · Lo que no se puede clonar (y por qué)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Elemento</th>
+<th style="text-align:left">Motivo</th>
+<th style="text-align:left">Qué hacemos en su lugar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Distrito uninominal</strong> (#6)</td>
+<td style="text-align:left">Presupone territorio y población fija. Una red SSB tiene un censo fluido (<code>inhabitantsCount</code> cuenta feeds con actividad) y ninguna geografía</td>
+<td style="text-align:left">Voto único por ciclo sobre candidatos personales. Alternativa a estudiar: &quot;distritos&quot; = PUBs (cada PUB elige un representante) — pero eso reintroduce al operador del PUB como cacique. <em>Superado por draftv2 TK-D01: colegios de tamaño M por hash determinista con semilla estable; el distrito sí es traducible sin territorio, a costa de la proximidad</em></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Doble vuelta</strong></td>
+<td style="text-align:left">Requiere dos convocatorias; el ciclo de 60 días es aritmético y único</td>
+<td style="text-align:left">RP-3 (sorteo) solo desempata; no hay segunda vuelta. Podría simularse: primera mitad del ciclo = primera vuelta</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Escala</strong></td>
+<td style="text-align:left">Trevijano piensa en un Estado-nación (~350 diputados). Oasis tiene 19 estrellas en GitHub y un PUB</td>
+<td style="text-align:left">Todo lo modelado es una <strong>maqueta 1:1 de un pueblo</strong>, no de un Estado. Válida como laboratorio, no como prueba</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Poder ejecutivo con materia propia</strong> (#5)</td>
+<td style="text-align:left">En un Estado el ejecutivo administra, recauda, hace cumplir. En Oasis nada se ejecuta: las leyes son textos en el log</td>
+<td style="text-align:left">El backlog v3 le da materia: claves chain-admin de Faircoin3 (<code>addcvn</code>, <code>addcoinsupply</code>, <code>setchainparameters</code>) y tesorería. Es el primer momento en que un &quot;ejecutivo&quot; digital tendría algo que ejecutar</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="tabla-3--dónde-oasis-es-más-republicano-que-el-modelo">Tabla 3 · Dónde Oasis es <em>más</em> republicano que el modelo</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Rasgo de Oasis</th>
+<th style="text-align:left">Trevijano</th>
+<th style="text-align:left">Lectura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Elecciones por calendario fijo desde 2020-01-01: nadie las convoca ni aplaza</td>
+<td style="text-align:left">Convocatoria por el poder constituido</td>
+<td style="text-align:left">Oasis blinda algo que Trevijano dejó a la ley electoral</td>
+</tr>
+<tr>
+<td style="text-align:left">Retorno automático a la anarquía si no hay quórum del 25 %</td>
+<td style="text-align:left">Período constituyente como momento excepcional</td>
+<td style="text-align:left">Oasis lo hace permanente y periódico</td>
+</tr>
+<tr>
+<td style="text-align:left">Jueces elegidos por la red</td>
+<td style="text-align:left">Independencia por carrera y jurado</td>
+<td style="text-align:left">Más democrático en origen; menos garantista</td>
+</tr>
+<tr>
+<td style="text-align:left">Transparencia obligatoria del gobernante (L.A.R.P.)</td>
+<td style="text-align:left">Publicidad como principio</td>
+<td style="text-align:left">Implementado como mecanismo, no como norma</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="conclusión">Conclusión</h2>
+<ol>
+<li><strong>No es un clon y no puede serlo</strong>: falta el territorio y falta la escala. Lo que cabe es una <strong>república digital que herede los principios de origen</strong> (formalidad, separación en el nacimiento, sufragio igual, constituyente previo) y renuncie honestamente a la geometría electoral (distritos, doble vuelta). <em>Nota 2026-09-09: la geometría se recupera en draftv2 (D01 mónadas por hash, D04 doble vuelta en ciclo partido); lo que sigue sin traducción es la escala.</em></li>
+<li><strong>Lo modelado hasta hoy es una auditoría + diez parches sin implementar.</strong> El código real (Oasis 1.0.7) es un selector de regímenes con un sesgo censitario (karma) y una fusión de poderes verificada por el propio código.</li>
+<li><strong>El punto más trevijanista de todo el ecosistema no lo diseñamos nosotros</strong>: la anarquía calculada de <code>resolveElection</code> es un constituyente permanente. Convendría construir a partir de ahí, no a pesar de ello.</li>
+<li><strong>El punto menos trevijanista tampoco</strong>: Oasis tiene ideología (manifiesto), Trevijano la niega. El backlog v3 no resuelve esa tensión; la hereda. <em>Nota 2026-09-09: draftv2 D12 la resuelve por defecto (manifiesto neutralizado, constitución de solo forma, test de constitucionalidad G11); queda como alternativa divergente conservarlo.</em></li>
+</ol>
+<h2 id="fuentes-y-certeza">Fuentes y certeza</h2>
+<ul>
+<li>Doctrina: <em>Teoría Pura de la República</em> (3 vols.), <em>Teoría pura de la democracia</em>, ideario MCRC (mcrc.diarioerc.com, diariorc.com). Paráfrasis; las marcas B/C exigen verificación antes de citar.</li>
+<li>Código: <code>vendor/oasis</code> commit <code>9a657b7</code> (1.0.7, 2026-09-08). Detalle con fichero:línea en <a href="draftv0.html">draftv0.md (pura.md rev. 2) §2–§4</a>.</li>
+<li>Parches RP-1…10 y backlog v3: propuestos, no implementados. Plan en curso.</li>
+</ul>
+
+</article>
+      <footer class="site-footer">
+<div class="provenance-footer">
+  <p class="provenance-footer-chain">
+    <a href="https://escrivivir.co">Escrivivir</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://escrivivir.co/2026/06/04/t04x06a-ficha-de-producto-scriptorium-skins-arg/">Scriptorium Skins</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span>Animus Iocandi</span>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Modelador de Redes</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span title="Frente Aleph de Resistencia Ontológica">F.A.R.O.</span>
+  </p>
+  <p class="provenance-footer-meta">
+    Material transmedia para agentes del juego ARG
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    v0.1.0
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    GPL-3.0-or-later · AIPLv1
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://github.com/alephscriptorium-eng/modelador-redes">Repositorio</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Inicio</a>
+  </p>
+</div>      </footer>
+    </main>
+  </div>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

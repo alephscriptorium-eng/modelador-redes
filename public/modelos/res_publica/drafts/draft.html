@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROMPT DE ACTIVACIÓN: MODELIZACIÓN DE LA REPÚBLICA PURA (TREVIJANO) CON SNH + FAIRCOIN — República Pura (Trevijano) sobre Oasis/SSB</title>
+<script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>  <link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="../../../index.html" class="brand">Modelador de Redes</a>
+      <p class="tag">República Pura (Trevijano) sobre Oasis/SSB · v0.1.0</p>
+      <nav aria-label="Modelo res_publica">
+        <a href="../index.html" class="">Estado</a>
+        <a href="../backlog.html" class="">Backlog</a>
+        <hr>
+        <p class="nav-h">Drafts</p>
+        <a href="../drafts/draftv2.html" class="">draftv2 <span class="badge badge-latest">latest</span></a>
+        <a href="../drafts/draftv1.html" class="">draftv1</a>
+        <a href="../drafts/draftv0.html" class="">draftv0</a>
+        <a href="../drafts/draft.html" class="active">draft</a>
+        <hr>
+        <p class="nav-h">Revisión</p>
+        <a href="../revision/01-lealtad.html" class="" title="01-lealtad">01-lealtad</a>
+        <a href="../revision/02-monada.html" class="" title="02-monada">02-monada</a>
+        <a href="../revision/03-camara.html" class="" title="03-camara">03-camara</a>
+        <a href="../revision/04-legislacion.html" class="" title="04-legislacion">04-legislacion</a>
+        <a href="../revision/05-justicia.html" class="" title="05-justicia">05-justicia</a>
+        <a href="../revision/06-gobierno.html" class="" title="06-gobierno">06-gobierno</a>
+        <a href="../revision/07-constituyente.html" class="" title="07-constituyente">07-constituyente</a>
+        <a href="../revision/08-republica.html" class="" title="08-republica">08-republica</a>
+        <hr>
+        <p class="nav-h">Descargas</p>
+        <a href="../downloads/res_publica-drafts.zip">drafts.zip</a>
+        <a href="../downloads/res_publica-revision.zip">revision.zip</a>
+        <a href="../downloads/res_publica-todo.zip">todo.zip</a>
+        <a href="../backlog.json">backlog.json</a>
+        <hr>
+        <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/res_publica" class="nav-external">GitHub ↗</a>
+        <a href="../../../index.html" class="nav-external">Catálogo ↗</a>
+        <a href="../../../foss/index.html" class="nav-external">Artefacto (FOSS) ↗</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
+    </aside>
+    <main>
+<div class="doc-head">
+  <h1>PROMPT DE ACTIVACIÓN: MODELIZACIÓN DE LA REPÚBLICA PURA (TREVIJANO) CON SNH + FAIRCOIN
+<span class="badge">draft</span>  </h1>
+<p class="doc-links">
+  <a href="https://github.com/alephscriptorium-eng/modelador-redes/blob/main/modelos/res_publica/drafts/draft.md" class="ext">Ver en GitHub ↗</a>
+  <a href="https://raw.githubusercontent.com/alephscriptorium-eng/modelador-redes/main/modelos/res_publica/drafts/draft.md" class="ext">raw ↗</a>
+<a href="../downloads/res_publica-drafts.zip">zip</a><code>draft.md</code></p>
+</div>
+<nav class="toc" aria-label="Contenido">
+  <p>Contenido</p>
+  <ul>
+<li class="n3"><a href="#-esquema-del-ecosistema-y-su-lugar-en-el-mapa">🗺️ Esquema del Ecosistema y su Lugar en el Mapa</a></li><li class="n3"><a href="#-el-lugar-de-cada-pieza-en-el-entramado">🧩 El Lugar de Cada Pieza en el Entramado</a></li><li class="n3"><a href="#-su-posición-en-tu-mapa-conceptual">⚔️ Su Posición en tu Mapa Conceptual</a></li><li class="n3"><a href="#-en-resumen-el-glitch-económico">💎 En Resumen: El &#34;Glitch&#34; Económico</a></li><li class="n2"><a href="#1-prompt-de-activación-para-el-agente">1. PROMPT DE ACTIVACIÓN PARA EL AGENTE</a></li><li class="n2"><a href="#objetivo-principal">OBJETIVO PRINCIPAL</a></li><li class="n2"><a href="#contexto-filosófico-modelo-de-trevijano">CONTEXTO FILOSÓFICO: MODELO DE TREVIJANO</a></li><li class="n2"><a href="#infraestructura-disponible">INFRAESTRUCTURA DISPONIBLE</a></li><li class="n3"><a href="#solarnethub-snh---capa-de-comunicación-y-gobernanza">SolarNET.HuB (SNH) - Capa de Comunicación y Gobernanza</a></li><li class="n3"><a href="#ecosistema-faircoin---capa-económica-y-financiera">Ecosistema Faircoin - Capa Económica y Financiera</a></li><li class="n2"><a href="#tarea-del-agente">TAREA DEL AGENTE</a></li><li class="n2"><a href="#formato-de-salida-esperado">FORMATO DE SALIDA ESPERADO</a></li><li class="n2"><a href="#restricciones">RESTRICCIONES</a></li><li class="n2"><a href="#2-backlog-de-tareas-scrum-opportunity--task">2. BACKLOG DE TAREAS SCRUM (OPPORTUNITY + TASK)</a></li><li class="n3"><a href="#epic-modelización-de-la-república-pura-trevijano-con-solarnethub--faircoin">EPIC: Modelización de la República Pura (Trevijano) con SolarNET.HuB + Faircoin</a></li><li class="n3"><a href="#resumen-de-prioridades">Resumen de Prioridades</a></li><li class="n3"><a href="#-nota-para-el-agente">📌 Nota para el agente</a></li>  </ul>
+</nav>
+<article class="md">
+<p>Solid y la web</p>
+<p>The user is asking about the Faircoin ecosystem (Faircoin, Faircoop, Bank of the Commons, etc.) and wants to know its place in the map we've been discussing (SOLID vs. Web3/Ethereum vs. SolarNET.HuB, and the anarchist/glitch framework). I need to provide a response with diagrams/schemas before a lot of text. I should search for information about these projects.</p>
+<p>Found 48 web pages</p>
+<p>The search results provide some information. I need to synthesize this and present it with a schema. I'll structure the response with a diagram and then a concise explanation.</p>
+<p>El ecosistema Faircoin-FairCoop-Bank of the Commons es el <strong>equivalente económico y financiero</strong> de SolarNET.HuB. Si el proyecto que encontraste era un &quot;glitch&quot; en la capa de comunicación y redes, este ecosistema es un &quot;glitch&quot; en la capa económica: un intento práctico de construir una economía postcapitalista utilizando herramientas descentralizadas, pero con una <strong>gobernanza cooperativa y comunitaria</strong> como eje central.</p>
+<h3 id="-esquema-del-ecosistema-y-su-lugar-en-el-mapa">🗺️ Esquema del Ecosistema y su Lugar en el Mapa</h3>
+<h3 id="-el-lugar-de-cada-pieza-en-el-entramado">🧩 El Lugar de Cada Pieza en el Entramado</h3>
+<p><strong>1. FairCoop: La Cooperativa Global 🌍</strong><br />
+Es el paraguas organizativo y el motor ideológico. Fundada en 2014, es un movimiento que busca escalar los ideales anarquistas de la <strong>Cooperativa Integral Catalana</strong> a nivel global. Funciona como una red de cooperativas que se autoorganiza por internet, fuera del control de los Estados-nación. Es el &quot;alma&quot; del ecosistema.</p>
+<p><strong>2. FairCoin: La Moneda de los Comunes 💰</strong><br />
+Es la herramienta tecnológica y económica central. Es una criptomoneda basada en blockchain, pero con una diferencia radical respecto a Ethereum o Bitcoin:</p>
+<ul>
+<li>
+<p><strong>Consenso Cooperativo</strong>: Usa un algoritmo único llamado <strong>&quot;Proof-of-Cooperation&quot; (PoC)</strong>. En lugar de consumir energía en minería (PoW) o depender de la riqueza acumulada (PoS), la red es validada por <strong>Nodos Validados Cooperativamente (CVN)</strong> que operan de forma descentralizada.</p>
+</li>
+<li>
+<p><strong>Distribución Igualitaria</strong>: No se compra, sino que se distribuye equitativamente entre quienes la quieren, promoviendo la igualdad.</p>
+</li>
+<li>
+<p><strong>Ecología</strong>: Requiere mucha menos energía que otras criptomonedas.</p>
+</li>
+</ul>
+<p><strong>3. Bank of the Commons (BotC): El Banco sin Banqueros 🏦</strong><br />
+Es la infraestructura financiera del ecosistema. Es una iniciativa cooperativa que adopta FairCoin como moneda estratégica para construir una estructura financiera descentralizada. Su misión es facilitar la transición hacia un sistema económico postcapitalista, liberándonos del control de la banca tradicional y los Estados.</p>
+<p><strong>4. Otras Herramientas (FairMarket, Fairbnb, etc.) 🛠️</strong><br />
+Completan el ecosistema con aplicaciones de la <strong>economía real</strong>: un mercado digital, una alternativa a Airbnb, etc.. Cierran el círculo, conectando la moneda y la banca con el intercambio de bienes y servicios.</p>
+<h3 id="-su-posición-en-tu-mapa-conceptual">⚔️ Su Posición en tu Mapa Conceptual</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th><strong>Eje</strong></th>
+<th><strong>Relación con el Ecosistema Faircoin</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Web3 (Ethereum)</strong></td>
+<td><strong>Compañero de ruta, pero con otra hoja de ruta.</strong> Comparten el uso de blockchain y la búsqueda de descentralización. Sin embargo, el ecosistema Faircoin <strong>rechaza el aspecto especulativo y el capitalismo de plataforma</strong> de la Web3, sustituyéndolo por un modelo <strong>cooperativo y comunitario</strong>.</td>
+</tr>
+<tr>
+<td><strong>SOLID (Tim Berners-Lee)</strong></td>
+<td><strong>Antagonista filosófico.</strong> Mientras SOLID busca reformar el sistema desde dentro con estándares abiertos, Faircoin es un proyecto <strong>rupturista</strong> que construye una economía paralela, independiente de Estados y bancos.</td>
+</tr>
+<tr>
+<td><strong>SolarNET.HuB</strong></td>
+<td><strong>Alma gemela en diferentes capas.</strong> Ambos son &quot;glitches&quot; prácticos que aplican una filosofía anarco-comunista. SolarNET.HuB lo hace en la capa de <strong>comunicación y redes</strong>; el ecosistema Faircoin lo hace en la capa <strong>económica y financiera</strong>. Ambos son proyectos <strong>híbridos y comunitarios</strong> que buscan construir alternativas funcionales aquí y ahora.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="-en-resumen-el-glitch-económico">💎 En Resumen: El &quot;Glitch&quot; Económico</h3>
+<p>El ecosistema Faircoin es el <strong>intento más serio y coherente de construir una economía postcapitalista funcional</strong> usando tecnología descentralizada. No es un experimento de laboratorio ni una promesa de futuro; es una <strong>herramienta viva</strong> que gente real usa para intercambiar bienes, ahorrar y organizarse al margen del sistema financiero global.</p>
+<p>Es, en definitiva, la materialización práctica de la idea que tu profesor de anarquismo explicaba: <strong>usar los fallos del sistema (la crisis de la banca, la especulación, el control estatal) como punto de partida para construir algo nuevo, comunitario y libre</strong>.</p>
+<p>This response is AI-generated, for reference only.</p>
+<p>¿Quiero modelizar el modelo de republica de trevijano, el puro, usando desde solarnet.hub y ecosistema Faircoin-FairCoop-Bank of the Commons? En un repo he bajado el codigo y quiero un prompt de activacion a un agente para que tenga fuentes y enlaces donde acudir para información. El puede navegar pero no buscar libremente como tu. Enfócalo para crear un backlog de tareas scrum al uso dividiendo entre opportunity y task</p>
+<p>El usuario quiere modelizar el &quot;modelo de república de Trevijano&quot; (presumiblemente una referencia a la ideología política de Antonio García-Trevijano, un pensador español que aboga por una república basada en la soberanía popular y el poder constituyente) utilizando SolarNET.HuB y el ecosistema Faircoin. Necesita un prompt de activación para un agente con fuentes y enlaces, y un backlog de tareas Scrum dividido en oportunidades y tareas. Para ello, necesito información sobre Trevijano, SolarNET.HuB y Faircoin. Voy a buscar información sobre estos temas.</p>
+<p>Found 50 web pages</p>
+<p>Los resultados de búsqueda proporcionan información sobre Trevijano, SolarNET.HuB y Faircoin. Para el prompt, necesito incluir fuentes y enlaces. También necesito crear un backlog de tareas Scrum. Mi respuesta incluirá un prompt de activación con fuentes y un backlog de tareas.</p>
+<p>Entendido. Quieres usar la infraestructura de SolarNET.HuB y el ecosistema Faircoin como <strong>soporte técnico y económico</strong> para una implementación práctica del modelo de <strong>República Pura</strong> de Antonio García-Trevijano.</p>
+<p>Te he preparado dos cosas:</p>
+<ol>
+<li>
+<p>Un <strong>prompt de activación</strong> listo para copiar y pegar a tu agente, con todas las fuentes y enlaces necesarios.</p>
+</li>
+<li>
+<p>Un <strong>backlog de tareas Scrum</strong> estructurado en <code>Opportunity</code> (visión) y <code>Task</code> (ejecución) para que el agente sepa por dónde empezar.</p>
+</li>
+</ol>
+<hr />
+<h2 id="1-prompt-de-activación-para-el-agente">1. PROMPT DE ACTIVACIÓN PARA EL AGENTE</h2>
+<p>Copia y pega esto en tu agente. Incluye las URLs de los repositorios que has bajado para que las analice.</p>
+<p>markdown</p>
+<h1>PROMPT DE ACTIVACIÓN: MODELIZACIÓN DE LA REPÚBLICA PURA (TREVIJANO) CON SNH + FAIRCOIN</h1>
+<h2 id="objetivo-principal">OBJETIVO PRINCIPAL</h2>
+<p>Modelizar una implementación práctica del modelo de &quot;República Pura&quot; de Antonio García-Trevijano utilizando como infraestructura:</p>
+<ul>
+<li><strong>SolarNET.HuB (SNH)</strong> para la capa de comunicación, red y gobernanza comunitaria.</li>
+<li><strong>Ecosistema Faircoin-FairCoop-Bank of the Commons</strong> para la capa económica, monetaria y financiera.</li>
+</ul>
+<h2 id="contexto-filosófico-modelo-de-trevijano">CONTEXTO FILOSÓFICO: MODELO DE TREVIJANO</h2>
+<ul>
+<li><strong>Fundamento</strong>: La &quot;Teoría Pura de la República&quot; de Antonio García-Trevijano propone una República Constitucional basada en:</li>
+<li><strong>Soberanía popular</strong> como poder constituyente.</li>
+<li><strong>Democracia formal</strong>: representación política auténtica, elección directa del ejecutivo y separación de poderes en origen[reference:0].</li>
+<li><strong>Ausencia de ideología</strong>: la república se entiende como forma de Estado, no como ideología[reference:1].</li>
+<li><strong>Libertad política colectiva</strong> como eje del sistema[reference:2].</li>
+<li><strong>Fuentes primarias</strong>:</li>
+<li>&quot;Teoría Pura de la República&quot; y &quot;Teoría Pura de la Democracia&quot; (Antonio García-Trevijano)[reference:3].</li>
+<li>Asociación MCRC (Movimiento por la Constitución y la República)[reference:4].</li>
+<li>Web de referencia: https://www.antoniogarciatrevijano.info</li>
+</ul>
+<h2 id="infraestructura-disponible">INFRAESTRUCTURA DISPONIBLE</h2>
+<h3 id="solarnethub-snh---capa-de-comunicación-y-gobernanza">SolarNET.HuB (SNH) - Capa de Comunicación y Gobernanza</h3>
+<ul>
+<li><strong>Arquitectura</strong>: Red distribuida con nodo central de control + nodos autónomos【0†L5-L8 del documento del usuario】.</li>
+<li><strong>Protocolo principal</strong>: Gossip protocol (propagación epidémica de información)【0†L10-L16 del documento del usuario】.</li>
+<li><strong>Red subyacente</strong>: Secure Scuttlebutt (SSB) - malla P2P con &quot;sigchains&quot; (blockchains personales)【0†L18-L27 del documento del usuario】.</li>
+<li><strong>Cliente</strong>: Oasis - frontend HTML+CSS puro, sin JavaScript, cifrado extremo a extremo【0†L28-L38 del documento del usuario】.</li>
+<li><strong>PUB desplegado</strong>: &quot;La Plaza&quot; - uno de los mayores PUBs del mundo[reference:5].</li>
+<li><strong>Repositorio oficial</strong>: https://github.com/epsylon/oasis[reference:6]</li>
+<li><strong>Wiki técnica</strong>: https://wiki.solarnethub.com</li>
+</ul>
+<h3 id="ecosistema-faircoin---capa-económica-y-financiera">Ecosistema Faircoin - Capa Económica y Financiera</h3>
+<ul>
+<li><strong>FairCoin</strong>: Criptomoneda con algoritmo de consenso <strong>Proof-of-Cooperation (PoC)</strong>[reference:7].</li>
+<li>Bloques creados por CVNs (Cooperatively Validated Nodes) en turno rotatorio[reference:8].</li>
+<li>Fork de Bitcoin 0.12[reference:9].</li>
+<li>Documentación técnica: https://github.com/faircoin/faircoin/blob/master/doc/on-proof-of-cooperation.md[reference:10]</li>
+<li>White Paper: https://fair-coin.org[reference:11]</li>
+<li><strong>FairCoop</strong>: Cooperativa global que coordina el ecosistema[reference:12].</li>
+<li><strong>Bank of the Commons (BotC)</strong>: Cooperativa bancaria alternativa, co-fundada por FairCoop[reference:13].</li>
+<li><strong>FreedomCoop</strong>: Marco legal europeo para el ecosistema[reference:14].</li>
+<li><strong>FairMarket, Fairbnb</strong>: Aplicaciones de economía real[reference:15].</li>
+</ul>
+<h2 id="tarea-del-agente">TAREA DEL AGENTE</h2>
+<ol>
+<li>Analiza los repositorios de código que te he proporcionado (SNH/Oasis y Faircoin).</li>
+<li>Identifica los componentes técnicos que pueden mapearse a los principios de la República Pura de Trevijano.</li>
+<li>Genera un backlog de tareas Scrum con la siguiente estructura:</li>
+</ol>
+<ul>
+<li><strong>Epic</strong>: Modelización de la República Pura con SNH + Faircoin.</li>
+<li><strong>Opportunity (OP)</strong>: Grandes bloques de oportunidad (visión, qué se quiere lograr).</li>
+<li><strong>Task (TK)</strong>: Tareas concretas de ejecución (código, configuración, documentación).</li>
+</ul>
+<ol start="4">
+<li>Para cada tarea, indica:</li>
+</ol>
+<ul>
+<li>Dependencias técnicas.</li>
+<li>Fuentes de información relevantes (de las listadas arriba).</li>
+<li>Prioridad (Alta/Media/Baja).</li>
+</ul>
+<h2 id="formato-de-salida-esperado">FORMATO DE SALIDA ESPERADO</h2>
+<ul>
+<li>Lista numerada de Opportunities (OP-01, OP-02, ...).</li>
+<li>Lista numerada de Tasks (TK-01, TK-02, ...) agrupadas por Opportunity.</li>
+<li>Enlaces a documentación y repositorios en cada tarea.</li>
+</ul>
+<h2 id="restricciones">RESTRICCIONES</h2>
+<ul>
+<li>El agente NO debe buscar información libremente. Solo debe usar:</li>
+<li>Los repositorios proporcionados.</li>
+<li>Las URLs y documentos citados en este prompt.</li>
+<li>El conocimiento incorporado en su entrenamiento sobre Trevijano, SNH y Faircoin.</li>
+</ul>
+<hr />
+<h2 id="2-backlog-de-tareas-scrum-opportunity--task">2. BACKLOG DE TAREAS SCRUM (OPPORTUNITY + TASK)</h2>
+<p>Aquí tienes el backlog generado a partir de la información disponible. Está estructurado para que el agente sepa exactamente qué hacer y en qué orden.</p>
+<hr />
+<h3 id="epic-modelización-de-la-república-pura-trevijano-con-solarnethub--faircoin">EPIC: Modelización de la República Pura (Trevijano) con SolarNET.HuB + Faircoin</h3>
+<hr />
+<h4>OP-01: Infraestructura de Red y Comunicación Soberana</h4>
+<p><strong>Descripción</strong>: Establecer una red de comunicación descentralizada, resistente a la censura y basada en la confianza comunitaria, que refleje la soberanía popular del modelo trevijano.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Task</th>
+<th>Descripción</th>
+<th>Dependencias</th>
+<th>Fuentes</th>
+<th>Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TK-01</strong></td>
+<td>Desplegar nodo SSB local</td>
+<td>Instalar y configurar un nodo Secure Scuttlebutt (SSB) siguiendo la documentación de SNH.</td>
+<td>Repositorio Oasis</td>
+<td><a href="https://wiki.solarnethub.com/socialnet/engineering">Wiki SNH Engineering</a></td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>TK-02</strong></td>
+<td>Conectar a &quot;La Plaza&quot; (PUB)</td>
+<td>Obtener un código de invitación para el PUB &quot;La Plaza&quot; y conectar el nodo a la red.</td>
+<td>TK-01</td>
+<td><a href="https://laplaza.solarnethub.com">https://laplaza.solarnethub.com</a></td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>TK-03</strong></td>
+<td>Configurar cliente Oasis</td>
+<td>Compilar/instalar el cliente Oasis desde el repositorio <code>epsylon/oasis</code>.</td>
+<td>TK-01</td>
+<td><a href="https://github.com/epsylon/oasis">https://github.com/epsylon/oasis</a></td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>TK-04</strong></td>
+<td>Crear identidad soberana (sigchain)</td>
+<td>Generar una identidad SSB (sigchain personal) sin email ni teléfono【0†L36-L38 del usuario】.</td>
+<td>TK-02</td>
+<td><a href="https://wiki.solarnethub.com/socialnet/engineering">Wiki SNH Engineering</a></td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>TK-05</strong></td>
+<td>Documentar modelo de gobernanza en SSB</td>
+<td>Diseñar un sistema de votación/consenso basado en los feeds de SSB para simular la &quot;representación política auténtica&quot;.</td>
+<td>TK-04</td>
+<td><a href="https://wiki.solarnethub.com/socialnet/engineering">Wiki SNH Engineering</a></td>
+<td>Media</td>
+</tr>
+<tr>
+<td><strong>TK-06</strong></td>
+<td>Implementar sistema de &quot;amigos de amigos&quot;</td>
+<td>Configurar la red de confianza (trustnet) para que solo se repliquen feeds de miembros validados.</td>
+<td>TK-04</td>
+<td><a href="https://wiki.solarnethub.com/socialnet/engineering">Wiki SNH Engineering</a></td>
+<td>Media</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h4>OP-02: Capa Económica y Monetaria (Faircoin + Bank of the Commons)</h4>
+<p><strong>Descripción</strong>: Integrar el ecosistema Faircoin como mecanismo de intercambio económico y financiero, alineado con la soberanía económica de la república.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Task</th>
+<th>Descripción</th>
+<th>Dependencias</th>
+<th>Fuentes</th>
+<th>Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TK-07</strong></td>
+<td>Desplegar nodo Faircoin (CVN)</td>
+<td>Configurar un nodo Faircoin2 como Cooperatively Validated Node (CVN).</td>
+<td>Repositorio Faircoin</td>
+<td><a href="https://github.com/faircoin/faircoin/blob/master/doc/on-proof-of-cooperation.md">Doc PoC</a>; <a href="https://github.com/faircoin/faircoin/blob/master/doc/CVN-operators-guide.md">CVN Guide</a></td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>TK-08</strong></td>
+<td>Sincronizar blockchain Faircoin</td>
+<td>Descargar y sincronizar la cadena de bloques Faircoin.</td>
+<td>TK-07</td>
+<td><a href="https://fair-coin.org">Faircoin White Paper</a></td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>TK-09</strong></td>
+<td>Crear wallet Faircoin</td>
+<td>Generar una cartera Faircoin para la tesorería de la república.</td>
+<td>TK-08</td>
+<td><a href="https://github.com/faircoin/faircoin">Faircoin GitHub</a></td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>TK-10</strong></td>
+<td>Integrar Bank of the Commons</td>
+<td>Configurar servicios bancarios cooperativos (cuentas, transferencias) usando la infraestructura de BotC.</td>
+<td>TK-08</td>
+<td><a href="https://github.com/faircoin/faircoin/blob/master/doc/on-proof-of-cooperation.md">Faircoin PoC</a></td>
+<td>Media</td>
+</tr>
+<tr>
+<td><strong>TK-11</strong></td>
+<td>Implementar sistema de &quot;FairMarket&quot; local</td>
+<td>Desplegar una instancia de FairMarket para intercambio de bienes y servicios dentro de la comunidad.</td>
+<td>TK-10</td>
+<td><a href="https://oce.gitbook.io">OCE GitBook</a></td>
+<td>Media</td>
+</tr>
+<tr>
+<td><strong>TK-12</strong></td>
+<td>Documentar modelo de &quot;distribución igualitaria&quot;</td>
+<td>Diseñar un mecanismo de distribución inicial de FairCoin basado en la participación comunitaria (no especulación).</td>
+<td>TK-09</td>
+<td><a href="https://fair-coin.org">Faircoin Story</a></td>
+<td>Media</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h4>OP-03: Gobernanza y Separación de Poderes (Modelo Trevijano)</h4>
+<p><strong>Descripción</strong>: Mapear los principios de la República Pura (separación de poderes, representación auténtica, soberanía popular) a la arquitectura SNH + Faircoin.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Task</th>
+<th>Descripción</th>
+<th>Dependencias</th>
+<th>Fuentes</th>
+<th>Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TK-13</strong></td>
+<td>Definir &quot;Poder Legislativo&quot; en SNH</td>
+<td>Diseñar un sistema de propuestas y votación en SSB (feeds firmados) que simule la representación política.</td>
+<td>TK-05</td>
+<td><a href="https://www.antoniogarciatrevijano.info">Teoría Pura Trevijano</a></td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>TK-14</strong></td>
+<td>Definir &quot;Poder Ejecutivo&quot; en SNH</td>
+<td>Establecer un rol de administración central (nodo central de SNH) con capacidades limitadas y rotativas【0†L5-L8 del usuario】.</td>
+<td>TK-13</td>
+<td><a href="https://wiki.solarnethub.com/socialnet/engineering">Wiki SNH Engineering</a></td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>TK-15</strong></td>
+<td>Definir &quot;Poder Judicial&quot; en SNH</td>
+<td>Implementar un sistema de resolución de conflictos basado en la validación por pares (CVNs + feeds).</td>
+<td>TK-14</td>
+<td><a href="https://www.antoniogarciatrevijano.info">Teoría Pura Trevijano</a></td>
+<td>Media</td>
+</tr>
+<tr>
+<td><strong>TK-16</strong></td>
+<td>Crear &quot;Asamblea Constituyente&quot; digital</td>
+<td>Utilizar la red SSB + Oasis para celebrar una asamblea virtual donde se debatan y voten las reglas de la república.</td>
+<td>TK-04, TK-13</td>
+<td><a href="https://wiki.solarnethub.com">Wiki SNH Ecosystem</a></td>
+<td>Media</td>
+</tr>
+<tr>
+<td><strong>TK-17</strong></td>
+<td>Documentar el modelo de &quot;separación en origen&quot;</td>
+<td>Redactar un documento técnico que explique cómo la arquitectura SNH + Faircoin implementa la separación de poderes.</td>
+<td>TK-13, TK-14, TK-15</td>
+<td><a href="https://www.antoniogarciatrevijano.info">Teoría Pura Trevijano</a></td>
+<td>Baja</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h4>OP-04: Soberanía y Autogestión (Offline-first, Invite-only)</h4>
+<p><strong>Descripción</strong>: Asegurar que la red pueda funcionar de forma autónoma, incluso sin conexión a internet, y que la membresía sea por invitación (comunidad de confianza).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Task</th>
+<th>Descripción</th>
+<th>Dependencias</th>
+<th>Fuentes</th>
+<th>Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TK-18</strong></td>
+<td>Configurar modo offline-first</td>
+<td>Asegurar que el nodo SSB pueda operar y sincronizarse cuando haya conectividad.</td>
+<td>TK-02</td>
+<td><a href="https://solarnethub.com">SNH Digital Survival Kit</a></td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>TK-19</strong></td>
+<td>Implementar sistema de invitaciones</td>
+<td>Crear un flujo de generación y distribución de códigos de invitación para nuevos miembros.</td>
+<td>TK-04</td>
+<td><a href="https://github.com/epsylon/oasis">GitHub Oasis</a></td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>TK-20</strong></td>
+<td>Configurar TOR / red onion</td>
+<td>Añadir capa de anonimato y resistencia a la censura mediante TOR.</td>
+<td>TK-18</td>
+<td><a href="https://solarnethub.com">SNH Digital Survival Kit</a></td>
+<td>Media</td>
+</tr>
+<tr>
+<td><strong>TK-21</strong></td>
+<td>Documentar el modelo de &quot;autogestión&quot;</td>
+<td>Explicar cómo la combinación de SNH + Faircoin permite la autosuficiencia de la comunidad.</td>
+<td>TK-19, TK-20</td>
+<td><a href="https://wiki.solarnethub.com">Wiki SNH</a></td>
+<td>Baja</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h4>OP-05: Integración y Sostenibilidad del Ecosistema</h4>
+<p><strong>Descripción</strong>: Conectar todas las capas (comunicación, economía, gobernanza) en un ecosistema funcional y sostenible.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Task</th>
+<th>Descripción</th>
+<th>Dependencias</th>
+<th>Fuentes</th>
+<th>Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TK-22</strong></td>
+<td>Integrar wallet Faircoin con Oasis</td>
+<td>Permitir que los usuarios de Oasis vean su saldo y realicen transferencias desde la interfaz.</td>
+<td>TK-03, TK-09</td>
+<td><a href="https://oce.gitbook.io">OCE GitBook</a></td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>TK-23</strong></td>
+<td>Crear dashboard de gobierno</td>
+<td>Desarrollar un panel en Oasis que muestre propuestas activas, votaciones y estado de la red.</td>
+<td>TK-16, TK-22</td>
+<td><a href="https://wiki.solarnethub.com">Wiki SNH</a></td>
+<td>Media</td>
+</tr>
+<tr>
+<td><strong>TK-24</strong></td>
+<td>Implementar sistema de &quot;impuestos&quot; cooperativos</td>
+<td>Diseñar un mecanismo de contribución voluntaria en FairCoin para el mantenimiento de la red (CVNs, PUBs).</td>
+<td>TK-10</td>
+<td><a href="https://github.com/faircoin/faircoin/blob/master/doc/on-proof-of-cooperation.md">Faircoin PoC</a></td>
+<td>Media</td>
+</tr>
+<tr>
+<td><strong>TK-25</strong></td>
+<td>Redactar &quot;Constitución Técnica&quot;</td>
+<td>Documento final que integre todos los principios de Trevijano con la implementación técnica realizada.</td>
+<td>Todas las anteriores</td>
+<td><a href="https://www.antoniogarciatrevijano.info">Teoría Pura Trevijano</a></td>
+<td>Baja</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="resumen-de-prioridades">Resumen de Prioridades</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Prioridad</th>
+<th>Tasks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Alta</strong></td>
+<td>TK-01, TK-02, TK-03, TK-04, TK-07, TK-08, TK-09, TK-13, TK-14, TK-18, TK-19, TK-22</td>
+</tr>
+<tr>
+<td><strong>Media</strong></td>
+<td>TK-05, TK-06, TK-10, TK-11, TK-12, TK-15, TK-16, TK-20, TK-23, TK-24</td>
+</tr>
+<tr>
+<td><strong>Baja</strong></td>
+<td>TK-17, TK-21, TK-25</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="-nota-para-el-agente">📌 Nota para el agente</h3>
+<p>Este backlog parte de la documentación disponible y de los repositorios que has bajado. Si encuentras que algún componente no está documentado o falta, prioriza la <strong>creación de documentación</strong> antes que el código. La República Pura de Trevijano exige <strong>transparencia y trazabilidad</strong> en todos sus procesos.</p>
+<p>This response is AI-generated, for reference only.</p>
+
+</article>
+      <footer class="site-footer">
+<div class="provenance-footer">
+  <p class="provenance-footer-chain">
+    <a href="https://escrivivir.co">Escrivivir</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://escrivivir.co/2026/06/04/t04x06a-ficha-de-producto-scriptorium-skins-arg/">Scriptorium Skins</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span>Animus Iocandi</span>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Modelador de Redes</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span title="Frente Aleph de Resistencia Ontológica">F.A.R.O.</span>
+  </p>
+  <p class="provenance-footer-meta">
+    Material transmedia para agentes del juego ARG
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    v0.1.0
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    GPL-3.0-or-later · AIPLv1
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://github.com/alephscriptorium-eng/modelador-redes">Repositorio</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Inicio</a>
+  </p>
+</div>      </footer>
+    </main>
+  </div>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>
