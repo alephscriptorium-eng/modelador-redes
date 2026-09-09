@@ -90,8 +90,8 @@
       "descripcion": "Modelo puro de las colectivizaciones anarcosindicalistas de 1936-37 (asamblea soberana, cargos rotatorios y revocables, propiedad colectiva, salario familiar, federación de abajo arriba, intercambio sin precio) auditado contra Oasis 1.0.7: ocho criterios, parches CL-1…CL-11 y backlog por carriles D' → G' → B' → E' → F'.",
       "latest": "draftv0",
       "n_drafts": 2,
-      "n_fichas": 1,
-      "total_tk": 29,
+      "n_fichas": 7,
+      "total_tk": 36,
       "ops": 6,
       "github": "https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/colectivizaciones"
     },
