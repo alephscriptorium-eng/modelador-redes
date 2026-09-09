@@ -2,7 +2,7 @@
 
 # Costuras de Oasis 1.0.7 para el nodo `clase` (materialismo filosófico de Gustavo Bueno)
 
-Exploración de 2026-09-09 sobre `vendor/oasis/src` @ `9a657b776fcafc7c24bf3ad61825316385ecf513`. Cada fila se ha verificado con `sed -n` y la línea citada contiene el símbolo nombrado. Las categorías siguen las coordenadas K1-K7 del plan embebido en `drafts/draft.md`. La columna «Lectura» es trituración nuestra: donde interpreta doctrina de Bueno sin verbatim lleva grado de certeza (A/B/C) y la etiqueta [doctrina, sin verbatim]. Los hechos de `res_publica/drafts/draftv0.md` y `colectivizaciones/drafts/draftv0.md` se han usado solo como pistas y se han vuelto a verificar aquí.
+Exploración de 2026-09-09 sobre `vendor/oasis/src` @ `9a657b776fcafc7c24bf3ad61825316385ecf513`. Cada fila se ha verificado con `sed -n` y la línea citada contiene el símbolo nombrado. Las categorías siguen las coordenadas K1-K7 del plan embebido en `drafts/draft.md`. La columna «Lectura» es trituración nuestra: donde interpreta doctrina de Bueno sin verbatim lleva grado de certeza (A/B/C) y la etiqueta [doctrina, sin verbatim]. Los hechos de `res_publica/drafts/draftv0.md` y `otro nodo del catálogo/drafts/draftv0.md` se han usado solo como pistas y se han vuelto a verificar aquí.
 
 Rutas: `models/` y `views/` son relativas a `vendor/oasis/src/`; `backend/backend.js`, `server/SSB_server.js`, `AI/ai_service.mjs`, `configs/server-config.json` y `../scripts/oasis-pub.js` se citan con su ruta completa desde `src/`.
 
