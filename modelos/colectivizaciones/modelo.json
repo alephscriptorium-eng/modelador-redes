@@ -1,0 +1,8 @@
+{
+  "id": "colectivizaciones",
+  "tipo": "nodo",
+  "nombre": "Colectivizaciones libertarias 1936-37 sobre Oasis/SSB",
+  "rama": "dev/colectivizaciones",
+  "estado": "en revisión",
+  "descripcion": "Modelo puro de las colectivizaciones anarcosindicalistas de 1936-37 (asamblea soberana, cargos rotatorios y revocables, propiedad colectiva, salario familiar, federación de abajo arriba, intercambio sin precio) auditado contra Oasis 1.0.7: ocho criterios, parches CL-1…CL-11 y backlog por carriles D' → G' → B' → E' → F'."
+}
