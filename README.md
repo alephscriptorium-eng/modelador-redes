@@ -4,6 +4,11 @@
 
 **Web:** https://alephscriptorium-eng.github.io/modelador-redes · **Versión:** 0.1.0 · **Licencia:** GPL-3.0-or-later AND LicenseRef-Animus-Iocandi
 
+> [!WARNING]
+> **GitHub queda *deprecated* como remoto canónico.** El original de este repo pasará a [Radicle](https://radicle.xyz) (git distribuido P2P, sin servidor central), semillado por un nodo propio en `rad.escrivivir.co`.
+>
+> **Pendiente:** ni el repo está inicializado en Radicle ni el nodo está desplegado. Hasta entonces `origin` (GitHub) sigue siendo el remoto que publica la web y no se borra nada. Guía y estado de la migración: [`docs/radicle.md`](docs/radicle.md).
+
 No se implementa ningún producto. El repo es documentación de backlog y el generador que la publica.
 
 ## Modelos
