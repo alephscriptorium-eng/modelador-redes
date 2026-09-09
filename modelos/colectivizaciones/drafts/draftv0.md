@@ -137,7 +137,7 @@ Tres niveles: **instalación** (medio de producción) → **plano** (`blueprint`
 
 ### B. La asamblea existe y no manda
 
-Cada tribu nace con un `tribeParliamentTerm` en `ANARCHY`, sin líder (L1363-L1364), con quórum del 25 % (L1384) y con retorno automático a la anarquía si nadie lo alcanza (L1402-L1410). Bajo `ANARCHY` todos proponen (L1298-L1311). Eso **es** una asamblea permanente: cualquiera propone, nadie preside, la mayoría decide. Pero sus decisiones son texto en el log. No hay una sola función en `tribes_model.js`, `industry_model.js` ni `banking_model.js` que lea un resultado del parlamento de tribu. La asamblea tiene voz y no tiene manos. El parche no es inventarla: es darle competencias (CL-1, CL-5, CL-7).
+Cada tribu nace con un `tribeParliamentTerm` en `ANARCHY`, sin líder (L1363-L1364), con quórum del 25 % (L1384) y con retorno automático a la anarquía si nadie lo alcanza (L1402-L1410). Bajo `ANARCHY` todos proponen (L1298-L1311). Eso **es** una asamblea permanente: cualquiera propone, nadie preside, la mayoría decide. Pero sus decisiones son texto en el log. No hay una sola función en `tribes_model.js`, `industry_model.js` ni `banking_model.js` que lea un resultado del parlamento de tribu. La asamblea tiene voz y no tiene manos. El parche no es inventarla: es darle competencias (CL-1, CL-5, CL-7). Y hay un segundo riesgo: el parlamento de tribu admite candidaturas con cualquier método de `METHODS` ([L1443-L1445](vendor/oasis/src/models/parliament_model.js#L1443-L1445)), así que una asamblea puede votarse un dictador de tribu. En la doctrina colectivista la asamblea elige comisiones, no gobiernos: CL-1 cierra esa puerta.
 
 ### C. Cooperativa de aportantes: trabajo y capital en la misma bolsa
 
@@ -165,9 +165,9 @@ El censo es la lista de autores con mensajes (L86-L88). Toda la aritmética de r
 
 | # | Cambio | Punto de intervención | Criterio que repara |
 | :-- | :-- | :-- | :-- |
-| **CL-1** | **Gobierno de la tribu por su asamblea.** Edición de `STRUCTURAL_FIELDS`, invitaciones y expulsiones pasan de `tribe.author` a una `tribeParliamentRule` aprobada con el quórum del parlamento de tribu | `tribes_model.js:11`, `:554-556`, `:612-617`, `:533-541` ← `parliament_model.js:1376-1384` | 1, 2 |
+| **CL-1** | **Gobierno de la tribu por su asamblea.** Edición de `STRUCTURAL_FIELDS`, invitaciones y expulsiones pasan de `tribe.author` a una `tribeParliamentRule` aprobada con el quórum del parlamento de tribu. **La asamblea no puede abdicar**: el parlamento de tribu solo admite `ANARCHY` (se eliminan las candidaturas a líder de tribu, `tribePublishCandidature`); las comisiones son cargos de CL-2, nunca gobierno | `tribes_model.js:11`, `:554-556`, `:612-617`, `:533-541` ← `parliament_model.js:1376-1384`, `:1443-1445` | 1, 2 |
 | **CL-2** | **Steward electo, rotatorio y revocable.** `steward` deja de ser `rootNode.author`; se elige por `passesThreshold` entre los miembros, con mandato de N lotes y revocación por voto (`subject: "steward"`) | `industry_model.js:164`, `:187`, `:205`, `:510`, `:532`, `:980` | 2, 3 |
-| **CL-3** | **Reparto por necesidades.** `disposition: "needs"` en `computeDistributionPlan`: cada miembro declara su unidad de necesidad (CL-9), la asamblea de la instalación la valida por voto, y el reparto es proporcional a necesidades con suelo; el excedente va al tesoro de la tribu (CL-5) | `industry_model.js:960-970`, `:306-321` | 4, 3 |
+| **CL-3** | **Reparto por necesidades, decidido por la asamblea.** `disposition: "needs"` en `computeDistributionPlan`: cada miembro declara su unidad de necesidad (CL-9), la asamblea de la instalación la valida por voto, y el reparto es proporcional a necesidades con suelo; el excedente va al tesoro de la tribu (CL-5). **El plan de reparto es una materia votable** (`subject: "distribute"` en `SUBJECTS`): nadie reparte sin acuerdo de la asamblea, ni siquiera el steward electo | `industry_model.js:960-970`, `:306-321`, `:532`, `:980` | 4, 3, 1 |
 | **CL-4** | **Coeficiente de necesidad en la RBU.** Sustituir `1 + karma/100` por `coef(hogar)` = 1 + 0,5 por dependiente, con edad; el karma sale de la fórmula. Suelo y techo se conservan | `banking_model.js:932`, `:1300`, `:1413` | 4 |
 | **CL-5** | **Tesoro de tribu.** Cartera colectiva multisig k-de-n cuyos firmantes nombra la asamblea; las épocas de reparto las ejecuta la asamblea de la tribu, no el operador del PUB | `banking_model.js:913-917`, `:1004`, `:1413-1416`; `tribes_model.js` (nuevo tipo `tribeTreasury`) | 1, 3 |
 | **CL-6** | **Precio cero, don y trueque.** Admitir `price = 0` y `kind: "gift" \| "barter"` en Market y Shops; vales = `transfers` `TIME`; caja de compensación entre tribus como `transfers` `TRUST` con saldo | `market_model.js:182`, `shops_model.js:415`, `transfers_model.js:25`, `:230-231` | 7 |
@@ -189,7 +189,7 @@ Leyenda: T = tamaño (S/M/L) · P = prioridad (C crítica, H alta, M media). Cad
 
 | ID | Buscar | Dónde | Default | Alternativas | Desbloquea |
 | :-- | :-- | :-- | :-- | :-- | :-- |
-| TK-D'01 | **Quién forma la asamblea y con qué quórum**: ¿todos los miembros?, ¿cabezas de familia?, ¿mayoría de presentes o de censo? | Leval, Souchy; Casanova (Aragón); Simoni (Cretas) | Asamblea = todos los miembros de la tribu; quórum = 25 % del censo (el de Oasis) y mayoría simple de votantes | quórum del 50 %; voto por hogar (CL-9) en vez de por persona | CL-1, CL-7, TK-G'01 |
+| TK-D'01 | **Quién forma la asamblea y con qué quórum**: ¿todos los miembros?, ¿cabezas de familia?, ¿mayoría de presentes o de censo?; **convocatoria y periodicidad** (¿ordinaria fija?, ¿quién convoca la extraordinaria?); **voto a mano alzada o secreto**; ¿puede la asamblea delegar en un líder o un consejo? | Leval, Souchy; Casanova (Aragón); Simoni (Cretas) | Asamblea = todos los miembros de la tribu; quórum = 25 % del censo (el de Oasis) y mayoría simple de votantes. Asamblea ordinaria = ciclo de 60 d del `tribeParliamentTerm`; extraordinaria convocada por el 10 % de los miembros. Voto público (firmado, visible dentro de la tribu). **La asamblea no puede abdicar**: no elige líder (ver CL-1) | quórum del 50 %; voto por hogar (CL-9) en vez de por persona; voto secreto cifrado; consejo delegado revocable | CL-1, CL-7, TK-G'01, TK-G'06 |
 | TK-D'02 | **Fórmula del salario familiar**: por miembro, por edad, por dependientes; ¿escala fija o decidida por asamblea? | Ovejero; Redalyc; Leval (casos de Aragón y Levante) | coef = 1 + 0,5 por dependiente; menores y mayores de 65 cuentan como dependientes; la escala la fija la asamblea de la tribu | escala lineal por miembro; coef por edad en tramos | CL-4, CL-9, TK-B'01 |
 | TK-D'03 | **Vales y cajas de compensación**: qué circulaba dentro (carnet de consumo, vales locales) y entre colectividades (compensación comarcal) | Leval, Souchy; Gómez (economía confederal) | Vales = `transfers` `TIME` dentro de la tribu; compensación entre tribus = saldo `TRUST` liquidado por la federación | moneda local ECOin por tribu; sin compensación | CL-6, TK-E'01, TK-F'02 |
 | TK-D'04 | **Delegados comarcales**: mandato imperativo, duración, revocación, ¿voto por colectividad o ponderado por población? | Casanova (Consejo de Aragón); Vela | Un delegado por tribu hija, mandato firmado por su asamblea, revocable en cualquier momento, voto por colectividad | voto ponderado por miembros; delegado rotatorio por sorteo | CL-8, TK-F'01 |
@@ -209,6 +209,7 @@ La asamblea de tribu recibe competencias sobre lo que hoy decide el fundador: ca
 | TK-G'03 | CL-2: steward electo por `passesThreshold`, mandato de N lotes, `subject: "steward"` revocable | D'06 | `industry_model.js:164`, `:532`, `:510`, `:980` | M | H |
 | TK-G'04 | CL-11: sucesión del fundador por asamblea; salida libre del steward tras elección | D'05 | `tribes_model.js:721`, `:726-729`; `industry_model.js:510` | M | H |
 | TK-G'05 | Publicidad: la deliberación de la asamblea (propuestas y votos) visible a todos los miembros; el cifrado de tribu sigue protegiendo hacia fuera | D'01 | `polls_model.js:45-60` | S | M |
+| TK-G'06 | Convocatoria y periodicidad: asamblea ordinaria = ciclo de 60 d del `tribeParliamentTerm`; `assemblyCall` extraordinaria por el 10 % de los miembros abre una ventana de propuestas; solo `ANARCHY` como método de tribu | D'01 | `parliament_model.js:1354-1374`, `:1443-1445` | M | H |
 
 ### OP-02 · Reparto por necesidades
 
@@ -218,7 +219,7 @@ Salario familiar sobre la RBU y sobre la industria; unidad familiar; tesoro de t
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | TK-B'01 | CL-4: `coef(hogar)` sustituye a `1 + karma/100` en los tres cálculos | D'02, B'02 | `banking_model.js:932`, `:1300`, `:1413` | M | **C** |
 | TK-B'02 | CL-9: tipo `household` (miembros, edades, dependientes) validado por la asamblea | D'08 | `inhabitants_model.js:86-88` | M | **C** |
-| TK-B'03 | CL-3: `disposition: "needs"` en `computeDistributionPlan`, excedente al tesoro | D'02, B'02, G'03 | `industry_model.js:960-970`, `:306-321` | M | H |
+| TK-B'03 | CL-3: `disposition: "needs"` en `computeDistributionPlan`, excedente al tesoro; `subject: "distribute"` votable | D'02, B'02, G'03, D'01 | `industry_model.js:960-970`, `:306-321`, `:532`, `:980` | M | H |
 | TK-B'04 | CL-5: `tribeTreasury` multisig k-de-n; épocas ejecutadas por la asamblea, no por `isPubNode` | D'01 | `banking_model.js:913-917`, `:1004`, `:1413-1416` | L | H |
 | TK-B'05 | CL-10: épocas de enfermedad y jubilación pagadas del tesoro de tribu | D'07, B'04 | `banking_model.js:920-947` | M | M |
 
@@ -261,7 +262,7 @@ Colectividad → comarcal → regional con delegados mandatados y compensación 
 | Prioridad | Tareas |
 | :-- | :-- |
 | **Crítica** | TK-G'01, TK-B'01, TK-B'02 |
-| **Alta** | TK-G'02, TK-G'03, TK-G'04, TK-B'03, TK-B'04, TK-E'01, TK-F'01, TK-V'01, TK-V'02 |
+| **Alta** | TK-G'02, TK-G'03, TK-G'04, TK-G'06, TK-B'03, TK-B'04, TK-E'01, TK-F'01, TK-V'01, TK-V'02 |
 | **Media** | TK-G'05, TK-B'05, TK-E'02, TK-E'03, TK-F'02, TK-F'03, TK-S'01, TK-S'02 |
 
 Mapa de carriles: **D' → G' → B' → E' → F'**; OP-05 y OP-06 corren en paralelo sobre B' y G'. El carril de cadena (Faircoin3 o ECOin) no se abre en este nodo: todo el reparto vive en Oasis.
