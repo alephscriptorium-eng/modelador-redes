@@ -20,6 +20,7 @@ def test_carriles_D_y_G():
     tablas = [t for t in parse_tablas(DRAFT_B, "draftv1") if es_backlog(t)]
     assert [t.carril for t in tablas] == ["D", "G"]
     assert carril("TK-D01") == "D" and carril("TK-31") == "num" and carril("RP-5") == "RP" and carril("R11") == "R"
+    assert carril("TK-D'01") == "D'" and carril("TK-G'06") == "G'" and carril("CL-3") == "CL"
 
 
 def test_ops_de_headings():

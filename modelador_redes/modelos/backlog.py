@@ -65,7 +65,7 @@ def _es_fila(linea: str) -> bool:
 
 
 def carril(id_: str) -> str:
-    m = re.match(r"^TK-([A-Z]+)\d", id_)
+    m = re.match(r"^TK-([A-Z]+'?)\d", id_)
     if m:
         return m.group(1)
     if re.match(r"^TK-\d", id_):
