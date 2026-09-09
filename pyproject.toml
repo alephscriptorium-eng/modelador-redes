@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "modelador-redes"
+version = "0.1.0"
+description = "Modelador de Redes — catálogo de modelizaciones políticas sobre redes distribuidas (Oasis/SSB + Faircoin): drafts, revisiones y backlogs publicados como web estática"
+readme = "README.md"
+license = { text = "GPL-3.0-or-later AND LicenseRef-Animus-Iocandi" }
+requires-python = ">=3.9"
+authors = [{ name = "Modelador de Redes Contributors" }]
+keywords = ["oasis", "ssb", "faircoin", "trevijano", "republica", "modelizacion", "backlog"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Documentation",
+]
+dependencies = [
+    "jinja2>=3.1",
+    "jsonschema>=4.20",
+    "markdown-it-py>=3.0,<4",
+    "mdit-py-plugins>=0.4,<0.5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4"]
+
+[project.scripts]
+modelador = "modelador_redes.cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["modelador_redes*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

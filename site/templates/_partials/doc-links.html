@@ -1,0 +1,8 @@
+{% if links %}
+<p class="doc-links">
+  <a href="{{ links.github }}" class="ext">Ver en GitHub ↗</a>
+  <a href="{{ links.raw }}" class="ext">raw ↗</a>
+  {% if links.zip %}<a href="{{ links.zip }}">zip</a>{% endif %}
+  {% if nombre_fichero %}<code>{{ nombre_fichero }}</code>{% endif %}
+</p>
+{% endif %}

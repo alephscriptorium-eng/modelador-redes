@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="doc-head">
+  <h1>{{ modelo.nombre }}</h1>
+  <p class="lead">{{ modelo.descripcion }}</p>
+</div>
+<dl class="meta-box">
+  <div><dt>Estado</dt><dd>{{ modelo.estado }}</dd></div>
+  <div><dt>Rama</dt><dd><code>{{ modelo.rama }}</code></dd></div>
+  <div><dt>Draft vigente</dt><dd>{% if modelo.latest %}<a href="drafts/{{ modelo.latest }}.html">{{ modelo.latest }}.md</a>{% else %}—{% endif %}</dd></div>
+  <div><dt>Drafts</dt><dd>{{ nav.drafts | length }}</dd></div>
+  <div><dt>Fichas de revisión</dt><dd>{{ nav.fichas | length }}</dd></div>
+  <div><dt>Tareas (draft vigente)</dt><dd>{{ resumen.total_tk }}</dd></div>
+  <div><dt>Descargas</dt><dd>{% for z in nav.zips %}<a href="downloads/{{ z.nombre }}">{{ z.kind }}</a>{{ ' · ' if not loop.last }}{% endfor %}</dd></div>
+  <div><dt>Fuente</dt><dd><a href="{{ modelo_github }}">GitHub ↗</a></dd></div>
+</dl>
+{% if contenido %}
+<h2>{{ titulo_indice or 'Índice de revisión' }}</h2>
+{% include "doc-links.html" %}
+<article class="md">
+{{ contenido | safe }}
+</article>
+{% else %}
+<p class="note">Este modelo aún no tiene índice de revisión (<code>revision/00-indice.md</code>).</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ modelo.nombre }} — {{ brand_name }}{% endblock %}</title>
+  {% include "theme-guard.html" %}
+  <link rel="stylesheet" href="{{ base_href }}assets/doc.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="{{ root_href }}" class="brand">{{ brand_name }}</a>
+      <p class="tag">{{ modelo.nombre }} · v{{ version }}</p>
+      <nav aria-label="Modelo {{ modelo.id }}">
+        <a href="{{ mhref }}index.html" class="{{ 'active' if pagina == 'index' }}">Estado</a>
+        <a href="{{ mhref }}backlog.html" class="{{ 'active' if pagina == 'backlog' }}">Backlog</a>
+        <hr>
+        <p class="nav-h">Drafts</p>
+        {% for d in nav.drafts %}
+        <a href="{{ mhref }}drafts/{{ d.nombre }}.html" class="{{ 'active' if pagina == d.nombre and tipo == 'draft' }}">{{ d.nombre }}{% if d.latest %} <span class="badge badge-latest">latest</span>{% endif %}</a>
+        {% endfor %}
+        <hr>
+        <p class="nav-h">Revisión</p>
+        {% for f in nav.fichas %}
+        <a href="{{ mhref }}revision/{{ f.nombre }}.html" class="{{ 'active' if pagina == f.nombre }}" title="{{ f.titulo }}">{{ f.nombre }}</a>
+        {% endfor %}
+        <hr>
+        <p class="nav-h">Descargas</p>
+        {% for z in nav.zips %}
+        <a href="{{ mhref }}downloads/{{ z.nombre }}">{{ z.kind }}.zip</a>
+        {% endfor %}
+        <a href="{{ mhref }}backlog.json">backlog.json</a>
+        <hr>
+        <a href="{{ modelo_github }}" class="nav-external">GitHub ↗</a>
+        <a href="{{ root_href }}" class="nav-external">Catálogo ↗</a>
+        <a href="{{ foss_href }}" class="nav-external">Artefacto (FOSS) ↗</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
+    </aside>
+    <main>
+      {% block content %}{% endblock %}
+      <footer class="site-footer">
+        {% include "provenance-footer.html" %}
+      </footer>
+    </main>
+  </div>
+  <script src="{{ base_href }}assets/theme.js"></script>
+</body>
+</html>

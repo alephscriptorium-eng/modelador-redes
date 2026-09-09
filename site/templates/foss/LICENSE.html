@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Licencia — {{ brand_name }}{% endblock %}
+{% block content %}
+<h1>Licencia</h1>
+<p class="lead">{{ provenance.license }} — compuesta: GPL-3.0-or-later AND LicenseRef-Animus-Iocandi. Oasis (AGPL-3.0) no forma parte de este repositorio.</p>
+<pre class="license">{{ license_text }}</pre>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Backlog — {{ modelo.nombre }}{% endblock %}
+{% block content %}
+<div class="doc-head">
+  <h1>Backlog</h1>
+  <p class="lead">Oportunidades (vista comprimida) y tareas a detalle, extraídas de los drafts. El draft vigente es <a href="drafts/{{ modelo.latest }}.html">{{ modelo.latest }}.md</a>; lo anterior se conserva con su etiqueta de origen. Datos: <a href="backlog.json">backlog.json</a>.</p>
+</div>
+<div class="resumen">
+  <span><strong>{{ resumen.total_tk }}</strong> tareas TK en {{ modelo.latest }}</span>
+  {% for c, n in resumen.por_carril.items() %}<span>carril {{ c }}: <strong>{{ n }}</strong></span>{% endfor %}
+  {% for p, n in resumen.por_prioridad.items() %}<span>prioridad {{ p }}: <strong>{{ n }}</strong></span>{% endfor %}
+  <span><strong>{{ resumen.ops_total }}</strong> oportunidades en {{ nav.drafts | length }} drafts</span>
+</div>
+
+<h2 id="oportunidades">Oportunidades</h2>
+{% if ops %}
+<div class="op-grid">
+  {% for o in ops %}
+  <div class="op-card">
+    <span class="badge {{ 'badge-latest' if o.draft == modelo.latest }}">{{ o.draft }}</span>
+    <h3>{{ o.id }} · {{ o.titulo_html | safe }}</h3>
+    {% if o.resumen_html %}<p>{{ o.resumen_html | safe }}</p>{% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<p class="note">Ningún draft define oportunidades (encabezados <code>OP-nn</code>).</p>
+{% endif %}
+
+<h2 id="tareas">Tareas a detalle</h2>
+{% if tablas %}
+{% for t in tablas %}
+<div class="tabla-head">
+  <h3 id="tabla-{{ loop.index }}">{{ t.draft }} · carril {{ t.carril }}{% if t.op %} · {{ t.op }}{% endif %}</h3>
+  <span class="badge {{ 'badge-latest' if t.draft == modelo.latest }}">{{ t.draft }}</span>
+  <span class="seccion">{{ t.seccion }}</span>
+</div>
+<div class="table-wrap">
+<table>
+  <thead><tr>{% for h in t.headers_html %}<th>{{ h | safe }}</th>{% endfor %}</tr></thead>
+  <tbody>
+  {% for fila in t.rows_html %}
+  <tr>{% for c in fila %}<td>{{ c | safe }}</td>{% endfor %}</tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% if t.avisos %}<p class="aviso">Filas con celdas desajustadas: {{ t.avisos | join('; ') }}</p>{% endif %}
+{% endfor %}
+{% else %}
+<p class="note">Ningún draft contiene tablas de tareas.</p>
+{% endif %}
+{% endblock %}

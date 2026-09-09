@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Técnico — {{ brand_name }}{% endblock %}
+{% block content %}
+<h1>Descripción técnica</h1>
+<h2>Convención de carpetas</h2>
+<pre>modelos/&lt;modelo&gt;/
+├── modelo.json            id · nombre · rama · estado · descripcion (a mano)
+├── drafts/                draft.md, draftv0.md, draftv1.md, … (sufijo mayor = vigente)
+└── revision/
+    ├── 00-indice.md       estado del modelo; línea «Draft vigente» mantenida por `modelador indice`
+    └── NN-*.md            fichas de revisión</pre>
+<p>Todo lo demás se deriva del disco: orden numérico de drafts (<code>draftv10 &gt; draftv2</code>), draft vigente, lista de fichas. La única redundancia es la línea <strong>Draft vigente</strong> del índice, que se trackea en git y que <code>modelador check</code> valida contra el sufijo mayor.</p>
+
+<h2>Módulos</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Módulo</th><th>Función</th></tr></thead>
+<tbody>
+<tr><td><code>modelos/catalogo.py</code></td><td>descubre modelos, ordena drafts, calcula el vigente</td></tr>
+<tr><td><code>modelos/indice.py</code></td><td>lee, escribe y valida la línea «Draft vigente»</td></tr>
+<tr><td><code>modelos/enlaces.py</code></td><td>reescribe enlaces fuera de bloques de código: rutas del vendor de Oasis → <code>blob/&lt;sha&gt;</code> en GitHub; <code>.md</code> internos → <code>.html</code>; anclas <code>#L</code> → blob en <code>main</code></td></tr>
+<tr><td><code>modelos/markdown.py</code></td><td>markdown-it-py (CommonMark + tablas + anclas h2/h3); tablas envueltas en <code>.table-wrap</code></td></tr>
+<tr><td><code>modelos/backlog.py</code></td><td>extracción tolerante: toda tabla cuya primera celda sea <code>TK-</code>/<code>OP-</code>/<code>RP-</code>/<code>Rn</code>, más los encabezados <code>OP-nn</code> como oportunidades; celdas guardadas como markdown en <code>backlog.json</code></td></tr>
+<tr><td><code>site/packs.py</code></td><td>zips deterministas (fecha fija, orden fijo): <code>-drafts</code>, <code>-revision</code>, <code>-todo</code></td></tr>
+<tr><td><code>cli/build.py</code> · <code>check.py</code> · <code>zip.py</code> · <code>indice.py</code></td><td>subcomandos de <code>modelador</code></td></tr>
+</tbody></table></div>
+
+<h2>CLI</h2>
+<pre>modelador build [--target all|catalogo|foss]   # public/ y data/ — solo en main
+modelador check                                # restos de rutas locales, enlaces rotos, &gt;300 KB, línea Draft vigente
+modelador zip [--modelo X]                     # solo los zips
+modelador indice --modelo X [--check]          # mantiene «Draft vigente» en revision/00-indice.md</pre>
+
+<h2>Oasis</h2>
+<p>El código auditado es <a href="{{ oasis_repo }}/tree/{{ oasis_sha }}">epsylon/oasis @ {{ oasis_short }}</a> (AGPL-3.0). No se commitea: vive en <code>vendor/oasis</code>, ignorado por git. Los enlaces de los drafts se reescriben en build hacia ese commit exacto, y <code>modelador check</code> falla si queda cualquier ruta local en <code>public/</code>.</p>
+{% endblock %}

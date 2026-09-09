@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ brand.serie.nombre }} — {{ brand.producto.nombre }}</title>
+  <meta name="description" content="{{ brand.serie.nombre }}: {{ brand.producto.etiqueta }}. {{ brand.scriptorium.etiqueta }}. {{ brand.arg.etiqueta }}.">
+  <meta property="og:image" content="assets/{{ brand.producto.logo }}">
+  {% include "theme-guard.html" %}
+  <link rel="stylesheet" href="assets/root.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="landing-header">
+      <div class="landing-logos">
+        <a href="{{ brand.scriptorium.url }}" class="logo-frame" title="{{ brand.scriptorium.nombre }}">
+          <img src="assets/{{ brand.scriptorium.logo }}" alt="{{ brand.scriptorium.nombre }}" class="provenance-logo landing-logo" width="48" height="48">
+        </a>
+        <a href="index.html" class="logo-frame" title="{{ brand.producto.nombre }}">
+          <img src="assets/{{ brand.producto.logo }}" alt="{{ brand.producto.nombre }} — {{ brand.arg.siglas }}" class="provenance-logo landing-logo" width="48" height="48">
+        </a>
+      </div>
+      <p class="serie-name">{{ brand.serie.nombre }}</p>
+      <p class="serie-tag">{{ brand.serie.etiqueta }} · <a href="{{ brand.scriptorium.url }}">{{ brand.scriptorium.nombre }}</a></p>
+      <h1>{{ brand.producto.nombre }}</h1>
+      <p class="version">v{{ version }} · {{ provenance.license }}</p>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+    </header>
+    <p class="lead">{{ brand.producto.etiqueta }}. Juguete-pasatiempo de la serie {{ brand.serie.nombre }}, {{ brand.serie.descripcion | lower }}. Cada modelización audita el mismo código (Oasis 1.0.7, commit <code>{{ oasis_short }}</code>) desde una doctrina distinta y crece en su propia rama.</p>
+    <section class="catalogo" aria-label="Catálogo de modelizaciones">
+      {% for m in modelos %}
+      <article class="modelo-card">
+        <h2><a href="modelos/{{ m.id }}/index.html">{{ m.nombre }}</a> {% if m.latest %}<span class="badge badge-latest">{{ m.latest }}</span>{% endif %}</h2>
+        <p>{{ m.descripcion }}</p>
+        <p class="modelo-meta">estado: {{ m.estado }} · rama <code>{{ m.rama }}</code> · {{ m.n_drafts }} draft{{ 's' if m.n_drafts != 1 }} · {{ m.n_fichas }} ficha{{ 's' if m.n_fichas != 1 }} de revisión · {{ m.total_tk }} tareas · {{ m.ops }} oportunidades en el draft vigente</p>
+        <p class="modelo-actions">
+          <a href="modelos/{{ m.id }}/index.html">Estado</a>
+          <a href="modelos/{{ m.id }}/backlog.html">Backlog</a>
+          {% if m.latest %}<a href="modelos/{{ m.id }}/drafts/{{ m.latest }}.html">Draft vigente</a>{% endif %}
+          <a href="modelos/{{ m.id }}/downloads/{{ m.id }}-todo.zip">zip</a>
+          <a href="{{ m.github }}">GitHub ↗</a>
+        </p>
+      </article>
+      {% endfor %}
+    </section>
+    <nav class="portals" aria-label="Portales">
+      <a class="portal" href="foss/index.html">
+        <strong>Artefacto (FOSS)</strong>
+        <span>Cómo se genera esta web, reglas de ramas, licencia y <code>llms.md</code> para agentes</span>
+      </a>
+    </nav>
+    <footer class="site-footer">
+      {% include "provenance-footer.html" %}
+    </footer>
+  </main>
+  <script src="assets/theme.js"></script>
+</body>
+</html>

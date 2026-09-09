@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ brand_name }} — Artefacto{% endblock %}</title>
+  {% include "theme-guard.html" %}
+  <link rel="stylesheet" href="{{ base_href }}assets/doc.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="{{ root_href }}" class="brand">{{ brand_name }}</a>
+      <p class="tag">Artefacto · v{{ version }}</p>
+      <nav aria-label="Documentación FOSS">
+        <a href="index.html" class="{{ 'active' if pagina == 'index' }}">Índice</a>
+        <a href="tecnico.html" class="{{ 'active' if pagina == 'tecnico' }}">Técnico</a>
+        <a href="devops.html" class="{{ 'active' if pagina == 'devops' }}">DevOps y ramas</a>
+        <a href="LICENSE.html" class="{{ 'active' if pagina == 'LICENSE' }}">Licencia</a>
+        <a href="llms.md">llms.md</a>
+        <hr>
+        <a href="{{ root_href }}" class="nav-external">Catálogo ↗</a>
+        <a href="{{ provenance.repo_url }}" class="nav-external">Repositorio ↗</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
+    </aside>
+    <main>
+      {% block content %}{% endblock %}
+      <footer class="site-footer">
+        {% include "provenance-footer.html" %}
+      </footer>
+    </main>
+  </div>
+  <script src="{{ base_href }}assets/theme.js"></script>
+</body>
+</html>

@@ -63,5 +63,5 @@ Grado de certeza sobre la doctrina: **A** = tesis nuclear, repetida en toda la o
 
 ## Fuentes y certeza
 - Doctrina: *Teoría Pura de la República* (3 vols.), *Teoría pura de la democracia*, ideario MCRC (mcrc.diarioerc.com, diariorc.com). Paráfrasis; las marcas B/C exigen verificación antes de citar.
-- Código: `base/teoria/vendor/oasis` commit `9a657b7` (1.0.7, 2026-09-08). Detalle con fichero:línea en [pura.md §2–§4](pura.md).
+- Código: `base/teoria/vendor/oasis` commit `9a657b7` (1.0.7, 2026-09-08). Detalle con fichero:línea en [draftv0.md (pura.md rev. 2) §2–§4](draftv0.md).
 - Parches RP-1…10 y backlog v3: propuestos, no implementados. Plan en curso.

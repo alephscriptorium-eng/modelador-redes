@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Artefacto {{ brand_name }}</h1>
+<p class="lead">Generador de sitio estático (Python + Jinja2, {{ provenance.license }}) que publica un <strong>catálogo de modelizaciones</strong>: para cada modelo, sus drafts sucesivos, sus fichas de revisión y su backlog, renderizados en línea, enlazados al repositorio y descargables en zip. No implementa ningún producto: solo documenta y publica.</p>
+<ul class="doc-list">
+  <li><a href="tecnico.html">Descripción técnica</a><span class="desc">Convenciones de carpetas, módulos del generador, CLI, extracción del backlog</span></li>
+  <li><a href="devops.html">DevOps y ramas</a><span class="desc">Una rama por modelo, integración en main, build, GitHub Pages</span></li>
+  <li><a href="llms.md">llms.md</a><span class="desc">Contrato de onboarding para agentes LLM (también en <a href="{{ provenance.repo_url }}/blob/main/llms.md">GitHub</a>)</span></li>
+  <li><a href="LICENSE.html">Licencia</a><span class="desc">{{ provenance.license }}</span></li>
+</ul>
+<h2>Modelos publicados</h2>
+<div class="card-grid">
+  {% for m in modelos %}
+  <div class="card">
+    <h3><a href="../modelos/{{ m.id }}/index.html">{{ m.nombre }}</a></h3>
+    <p>rama <code>{{ m.rama }}</code> · draft vigente <code>{{ m.latest }}</code> · {{ m.estado }}</p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

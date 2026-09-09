@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}{{ titulo }} — {{ modelo.nombre }}{% endblock %}
+{% block content %}
+<div class="doc-head">
+  <h1>{{ titulo }}
+    {% if tipo == 'draft' %}<span class="badge">draft</span>{% elif tipo == 'indice' %}<span class="badge">índice</span>{% else %}<span class="badge">ficha</span>{% endif %}
+    {% if es_latest %}<span class="badge badge-latest">latest</span>{% endif %}
+  </h1>
+  {% include "doc-links.html" %}
+</div>
+{% if toc %}
+<nav class="toc" aria-label="Contenido">
+  <p>Contenido</p>
+  <ul>
+    {% for t in toc %}<li class="n{{ t.nivel }}"><a href="#{{ t.id }}">{{ t.texto }}</a></li>{% endfor %}
+  </ul>
+</nav>
+{% endif %}
+<article class="md">
+{{ contenido | safe }}
+</article>
+{% endblock %}

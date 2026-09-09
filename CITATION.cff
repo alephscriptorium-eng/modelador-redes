@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "Modelador de Redes"
+version: 0.1.0
+date-released: 2026-09-09
+license: "GPL-3.0-or-later AND LicenseRef-Animus-Iocandi"
+type: software
+message: "If you use this software, please cite it as below."
+authors:
+  - name: "Modelador de Redes Contributors"
+repository-code: "https://github.com/alephscriptorium-eng/modelador-redes"
+url: "https://alephscriptorium-eng.github.io/modelador-redes"
+keywords:
+  - oasis
+  - ssb
+  - faircoin
+  - trevijano
+  - modelizacion
+abstract: >
+  Catálogo de modelizaciones políticas sobre redes distribuidas (Oasis/SSB y
+  Faircoin): drafts sucesivos, fichas de revisión y backlogs por carriles,
+  publicados como web estática con enlaces al código auditado y descargas zip.
