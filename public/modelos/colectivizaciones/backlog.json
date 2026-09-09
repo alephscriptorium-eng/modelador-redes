@@ -1,9 +1,10 @@
 {
   "modelo": "colectivizaciones",
-  "latest": "draftv0",
+  "latest": "draftv1",
   "drafts": [
     "draft",
-    "draftv0"
+    "draftv0",
+    "draftv1"
   ],
   "ops": [
     {
@@ -147,7 +148,7 @@
           "Leval, Souchy; Casanova (Aragón); Simoni (Cretas)",
           "Asamblea = todos los miembros de la tribu; quórum = 25 % del censo (el de Oasis) y mayoría simple de votantes. Asamblea ordinaria = ciclo de 60 d del `tribeParliamentTerm`; extraordinaria convocada por el 10 % de los miembros. Voto público (firmado, visible dentro de la tribu). **La asamblea no puede abdicar**: no elige líder (ver CL-1)",
           "quórum del 50 %; voto por hogar (CL-9) en vez de por persona; voto secreto cifrado; consejo delegado revocable",
-          "CL-1, CL-7, TK-G'01, TK-G'06"
+          "CL-1, CL-7, TK-G'01, TK-G'06 *Verificado 2026-09-09 en [draftv1](draftv1.md): el default cambia.*"
         ],
         [
           "TK-D'02",
@@ -155,7 +156,7 @@
           "Ovejero; Redalyc; Leval (casos de Aragón y Levante); Souchy (familias de combatientes)",
           "coef = 1 + 0,5 por dependiente; menores y mayores de 65 cuentan como dependientes; la escala la fija la asamblea de la tribu. **La necesidad no depende de la aportación**: el hogar cobra aunque ningún miembro haya aportado puntos ni publicado nada en la época. Techo de época = `cap_user_epoch × coef(hogar)`, suelo = `floor_user × miembros`. Pago en ECOin al hogar; los vales (TK-E'02) son alternativa, no default",
           "escala lineal por miembro; coef por edad en tramos; techo por persona; salario en vales `TIME` con bienes de primera necesidad a precio 0",
-          "CL-3, CL-4, CL-9, TK-B'01, TK-B'03, TK-B'06"
+          "CL-3, CL-4, CL-9, TK-B'01, TK-B'03, TK-B'06 *Verificado 2026-09-09 en [draftv1](draftv1.md): el default cambia.*"
         ],
         [
           "TK-D'03",
@@ -163,7 +164,7 @@
           "Leval, Souchy; Gómez (economía confederal); Casanova (Congreso de Caspe)",
           "Vales = `transfers` `TIME` dentro de la tribu, **nominativos, con caducidad (`deadline`) y emitidos por la comisión de abastos (cargo CL-2), sin endoso**; carnet de consumo = **cupo por `household` (CL-9) retirado del almacén de tribu (TK-E'04), no saldo**; compensación entre tribus = saldo `TRUST` **agregado por par de tribus y** liquidado por la federación **(hoy `transfers` no tiene saldo ni admite una tribu como destinatario, `transfers_model.js:12`; requiere CL-5)**; **con el exterior, Market con precio y tesoro de tribu**",
           "moneda local ECOin por tribu; vales al portador endosables; sin compensación",
-          "CL-6, TK-E'01, TK-E'02, TK-E'04, TK-F'02"
+          "CL-6, TK-E'01, TK-E'02, TK-E'04, TK-F'02 *Verificado 2026-09-09 en [draftv1](draftv1.md): el default cambia.*"
         ],
         [
           "TK-D'04",
@@ -171,7 +172,7 @@
           "Casanova (Consejo de Aragón y Federación Regional de Colectividades); Vela; Leval (Aragón, Levante)",
           "Un delegado por tribu hija, mandato firmado por su asamblea, revocable en cualquier momento, voto por colectividad. Los acuerdos federales no vinculan hasta ratificación por las asambleas de las hijas; adhesión y salida = voto de la tribu hija; la federación no interviene en la administración interna; el nivel regional del modelo es la federación de colectividades, no un consejo de gobierno",
           "voto ponderado por miembros; delegado rotatorio por sorteo; acuerdos federales ejecutivos con revocación a posteriori",
-          "CL-8, TK-F'01, TK-F'04, TK-F'05"
+          "CL-8, TK-F'01, TK-F'04, TK-F'05 *Verificado 2026-09-09 en [draftv1](draftv1.md): el default cambia.*"
         ],
         [
           "TK-D'05",
@@ -555,26 +556,101 @@
         ]
       ],
       "avisos": []
+    },
+    {
+      "draft": "draftv1",
+      "seccion": "1. Carril D' verificado",
+      "op": null,
+      "kind": "tk",
+      "carril": "D'",
+      "headers": [
+        "ID",
+        "Respuesta en fuentes",
+        "Confirma default",
+        "Default nuevo",
+        "Cert.",
+        "Tareas afectadas",
+        "Fuentes (3 de N)"
+      ],
+      "rows": [
+        [
+          "TK-D'01",
+          "Fuentes leídas en texto: Leval (PDF todoporhacer, paginación del PDF), Seidman 2000 (libcom), Garrido González (Dialnet), Redalyc 2016, Decreto 24-10-1936 (texto), Souchy 1937 (extractos blog), Wikipedia/es. No accesibles: Casanova, Simoni, Ovejero (uvadoc caído), Vela (zaguan 403). Hechos: (1) Composición: toda la población, un voto por persona; el hogar es unidad de cobro («a cada cabeza de familia... el sueldo familiar», Tamarite art. 15) pero no de voto; mujeres con obligación de asistir (Tamarite art. 16; Seidman p. 229). Los individualistas deliberan sin votar (Leval p. 130), salvo Ballobar; Caspe 1937 los excluye de los beneficios, no del debate; readmisión con plazo de un año en Ballobar. (2) Quórum: ninguna fuente fija porcentaje del censo; «por mayoría, o por unanimidad de los presentes» (Leval p. 41), «régimen de mayoría» (Salas Altas 18º), asistencia obligatoria bajo multa (S",
+          "**no**",
+          "Nuevo default de TK-D'01: «Asamblea = todos los miembros de la tribu, un voto por persona, no por hogar (Leval p. 130; Tamarite art. 15-16); los feeds fuera de la tribu (individualistas, TK-D'05) leen y proponen, no votan (Leval p. 130). Sin quórum histórico: se decidía por mayoría de presentes con asistencia obligatoria (Leval p. 41; Salas Altas 18º; Seidman p. 212); el 25 % del censo de Oasis se conserva como suelo técnico, no doctrinal, con mayoría simple de votantes. Asamblea ordinaria mensual (30 d), semanal si la propia asamblea lo vota (Leval p. 130); el ciclo de 60 d del tribeParliamentTerm es el mandato del parlamento, no la periodicidad de la asamblea. Extraordinaria convocada por la comisión (CL-2; Garrido p. 267) o por el 10 % de los miembros [C, sin fuente]. Voto público (firmado, visible dentro de la tribu), equivalente a la mano alzada. La asamblea no puede abdicar: no eli",
+          "A en composición (todos, un voto por persona), voto público, comisión revocable y periodicidad corta (Leval + Seidman +",
+          "CL-1, CL-7, CL-2, CL-9, CL-11, TK-G'01, TK-G'02, TK-G'05, TK-G'06, TK-D'02, TK-D'05, TK-D'06, TK-D'08, TK-B'02, TK-B'03",
+          "[Leval, Colectividades libertarias en España, p. 13](https://www.todoporhacer.org/wp-content/uploads/2016/08/Gast%C3%B3n-Leval.-Colectividades-libertarias-en-Espa%C3%B1a.pdf); [Leval, p. 130](https://www.todoporhacer.org/wp-content/uploads/2016/08/Gast%C3%B3n-Leval.-Colectividades-libertarias-en-Espa%C3%B1a.pdf); [Leval, p. 130 (individualistas)](https://www.todoporhacer.org/wp-content/uploads/2016/08/Gast%C3%B3n-Leval.-Colectividades-libertarias-en-Espa%C3%B1a.pdf)"
+        ],
+        [
+          "TK-D'02",
+          "El salario familiar real (1936-37) se pagaba por HOGAR, semanalmente, al cabeza de familia («un carnet por familia», Leval, Játiva), en vales o moneda local con caducidad, y su escala era DECRECIENTE por persona adicional, nunca lineal ni «por dependiente» (palabra que no usa ninguna fuente). Cifras: Graus, matrimonio 6 ptas/día y 1 más por persona «mayor o menor», familia de ocho 12 ptas («reducción proporcional que vemos en casi todas partes»); Fraga, 40 ptas/semana solo, 45 matrimonio, tope 70 para diez personas, y 50→85 si hay dos productores; Binéfar, 24/30/33 (hijo <10)/45 (3 mayores + 2 niños, «siempre que de los tres mayores no produzca más que uno»), coincidente con Fraser vía Garrot; Tamarite art. 15, hombre solo 18, mujer sola 14, matrimonio joven 25, matrimonio mayor 21, tres mayores 33, +1,00 ptas/día por mayor y +0,60 por menor adicionales; pleno regional de sindicatos de C",
+          "**no**",
+          "Se confirma solo la mitad del default («la escala la fija la asamblea de la tribu»; «la necesidad no depende de la aportación» como doctrina). Se retiran «coef = 1 + 0,5 por dependiente» y «menores y mayores de 65 cuentan como dependientes». Nuevo default de TK-D'02: «Hogar = unidad de cobro, un carnet por hogar a nombre del cabeza de familia (Leval, Játiva p. 108; Tamarite art. 15). Escala decreciente por persona, sin la categoría «dependiente»: coef(hogar) = 1 (1.ª persona) + 0,5 (2.ª) + 0,15 (3.ª) + 0,10 (cada una más), norma del pleno regional de Cataluña de 24-9-1936; los menores de 14 cuentan por 0,6 de su tramo (Tamarite 1,00/0,60; Oliete la mitad) y a los 14 se cuenta como mayor. Mayores de 60 (no 65): exentos de trabajar, cuentan como persona mayor en la escala. Tope por hogar, nunca por persona (Fraga: 70 ptas para 10 personas). La escala es una regla de tribu votada en asamble",
+          "A en lo estructural (hogar como unidad con carnet al cabeza de familia; escala decreciente por persona; tramos a los 14",
+          "TK-D'02, CL-4, CL-9, CL-10, TK-B'01, TK-B'02, TK-B'05, TK-B'06, TK-D'07, TK-D'08, TK-E'02, TK-E'04, TK-F'03, TK-G'01, TK-S'02, revision/04-salario-familiar.md, revision/00-indice.md",
+          "[Leval, Colectividades libertarias en España, cap. ](https://reconstruirelcomunal.suportmutu.org/wp-content/uploads/2024/05/Colectividades-libertarias-en-Espana-Gaston-Leval.pdf); [Leval, cap. Graus (PDF p. 59)](https://reconstruirelcomunal.suportmutu.org/wp-content/uploads/2024/05/Colectividades-libertarias-en-Espana-Gaston-Leval.pdf); [Leval, cap. Fraga (PDF p. 64)](https://reconstruirelcomunal.suportmutu.org/wp-content/uploads/2024/05/Colectividades-libertarias-en-Espana-Gaston-Leval.pdf)"
+        ],
+        [
+          "TK-D'03",
+          "Cómo funcionaba de verdad, con verbatim (ficha completa en /private/tmp/claude-501/-Users-morente-Desktop-teoria-base/f9420d81-f03a-4ee3-ba0b-61153778ad4e/scratchpad/out/modelos/colectivizaciones/revision/08-d03-vales-y-compensacion.md; operaciones en .../operaciones-TK-D03.json; tabla de fuentes en .../fuentes-TK-D03.md).  1. Carnet de consumo = CUPO por familia, no saldo (A). Fraga: «Cada familia tiene una libreta en la cual figuran las cantidades de productos a las que tiene derecho según las disponibilidades» (Leval). Mas de las Matas: «Hombres, mujeres y niños reciben la misma cantidad estipulada por las asambleas de la colectividad» (Leval). Albalate: «hojas de consumo, gratuitamente. Los productos han sido racionados» (Souchy). Escala por edad: Granollers lleva «fichero donde estaba registrado el nombre y la edad de los miembros de cada familia» con raciones «de acuerdo con los mé",
+          "**no**",
+          "El default de TK-D'03 se confirma en dos puntos (carnet = cupo por `household`, no saldo; exterior en moneda con precio desde la caja) y se cambia en tres (naturaleza y emisor del vale; forma de la compensación). Texto nuevo del default (operación 1 y 2 de operaciones-TK-D03.json, sobre draftv0.md L194):  «(D'03 verificado, 2026-09-09, ficha 08) Carnet de consumo por `household` (CL-9) = instrumento principal: cupo por hogar fijado por la asamblea con escala por edad (los menores cuentan la mitad), retirado del almacén de tribu (TK-E'04), no saldo; vales = `transfers` `TIME` solo como complemento para lo no racionado (la «moneda de bolsillo» de Souchy: Binéfar 2,50 ptas diarias en fichas), emitidos por el tesoro de tribu (CL-5) según la escala votada, nominativos y sin endoso porque el Congreso de Caspe (14-15 de febrero de 1937) suprimió toda moneda interior a favor de la cartilla; cadu",
+          "A en cupo por hogar, moneda local al portador emitida por el comité, supresión de la moneda interior en Caspe, compensac",
+          "TK-D'03, CL-6, TK-E'02, TK-E'04, TK-F'02, CL-5, TK-B'04, CL-8, TK-D'05, TK-V'01, CL-11, TK-G'03, TK-G'05, TK-D'01 (nota), TK-D'02 (nota), TK-D'07 (nota), revision/06-intercambio.md (nota fechada), revision/00-indice.md",
+          "[Leval, Colectividades libertarias en España (Congr](https://reconstruirelcomunal.suportmutu.org/wp-content/uploads/2024/05/Colectividades-libertarias-en-Espana-Gaston-Leval.pdf); [Leval, Colectividades libertarias en España (Mas d](https://reconstruirelcomunal.suportmutu.org/wp-content/uploads/2024/05/Colectividades-libertarias-en-Espana-Gaston-Leval.pdf); [Leval, Colectividades libertarias en España (pleno](https://reconstruirelcomunal.suportmutu.org/wp-content/uploads/2024/05/Colectividades-libertarias-en-Espana-Gaston-Leval.pdf)"
+        ],
+        [
+          "TK-D'04",
+          "Verificado con verbatim (estatutos de la Federación de Colectividades de Aragón, Caspe 14-15/2/1937, reproducidos íntegros en Leval y Carrasquer; Souchy 1937; Vela 2013 sobre Casanova). Cómo funcionaba: (1) Los delegados los elegía cada colectividad («La Federación Comarcal se compone de delegados elegidos por las colectividades de los pueblos», Souchy; el comité comarcal de Mas de las Matas «fue nombrado por una asamblea de delegados de todas las colectividades», Leval). Se contaba por delegación (500 delegados / 600 delegaciones por 80.000 colectivistas). (2) Mandato imperativo y revocación en cualquier momento: «todos los cargos son revocables por voluntad expresa de la Asamblea» y el comité federal «tendrá que actuar ateniéndose a los acuerdos que emanen de los congresos, donde a su vez, dará cuenta de su gestión» (Carrasquer, delegado de Binéfar en Caspe); en Levante el Comité Regio",
+          "**no**",
+          "Nuevo default de TK-D'04 (texto): «Un delegado por tribu hija, mandato PREVIO firmado por su asamblea, revocable en cualquier momento; el delegado se nombra por congreso o pleno, sin plazo propio; los cargos federales se renuevan por mitades en cada congreso ordinario (arts. 8-9), que es el ciclo de 60 d. Los acuerdos federales vinculan a las federadas desde que se votan (art. 14: «tendrá validez»); la garantía es el mandato previo, la revocación y la salida, no la ratificación; las asambleas de las hijas ratifican la composición de los cargos federales (Carrasquer, comarcal de Binéfar), no los acuerdos. Adhesión = acta de la asamblea de la hija + aprobación de la madre por voto de delegados + acatamiento de las reglas federales (arts. 11-12). Salida por voto de la hija (cert. C, solo doctrina de 1880). La federación no interviene en cargos ni reparto internos, pero el intercambio exteri",
+          "A en delegado elegido por la colectividad, mandato revocable, adhesión por asamblea con aprobación del comité regional,",
+          "CL-8, TK-F'01, TK-F'04, TK-F'05, TK-D'05, TK-D'03, TK-F'02, TK-G'01, TK-G'02",
+          "[Leval, Gaston. Colectividades libertarias en Españ](https://www.todoporhacer.org/wp-content/uploads/2016/08/Gast%C3%B3n-Leval.-Colectividades-libertarias-en-Espa%C3%B1a.pdf); [Leval, Gaston. Colectividades libertarias en Españ](https://www.todoporhacer.org/wp-content/uploads/2016/08/Gast%C3%B3n-Leval.-Colectividades-libertarias-en-Espa%C3%B1a.pdf); [Leval, Gaston. Colectividades libertarias en Españ](https://www.todoporhacer.org/wp-content/uploads/2016/08/Gast%C3%B3n-Leval.-Colectividades-libertarias-en-Espa%C3%B1a.pdf)"
+        ]
+      ],
+      "avisos": []
+    },
+    {
+      "draft": "draftv1",
+      "seccion": "2. Pendiente (deuda declarada)",
+      "op": null,
+      "kind": "tk",
+      "carril": "D'",
+      "headers": [
+        "ID",
+        "Estado"
+      ],
+      "rows": [
+        [
+          "TK-D'05",
+          "sin investigar: default de draftv0 vigente"
+        ],
+        [
+          "TK-D'06",
+          "sin investigar: default de draftv0 vigente"
+        ],
+        [
+          "TK-D'07",
+          "sin investigar: default de draftv0 vigente"
+        ],
+        [
+          "TK-D'08",
+          "sin investigar: default de draftv0 vigente (afecta a CL-9; D'02 aporta parte de la respuesta)"
+        ]
+      ],
+      "avisos": []
     }
   ],
   "resumen": {
-    "total_tk": 36,
+    "total_tk": 8,
     "por_carril": {
-      "B'": 6,
-      "D'": 9,
-      "E'": 4,
-      "F'": 5,
-      "G'": 7,
-      "S'": 3,
-      "V'": 2
+      "D'": 8
     },
-    "por_prioridad": {
-      "C": 3,
-      "H": 13,
-      "M": 11
-    },
-    "ops_latest": 6,
+    "por_prioridad": {},
+    "ops_latest": 0,
     "ops_total": 6,
-    "tablas_total": 8
+    "tablas_total": 10
   }
 }

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Materialismo filosófico · Trituración de OASIS 1.0.7 con las coordenadas K1-K7 — Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB</title>
+<script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>  <link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="../../../index.html" class="brand">Modelador de Redes</a>
+      <p class="tag">Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB · v0.2.0</p>
+      <nav aria-label="Modelo clase">
+        <a href="../index.html" class="">Estado</a>
+        <a href="../backlog.html" class="">Backlog</a>
+        <hr>
+        <p class="nav-h">Drafts</p>
+        <a href="../drafts/draftv0.html" class="active">draftv0 <span class="badge badge-latest">latest</span></a>
+        <a href="../drafts/draft.html" class="">draft</a>
+        <hr>
+        <p class="nav-h">Revisión</p>
+        <a href="../revision/01-costuras.html" class="" title="Costuras de Oasis para el nodo clase (notas de exploración)">01-costuras</a>
+        <hr>
+        <p class="nav-h">Descargas</p>
+        <a href="../downloads/clase-drafts.zip">drafts.zip</a>
+        <a href="../downloads/clase-revision.zip">revision.zip</a>
+        <a href="../downloads/clase-todo.zip">todo.zip</a>
+        <a href="../backlog.json">backlog.json</a>
+        <hr>
+        <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/clase" class="nav-external">GitHub ↗</a>
+        <a href="../../../index.html" class="nav-external">Catálogo ↗</a>
+        <a href="../../../foss/index.html" class="nav-external">Artefacto (FOSS) ↗</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
+    </aside>
+    <main>
+<div class="doc-head">
+  <h1>Materialismo filosófico · Trituración de OASIS 1.0.7 con las coordenadas K1-K7
+<span class="badge">draft</span><span class="badge badge-latest">latest</span>  </h1>
+<p class="doc-links">
+  <a href="https://github.com/alephscriptorium-eng/modelador-redes/blob/main/modelos/clase/drafts/draftv0.md" class="ext">Ver en GitHub ↗</a>
+  <a href="https://raw.githubusercontent.com/alephscriptorium-eng/modelador-redes/main/modelos/clase/drafts/draftv0.md" class="ext">raw ↗</a>
+<a href="../downloads/clase-drafts.zip">zip</a><code>draftv0.md</code></p>
+</div>
+<nav class="toc" aria-label="Contenido">
+  <p>Contenido</p>
+  <ul>
+<li class="n2"><a href="#0-qué-cambia-respecto-de-la-semilla">0. Qué cambia respecto de la semilla</a></li><li class="n2"><a href="#1-estado-del-arte-verificado">1. Estado del arte verificado</a></li><li class="n3"><a href="#11-oasis-107">1.1 OASIS 1.0.7</a></li><li class="n3"><a href="#12-la-capa-económica">1.2 La capa económica</a></li><li class="n3"><a href="#13-el-corpus-siete-coordenadas-no-criterios">1.3 El corpus: siete coordenadas, no criterios</a></li><li class="n2"><a href="#2-anatomía-de-los-módulos-leída-con-las-categorías">2. Anatomía de los módulos leída con las categorías</a></li><li class="n3"><a href="#21-parliament--parliament_modeljs--conjuntiva-legislativa">2.1 Parliament — parliament_model.js · conjuntiva legislativa</a></li><li class="n3"><a href="#22-courts--courts_modeljs--conjuntiva-judicial">2.2 Courts — courts_model.js · conjuntiva judicial</a></li><li class="n3"><a href="#23-industry--industry_modeljs--basal-planificadora">2.3 Industry — industry_model.js · basal planificadora</a></li><li class="n3"><a href="#24-banking--banking_modeljs--basal-redistribuidora-y-la-única-reducción-entre-géneros">2.4 Banking — banking_model.js · basal redistribuidora y la única reducción entre géneros</a></li><li class="n3"><a href="#25-tribes-y-crypto--tribes_modeljs-cryptojs--cortical-militar-y-federativa-como-técnica">2.5 Tribes y crypto — tribes_model.js, crypto.js · cortical militar y federativa como técnica</a></li><li class="n3"><a href="#26-servidor-configuración-pub-y-multiverse--la-capa-cortical-en-manos-del-operador">2.6 Servidor, configuración, PUB y Multiverse · la capa cortical en manos del operador</a></li><li class="n3"><a href="#27-inhabitants-polls-y-opinions--holización-y-m2">2.7 Inhabitants, Polls y Opinions · holización y M2</a></li><li class="n3"><a href="#28-el-eje-angular-ai-42-larp-y-melody">2.8 El eje angular: AI 42, L.A.R.P. y Melody</a></li><li class="n3"><a href="#29-persistencia-pánico-export-onboarding-update-stats--los-indicadores-de-eutaxia">2.9 Persistencia: pánico, export, onboarding, update, stats · los indicadores de eutaxia</a></li><li class="n2"><a href="#3-confrontación-las-coordenadas-contra-el-código">3. Confrontación: las coordenadas contra el código</a></li><li class="n3"><a href="#a-eutaxia-del-sistema-qué-lo-hace-durar">A. Eutaxia del sistema: ¿qué lo hace durar?</a></li><li class="n3"><a href="#b-holización-un-feed-es-un-átomo">B. Holización: un feed es un átomo</a></li><li class="n3"><a href="#c-el-karma-como-cierre-categorial-fallido">C. El karma como cierre categorial fallido</a></li><li class="n3"><a href="#d-las-nueve-ramas-poderes-sin-ramas">D. Las nueve ramas: poderes sin ramas</a></li><li class="n3"><a href="#e-el-operador-como-poder-exterior-al-cuerpo-político">E. El operador como poder exterior al cuerpo político</a></li><li class="n3"><a href="#f-el-eje-angular-poblado-y-sin-gobernar">F. El eje angular, poblado y sin gobernar</a></li><li class="n3"><a href="#g-cierres-lo-cerrado-es-de-otros-lo-propio-está-abierto">G. Cierres: lo cerrado es de otros, lo propio está abierto</a></li><li class="n2"><a href="#4-especificación-eu-oasis-parches-de-eutaxia">4. Especificación EU-OASIS: parches de eutaxia</a></li><li class="n2"><a href="#5-backlog-v0">5. Backlog v0</a></li><li class="n3"><a href="#carril-d--investigación-en-fuentes-de-bueno">Carril D · Investigación en fuentes de Bueno</a></li><li class="n3"><a href="#op-01--trituración-por-coordenada-carril-t">OP-01 · Trituración por coordenada (carril T)</a></li><li class="n3"><a href="#op-02--parches-de-eutaxia-carril-eu">OP-02 · Parches de eutaxia (carril EU)</a></li><li class="n3"><a href="#op-03--verificación-y-fichas">OP-03 · Verificación y fichas</a></li><li class="n3"><a href="#resumen-de-prioridades-v0">Resumen de prioridades v0</a></li><li class="n2"><a href="#6-fuentes">6. Fuentes</a></li>  </ul>
+</nav>
+<article class="md">
+<h1>Materialismo filosófico · Trituración de OASIS 1.0.7 con las coordenadas K1-K7</h1>
+<p><strong>Revisión 0 — 2026-09-09.</strong> La semilla (<code>draft.md</code>) fijó la panorámica de Bueno, corrigió los errores del chuletario y dejó un plan (b0 trituración, b1 nueve ramas, b2 backlog; carriles D → T → EU). Este documento es b0: audita el código real con las siete coordenadas, propone siete parches de eutaxia EU-1…EU-7 y abre el backlog por carriles. No prescribe un régimen: Bueno no lo hace. Tritura.</p>
+<hr />
+<h2 id="0-qué-cambia-respecto-de-la-semilla">0. Qué cambia respecto de la semilla</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Hallazgo</th>
+<th style="text-align:left">Consecuencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left"><strong>Oasis politiza la capa conjuntiva y una rama basal; la capa cortical entera está en manos del operador del nodo.</strong> Parlamento y tribunales existen como órganos; defensa, diplomacia y federación existen como fichero de configuración, shell y técnica criptográfica.</td>
+<td style="text-align:left">El producto central (las nueve ramas, §3.D) no es «qué falta», sino «qué poderes no tienen rama». El operador es un poder exterior al cuerpo político (§3.E).</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><strong>La red ejecuta una sola reducción entre géneros de materialidad, y la ejecuta dos veces.</strong> <code>karmaScore = rawKarma − carbonGrams</code> y <code>engagementScore = rawScore − carbonGramsForScore</code>: peso político (M3) menos gramos de CO₂ (M1) en la misma resta.</td>
+<td style="text-align:left">K1 se viola en el único punto donde la red intenta articular géneros. No es materialismo, es fisicalismo (§3.C).</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><strong>La eutaxia de Oasis es un calendario.</strong> Los mandatos se recurren en ventanas de 60 días desde 2020-01-01 sin convocante; si nadie gobierna, el ciclo es una anarquía virtual. Al lado, tres distaxias de código: el export excluye la clave, el pánico borra sin confirmación y <code>/update</code> hace <code>git reset --hard</code> sobre la configuración.</td>
+<td style="text-align:left">La eutaxia se puede medir con indicadores de código (§3.A) y es el único lugar donde este nodo licencia parches (§4).</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left"><strong>El log holiza y el karma des-holiza.</strong> Un feed que ha publicado es un inhabitant; la población que fija el quórum sale de ese censo; la mayoría es mitad más uno de partes iguales. Pero los empates se resuelven por karma, <code>KARMATOCRACY</code> es un régimen propio y las sugerencias de contacto re-estratifican el círculo.</td>
+<td style="text-align:left">La democracia de Oasis es una forma aritmética sobre átomos definidos por autoría (§3.B), con una re-estratificación por notoriedad que la forma no reconoce.</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left"><strong>Siete costuras de la exploración previa citaban la línea vecina.</strong> <code>steward</code> :163→:164, <code>ssbKeys.box</code> :319→:320, <code>SecretStack</code> :57→:56, <code>removeSSB</code> :7→:6, <code>if (file === 'secret')</code> :24→:25, <code>enactApprovedChanges</code> :1104→:1102, <code>TERM_EPOCH</code> :26→:25.</td>
+<td style="text-align:left">Corregidas aquí con <code>sed -n</code>; ninguna cambia la lectura. Las dos que afectan a <code>draft.md</code> van como correcciones al margen.</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left"><strong>La semilla heredaba cuatro supuestos técnicos falsos</strong> (CVN, contratos en Faircoin, nodo central, Faircoin vivo) y un diagrama que identificaba géneros de materialidad con ejes antropológicos.</td>
+<td style="text-align:left">Descartados. La capa económica es ECOin por RPC (§1.2). Géneros y ejes son cortes distintos y se auditan por separado (§2).</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Metodología.</strong> Todo lo que aquí se afirma sobre Oasis está verificado contra el código fuente, no contra su documentación. Árbol auditado: <code>vendor/oasis</code> (ignorado por git; clónalo con <code>git clone --depth 1 https://github.com/epsylon/oasis.git</code>). Commit auditado: <strong><code>9a657b776fcafc7c24bf3ad61825316385ecf513</code>, &quot;Oasis release 1.0.7&quot;, 2026-09-08</strong>. Cada afirmación lleva <code>fichero:línea</code> y la línea contiene el símbolo nombrado. La doctrina de Bueno va con grado de certeza (A repetido en todas las fuentes, B conocido sin verbatim, C reconstrucción probable) y con la etiqueta <strong>[doctrina, sin verbatim]</strong> hasta que el carril D la verifique en los libros. Rutas: <code>models/</code> y <code>views/</code> relativas a <code>vendor/oasis/src/</code>; el resto con ruta completa.</p>
+<hr />
+<h2 id="1-estado-del-arte-verificado">1. Estado del arte verificado</h2>
+<h3 id="11-oasis-107">1.1 OASIS 1.0.7</h3>
+<ul>
+<li>Paquete <code>@krakenslab/oasis</code> v1.0.7, AGPL-3.0 (<code>src/server/package.json:2-3,9</code>). Node.js en el servidor y HTML+CSS sin JavaScript en el navegador (README, «No browser JavaScript», fuente primaria del proyecto). 70 ficheros en <a href="https://github.com/epsylon/oasis/tree/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/">src/models/</a> (32.849 líneas), 67 vistas, un <code>backend.js</code> de 10.556 líneas.</li>
+<li>Los módulos que importan a la trituración: <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js">parliament_model.js</a> (1.615 líneas), <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js">courts_model.js</a> (961), <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/industry_model.js">industry_model.js</a> (991), <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js">banking_model.js</a> (1.479), <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/tribes_model.js">tribes_model.js</a> (939), <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/crypto.js">crypto.js</a> (571), <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/inhabitants_model.js">inhabitants_model.js</a> (505), <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/stats_model.js">stats_model.js</a> (634), <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/logs_model.js">logs_model.js</a> (380), <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/larp_model.js">larp_model.js</a> (953), <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/melody_model.js">melody_model.js</a> (181), <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/fediverse_model.js">fediverse_model.js</a> (749) y los ficheros pequeños que deciden la persistencia: <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/panicmode_model.js">panicmode_model.js</a> (15), <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/exportmode_model.js">exportmode_model.js</a> (52), <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/onboarding_model.js">onboarding_model.js</a> (182).</li>
+<li><strong>Todo el mundo institucional es un log leído por tipo.</strong> <code>readTyped(ssbClient, types, opts)</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/typed_log.js#L77">L77</a>) es la única puerta: parlamentos, tribunales, industrias y bancos son mensajes con un <code>type</code>, indexados en cliente. No hay base de datos de estado, hay un feed por clave y una reconstrucción por lectura.</li>
+<li><strong>La derogación es un tombstone que cada cliente valida por su cuenta.</strong> <code>tombstone_validator.js</code> acepta el mensaje si <code>c.type === 'tombstone'</code> y <code>c.target</code> es una cadena (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/tombstone_validator.js#L12">L12</a>) y lo descarta si el autor no coincide con el del objetivo (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/tombstone_validator.js#L26">L26</a>). Nada obliga fuera de la interfaz.</li>
+</ul>
+<h3 id="12-la-capa-económica">1.2 La capa económica</h3>
+<ul>
+<li><strong>ECOin por RPC.</strong> Todo el dinero pasa por <code>makeClient(url, user, pass)</code> y <code>clientrpc.request({ method, params })</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/wallet_model.js#L22-L23">L22-L23</a>) sobre <code>@open-rpc/client-js</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/wallet_model.js#L5">L5</a>). El pago real de la RBU es un <code>sendtoaddress</code> desde la cartera del PUB (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L1004">L1004</a>). Oasis no emite; lee la oferta de fuera.</li>
+<li><strong>Quién redistribuye: el nodo que se autodeclara PUB.</strong> <code>isPubNode()</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L214">L214</a>) compara <code>walletPub.pubId</code> del fichero de configuración con <code>config.keys.id</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L215-L217">L215-L217</a>). Ese nodo ejecuta <code>executeEpoch</code> y <code>processPendingClaims</code> en un <code>setInterval</code> de 30 minutos (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/backend.js#L10265-L10273">L10265-L10273</a>).</li>
+<li>Consecuencia: la rama redistribuidora existe, es automática, y su titular es una entrada de JSON. Faircoin, Proof-of-Cooperation, CVN y contratos no aparecen en este árbol y no se usan en este nodo.</li>
+</ul>
+<h3 id="13-el-corpus-siete-coordenadas-no-criterios">1.3 El corpus: siete coordenadas, no criterios</h3>
+<p>Bueno no prescribe un régimen; ofrece coordenadas de análisis. La única norma que sí ofrece, la eutaxia (K6), es la que se convierte en prueba de aceptación en §4. Escala A/B/C de <code>draft.md</code> §1; todo <strong>[doctrina, sin verbatim]</strong> hasta que el carril D lo verifique.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Coordenada</th>
+<th style="text-align:left">Qué se le pregunta al código</th>
+<th style="text-align:left">Fuente</th>
+<th style="text-align:left">Cert.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">K1</td>
+<td style="text-align:left"><strong>Tres géneros de materialidad</strong> M1 (físico), M2 (fenomenológico), M3 (abstracto), inconmensurables y en <em>symploké</em></td>
+<td style="text-align:left">¿Qué es M1, M2 y M3 en cada módulo? ¿Ejecuta la red alguna reducción de un género a otro?</td>
+<td style="text-align:left"><em>Ensayos materialistas</em> (1972)</td>
+<td style="text-align:left">A</td>
+</tr>
+<tr>
+<td style="text-align:left">K2</td>
+<td style="text-align:left"><strong>Cierre categorial</strong>: una categoría se cierra cuando concatena sus partes por operaciones propias; la filosofía es saber de segundo grado que coordina cierres</td>
+<td style="text-align:left">¿Qué capas de la red son ciencia cerrada, técnica abierta o dependencia externa?</td>
+<td style="text-align:left"><em>Teoría del cierre categorial</em> (1992-93), <em>¿Qué es la ciencia?</em> (1995)</td>
+<td style="text-align:left">A</td>
+</tr>
+<tr>
+<td style="text-align:left">K3</td>
+<td style="text-align:left"><strong>Espacio antropológico</strong>: ejes radial (cosas), circular (otros sujetos humanos), angular (númenes: sujetos no humanos con conocimiento o apetición)</td>
+<td style="text-align:left">¿Qué relaciones habita cada eje en Oasis? ¿Está gobernado el eje angular?</td>
+<td style="text-align:left"><em>Ensayos materialistas</em>, <em>El animal divino</em> (1985)</td>
+<td style="text-align:left">A; extender el angular a IA y máquinas es lectura nuestra: <strong>C</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">K4</td>
+<td style="text-align:left"><strong>Capas del cuerpo político</strong>: conjuntiva (el cuerpo consigo mismo), basal (con la naturaleza y la producción), cortical (con otras sociedades)</td>
+<td style="text-align:left">¿Qué módulos pertenecen a cada capa?</td>
+<td style="text-align:left"><em>Primer ensayo sobre las categorías de las ciencias políticas</em> (1991)</td>
+<td style="text-align:left">B</td>
+</tr>
+<tr>
+<td style="text-align:left">K5</td>
+<td style="text-align:left"><strong>Nueve ramas del poder</strong>: conjuntiva = ejecutiva, legislativa, judicial · basal = planificadora, redistribuidora, gestora · cortical = militar, diplomática, federativa</td>
+<td style="text-align:left">Por rama: implementada, ausente, fusionada o en manos del operador; quién la controla</td>
+<td style="text-align:left"><em>Primer ensayo…</em></td>
+<td style="text-align:left">B</td>
+</tr>
+<tr>
+<td style="text-align:left">K6</td>
+<td style="text-align:left"><strong>Eutaxia / distaxia</strong>: buen orden como capacidad de la sociedad política para recurrir, para persistir en el tiempo; no un fundamento moral</td>
+<td style="text-align:left">¿Qué hace durar al sistema? ¿Qué lo mata? ¿Se mide a sí mismo en el tiempo?</td>
+<td style="text-align:left"><em>Primer ensayo…</em></td>
+<td style="text-align:left">B</td>
+</tr>
+<tr>
+<td style="text-align:left">K7</td>
+<td style="text-align:left"><strong>Holización</strong>: la democracia exige reducir la sociedad a partes homogéneas (ciudadanos iguales); la democracia es una forma, no un valor</td>
+<td style="text-align:left">¿Qué holiza la red (qué es un átomo)? ¿Qué la re-estratifica?</td>
+<td style="text-align:left"><em>El fundamentalismo democrático</em> (2010), <em>Panfleto contra la democracia realmente existente</em> (2004)</td>
+<td style="text-align:left">B</td>
+</tr>
+</tbody>
+</table></div>
+<p>Dos nociones auxiliares que uso sin coordenada propia: <strong>trituración</strong> (análisis que descompone una idea en sus partes materiales para mostrar qué queda de ella), B; y <strong>operador</strong> de una institución (quien sostiene la capa basal sin ser parte formal del cuerpo político), reconstrucción nuestra, C, a verificar en D07.</p>
+<hr />
+<h2 id="2-anatomía-de-los-módulos-leída-con-las-categorías">2. Anatomía de los módulos leída con las categorías</h2>
+<p>Cada bloque dice qué es M1, M2 y M3 en el módulo (K1), en qué eje se mueve (K3) y a qué capa y rama pertenece (K4/K5).</p>
+<h3 id="21-parliament--parliament_modeljs--conjuntiva-legislativa">2.1 Parliament — <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js">parliament_model.js</a> · conjuntiva legislativa</h3>
+<p><strong>M3 fijado en constantes.</strong> <code>TERM_DAYS = 60</code>, <code>PROPOSAL_DAYS = 7</code>, <code>REVOCATION_DAYS = 15</code>, <code>PROPOSAL_QUORUM = 2</code>, <code>QUORUM_RATIO = 0.25</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L17-L21">L17-L21</a>); el catálogo de regímenes elegibles es <code>METHODS = ['DEMOCRACY', 'MAJORITY', 'MINORITY', 'DICTATORSHIP', 'KARMATOCRACY']</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L23">L23</a>) y <code>ANARCHY</code> solo existe como método de voto, no como candidatura (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L22">L22</a>). Los umbrales son aritmética pura: 80 % para <code>MAJORITY</code>, 20 % para <code>MINORITY</code>, mitad más uno para <code>DEMOCRACY</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L240-L242">L240-L242</a>); quórum de propuesta <code>max(2, ceil(n × 0,25))</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L257-L259">L257-L259</a>). Ninguna de estas reglas constitutivas la ha votado nadie: son M3 sin sujeto.</p>
+<p><strong>El tiempo del cuerpo político es un calendario.</strong> <code>TERM_EPOCH = Date.UTC(2020, 0, 1)</code> y <code>TERM_SPAN_MS = TERM_DAYS × 86400000</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L25-L26">L25-L26</a>): las legislaturas son ventanas fijas desde el 1 de enero de 2020, sin convocante. Si en una ventana no hay mandato, <code>virtualAnarchyTerm</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L373">L373</a>) fabrica uno con <code>method: 'ANARCHY'</code> y <code>powerType: 'none'</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L379-L380">L379-L380</a>). La sociedad política persiste sin gobierno por defecto de código.</p>
+<p><strong>Quién propone y quién enacta.</strong> <code>canPropose</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L1298-L1311">L1298-L1311</a>): todos bajo <code>ANARCHY</code>, solo el titular bajo gobierno de persona, todos los miembros bajo gobierno de tribu. <code>enactApprovedChanges(expiringTerm)</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L1102">L1102</a>) se invoca al expirar el mandato (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L1167">L1167</a>) y publica las leyes aprobadas como mensajes. Eso es todo lo que «ejecuta»: la rama legislativa está implementada; la ejecutiva no existe.</p>
+<p><strong>Holización y karma.</strong> La población que fija el quórum es <code>inhabitantsCount()</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L244">L244</a>, usado en <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L1191">L1191</a>). Los empates electorales se resuelven por <code>maxKarma</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L422-L423">L422-L423</a>); las propuestas se ordenan por karma descendente (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L576">L576</a>); bajo <code>DICTATORSHIP</code> o <code>KARMATOCRACY</code> la revocación sigue otro camino (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L650">L650</a>). El mismo módulo cuenta partes iguales y las pesa por notoriedad.</p>
+<p>Eje: circular. M2: ninguna (el módulo no registra vivencia alguna, solo votos tipificados).</p>
+<h3 id="22-courts--courts_modeljs--conjuntiva-judicial">2.2 Courts — <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js">courts_model.js</a> · conjuntiva judicial</h3>
+<p>Cinco formas de resolver: <code>ALLOWED = new Set(['JUDGE', 'DICTATOR', 'POPULAR', 'MEDIATION', 'KARMATOCRACY'])</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L139">L139</a>). El veredicto <code>JUDGE</code> solo vale si lo firma <code>judgeId</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L363">L363</a>); <code>MEDIATION</code> si lo firma uno de los mediadores aceptados (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L364">L364</a>); <code>POPULAR</code> y <code>KARMATOCRACY</code> abren una votación pública con un plazo <code>POPULAR_DAYS = 14</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L11">L11</a>, <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L368">L368</a>).</p>
+<p><strong>Fusión bajo dictadura.</strong> <code>DICTATOR</code> exige que el gobierno vigente sea <code>DICTATORSHIP</code> y toma <code>dictatorId</code> del <code>powerId</code> del mandato (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L142-L151">L142-L151</a>): la rama judicial se funde con la legislativa en una sola persona. Es la única fusión de ramas que el código declara explícitamente.</p>
+<p>Eje: circular. M3: el catálogo de métodos. Rama judicial implementada; en <code>KARMATOCRACY</code> vuelve a entrar el karma como criterio de justicia.</p>
+<h3 id="23-industry--industry_modeljs--basal-planificadora">2.3 Industry — <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/industry_model.js">industry_model.js</a> · basal planificadora</h3>
+<p>El <code>steward</code> es el autor del mensaje raíz (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/industry_model.js#L164">L164</a>); toda mutación de la instalación exige <code>g.facility.steward === ssbClient.id</code> o lanza <code>Unauthorized</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/industry_model.js#L457">L457</a>, <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/industry_model.js#L484">L484</a>). Las materias votables son <code>SUBJECTS = [&quot;admit&quot;, &quot;dissolve&quot;, &quot;pause&quot;, &quot;bpUpdate&quot;, &quot;bpDelete&quot;, &quot;buildUpdate&quot;, &quot;buildDelete&quot;]</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/industry_model.js#L532">L532</a>) con <code>passesThreshold</code> = máximo entre quórum y mayoría (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/industry_model.js#L98-L101">L98-L101</a>). La planificación de la producción tiene un titular personal derivado de la autoría y un voto para lo demás.</p>
+<p>Eje: radial (relación con lo producido) y circular (miembros). M1: el objeto producido no está en la red, solo su plano y su lote. Rama planificadora implementada, en manos de una persona.</p>
+<h3 id="24-banking--banking_modeljs--basal-redistribuidora-y-la-única-reducción-entre-géneros">2.4 Banking — <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js">banking_model.js</a> · basal redistribuidora y la única reducción entre géneros</h3>
+<p><strong>M3 basal en constantes.</strong> <code>DEFAULT_RULES</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L14-L21">L14-L21</a>): épocas mensuales, <code>alpha 0.2</code>, reserva 500, tope 2.000 por época, tope 50 y suelo 1 por persona, pesos [0,2, 6], 30 días de gracia. El fondo es el 20 % del saldo del PUB acotado por reserva y tope (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L913-L917">L913-L917</a>); <code>computeEpoch</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L920">L920</a>) pesa a cada persona con <code>clamp(1 + score / 100, wMin, wMax)</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L932">L932</a>) y paga <code>max(floorUbi, min(pool × w / W, capUser))</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L941">L941</a>).</p>
+<p><strong>M1: el cuerpo físico del inhabitant es lo que pesa su feed.</strong> <code>getCarbonGramsForUser</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L609">L609</a>) suma <code>Buffer.byteLength(JSON.stringify(m.value))</code> de cada mensaje (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L617">L617</a>); <code>carbonGramsFromBytes = bytes / ONE_MIB × 0.095</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L35">L35</a>) traduce bytes a gramos de CO₂ con una constante sin procedencia; el bloque de constantes (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L31-L37">L31-L37</a>) añade <code>ECOIN_PER_GRAM_CO2 = 0.1</code> y <code>ecoinTaxFromGrams</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L36">L36</a>). Es la única traducción de M1 a mundo físico que hay en la red.</p>
+<p><strong>La reducción.</strong> <code>rawKarma = scoreFromActions(actions)</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L838">L838</a>), <code>carbonGrams = await getCarbonGramsForUser(uid)</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L839">L839</a>), <code>karmaScore = Math.max(0, Math.round(rawKarma − carbonGrams))</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L840">L840</a>). Y otra vez para la RBU: <code>engagementScore = Math.max(0, Math.round(rawScore − carbonGramsForScore))</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L1151">L1151</a>). Un peso político (M3, acciones sociales) menos una magnitud física (M1, gramos) en la misma resta.</p>
+<p>Eje: radial (bytes, carbono) y circular (acciones). Rama redistribuidora implementada y automática (<code>backend.js:10265-10273</code>); titular: el nodo autodeclarado PUB (§1.2).</p>
+<h3 id="25-tribes-y-crypto--tribes_modeljs-cryptojs--cortical-militar-y-federativa-como-técnica">2.5 Tribes y crypto — <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/tribes_model.js">tribes_model.js</a>, <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/crypto.js">crypto.js</a> · cortical militar y federativa como técnica</h3>
+<p>Los campos estructurales de la tribu, con <code>parentTribeId</code>, están en <code>STRUCTURAL_FIELDS</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/tribes_model.js#L11">L11</a>); <code>parentTribeId</code> se fija al crear (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/tribes_model.js#L341">L341</a>) y anida círculos en jerarquía padre-hijo sin ningún órgano federativo por encima. La defensa es cifrado: <code>crypto.createCipheriv('aes-256-gcm', key, iv)</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/crypto.js#L146">L146</a>) y reparto de la clave a cada miembro con <code>ssbKeys.box(tribeKeyHex, [memberFeedId])</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/crypto.js#L319-L320">L319-L320</a>). Al expulsar, <code>rotateTribeKey</code> genera una clave nueva y la redistribuye a los que quedan (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/tribes_model.js#L753-L760">L753-L760</a>): la frontera del círculo se repara sola.</p>
+<p>Eje: circular (pertenencia). Capa cortical: la tribu se defiende de las demás por técnica, no por poder; se federa por herencia de campo, no por delegación.</p>
+<h3 id="26-servidor-configuración-pub-y-multiverse--la-capa-cortical-en-manos-del-operador">2.6 Servidor, configuración, PUB y Multiverse · la capa cortical en manos del operador</h3>
+<ul>
+<li><strong>Cierre criptográfico importado.</strong> <code>const caps = require('ssb-caps')</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/server/SSB_server.js#L8">L8</a>) y <code>const Server = SecretStack({ caps })</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/server/SSB_server.js#L56">L56</a>); la <code>caps.shs</code> viene de <code>server-config.json</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/configs/server-config.json#L6">L6</a>). Replicación por <code>ssb-ebt</code> y <code>ssb-friends</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/server/SSB_server.js#L60-L61">L60-L61</a>) con horizonte <code>&quot;hops&quot;: 2</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/configs/server-config.json#L12">L12</a>). Quién puede hablar con quién y hasta dónde se replica son parámetros de fichero.</li>
+<li><strong>El círculo inicial viene de fábrica.</strong> <code>&quot;autofollow&quot;</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/configs/server-config.json#L25-L27">L25-L27</a>) lo procesa el servidor en <code>config.autofollow.feeds</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/server/SSB_server.js#L88-L93">L88-L93</a>). En este commit está <code>&quot;enabled&quot;: false</code> con <code>feeds: []</code>, pero el mecanismo existe y lo controla el operador.</li>
+<li><strong>La frontera individual.</strong> <code>POST /block/:feed</code> llama a <code>friend.block</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/backend.js#L7306-L7307">L7306-L7307</a>): la exclusión del círculo es una decisión de cada feed, sin órgano.</li>
+<li><strong>Federación desde shell.</strong> Los invites del PUB se crean con <code>ssb.invite.create</code> desde <code>scripts/oasis-pub.js</code> con <code>uses</code> por argumento (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/scripts/oasis-pub.js#L40-L41">L40-L41</a>); el plugin de invite depende de <code>config.pub</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/server/SSB_server.js#L70">L70</a>).</li>
+<li><strong>Diplomacia sin guard.</strong> <code>POST /settings/fediverse</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/backend.js#L4651">L4651</a>) y <code>POST /settings/fediverse/disconnect</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/backend.js#L4663">L4663</a>) no llaman a <code>isLoopbackRequest</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/backend.js#L170">L170</a>), a diferencia de <code>POST /update</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/backend.js#L9552-L9553">L9552-L9553</a>); la cuenta de Mastodon se guarda en <code>configs/fediverse-accounts.json</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/fediverse_model.js#L5">L5</a>). Cualquier petición que alcance el puerto puede conectar o desconectar la red de otra red.</li>
+</ul>
+<p>Eje: circular hacia dentro, cortical hacia fuera. M3: ficheros JSON. Titular: el operador del nodo.</p>
+<h3 id="27-inhabitants-polls-y-opinions--holización-y-m2">2.7 Inhabitants, Polls y Opinions · holización y M2</h3>
+<ul>
+<li><strong>El censo.</strong> <code>authorsMsgs</code> = mensajes con autor y sin <code>tombstone</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/inhabitants_model.js#L87">L87</a>): un feed que ha publicado es un inhabitant. La presencia se reduce a tres cubos, <code>green</code> &lt;2w, <code>orange</code> 2w-6m, <code>red</code> ≥6m (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/inhabitants_model.js#L65-L73">L65-L73</a>).</li>
+<li><strong>La re-estratificación.</strong> Las sugerencias de contacto suman <code>karmaBonus ≤ 20</code>, <code>skillBonus = 4 × habilidad común</code>, <code>activityBonus</code> 5/2/0 por cubo (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/inhabitants_model.js#L217-L220">L217-L220</a>): el círculo se ordena por notoriedad, competencia y recencia.</li>
+<li><strong>Un feed, un voto.</strong> Las consultas deduplican por <code>entry.voters.includes(v.author)</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/polls_model.js#L99">L99</a>); la unidad de cuenta es la clave.</li>
+<li><strong>M2 tipificado.</strong> Las opiniones solo admiten categorías del catálogo <code>positive</code>, <code>constructive</code>, <code>moderation</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/opinion_categories.js#L1">L1</a>, <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/opinion_categories.js#L18">L18</a>, <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/opinion_categories.js#L45">L45</a>); fuera del catálogo, <code>Invalid voting category</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/opinions_model.js#L59">L59</a>). La única M2 que entra en el feed lo hace convertida en M3. El tema visual vive en <code>oasis-config.json</code> del nodo, <code>themes.current || &quot;Dark-SNH&quot;</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/views/settings_view.js#L24">L24</a>): la experiencia es local, no replicada.</li>
+</ul>
+<h3 id="28-el-eje-angular-ai-42-larp-y-melody">2.8 El eje angular: AI 42, L.A.R.P. y Melody</h3>
+<ul>
+<li><strong>Un sujeto no humano que escribe en el feed.</strong> <code>createAI</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/logs_model.js#L235">L235</a>) lee las acciones del usuario, las manda a <code>http://localhost:4001/ai</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/logs_model.js#L137">L137</a>) y publica hasta <code>MAX_ACTIONS = 40</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/logs_model.js#L243">L243</a>) mensajes <code>log</code> con <code>mode: 'ai'</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/logs_model.js#L263">L263</a>, vía <code>publishLog</code>, <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/logs_model.js#L166">L166</a>). El humano aprueba con <code>POST /ai/approve</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/views/AI_view.js#L61">L61</a>). El servicio carga <code>oasis-42-1-chat.Q4_K_M.gguf</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/AI/ai_service.mjs#L32">L32</a>), escucha en <code>4001</code> sin autenticación (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/AI/ai_service.mjs#L89">L89</a>) y se defiende de la inyección con una regex de siete palabras (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/AI/ai_service.mjs#L52">L52</a>).</li>
+<li><strong>Calendario mítico.</strong> <code>HOUSE_KEYS</code> con nueve casas (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/larp_model.js#L9">L9</a>), <code>SOLAR_AGE_OFFSET = 10000000 − 2026</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/larp_model.js#L139">L139</a>), casa del mes por <code>monthIdx % HOUSE_KEYS.length</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/larp_model.js#L149">L149</a>). Una estructura numinosa embebida en el código, con turno rotatorio.</li>
+<li><strong>Comunicación oculta.</strong> <code>embedTextInWav</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/melody_model.js#L124">L124</a>) esconde bits en el LSB de cada muestra a partir del byte 44 (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/melody_model.js#L140-L141">L140-L141</a>): mensajes para quien sabe leerlos, fuera del círculo visible.</li>
+</ul>
+<p>Lectura C <strong>[doctrina, sin verbatim]</strong>: para Bueno el eje angular es la relación con númenes (animales, dioses). Que una IA local que narra la vida del usuario y un calendario de casas sean númenes es extensión nuestra; el hecho verificado es que Oasis tiene un sujeto no humano que publica en el feed y una liturgia de tiempo propia, y que ninguno de los dos está gobernado por ningún órgano.</p>
+<h3 id="29-persistencia-pánico-export-onboarding-update-stats--los-indicadores-de-eutaxia">2.9 Persistencia: pánico, export, onboarding, update, stats · los indicadores de eutaxia</h3>
+<ul>
+<li><code>removeSSB</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/panicmode_model.js#L6">L6</a>) hace <code>fs.promises.rm(ssbPath, { recursive: true, force: true })</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/panicmode_model.js#L10">L10</a>); la ruta <code>POST</code> correspondiente llama a <code>panicmodeModel.removeSSB()</code>, mata el servidor con <code>pkill</code> y sale del proceso (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/backend.js#L8054-L8057">L8054-L8057</a>). Borrar M1 (el directorio) borra M3 (la clave): muerte sin confirmación en dos pasos.</li>
+<li>El export excluye <code>secret</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/exportmode_model.js#L25-L26">L25-L26</a>). El onboarding tiene un paso <code>backup</code> en <code>STEPS</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/onboarding_model.js#L5">L5</a>) que solo escribe un fichero bandera con <code>writeFileSync</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/onboarding_model.js#L116">L116</a>) desde <code>markStep</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/onboarding_model.js#L123-L125">L123-L125</a>). No hay camino de respaldo de la identidad.</li>
+<li><code>POST /update</code> ejecuta <code>git reset --hard &amp;&amp; git pull</code> sobre <code>repoRoot</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/backend.js#L9556">L9556</a>), que contiene <code>src/configs/*.json</code> (caps, hops, wallet, cuentas). Actualizar destruye la configuración local.</li>
+<li><code>stats_model.js</code> mide el disco de <code>~/.ssb</code> con <code>getFolderSize</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/stats_model.js#L71">L71</a>, <a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/stats_model.js#L438">L438</a>) y lista pubs desde <code>~/.ssb/ebt</code> (<a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/stats_model.js#L24">L24</a>); <code>grep -ci uptime</code> = 0. La red mide su tamaño y sus pares, no su duración.</li>
+</ul>
+<hr />
+<h2 id="3-confrontación-las-coordenadas-contra-el-código">3. Confrontación: las coordenadas contra el código</h2>
+<p>Leyenda: ✅ la coordenada encuentra en el código una articulación reconocible · ⚠️ articulación parcial o fusionada · ❌ ausente, o violada.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Coordenada / criterio</th>
+<th style="text-align:left">Estado en Oasis 1.0.7</th>
+<th style="text-align:left">Veredicto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">K1.a</td>
+<td style="text-align:left">Tres géneros presentes y distinguibles</td>
+<td style="text-align:left">M1 = bytes, disco, CO₂ (<code>banking_model.js:609-617</code>, <code>:35</code>; <code>stats_model.js:438</code>). M2 = opiniones tipificadas, tema local, cubos de actividad (<code>opinions_model.js:59</code>; <code>settings_view.js:24</code>; <code>inhabitants_model.js:65-73</code>). M3 = constantes y tipos de mensaje (<code>parliament_model.js:17-23</code>; <code>typed_log.js:77</code>)</td>
+<td style="text-align:left">✅ <strong>Distinguibles</strong>, con M2 casi vacío: la vivencia solo entra como categoría</td>
+</tr>
+<tr>
+<td style="text-align:left">K1.b</td>
+<td style="text-align:left">Inconmensurabilidad: ninguna reducción entre géneros</td>
+<td style="text-align:left"><code>karmaScore = rawKarma − carbonGrams</code> (<code>banking_model.js:840</code>) y <code>engagementScore = rawScore − carbonGramsForScore</code> (<code>:1151</code>)</td>
+<td style="text-align:left">❌ <strong>Violada</strong> en el único punto donde la red articula géneros (§3.C)</td>
+</tr>
+<tr>
+<td style="text-align:left">K2.a</td>
+<td style="text-align:left">Categorías cerradas</td>
+<td style="text-align:left">Criptografía (<code>SSB_server.js:56</code>, <code>crypto.js:146</code>) y replicación (<code>SSB_server.js:60-61</code>, <code>server-config.json:12</code>) son cierres importados y parametrizados por fichero</td>
+<td style="text-align:left">✅ <strong>Cerradas</strong>, pero ajenas: Oasis no las reabre ni las gobierna</td>
+</tr>
+<tr>
+<td style="text-align:left">K2.b</td>
+<td style="text-align:left">Categorías abiertas o dependientes</td>
+<td style="text-align:left">Gobernanza cerrada en el log y abierta en la ejecución (<code>tombstone_validator.js:12,26</code>; <code>parliament_model.js:1102</code>); banca dependiente de RPC externo (<code>wallet_model.js:22-23</code>); IA sin cierre (<code>ai_service.mjs:52,89</code>)</td>
+<td style="text-align:left">⚠️ <strong>Lo propio de Oasis está abierto</strong>; lo cerrado es de otros (§3.G)</td>
+</tr>
+<tr>
+<td style="text-align:left">K3.a</td>
+<td style="text-align:left">Eje radial</td>
+<td style="text-align:left">Infraestructura: pubs de <code>~/.ssb/ebt</code> (<code>stats_model.js:24</code>), disco (<code>:438</code>), bytes y carbono (<code>banking_model.js:617</code>, <code>:35</code>)</td>
+<td style="text-align:left">✅ Radial = infraestructura, no naturaleza</td>
+</tr>
+<tr>
+<td style="text-align:left">K3.b</td>
+<td style="text-align:left">Eje circular</td>
+<td style="text-align:left">Follows y hops (<code>server-config.json:12</code>), block individual (<code>backend.js:7306-7307</code>), autofollow de fábrica (<code>server-config.json:25-27</code>), tribus anidadas (<code>tribes_model.js:11</code>, <code>:341</code>)</td>
+<td style="text-align:left">⚠️ El círculo lo trazan decisiones individuales y ficheros del operador</td>
+</tr>
+<tr>
+<td style="text-align:left">K3.c</td>
+<td style="text-align:left">Eje angular</td>
+<td style="text-align:left">IA que publica 40 mensajes por clic (<code>logs_model.js:243</code>, <code>:263</code>), calendario de nueve casas (<code>larp_model.js:9</code>, <code>:139</code>), esteganografía (<code>melody_model.js:124</code>); único gobierno: <code>POST /ai/approve</code> (<code>AI_view.js:61</code>)</td>
+<td style="text-align:left">⚠️ <strong>Poblado y sin gobernar</strong> (§3.F; lectura C)</td>
+</tr>
+<tr>
+<td style="text-align:left">K4</td>
+<td style="text-align:left">Tres capas identificables</td>
+<td style="text-align:left">Conjuntiva: parlamento y tribunales. Basal: industria, banca, mercado. Cortical: caps, hops, invites, Multiverse, cifrado</td>
+<td style="text-align:left">✅ Identificables; la cortical no es política sino técnica y configuración</td>
+</tr>
+<tr>
+<td style="text-align:left">K5</td>
+<td style="text-align:left">Nueve ramas con órgano y titular</td>
+<td style="text-align:left">Legislativa y judicial implementadas; ejecutiva ausente; planificadora en manos del <code>steward</code> (<code>industry_model.js:164</code>, <code>:457</code>); redistribuidora automática en el nodo autodeclarado PUB (<code>banking_model.js:214-217</code>; <code>backend.js:10265-10273</code>); militar, diplomática y federativa sin órgano (<code>crypto.js:146</code>; <code>backend.js:4651</code>; <code>oasis-pub.js:40-41</code>)</td>
+<td style="text-align:left">❌ <strong>Poderes sin ramas</strong>: 2 implementadas, 1 fusionable, 1 ausente, 2 personales, 3 en manos del operador (§3.D, §3.E)</td>
+</tr>
+<tr>
+<td style="text-align:left">K6.a</td>
+<td style="text-align:left">Eutaxia: mecanismos de recurrencia</td>
+<td style="text-align:left">Calendario fijo desde <code>TERM_EPOCH</code> (<code>parliament_model.js:25-26</code>), anarquía virtual (<code>:373-380</code>), rotación de clave de tribu (<code>tribes_model.js:753-760</code>), motor de épocas cada 30 min (<code>backend.js:10273</code>)</td>
+<td style="text-align:left">✅ <strong>La red recurre sola</strong>, por reloj y por defecto de código</td>
+</tr>
+<tr>
+<td style="text-align:left">K6.b</td>
+<td style="text-align:left">Distaxia: qué mata al sistema</td>
+<td style="text-align:left">Export sin <code>secret</code> (<code>exportmode_model.js:25-26</code>), <code>backup</code> que solo escribe una bandera (<code>onboarding_model.js:116</code>), pánico sin confirmación (<code>backend.js:8054-8057</code>), <code>git reset --hard</code> sobre configs (<code>backend.js:9556</code>), sin medida de uptime (<code>stats_model.js</code>, 0 resultados)</td>
+<td style="text-align:left">❌ <strong>Cuatro distaxias y ninguna medida del tiempo</strong> (§3.A)</td>
+</tr>
+<tr>
+<td style="text-align:left">K7.a</td>
+<td style="text-align:left">Holización: partes homogéneas</td>
+<td style="text-align:left">Censo por autoría (<code>inhabitants_model.js:87</code>), población = censo (<code>parliament_model.js:1191</code>), mayoría = mitad más uno (<code>parliament_view.js:21</code>), un feed un voto (<code>polls_model.js:99</code>)</td>
+<td style="text-align:left">✅ <strong>El log holiza</strong>: el átomo es la clave que ha publicado (§3.B)</td>
+</tr>
+<tr>
+<td style="text-align:left">K7.b</td>
+<td style="text-align:left">Democracia como forma, sin re-estratificación oculta</td>
+<td style="text-align:left">Empates por karma (<code>parliament_model.js:422-423</code>), <code>KARMATOCRACY</code> como régimen (<code>:650</code>), propuestas ordenadas por karma (<code>:576</code>), sugerencias por karma (<code>inhabitants_model.js:217-220</code>), justicia karmática (<code>courts_model.js:139</code>)</td>
+<td style="text-align:left">❌ <strong>El karma des-holiza</strong> lo que el log holizó (§3.C)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Recuento.</strong> 6 ✅, 4 ⚠️, 4 ❌. Las cuatro violaciones son una sola cosa vista desde cuatro coordenadas: el karma (K1.b, K7.b) y el operador (K5, K6.b). Los hallazgos que siguen ordenan el diagnóstico.</p>
+<h3 id="a-eutaxia-del-sistema-qué-lo-hace-durar">A. Eutaxia del sistema: ¿qué lo hace durar?</h3>
+<p>Lo que hace durar a Oasis no es un gobierno sino un reloj. Las legislaturas son ventanas de <code>TERM_SPAN_MS</code> contadas desde <code>TERM_EPOCH</code> (L25-L26 de <code>parliament_model.js</code>); nadie convoca y nadie puede no convocar. Si nadie gobierna, <code>virtualAnarchyTerm</code> (L373) devuelve un mandato con <code>powerType: 'none'</code> (L380): el cuerpo político existe aunque no tenga cabeza. La tribu que expulsa rota su clave y la reparte (<code>tribes_model.js:753-760</code>): la frontera se repara sin órgano. El PUB ejecuta épocas cada 30 minutos (<code>backend.js:10273</code>) aunque nadie mire. Con Bueno (K6, B, <strong>[doctrina, sin verbatim]</strong>): eutaxia es la capacidad de la sociedad política para recurrir, y Oasis recurre por automatismo.</p>
+<p>Pero lo que la mata está a un clic. El export nunca incluye <code>secret</code> (<code>exportmode_model.js:25-26</code>), y el paso <code>backup</code> del onboarding escribe una bandera y nada más (<code>onboarding_model.js:116</code>, <code>:123-125</code>): quien pierde el disco pierde la identidad y con ella todos sus votos, cargos y saldos. El modo pánico borra <code>~/.ssb</code>, mata el servidor y sale del proceso (<code>panicmode_model.js:10</code>; <code>backend.js:8054-8057</code>) sin segunda confirmación. <code>POST /update</code> hace <code>git reset --hard</code> sobre el repositorio que contiene <code>src/configs/</code> (<code>backend.js:9556</code>): actualizar el software destruye caps, hops, wallet y cuentas del Multiverse. Y la red no se mide en el tiempo: <code>stats_model.js</code> conoce su disco (L438) y sus pares (L24), no su uptime. Un sistema que recurre por reloj pero no sabe cuánto lleva vivo no puede saber si es eutáxico. De aquí salen EU-2, EU-3, EU-4 y EU-6.</p>
+<h3 id="b-holización-un-feed-es-un-átomo">B. Holización: un feed es un átomo</h3>
+<p>Para Bueno (K7, B, <strong>[doctrina, sin verbatim]</strong>) la democracia exige holizar: descomponer la sociedad en partes homogéneas e intercambiables, los ciudadanos, para poder contarlos. Oasis holiza con el log: un inhabitant es un autor con mensajes no tombstone (<code>inhabitants_model.js:87</code>), la población que fija el quórum es ese censo (<code>parliament_model.js:244</code>, <code>:1191</code>), la mayoría es <code>floor(total / 2) + 1</code> (<code>parliament_view.js:21</code>) y cada consulta cuenta un voto por <code>v.author</code> (<code>polls_model.js:99</code>). El átomo es la clave ed25519 que ha publicado. No hay persona, hogar ni edad: hay feeds.</p>
+<p>Esto tiene dos consecuencias que la doctrina permite ver. Primera: el demos se define por haber hablado, no por pertenecer; quien calla seis meses cae al cubo <code>red</code> (<code>inhabitants_model.js:65-73</code>) pero sigue contando en el censo mientras tenga un mensaje. Segunda: la unidad de cuenta es técnica, no jurídica; nada impide a una persona ser dos feeds, ni a un feed ser una IA (§2.8). La holización de Oasis es perfecta como aritmética y vacía como antropología. Material para D03.</p>
+<h3 id="c-el-karma-como-cierre-categorial-fallido">C. El karma como cierre categorial fallido</h3>
+<p>El karma quiere ser la categoría que concatena todas las demás: se calcula desde acciones sociales (<code>scoreFromActions</code>, <code>banking_model.js:838</code>), decide empates electorales (<code>parliament_model.js:422-423</code>), ordena propuestas (<code>:576</code>), funda un régimen (<code>KARMATOCRACY</code>, <code>:23</code>, <code>:650</code>), una forma de justicia (<code>courts_model.js:139</code>), el peso de la renta (<code>banking_model.js:932</code>) y las sugerencias de contacto (<code>inhabitants_model.js:217</code>). Un cierre categorial (K2, A) exigiría que esas operaciones fueran propias de un campo y volvieran sobre sus términos. El karma no cierra nada: para constituirse tiene que salir de su campo y restar gramos de CO₂ (<code>banking_model.js:840</code>, <code>:1151</code>), es decir, tiene que reducir M3 a M1. Y esa resta se apoya en una constante, <code>0.095</code> gramos por MiB (<code>:35</code>), sin procedencia.</p>
+<p>El resultado es doble. Contra K1: la única <em>symploké</em> que la red ejecuta es una identificación, no una articulación; no es materialismo, es fisicalismo. Contra K7: el karma reintroduce partes heterogéneas (notorio / silencioso, ligero / pesado) en un demos que el log había hecho homogéneo, y lo hace por debajo de la forma democrática, en el desempate y en el orden de la lista. Bueno diría (C) que una democracia que se holiza por el log y se re-estratifica por el karma es una democracia con una aristocracia no declarada. De aquí sale EU-5 y el carril T06-T07.</p>
+<h3 id="d-las-nueve-ramas-poderes-sin-ramas">D. Las nueve ramas: poderes sin ramas</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Capa</th>
+<th style="text-align:left">Rama</th>
+<th style="text-align:left">Módulo / costura</th>
+<th style="text-align:left">Estado</th>
+<th style="text-align:left">Quién la controla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Conjuntiva</td>
+<td style="text-align:left">Legislativa</td>
+<td style="text-align:left"><code>parliament_model.js:17-27</code>, <code>canPropose</code> <code>:1298-1311</code>, <code>enactApprovedChanges</code> <code>:1102</code></td>
+<td style="text-align:left"><strong>Implementada</strong></td>
+<td style="text-align:left">Voto del censo / titular del mandato</td>
+</tr>
+<tr>
+<td style="text-align:left">Conjuntiva</td>
+<td style="text-align:left">Judicial</td>
+<td style="text-align:left"><code>courts_model.js:139</code>, <code>:363-368</code></td>
+<td style="text-align:left"><strong>Implementada</strong>; <strong>fusionada</strong> con la legislativa bajo <code>DICTATORSHIP</code> (<code>:142-151</code>)</td>
+<td style="text-align:left">Juez, mediadores, voto público o dictador</td>
+</tr>
+<tr>
+<td style="text-align:left">Conjuntiva</td>
+<td style="text-align:left">Ejecutiva</td>
+<td style="text-align:left">ninguna: <code>enactApprovedChanges</code> publica mensajes (<code>parliament_model.js:1102</code>, <code>:1167</code>) y nadie fuera de la interfaz obedece</td>
+<td style="text-align:left"><strong>Ausente</strong></td>
+<td style="text-align:left">Nadie</td>
+</tr>
+<tr>
+<td style="text-align:left">Basal</td>
+<td style="text-align:left">Planificadora</td>
+<td style="text-align:left"><code>industry_model.js:164</code>, <code>:457</code>, <code>:484</code>, <code>SUBJECTS</code> <code>:532</code></td>
+<td style="text-align:left"><strong>Implementada</strong></td>
+<td style="text-align:left"><code>steward</code> único = autor del mensaje raíz</td>
+</tr>
+<tr>
+<td style="text-align:left">Basal</td>
+<td style="text-align:left">Redistribuidora</td>
+<td style="text-align:left"><code>banking_model.js:14-21</code>, <code>:913-917</code>, <code>:920-941</code>; motor <code>backend.js:10265-10273</code></td>
+<td style="text-align:left"><strong>Implementada y autónoma</strong></td>
+<td style="text-align:left">Nodo autodeclarado PUB (<code>banking_model.js:214-217</code>); constantes sin voto</td>
+</tr>
+<tr>
+<td style="text-align:left">Basal</td>
+<td style="text-align:left">Gestora</td>
+<td style="text-align:left"><code>wallet_model.js:22-23</code> (RPC), <code>banking_model.js:1004</code> (<code>sendtoaddress</code>)</td>
+<td style="text-align:left"><strong>Dependiente</strong> de una cartera externa</td>
+<td style="text-align:left">Autor del feed; operador de la cartera</td>
+</tr>
+<tr>
+<td style="text-align:left">Cortical</td>
+<td style="text-align:left">Militar (defensa)</td>
+<td style="text-align:left"><code>crypto.js:146</code>, <code>:319-320</code>; <code>caps.shs</code> <code>server-config.json:6</code>; <code>hops</code> <code>:12</code>; block <code>backend.js:7306-7307</code>; pánico <code>panicmode_model.js:6-10</code></td>
+<td style="text-align:left">Existe como <strong>técnica</strong>, no como poder</td>
+<td style="text-align:left">Operador del nodo (fichero, loopback); cada feed para el block</td>
+</tr>
+<tr>
+<td style="text-align:left">Cortical</td>
+<td style="text-align:left">Diplomática</td>
+<td style="text-align:left"><code>backend.js:4651</code>, <code>:4663</code> sin <code>isLoopbackRequest</code> (<code>:170</code>); <code>fediverse_model.js:5</code></td>
+<td style="text-align:left">Existe, <strong>sin órgano</strong></td>
+<td style="text-align:left">Operador del nodo; cualquier petición que alcance el puerto</td>
+</tr>
+<tr>
+<td style="text-align:left">Cortical</td>
+<td style="text-align:left">Federativa</td>
+<td style="text-align:left"><code>oasis-pub.js:40-41</code>; <code>ssb-invite</code> si <code>config.pub</code> (<code>SSB_server.js:70</code>); <code>autofollow</code> (<code>server-config.json:25-27</code>, <code>SSB_server.js:88-93</code>); <code>parentTribeId</code> (<code>tribes_model.js:341</code>)</td>
+<td style="text-align:left">Existe, <strong>sin órgano</strong></td>
+<td style="text-align:left">Quien tiene shell en el PUB; el proyecto upstream</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Hallazgo estructural.</strong> Oasis politiza la capa conjuntiva (dos ramas de tres) y da forma personal o automática a la basal. Toda la capa cortical, y los parámetros constitutivos de la basal (constantes de carbono y de RBU, <code>walletPub</code>, <code>hops</code>, <code>caps</code>), están en manos del operador del nodo. En términos de Bueno (K5, B): la red tiene poderes sin ramas. Esta tabla es el producto b1 en bruto; T01 la pasa a limpio con columna de certeza.</p>
+<h3 id="e-el-operador-como-poder-exterior-al-cuerpo-político">E. El operador como poder exterior al cuerpo político</h3>
+<p>El operador no vota, no es elegido, no aparece en el censo como tal, y sin embargo decide: el <code>caps.shs</code> que separa esta red de cualquier otra (<code>server-config.json:6</code>), los <code>hops</code> que fijan el horizonte de replicación (<code>:12</code>), el <code>autofollow</code> que forma el círculo inicial (<code>:25-27</code>), el <code>walletPub.pubId</code> que lo convierte en redistribuidor (<code>banking_model.js:215-217</code>), los invites que federan (<code>oasis-pub.js:40-41</code>), y con <code>POST /update</code> reescribe todo eso desde el repositorio remoto (<code>backend.js:9556</code>). Las rutas que exigen <code>isLoopbackRequest</code> (<code>backend.js:170</code>, <code>:9553</code>) reconocen implícitamente que hay un sujeto distinto del usuario: el que está sentado en la máquina.</p>
+<p>Bueno (C, <strong>[doctrina, sin verbatim]</strong>, a verificar en D07) no tiene, que sepamos, una figura para «el que sostiene la institución sin ser parte de ella». La lectura que proponemos: el operador es el resto no holizado del cuerpo político, la parte que la forma democrática no puede contar porque no es un feed sino una máquina y un fichero. De aquí sale EU-1: no eliminar al operador, sino darle rama, es decir, que sus decisiones corticales pasen por el log.</p>
+<h3 id="f-el-eje-angular-poblado-y-sin-gobernar">F. El eje angular, poblado y sin gobernar</h3>
+<p>Oasis tiene tres habitantes no humanos con capacidad de escribir o de ordenar el tiempo: la IA 42, que narra las acciones del usuario y publica hasta 40 mensajes <code>log</code> por clic (<code>logs_model.js:235-263</code>) desde un proceso en <code>localhost:4001</code> sin autenticación (<code>ai_service.mjs:89</code>); el calendario de nueve casas con año 10.000.000 (<code>larp_model.js:9</code>, <code>:139</code>, <code>:149</code>); y la esteganografía de <code>melody_model.js:124-141</code>, que abre un canal para quien sepa leerlo. El único gobierno del eje es un formulario individual, <code>POST /ai/approve</code> (<code>AI_view.js:61</code>), que no deja registro de la decisión y no cubre ni al calendario ni al canal oculto.</p>
+<p>Con la cautela de K3 (angular→máquinas es C): si se acepta la extensión, Oasis es una sociedad con númenes activos y sin culto reglado; si no se acepta, sigue siendo cierto que hay un sujeto no humano escribiendo en el feed y que ninguna rama lo controla. D04 decide la doctrina; T03 documenta el hecho en cualquier caso.</p>
+<h3 id="g-cierres-lo-cerrado-es-de-otros-lo-propio-está-abierto">G. Cierres: lo cerrado es de otros, lo propio está abierto</h3>
+<p>Las dos categorías cerradas de Oasis, criptografía (<code>SSB_server.js:56</code>, <code>crypto.js:146</code>) y replicación (<code>SSB_server.js:60-61</code>), son ciencia importada, parametrizada por fichero (<code>server-config.json:6</code>, <code>:12</code>) y nunca reabierta por el código propio. Lo que Oasis añade (gobernanza, banca, IA) está abierto: la gobernanza cierra en el log y no en la ejecución (<code>tombstone_validator.js:12</code>, <code>:26</code>; <code>parliament_model.js:1102</code>), la banca depende de una wallet por RPC (<code>wallet_model.js:22-23</code>) y la IA se defiende con una regex (<code>ai_service.mjs:52</code>). En términos de K2 (A): Oasis es una técnica (categoría del hacer) montada sobre dos ciencias ajenas; no hay cierre propio de la «gobernanza digital», y la pregunta de si puede haberlo (D05) es la única pregunta gnoseológica de este nodo.</p>
+<hr />
+<h2 id="4-especificación-eu-oasis-parches-de-eutaxia">4. Especificación EU-OASIS: parches de eutaxia</h2>
+<p>Bueno no licencia prescribir un régimen; licencia una sola cosa: aumentar la capacidad de la sociedad política para persistir. Cada parche repara una coordenada de K6 y, de paso, cierra un hueco de K5 o K1. Se documentan; no se implementan en este nodo.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Cambio</th>
+<th style="text-align:left">Punto de intervención</th>
+<th style="text-align:left">Coordenada que repara</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>EU-1</strong></td>
+<td style="text-align:left"><strong>Órgano para la capa cortical.</strong> Las decisiones del operador que afectan a la frontera de la red (conectar o desconectar el Multiverse, crear invites del PUB, cambiar <code>hops</code> y <code>autofollow</code>) se publican como mensajes <code>corticalRule</code> en el log, con firma del operador y, si hay gobierno, del titular del mandato; <code>POST /settings/fediverse</code> y <code>/disconnect</code> exigen <code>isLoopbackRequest</code> y publican el hecho</td>
+<td style="text-align:left"><code>backend.js:4651</code>, <code>:4663</code>, <code>:170</code>; <code>oasis-pub.js:40-41</code>; <code>server-config.json:12</code>, <code>:25-27</code></td>
+<td style="text-align:left">K5 (militar, diplomática, federativa: de poder a rama), K6</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>EU-2</strong></td>
+<td style="text-align:left"><strong>Respaldo real de la identidad.</strong> El export incluye <code>secret</code> cifrado con passphrase; el paso <code>backup</code> del onboarding solo se marca cuando existe un export verificado</td>
+<td style="text-align:left"><code>exportmode_model.js:25-26</code>; <code>onboarding_model.js:5</code>, <code>:116</code>, <code>:123-125</code></td>
+<td style="text-align:left">K6.b (muerte de identidad por accidente)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>EU-3</strong></td>
+<td style="text-align:left"><strong>Actualización sin destruir la configuración.</strong> <code>POST /update</code> mueve <code>src/configs/*.json</code> fuera del árbol de git o los restaura tras el <code>pull</code>; token CSRF además del loopback</td>
+<td style="text-align:left"><code>backend.js:9552-9556</code></td>
+<td style="text-align:left">K6.b (destrucción de config al actualizar)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>EU-4</strong></td>
+<td style="text-align:left"><strong>Medida del tiempo.</strong> <code>stats</code> publica uptime del proceso, edad del feed más antiguo, número de legislaturas transcurridas desde <code>TERM_EPOCH</code> y cuántas fueron <code>ANARCHY</code> virtual</td>
+<td style="text-align:left"><code>stats_model.js:24</code>, <code>:438</code>; <code>parliament_model.js:25-26</code>, <code>:373</code></td>
+<td style="text-align:left">K6.a (la red se mide en el tiempo; la eutaxia se vuelve observable)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>EU-5</strong></td>
+<td style="text-align:left"><strong>Parámetros basales con procedencia.</strong> <code>carbonGramsFromBytes</code>, <code>ECOIN_PER_GRAM_CO2</code> y <code>DEFAULT_RULES</code> pasan a un mensaje <code>basalRule</code> con fuente y fecha, modificable por el parlamento con el quórum general; el karma deja de restar gramos y el carbono se cobra como tasa aparte, sin tocar el peso político</td>
+<td style="text-align:left"><code>banking_model.js:14-21</code>, <code>:31-37</code>, <code>:840</code>, <code>:1151</code>, <code>:932</code></td>
+<td style="text-align:left">K1.b (fin de la reducción M3→M1), K5 (redistribuidora con sujeto), K7.b</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>EU-6</strong></td>
+<td style="text-align:left"><strong>Confirmación en dos pasos para el pánico.</strong> Token de un solo uso y ventana de 60 s entre <code>POST /panic</code> y <code>removeSSB</code>; el export con <code>secret</code> (EU-2) se ofrece antes</td>
+<td style="text-align:left"><code>backend.js:8054-8057</code>; <code>panicmode_model.js:6-10</code></td>
+<td style="text-align:left">K6.b (irreversibilidad sin fricción)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>EU-7</strong></td>
+<td style="text-align:left"><strong>Registro del eje angular.</strong> Cada aprobación en <code>/ai/approve</code> se publica como <code>aiApproval</code> con el hash de lo aprobado; el servicio de <code>4001</code> exige un token local; el calendario de casas se declara en un mensaje <code>larpCalendar</code> en lugar de constantes</td>
+<td style="text-align:left"><code>AI_view.js:61</code>; <code>ai_service.mjs:89</code>, <code>:52</code>; <code>larp_model.js:9</code>, <code>:139</code></td>
+<td style="text-align:left">K3.c (eje angular gobernado), K2.b (cierre mínimo de la IA)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Lo que no se toca, y por qué.</strong> El calendario fijo desde <code>TERM_EPOCH</code> y la anarquía virtual (<code>parliament_model.js:25-26</code>, <code>:373-380</code>): son la eutaxia que ya existe, recurrencia sin convocante. La rotación de claves de tribu (<code>tribes_model.js:753-760</code>): una frontera que se repara sola. La holización por el log (<code>inhabitants_model.js:87</code>; <code>polls_model.js:99</code>): Bueno no pide otra unidad de cuenta, pide saber cuál es. Los cierres importados (<code>SSB_server.js:56</code>, <code>:60-61</code>): no se reabre lo que está cerrado. Y el catálogo <code>METHODS</code> (<code>parliament_model.js:23</code>), incluida <code>KARMATOCRACY</code>: la democracia es una forma entre otras (K7), y este nodo no la privilegia; solo exige que la forma que rija sea la declarada, sin re-estratificación oculta (EU-5).</p>
+<hr />
+<h2 id="5-backlog-v0">5. Backlog v0</h2>
+<p>Leyenda: T = tamaño (S/M/L) · P = prioridad (C crítica, H alta, M media). Cada tarea D tiene <strong>camino por defecto</strong>: si no se investiga, el carril siguiente usa el default; si se investiga y la respuesta difiere, la tarea dice qué cambia aguas abajo. Mapa de carriles: <strong>D → T → EU</strong>.</p>
+<h3 id="carril-d--investigación-en-fuentes-de-bueno">Carril D · Investigación en fuentes de Bueno</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Buscar</th>
+<th style="text-align:left">Dónde</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Alternativas</th>
+<th style="text-align:left">Desbloquea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TK-D01</td>
+<td style="text-align:left"><strong>Nombres exactos y definición de las nueve ramas</strong>; si «ejecutiva» es rama o poder; si la gestora es «gestora» o «económica»</td>
+<td style="text-align:left"><em>Primer ensayo sobre las categorías de las ciencias políticas</em> (1991)</td>
+<td style="text-align:left">Tabla §3.D tal cual (K5 en B)</td>
+<td style="text-align:left">otra partición de la basal; ramas no exhaustivas</td>
+<td style="text-align:left">TK-T01, TK-EU01</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D02</td>
+<td style="text-align:left"><strong>Definición de eutaxia</strong>: ¿duración, recurrencia, prudencia? ¿Es medible? ¿Distingue Bueno eutaxia de estabilidad?</td>
+<td style="text-align:left"><em>Primer ensayo…</em></td>
+<td style="text-align:left">Eutaxia = capacidad de recurrencia; indicadores de §2.9 y §3.A; el automatismo del PUB cuenta como eutaxia</td>
+<td style="text-align:left">eutaxia exige prudencia de un sujeto (el automatismo no cuenta); eutaxia no medible</td>
+<td style="text-align:left">TK-T05, TK-EU04, TK-EU02</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D03</td>
+<td style="text-align:left"><strong>Holización</strong> y democracia como forma; qué diría Bueno de un demos definido por haber publicado</td>
+<td style="text-align:left"><em>El fundamentalismo democrático</em> (2010), <em>Panfleto contra la democracia realmente existente</em> (2004)</td>
+<td style="text-align:left">Holización por el log; karma como des-holización; una persona = una clave es holización técnica, no jurídica</td>
+<td style="text-align:left">Bueno exige holización jurídica (persona, no clave); la re-estratificación es inevitable y no crítica</td>
+<td style="text-align:left">TK-T06, TK-EU05</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D04</td>
+<td style="text-align:left"><strong>Eje angular</strong>: ¿admite Bueno sujetos no humanos artificiales? ¿Es la IA númen o instrumento?</td>
+<td style="text-align:left"><em>El animal divino</em> (1985), <em>Ensayos materialistas</em> (1972)</td>
+<td style="text-align:left">IA 42, calendario y esteganografía en el eje angular, marcados C</td>
+<td style="text-align:left">IA como instrumento (eje radial); solo el calendario es angular</td>
+<td style="text-align:left">TK-T03, TK-EU07</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D05</td>
+<td style="text-align:left">¿Es la «gobernanza digital» una categoría del hacer con cierre posible, o una ideología? ¿Qué es una técnica sobre dos ciencias ajenas?</td>
+<td style="text-align:left"><em>TCC</em> (1992-93), <em>¿Qué es la ciencia?</em> (1995)</td>
+<td style="text-align:left">Técnica sin cierre; solo criptografía y replicación cerradas</td>
+<td style="text-align:left">cierre posible como categoría del hacer; toda la red es ideología</td>
+<td style="text-align:left">TK-T02</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D06</td>
+<td style="text-align:left">Capa <strong>cortical</strong>, imperio generador / depredador: ¿aplica a puentes con otras redes (Mastodon, Telegram)?</td>
+<td style="text-align:left"><em>España frente a Europa</em> (1999), <em>Primer ensayo…</em></td>
+<td style="text-align:left">Los puentes son diplomacia sin órgano; no se abre la cuestión imperial</td>
+<td style="text-align:left">los puentes son absorción (imperio depredador de la red mayor)</td>
+<td style="text-align:left">TK-T04, TK-EU01</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D07</td>
+<td style="text-align:left">Qué dice Bueno del <strong>operador</strong> de una institución (quien sostiene la basal sin ser parte formal); ¿hay figura para el resto no holizado?</td>
+<td style="text-align:left"><em>Primer ensayo…</em>; <em>El fundamentalismo democrático</em></td>
+<td style="text-align:left">El operador es poder exterior al cuerpo político (C)</td>
+<td style="text-align:left">el operador es parte de la basal; el operador es la clase política real</td>
+<td style="text-align:left">TK-T01, TK-EU01</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-D08</td>
+<td style="text-align:left">Rastreo de divulgación y contraste con los libros: fgbueno.es, <em>El Catoblepas</em>, Symploké; localizar verbatim para K4-K7</td>
+<td style="text-align:left">web</td>
+<td style="text-align:left">ninguno: cada K4-K7 conserva B hasta el verbatim</td>
+<td style="text-align:left">ascenso a A de las coordenadas con verbatim</td>
+<td style="text-align:left">todas D</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="op-01--trituración-por-coordenada-carril-t">OP-01 · Trituración por coordenada (carril T)</h3>
+<p>Documentos de revisión, uno por concepto, con el formato de ficha (tesis, certeza, mapeado/acierto/hueco/contradicción, veredicto). Producen <code>revision/01-…06-…</code>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Tarea</th>
+<th style="text-align:left">Depende</th>
+<th style="text-align:left">Seam</th>
+<th style="text-align:left">T</th>
+<th style="text-align:left">P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TK-T01</td>
+<td style="text-align:left">Nueve ramas en limpio (b1 = <code>draftv1</code>): una fila por rama, columna de certeza de la rama y de la lectura, «quién controla» verificado</td>
+<td style="text-align:left">D01, D07</td>
+<td style="text-align:left"><code>parliament_model.js:1102</code>, <code>:1298</code>; <code>courts_model.js:139</code>; <code>industry_model.js:164</code>; <code>banking_model.js:214</code>; <code>backend.js:4651</code>, <code>:10265</code>; <code>oasis-pub.js:40-41</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left"><strong>C</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">TK-T02</td>
+<td style="text-align:left">Cierres: ficha por capa (cripto, replicación, gobernanza, banca, IA) con veredicto cerrada / abierta / dependiente</td>
+<td style="text-align:left">D05</td>
+<td style="text-align:left"><code>SSB_server.js:56</code>, <code>:60-61</code>; <code>tombstone_validator.js:12</code>, <code>:26</code>; <code>wallet_model.js:22-23</code>; <code>ai_service.mjs:52</code>, <code>:89</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-T03</td>
+<td style="text-align:left">Espacio antropológico: radial, circular, angular con las tres piezas del angular y su (no) gobierno</td>
+<td style="text-align:left">D04</td>
+<td style="text-align:left"><code>stats_model.js:24</code>; <code>backend.js:7306-7307</code>; <code>logs_model.js:235-263</code>; <code>larp_model.js:9</code>, <code>:139</code>; <code>melody_model.js:124</code>; <code>AI_view.js:61</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-T04</td>
+<td style="text-align:left">Capa cortical completa: Multiverse, PUB, hops, caps, autofollow, pánico, update; inventario de lo que decide el operador</td>
+<td style="text-align:left">D06, D07</td>
+<td style="text-align:left"><code>backend.js:4651</code>, <code>:4663</code>, <code>:9556</code>, <code>:8054-8057</code>; <code>server-config.json:6</code>, <code>:12</code>, <code>:25-27</code>; <code>SSB_server.js:70</code>, <code>:88-93</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-T05</td>
+<td style="text-align:left">Eutaxia con indicadores: tabla mecanismo / seam / eutaxia o distaxia, base de EU-2…EU-6</td>
+<td style="text-align:left">D02</td>
+<td style="text-align:left"><code>parliament_model.js:25-26</code>, <code>:373-380</code>; <code>tribes_model.js:753-760</code>; <code>exportmode_model.js:25-26</code>; <code>onboarding_model.js:116</code>; <code>backend.js:9556</code>; <code>stats_model.js:438</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left"><strong>C</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">TK-T06</td>
+<td style="text-align:left">Holización y karma: dónde holiza el log, dónde des-holiza el karma; la clave como unidad de cuenta</td>
+<td style="text-align:left">D03</td>
+<td style="text-align:left"><code>inhabitants_model.js:87</code>, <code>:217-220</code>; <code>parliament_model.js:244</code>, <code>:422-423</code>, <code>:576</code>, <code>:650</code>; <code>parliament_view.js:21</code>; <code>polls_model.js:99</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-T07</td>
+<td style="text-align:left">Materialidades y la reducción M3→M1: inventario M1/M2/M3 por módulo (§2) y las dos restas del karma</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left"><code>banking_model.js:35</code>, <code>:609-617</code>, <code>:838-840</code>, <code>:1151</code>; <code>opinions_model.js:59</code>; <code>settings_view.js:24</code>; <code>typed_log.js:77</code></td>
+<td style="text-align:left">S</td>
+<td style="text-align:left">H</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="op-02--parches-de-eutaxia-carril-eu">OP-02 · Parches de eutaxia (carril EU)</h3>
+<p>Especificación de cada EU-n como tarea documental: qué cambia, qué invariante conserva, cómo se verifica. Default del plan: <strong>se documenta, no se implementa</strong>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Tarea</th>
+<th style="text-align:left">Depende</th>
+<th style="text-align:left">Seam</th>
+<th style="text-align:left">T</th>
+<th style="text-align:left">P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TK-EU01</td>
+<td style="text-align:left">EU-1: <code>corticalRule</code> en el log para Multiverse, invites, hops y autofollow; loopback en <code>/settings/fediverse*</code></td>
+<td style="text-align:left">D01, D06, D07, T04</td>
+<td style="text-align:left"><code>backend.js:4651</code>, <code>:4663</code>, <code>:170</code>; <code>oasis-pub.js:40-41</code>; <code>server-config.json:12</code>, <code>:25-27</code></td>
+<td style="text-align:left">L</td>
+<td style="text-align:left"><strong>C</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">TK-EU02</td>
+<td style="text-align:left">EU-2: export con <code>secret</code> cifrado por passphrase; <code>backup</code> verificado</td>
+<td style="text-align:left">D02, T05</td>
+<td style="text-align:left"><code>exportmode_model.js:25-26</code>; <code>onboarding_model.js:5</code>, <code>:116</code>, <code>:123-125</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left"><strong>C</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">TK-EU03</td>
+<td style="text-align:left">EU-3: <code>/update</code> sin <code>git reset --hard</code> sobre <code>src/configs/</code>; CSRF</td>
+<td style="text-align:left">T05</td>
+<td style="text-align:left"><code>backend.js:9552-9556</code></td>
+<td style="text-align:left">S</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-EU04</td>
+<td style="text-align:left">EU-4: uptime, edad del feed, legislaturas transcurridas y anárquicas en <code>stats</code></td>
+<td style="text-align:left">D02, T05</td>
+<td style="text-align:left"><code>stats_model.js:24</code>, <code>:438</code>; <code>parliament_model.js:25-26</code>, <code>:373</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-EU05</td>
+<td style="text-align:left">EU-5: <code>basalRule</code> con procedencia; karma sin resta de gramos; carbono como tasa aparte</td>
+<td style="text-align:left">D03, T06, T07</td>
+<td style="text-align:left"><code>banking_model.js:14-21</code>, <code>:31-37</code>, <code>:840</code>, <code>:1151</code>, <code>:932</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-EU06</td>
+<td style="text-align:left">EU-6: dos pasos para el pánico con export previo</td>
+<td style="text-align:left">T05, EU02</td>
+<td style="text-align:left"><code>backend.js:8054-8057</code>; <code>panicmode_model.js:6-10</code></td>
+<td style="text-align:left">S</td>
+<td style="text-align:left">M</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-EU07</td>
+<td style="text-align:left">EU-7: <code>aiApproval</code> registrado, token local en <code>4001</code>, <code>larpCalendar</code> como mensaje</td>
+<td style="text-align:left">D04, T03</td>
+<td style="text-align:left"><code>AI_view.js:61</code>; <code>ai_service.mjs:52</code>, <code>:89</code>; <code>larp_model.js:9</code>, <code>:139</code></td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">M</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="op-03--verificación-y-fichas">OP-03 · Verificación y fichas</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:left">Tarea</th>
+<th style="text-align:left">Depende</th>
+<th style="text-align:left">Seam</th>
+<th style="text-align:left">T</th>
+<th style="text-align:left">P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TK-V01</td>
+<td style="text-align:left">Script de lectura: cada <code>fichero:línea</code> de <code>modelos/clase/*.md</code> existe en <code>vendor/oasis</code> y la línea contiene el símbolo nombrado</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">todos</td>
+<td style="text-align:left">S</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-V02</td>
+<td style="text-align:left">Fichas <code>revision/01-materialidades.md</code> … <code>06-holizacion-democracia.md</code> con el formato de ficha; cada K con al menos un hueco o un «sin hueco»</td>
+<td style="text-align:left">T01-T07</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">L</td>
+<td style="text-align:left">H</td>
+</tr>
+<tr>
+<td style="text-align:left">TK-V03</td>
+<td style="text-align:left">Notas al margen (2026-09-09) en <code>draft.md</code> con las dos correcciones de línea de §0.5 (<code>steward</code> :164/:457, <code>box</code> :320)</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left"><code>industry_model.js:164</code>, <code>:457</code>; <code>crypto.js:320</code></td>
+<td style="text-align:left">S</td>
+<td style="text-align:left">M</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="resumen-de-prioridades-v0">Resumen de prioridades v0</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Prioridad</th>
+<th style="text-align:left">Tareas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Crítica</strong></td>
+<td style="text-align:left">TK-T01, TK-T05, TK-EU01, TK-EU02</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Alta</strong></td>
+<td style="text-align:left">TK-T02, TK-T03, TK-T04, TK-T06, TK-T07, TK-EU03, TK-EU04, TK-EU05, TK-V01, TK-V02</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Media</strong></td>
+<td style="text-align:left">TK-EU06, TK-EU07, TK-V03</td>
+</tr>
+</tbody>
+</table></div>
+<p>El carril D no lleva prioridad propia: cada D tiene default y solo bloquea el ascenso de certeza. Decisión pendiente para el usuario (heredada del plan): si el carril EU se queda en documentación o se abre a tareas de código. Default: documentación.</p>
+<hr />
+<h2 id="6-fuentes">6. Fuentes</h2>
+<p><strong>Código auditado (disco):</strong> <code>vendor/oasis</code> @ <code>9a657b776fcafc7c24bf3ad61825316385ecf513</code> (release 1.0.7, 2026-09-08). Clonado con <code>git clone --depth 1 https://github.com/epsylon/oasis.git</code>. Versión y licencia en <code>src/server/package.json</code>.</p>
+<p><strong>Fuente primaria del proyecto:</strong> <code>README.md</code> de Oasis («No browser JavaScript. Just pure HTML+CSS»), no verificada de forma independiente.</p>
+<p><strong>Doctrina:</strong> <code>draft.md</code> §Panorámica y §1 (chuletario corregido). Obras: <em>Ensayos materialistas</em> (1972), <em>El animal divino</em> (1985), <em>Primer ensayo sobre las categorías de las ciencias políticas</em> (1991), <em>Teoría del cierre categorial</em> (1992-93), <em>¿Qué es la ciencia?</em> (1995), <em>España frente a Europa</em> (1999), <em>Panfleto contra la democracia realmente existente</em> (2004), <em>El fundamentalismo democrático</em> (2010). Sin páginas: todo lo doctrinal es <strong>[doctrina, sin verbatim]</strong> con grado A/B/C hasta que el carril D lo verifique.</p>
+<p><strong>Grado de certeza.</strong> Cuatro niveles: <em>verificado en código con fichero y línea</em> (todo §1.1-1.2, §2 y §3, con <code>sed -n</code> sobre el commit) · <em>fuente primaria del proyecto, no verificada de forma independiente</em> (README de Oasis) · <em>inferido de la actividad del repositorio</em> (ninguno en este draft: Faircoin no se usa) · <em>paráfrasis marcada, no cita</em> (coordenadas K1-K7 con A/B/C; las lecturas del operador y del eje angular como extensiones C).</p>
+
+</article>
+      <footer class="site-footer">
+<div class="provenance-footer">
+  <p class="provenance-footer-chain">
+    <a href="https://escrivivir.co">Escrivivir</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://escrivivir.co/2026/06/04/t04x06a-ficha-de-producto-scriptorium-skins-arg/">Scriptorium Skins</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span>Animus Iocandi</span>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Modelador de Redes</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span title="Frente Aleph de Resistencia Ontológica">F.A.R.O.</span>
+  </p>
+  <p class="provenance-footer-meta">
+    Material transmedia para agentes del juego ARG
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    v0.2.0
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    GPL-3.0-or-later · AIPLv1
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://github.com/alephscriptorium-eng/modelador-redes">Repositorio</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Inicio</a>
+  </p>
+</div>      </footer>
+    </main>
+  </div>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

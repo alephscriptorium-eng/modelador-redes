@@ -12,15 +12,17 @@
   <div class="layout">
     <aside class="sidebar">
       <a href="../../index.html" class="brand">Modelador de Redes</a>
-      <p class="tag">Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB · v0.1.0</p>
+      <p class="tag">Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB · v0.2.0</p>
       <nav aria-label="Modelo clase">
         <a href="index.html" class="">Estado</a>
         <a href="backlog.html" class="active">Backlog</a>
         <hr>
         <p class="nav-h">Drafts</p>
-        <a href="drafts/draft.html" class="">draft <span class="badge badge-latest">latest</span></a>
+        <a href="drafts/draftv0.html" class="">draftv0 <span class="badge badge-latest">latest</span></a>
+        <a href="drafts/draft.html" class="">draft</a>
         <hr>
         <p class="nav-h">Revisión</p>
+        <a href="revision/01-costuras.html" class="" title="Costuras de Oasis para el nodo clase (notas de exploración)">01-costuras</a>
         <hr>
         <p class="nav-h">Descargas</p>
         <a href="downloads/clase-drafts.zip">drafts.zip</a>
@@ -39,20 +41,125 @@
     <main>
 <div class="doc-head">
   <h1>Backlog</h1>
-  <p class="lead">Oportunidades (vista comprimida) y tareas a detalle, extraídas de los drafts. El draft vigente es <a href="drafts/draft.html">draft.md</a>; lo anterior se conserva con su etiqueta de origen. Datos: <a href="backlog.json">backlog.json</a>.</p>
+  <p class="lead">Oportunidades (vista comprimida) y tareas a detalle, extraídas de los drafts. El draft vigente es <a href="drafts/draftv0.html">draftv0.md</a>; lo anterior se conserva con su etiqueta de origen. Datos: <a href="backlog.json">backlog.json</a>.</p>
 </div>
 <div class="resumen">
-  <span><strong>0</strong> tareas TK en draft</span>
-  <span><strong>0</strong> oportunidades en 1 drafts</span>
+  <span><strong>25</strong> tareas TK en draftv0</span>
+<span>carril D: <strong>8</strong></span><span>carril EU: <strong>7</strong></span><span>carril T: <strong>7</strong></span><span>carril V: <strong>3</strong></span><span>prioridad C: <strong>4</strong></span><span>prioridad H: <strong>10</strong></span><span>prioridad M: <strong>3</strong></span>  <span><strong>3</strong> oportunidades en 2 drafts</span>
 </div>
 
 <h2 id="oportunidades">Oportunidades</h2>
-<p class="note">Ningún draft define oportunidades (encabezados <code>OP-nn</code>).</p>
+<div class="op-grid">
+  <div class="op-card">
+    <span class="badge badge-latest">draftv0</span>
+    <h3>OP-03 · Verificación y fichas</h3>
+  </div>
+  <div class="op-card">
+    <span class="badge badge-latest">draftv0</span>
+    <h3>OP-02 · Parches de eutaxia (carril EU)</h3>
+<p>Especificación de cada EU-n como tarea documental: qué cambia, qué invariante conserva, cómo se verifica. Default del plan: <strong>se documenta, no se implementa</strong>.</p>  </div>
+  <div class="op-card">
+    <span class="badge badge-latest">draftv0</span>
+    <h3>OP-01 · Trituración por coordenada (carril T)</h3>
+<p>Documentos de revisión, uno por concepto, con el formato de ficha (tesis, certeza, mapeado/acierto/hueco/contradicción, veredicto). Producen <code>revision/01-…06-…</code>.</p>  </div>
+</div>
 
 <h2 id="tareas">Tareas a detalle</h2>
 <div class="tabla-head">
-  <h3 id="tabla-1">draft · carril EU</h3>
-  <span class="badge badge-latest">draft</span>
+  <h3 id="tabla-1">draftv0 · carril EU</h3>
+  <span class="badge badge-latest">draftv0</span>
+  <span class="seccion">4. Especificación EU-OASIS: parches de eutaxia</span>
+</div>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>#</th><th>Cambio</th><th>Punto de intervención</th><th>Coordenada que repara</th></tr></thead>
+  <tbody>
+  <tr><td><strong>EU-1</strong></td><td><strong>Órgano para la capa cortical.</strong> Las decisiones del operador que afectan a la frontera de la red (conectar o desconectar el Multiverse, crear invites del PUB, cambiar <code>hops</code> y <code>autofollow</code>) se publican como mensajes <code>corticalRule</code> en el log, con firma del operador y, si hay gobierno, del titular del mandato; <code>POST /settings/fediverse</code> y <code>/disconnect</code> exigen <code>isLoopbackRequest</code> y publican el hecho</td><td><code>backend.js:4651</code>, <code>:4663</code>, <code>:170</code>; <code>oasis-pub.js:40-41</code>; <code>server-config.json:12</code>, <code>:25-27</code></td><td>K5 (militar, diplomática, federativa: de poder a rama), K6</td></tr>
+  <tr><td><strong>EU-2</strong></td><td><strong>Respaldo real de la identidad.</strong> El export incluye <code>secret</code> cifrado con passphrase; el paso <code>backup</code> del onboarding solo se marca cuando existe un export verificado</td><td><code>exportmode_model.js:25-26</code>; <code>onboarding_model.js:5</code>, <code>:116</code>, <code>:123-125</code></td><td>K6.b (muerte de identidad por accidente)</td></tr>
+  <tr><td><strong>EU-3</strong></td><td><strong>Actualización sin destruir la configuración.</strong> <code>POST /update</code> mueve <code>src/configs/*.json</code> fuera del árbol de git o los restaura tras el <code>pull</code>; token CSRF además del loopback</td><td><code>backend.js:9552-9556</code></td><td>K6.b (destrucción de config al actualizar)</td></tr>
+  <tr><td><strong>EU-4</strong></td><td><strong>Medida del tiempo.</strong> <code>stats</code> publica uptime del proceso, edad del feed más antiguo, número de legislaturas transcurridas desde <code>TERM_EPOCH</code> y cuántas fueron <code>ANARCHY</code> virtual</td><td><code>stats_model.js:24</code>, <code>:438</code>; <code>parliament_model.js:25-26</code>, <code>:373</code></td><td>K6.a (la red se mide en el tiempo; la eutaxia se vuelve observable)</td></tr>
+  <tr><td><strong>EU-5</strong></td><td><strong>Parámetros basales con procedencia.</strong> <code>carbonGramsFromBytes</code>, <code>ECOIN_PER_GRAM_CO2</code> y <code>DEFAULT_RULES</code> pasan a un mensaje <code>basalRule</code> con fuente y fecha, modificable por el parlamento con el quórum general; el karma deja de restar gramos y el carbono se cobra como tasa aparte, sin tocar el peso político</td><td><code>banking_model.js:14-21</code>, <code>:31-37</code>, <code>:840</code>, <code>:1151</code>, <code>:932</code></td><td>K1.b (fin de la reducción M3→M1), K5 (redistribuidora con sujeto), K7.b</td></tr>
+  <tr><td><strong>EU-6</strong></td><td><strong>Confirmación en dos pasos para el pánico.</strong> Token de un solo uso y ventana de 60 s entre <code>POST /panic</code> y <code>removeSSB</code>; el export con <code>secret</code> (EU-2) se ofrece antes</td><td><code>backend.js:8054-8057</code>; <code>panicmode_model.js:6-10</code></td><td>K6.b (irreversibilidad sin fricción)</td></tr>
+  <tr><td><strong>EU-7</strong></td><td><strong>Registro del eje angular.</strong> Cada aprobación en <code>/ai/approve</code> se publica como <code>aiApproval</code> con el hash de lo aprobado; el servicio de <code>4001</code> exige un token local; el calendario de casas se declara en un mensaje <code>larpCalendar</code> en lugar de constantes</td><td><code>AI_view.js:61</code>; <code>ai_service.mjs:89</code>, <code>:52</code>; <code>larp_model.js:9</code>, <code>:139</code></td><td>K3.c (eje angular gobernado), K2.b (cierre mínimo de la IA)</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="tabla-head">
+  <h3 id="tabla-2">draftv0 · carril D</h3>
+  <span class="badge badge-latest">draftv0</span>
+  <span class="seccion">Carril D · Investigación en fuentes de Bueno</span>
+</div>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>ID</th><th>Buscar</th><th>Dónde</th><th>Default</th><th>Alternativas</th><th>Desbloquea</th></tr></thead>
+  <tbody>
+  <tr><td>TK-D01</td><td><strong>Nombres exactos y definición de las nueve ramas</strong>; si «ejecutiva» es rama o poder; si la gestora es «gestora» o «económica»</td><td><em>Primer ensayo sobre las categorías de las ciencias políticas</em> (1991)</td><td>Tabla §3.D tal cual (K5 en B)</td><td>otra partición de la basal; ramas no exhaustivas</td><td>TK-T01, TK-EU01</td></tr>
+  <tr><td>TK-D02</td><td><strong>Definición de eutaxia</strong>: ¿duración, recurrencia, prudencia? ¿Es medible? ¿Distingue Bueno eutaxia de estabilidad?</td><td><em>Primer ensayo…</em></td><td>Eutaxia = capacidad de recurrencia; indicadores de §2.9 y §3.A; el automatismo del PUB cuenta como eutaxia</td><td>eutaxia exige prudencia de un sujeto (el automatismo no cuenta); eutaxia no medible</td><td>TK-T05, TK-EU04, TK-EU02</td></tr>
+  <tr><td>TK-D03</td><td><strong>Holización</strong> y democracia como forma; qué diría Bueno de un demos definido por haber publicado</td><td><em>El fundamentalismo democrático</em> (2010), <em>Panfleto contra la democracia realmente existente</em> (2004)</td><td>Holización por el log; karma como des-holización; una persona = una clave es holización técnica, no jurídica</td><td>Bueno exige holización jurídica (persona, no clave); la re-estratificación es inevitable y no crítica</td><td>TK-T06, TK-EU05</td></tr>
+  <tr><td>TK-D04</td><td><strong>Eje angular</strong>: ¿admite Bueno sujetos no humanos artificiales? ¿Es la IA númen o instrumento?</td><td><em>El animal divino</em> (1985), <em>Ensayos materialistas</em> (1972)</td><td>IA 42, calendario y esteganografía en el eje angular, marcados C</td><td>IA como instrumento (eje radial); solo el calendario es angular</td><td>TK-T03, TK-EU07</td></tr>
+  <tr><td>TK-D05</td><td>¿Es la «gobernanza digital» una categoría del hacer con cierre posible, o una ideología? ¿Qué es una técnica sobre dos ciencias ajenas?</td><td><em>TCC</em> (1992-93), <em>¿Qué es la ciencia?</em> (1995)</td><td>Técnica sin cierre; solo criptografía y replicación cerradas</td><td>cierre posible como categoría del hacer; toda la red es ideología</td><td>TK-T02</td></tr>
+  <tr><td>TK-D06</td><td>Capa <strong>cortical</strong>, imperio generador / depredador: ¿aplica a puentes con otras redes (Mastodon, Telegram)?</td><td><em>España frente a Europa</em> (1999), <em>Primer ensayo…</em></td><td>Los puentes son diplomacia sin órgano; no se abre la cuestión imperial</td><td>los puentes son absorción (imperio depredador de la red mayor)</td><td>TK-T04, TK-EU01</td></tr>
+  <tr><td>TK-D07</td><td>Qué dice Bueno del <strong>operador</strong> de una institución (quien sostiene la basal sin ser parte formal); ¿hay figura para el resto no holizado?</td><td><em>Primer ensayo…</em>; <em>El fundamentalismo democrático</em></td><td>El operador es poder exterior al cuerpo político (C)</td><td>el operador es parte de la basal; el operador es la clase política real</td><td>TK-T01, TK-EU01</td></tr>
+  <tr><td>TK-D08</td><td>Rastreo de divulgación y contraste con los libros: fgbueno.es, <em>El Catoblepas</em>, Symploké; localizar verbatim para K4-K7</td><td>web</td><td>ninguno: cada K4-K7 conserva B hasta el verbatim</td><td>ascenso a A de las coordenadas con verbatim</td><td>todas D</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="tabla-head">
+  <h3 id="tabla-3">draftv0 · carril T · OP-01</h3>
+  <span class="badge badge-latest">draftv0</span>
+  <span class="seccion">OP-01 · Trituración por coordenada (carril T)</span>
+</div>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>ID</th><th>Tarea</th><th>Depende</th><th>Seam</th><th>T</th><th>P</th></tr></thead>
+  <tbody>
+  <tr><td>TK-T01</td><td>Nueve ramas en limpio (b1 = <code>draftv1</code>): una fila por rama, columna de certeza de la rama y de la lectura, «quién controla» verificado</td><td>D01, D07</td><td><code>parliament_model.js:1102</code>, <code>:1298</code>; <code>courts_model.js:139</code>; <code>industry_model.js:164</code>; <code>banking_model.js:214</code>; <code>backend.js:4651</code>, <code>:10265</code>; <code>oasis-pub.js:40-41</code></td><td>M</td><td><strong>C</strong></td></tr>
+  <tr><td>TK-T02</td><td>Cierres: ficha por capa (cripto, replicación, gobernanza, banca, IA) con veredicto cerrada / abierta / dependiente</td><td>D05</td><td><code>SSB_server.js:56</code>, <code>:60-61</code>; <code>tombstone_validator.js:12</code>, <code>:26</code>; <code>wallet_model.js:22-23</code>; <code>ai_service.mjs:52</code>, <code>:89</code></td><td>M</td><td>H</td></tr>
+  <tr><td>TK-T03</td><td>Espacio antropológico: radial, circular, angular con las tres piezas del angular y su (no) gobierno</td><td>D04</td><td><code>stats_model.js:24</code>; <code>backend.js:7306-7307</code>; <code>logs_model.js:235-263</code>; <code>larp_model.js:9</code>, <code>:139</code>; <code>melody_model.js:124</code>; <code>AI_view.js:61</code></td><td>M</td><td>H</td></tr>
+  <tr><td>TK-T04</td><td>Capa cortical completa: Multiverse, PUB, hops, caps, autofollow, pánico, update; inventario de lo que decide el operador</td><td>D06, D07</td><td><code>backend.js:4651</code>, <code>:4663</code>, <code>:9556</code>, <code>:8054-8057</code>; <code>server-config.json:6</code>, <code>:12</code>, <code>:25-27</code>; <code>SSB_server.js:70</code>, <code>:88-93</code></td><td>M</td><td>H</td></tr>
+  <tr><td>TK-T05</td><td>Eutaxia con indicadores: tabla mecanismo / seam / eutaxia o distaxia, base de EU-2…EU-6</td><td>D02</td><td><code>parliament_model.js:25-26</code>, <code>:373-380</code>; <code>tribes_model.js:753-760</code>; <code>exportmode_model.js:25-26</code>; <code>onboarding_model.js:116</code>; <code>backend.js:9556</code>; <code>stats_model.js:438</code></td><td>M</td><td><strong>C</strong></td></tr>
+  <tr><td>TK-T06</td><td>Holización y karma: dónde holiza el log, dónde des-holiza el karma; la clave como unidad de cuenta</td><td>D03</td><td><code>inhabitants_model.js:87</code>, <code>:217-220</code>; <code>parliament_model.js:244</code>, <code>:422-423</code>, <code>:576</code>, <code>:650</code>; <code>parliament_view.js:21</code>; <code>polls_model.js:99</code></td><td>M</td><td>H</td></tr>
+  <tr><td>TK-T07</td><td>Materialidades y la reducción M3→M1: inventario M1/M2/M3 por módulo (§2) y las dos restas del karma</td><td>—</td><td><code>banking_model.js:35</code>, <code>:609-617</code>, <code>:838-840</code>, <code>:1151</code>; <code>opinions_model.js:59</code>; <code>settings_view.js:24</code>; <code>typed_log.js:77</code></td><td>S</td><td>H</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="tabla-head">
+  <h3 id="tabla-4">draftv0 · carril EU · OP-02</h3>
+  <span class="badge badge-latest">draftv0</span>
+  <span class="seccion">OP-02 · Parches de eutaxia (carril EU)</span>
+</div>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>ID</th><th>Tarea</th><th>Depende</th><th>Seam</th><th>T</th><th>P</th></tr></thead>
+  <tbody>
+  <tr><td>TK-EU01</td><td>EU-1: <code>corticalRule</code> en el log para Multiverse, invites, hops y autofollow; loopback en <code>/settings/fediverse*</code></td><td>D01, D06, D07, T04</td><td><code>backend.js:4651</code>, <code>:4663</code>, <code>:170</code>; <code>oasis-pub.js:40-41</code>; <code>server-config.json:12</code>, <code>:25-27</code></td><td>L</td><td><strong>C</strong></td></tr>
+  <tr><td>TK-EU02</td><td>EU-2: export con <code>secret</code> cifrado por passphrase; <code>backup</code> verificado</td><td>D02, T05</td><td><code>exportmode_model.js:25-26</code>; <code>onboarding_model.js:5</code>, <code>:116</code>, <code>:123-125</code></td><td>M</td><td><strong>C</strong></td></tr>
+  <tr><td>TK-EU03</td><td>EU-3: <code>/update</code> sin <code>git reset --hard</code> sobre <code>src/configs/</code>; CSRF</td><td>T05</td><td><code>backend.js:9552-9556</code></td><td>S</td><td>H</td></tr>
+  <tr><td>TK-EU04</td><td>EU-4: uptime, edad del feed, legislaturas transcurridas y anárquicas en <code>stats</code></td><td>D02, T05</td><td><code>stats_model.js:24</code>, <code>:438</code>; <code>parliament_model.js:25-26</code>, <code>:373</code></td><td>M</td><td>H</td></tr>
+  <tr><td>TK-EU05</td><td>EU-5: <code>basalRule</code> con procedencia; karma sin resta de gramos; carbono como tasa aparte</td><td>D03, T06, T07</td><td><code>banking_model.js:14-21</code>, <code>:31-37</code>, <code>:840</code>, <code>:1151</code>, <code>:932</code></td><td>M</td><td>H</td></tr>
+  <tr><td>TK-EU06</td><td>EU-6: dos pasos para el pánico con export previo</td><td>T05, EU02</td><td><code>backend.js:8054-8057</code>; <code>panicmode_model.js:6-10</code></td><td>S</td><td>M</td></tr>
+  <tr><td>TK-EU07</td><td>EU-7: <code>aiApproval</code> registrado, token local en <code>4001</code>, <code>larpCalendar</code> como mensaje</td><td>D04, T03</td><td><code>AI_view.js:61</code>; <code>ai_service.mjs:52</code>, <code>:89</code>; <code>larp_model.js:9</code>, <code>:139</code></td><td>M</td><td>M</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="tabla-head">
+  <h3 id="tabla-5">draftv0 · carril V · OP-03</h3>
+  <span class="badge badge-latest">draftv0</span>
+  <span class="seccion">OP-03 · Verificación y fichas</span>
+</div>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>ID</th><th>Tarea</th><th>Depende</th><th>Seam</th><th>T</th><th>P</th></tr></thead>
+  <tbody>
+  <tr><td>TK-V01</td><td>Script de lectura: cada <code>fichero:línea</code> de <code>modelos/clase/*.md</code> existe en <code>vendor/oasis</code> y la línea contiene el símbolo nombrado</td><td>—</td><td>todos</td><td>S</td><td>H</td></tr>
+  <tr><td>TK-V02</td><td>Fichas <code>revision/01-materialidades.md</code> … <code>06-holizacion-democracia.md</code> con el formato de ficha; cada K con al menos un hueco o un «sin hueco»</td><td>T01-T07</td><td>—</td><td>L</td><td>H</td></tr>
+  <tr><td>TK-V03</td><td>Notas al margen (2026-09-09) en <code>draft.md</code> con las dos correcciones de línea de §0.5 (<code>steward</code> :164/:457, <code>box</code> :320)</td><td>—</td><td><code>industry_model.js:164</code>, <code>:457</code>; <code>crypto.js:320</code></td><td>S</td><td>M</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="tabla-head">
+  <h3 id="tabla-6">draft · carril EU</h3>
+  <span class="badge ">draft</span>
   <span class="seccion">5.5 Carril EU · parches de eutaxia (opcional; único lugar donde Bueno licencia prescribir)</span>
 </div>
 <div class="table-wrap">
@@ -84,7 +191,7 @@
   <p class="provenance-footer-meta">
     Material transmedia para agentes del juego ARG
     <span class="provenance-sep" aria-hidden="true">·</span>
-    v0.1.0
+    v0.2.0
     <span class="provenance-sep" aria-hidden="true">·</span>
     GPL-3.0-or-later · AIPLv1
     <span class="provenance-sep" aria-hidden="true">·</span>

@@ -1,5 +1,5 @@
 {
-  "generador": "modelador-redes 0.1.0",
+  "generador": "modelador-redes 0.2.0",
   "oasis": {
     "repo": "https://github.com/epsylon/oasis",
     "sha": "9a657b776fcafc7c24bf3ad61825316385ecf513"
@@ -14,8 +14,8 @@
       "id": "clase",
       "nombre": "Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB",
       "rama": "dev/clase",
-      "estado": "semilla",
-      "latest": "draft",
+      "estado": "auditoría sin revisar",
+      "latest": "draftv0",
       "aristas": []
     },
     {
@@ -23,7 +23,7 @@
       "nombre": "Colectivizaciones libertarias 1936-37 sobre Oasis/SSB",
       "rama": "dev/colectivizaciones",
       "estado": "en revisión",
-      "latest": "draftv0",
+      "latest": "draftv1",
       "aristas": [
         "res_publica+colectivizaciones"
       ]
@@ -62,13 +62,13 @@
       "relacion": "",
       "aristas": [],
       "rama": "dev/clase",
-      "estado": "semilla",
+      "estado": "auditoría sin revisar",
       "descripcion": "Panorámica del sistema de Gustavo Bueno (M₁/M₂/M₃, teoría del cierre categorial, espacio antropológico, eutaxia) y plan para triturar Oasis/SSB con sus categorías, en contraste con Trevijano y con las colectivizaciones. Carriles D (fuentes) → T (trituración) → EU (eutaxia).",
-      "latest": "draft",
-      "n_drafts": 1,
-      "n_fichas": 0,
-      "total_tk": 0,
-      "ops": 0,
+      "latest": "draftv0",
+      "n_drafts": 2,
+      "n_fichas": 1,
+      "total_tk": 25,
+      "ops": 3,
       "github": "https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/clase"
     },
     {
@@ -88,11 +88,11 @@
       "rama": "dev/colectivizaciones",
       "estado": "en revisión",
       "descripcion": "Modelo puro de las colectivizaciones anarcosindicalistas de 1936-37 (asamblea soberana, cargos rotatorios y revocables, propiedad colectiva, salario familiar, federación de abajo arriba, intercambio sin precio) auditado contra Oasis 1.0.7: ocho criterios, parches CL-1…CL-11 y backlog por carriles D' → G' → B' → E' → F'.",
-      "latest": "draftv0",
-      "n_drafts": 2,
-      "n_fichas": 7,
-      "total_tk": 36,
-      "ops": 6,
+      "latest": "draftv1",
+      "n_drafts": 3,
+      "n_fichas": 11,
+      "total_tk": 8,
+      "ops": 0,
       "github": "https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/colectivizaciones"
     },
     {

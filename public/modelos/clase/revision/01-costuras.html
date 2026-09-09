@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Costuras de Oasis para el nodo clase (notas de exploración) — Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB</title>
+<script>
+    (function(){try{var t=localStorage.getItem('ml-theme');document.documentElement.setAttribute('data-theme',t||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>  <link rel="stylesheet" href="../../../assets/doc.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="../../../index.html" class="brand">Modelador de Redes</a>
+      <p class="tag">Materialismo filosófico (Gustavo Bueno) sobre Oasis/SSB · v0.2.0</p>
+      <nav aria-label="Modelo clase">
+        <a href="../index.html" class="">Estado</a>
+        <a href="../backlog.html" class="">Backlog</a>
+        <hr>
+        <p class="nav-h">Drafts</p>
+        <a href="../drafts/draftv0.html" class="">draftv0 <span class="badge badge-latest">latest</span></a>
+        <a href="../drafts/draft.html" class="">draft</a>
+        <hr>
+        <p class="nav-h">Revisión</p>
+        <a href="../revision/01-costuras.html" class="active" title="Costuras de Oasis para el nodo clase (notas de exploración)">01-costuras</a>
+        <hr>
+        <p class="nav-h">Descargas</p>
+        <a href="../downloads/clase-drafts.zip">drafts.zip</a>
+        <a href="../downloads/clase-revision.zip">revision.zip</a>
+        <a href="../downloads/clase-todo.zip">todo.zip</a>
+        <a href="../backlog.json">backlog.json</a>
+        <hr>
+        <a href="https://github.com/alephscriptorium-eng/modelador-redes/tree/main/modelos/clase" class="nav-external">GitHub ↗</a>
+        <a href="../../../index.html" class="nav-external">Catálogo ↗</a>
+        <a href="../../../foss/index.html" class="nav-external">Artefacto (FOSS) ↗</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
+      </div>
+    </aside>
+    <main>
+<div class="doc-head">
+  <h1>Costuras de Oasis para el nodo clase (notas de exploración)
+<span class="badge">ficha</span>  </h1>
+<p class="doc-links">
+  <a href="https://github.com/alephscriptorium-eng/modelador-redes/blob/main/modelos/clase/revision/01-costuras.md" class="ext">Ver en GitHub ↗</a>
+  <a href="https://raw.githubusercontent.com/alephscriptorium-eng/modelador-redes/main/modelos/clase/revision/01-costuras.md" class="ext">raw ↗</a>
+<a href="../downloads/clase-revision.zip">zip</a><code>01-costuras.md</code></p>
+</div>
+<nav class="toc" aria-label="Contenido">
+  <p>Contenido</p>
+  <ul>
+<li class="n2"><a href="#tabla-de-costuras-54">Tabla de costuras (54)</a></li><li class="n2"><a href="#desajustes-de-numeración-detectados-en-draftsdraftmd-2026-09-09">Desajustes de numeración detectados en drafts/draft.md (2026-09-09)</a></li><li class="n2"><a href="#resumen-por-coordenada">Resumen por coordenada</a></li>  </ul>
+</nav>
+<article class="md">
+<h1>Costuras de Oasis para el nodo clase (notas de exploración)</h1>
+<h1>Costuras de Oasis 1.0.7 para el nodo <code>clase</code> (materialismo filosófico de Gustavo Bueno)</h1>
+<p>Exploración de 2026-09-09 sobre <code>vendor/oasis/src</code> @ <code>9a657b776fcafc7c24bf3ad61825316385ecf513</code>. Cada fila se ha verificado con <code>sed -n</code> y la línea citada contiene el símbolo nombrado. Las categorías siguen las coordenadas K1-K7 del plan embebido en <code>drafts/draft.md</code>. La columna «Lectura» es trituración nuestra: donde interpreta doctrina de Bueno sin verbatim lleva grado de certeza (A/B/C) y la etiqueta [doctrina, sin verbatim]. Los hechos de <code>res_publica/drafts/draftv0.md</code> y <code>colectivizaciones/drafts/draftv0.md</code> se han usado solo como pistas y se han vuelto a verificar aquí.</p>
+<p>Rutas: <code>models/</code> y <code>views/</code> son relativas a <code>vendor/oasis/src/</code>; <code>backend/backend.js</code>, <code>server/SSB_server.js</code>, <code>AI/ai_service.mjs</code>, <code>configs/server-config.json</code> y <code>../scripts/oasis-pub.js</code> se citan con su ruta completa desde <code>src/</code>.</p>
+<h2 id="tabla-de-costuras-54">Tabla de costuras (54)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Categoría</th>
+<th style="text-align:left">Fichero:línea</th>
+<th style="text-align:left">Línea literal</th>
+<th style="text-align:left">Lectura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">K1 · M1 físico</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L35">banking_model.js:35</a></td>
+<td style="text-align:left"><code>const carbonGramsFromBytes = (b) =&gt; (Number(b) || 0) / ONE_MIB * 0.095;</code></td>
+<td style="text-align:left">La única traducción de M1 (bytes) a mundo físico (gramos CO₂) es una constante sin procedencia. Eutaxia ecológica con número mágico</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">K1 · M1 físico</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L617">banking_model.js:617</a></td>
+<td style="text-align:left"><code>(m) =&gt; { try { bytes += Buffer.byteLength(JSON.stringify(m &amp;&amp; m.value), 'utf8'); } catch (_) {} },</code></td>
+<td style="text-align:left">El cuerpo físico del inhabitant es la suma de bytes de su feed (<code>getCarbonGramsForUser</code>, :609). M1 = lo que pesa el log</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">K1 · M1 físico</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/stats_model.js#L438">stats_model.js:438</a></td>
+<td style="text-align:left"><code>const folderSize = getFolderSize(`${os.homedir()}/.ssb`);</code></td>
+<td style="text-align:left">El disco de <code>~/.ssb</code> es la única medida material del nodo; se mide almacenamiento, no duración</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">K1 · M1 físico</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/panicmode_model.js#L10">panicmode_model.js:10</a></td>
+<td style="text-align:left"><code>await fs.promises.rm(ssbPath, { recursive: true, force: true });</code></td>
+<td style="text-align:left">Destrucción de M1 (directorio) = destrucción de la identidad (M3, la clave). Los géneros se involucran en el borrado</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">K1 · M2 fenomenológico</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/opinion_categories.js#L1">opinion_categories.js:1</a></td>
+<td style="text-align:left"><code>const positive = [</code></td>
+<td style="text-align:left">La vivencia se tipifica en listas cerradas (<code>positive</code>, <code>constructive</code>). M2 entra en la red solo como categoría</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">K1 · M2 fenomenológico</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/opinions_model.js#L59">opinions_model.js:59</a></td>
+<td style="text-align:left"><code>if (!categories.includes(category)) throw new Error(&quot;Invalid voting category.&quot;);</code></td>
+<td style="text-align:left">Una opinión fuera del catálogo lanza error: M2 no tiene entrada libre, se reduce a M3 (tipo de mensaje)</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">K1 · M2 fenomenológico</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/views/settings_view.js#L24">settings_view.js:24</a></td>
+<td style="text-align:left"><code>const theme = currentThemeConfig.themes?.current || &quot;Dark-SNH&quot;;</code></td>
+<td style="text-align:left">La apariencia (tema) vive en <code>oasis-config.json</code> del nodo, no en el feed: la experiencia es local y no replicada</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left">K1 · M2 fenomenológico</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/inhabitants_model.js#L65-L73">inhabitants_model.js:65</a></td>
+<td style="text-align:left"><code>function bucketLastActivity(ts) {</code></td>
+<td style="text-align:left">La presencia de un sujeto se reduce a tres cubos (<code>green</code> &lt;2w, <code>orange</code> 2w-6m, <code>red</code> ≥6m). Única medida de recurrencia social</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left">K1 · M3 abstracto</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L17-L21">parliament_model.js:17</a></td>
+<td style="text-align:left"><code>const TERM_DAYS = 60;</code></td>
+<td style="text-align:left">Las reglas constitutivas (60 días de mandato, 7 de propuesta, 15 de revocación, quórum 2 / 25 %) son constantes del código, sin sujeto que las haya votado</td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:left">K1 · M3 abstracto</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L23">parliament_model.js:23</a></td>
+<td style="text-align:left"><code>const METHODS = ['DEMOCRACY', 'MAJORITY', 'MINORITY', 'DICTATORSHIP', 'KARMATOCRACY'];</code></td>
+<td style="text-align:left">El catálogo de formas de gobierno es M3 cerrado: cinco métodos, no ampliables por el log</td>
+</tr>
+<tr>
+<td style="text-align:left">11</td>
+<td style="text-align:left">K1 · M3 abstracto</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L14-L21">banking_model.js:14</a></td>
+<td style="text-align:left"><code>const DEFAULT_RULES = {</code></td>
+<td style="text-align:left">Parámetros de la RBU (<code>alpha</code>, <code>reserveMin</code>, <code>capPerEpoch</code>, <code>caps</code>) fijados en código: capa basal con constantes sin procedencia</td>
+</tr>
+<tr>
+<td style="text-align:left">12</td>
+<td style="text-align:left">K1 · M3 abstracto</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/typed_log.js#L77">typed_log.js:77</a></td>
+<td style="text-align:left"><code>const readTyped = async (ssbClient, types, opts = {}) =&gt; {</code></td>
+<td style="text-align:left">Todo el mundo institucional de Oasis es un log leído por <code>type</code>: M3 = tipos de mensaje indexados en cliente</td>
+</tr>
+<tr>
+<td style="text-align:left">13</td>
+<td style="text-align:left">K1 · reducción M3→M1</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L840">banking_model.js:840</a></td>
+<td style="text-align:left"><code>const karmaScore = Math.max(0, Math.round(rawKarma - carbonGrams));</code></td>
+<td style="text-align:left">Peso político (karma, M3) menos gramos de CO₂ (M1) en una misma resta. Única reducción entre géneros que la red ejecuta; contra la inconmensurabilidad de K1 (A)</td>
+</tr>
+<tr>
+<td style="text-align:left">14</td>
+<td style="text-align:left">K1 · reducción M3→M1</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L1151">banking_model.js:1151</a></td>
+<td style="text-align:left"><code>const engagementScore = Math.max(0, Math.round(rawScore - carbonGramsForScore));</code></td>
+<td style="text-align:left">La misma resta se repite para el <code>engagementScore</code> de la RBU: el fisicalismo alcanza también la redistribución</td>
+</tr>
+<tr>
+<td style="text-align:left">15</td>
+<td style="text-align:left">K2 · cierre criptográfico</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/server/SSB_server.js#L57">SSB_server.js:57</a></td>
+<td style="text-align:left"><code>const Server = SecretStack({ caps })</code></td>
+<td style="text-align:left">La red se cierra con <code>caps</code> (secret handshake) importado: ciencia ajena, cerrada, parametrizada por el operador (<code>server-config.json:6</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left">16</td>
+<td style="text-align:left">K2 · cierre de replicación</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/server/SSB_server.js#L60-L61">SSB_server.js:60</a></td>
+<td style="text-align:left"><code>.use(require('ssb-ebt'))</code></td>
+<td style="text-align:left">Replicación EBT + <code>ssb-friends</code> (:61): cierre determinista importado; Oasis no lo reabre</td>
+</tr>
+<tr>
+<td style="text-align:left">17</td>
+<td style="text-align:left">K2 · cierre de replicación</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/configs/server-config.json#L12">server-config.json:12</a></td>
+<td style="text-align:left"><code>&quot;hops&quot;: 2</code></td>
+<td style="text-align:left">El horizonte de replicación (cuántos saltos del grafo de follows se replican) es un parámetro de fichero, no una decisión del cuerpo político</td>
+</tr>
+<tr>
+<td style="text-align:left">18</td>
+<td style="text-align:left">K2 · IA abierta</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/AI/ai_service.mjs#L89">ai_service.mjs:89</a></td>
+<td style="text-align:left"><code>app.listen(4001);</code></td>
+<td style="text-align:left">El servicio de IA escucha en 4001 sin autenticación: técnica abierta, sin cierre</td>
+</tr>
+<tr>
+<td style="text-align:left">19</td>
+<td style="text-align:left">K2 · IA abierta</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/AI/ai_service.mjs#L52">ai_service.mjs:52</a></td>
+<td style="text-align:left"><code>const sanitize = (s) =&gt; String(s || '').replace(/[&lt;&gt;&quot;'</code>]/g, '').replace(/\b(ignore|disregard|forget|system|instruction|prompt)\b/gi, '[$1]').trim();`</td>
+<td style="text-align:left">La defensa contra inyección es una regex de siete palabras: no hay cierre operatorio de la categoría «IA»</td>
+</tr>
+<tr>
+<td style="text-align:left">20</td>
+<td style="text-align:left">K2 · banca dependiente</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/wallet_model.js#L22-L23">wallet_model.js:22</a></td>
+<td style="text-align:left"><code>const clientrpc = await makeClient(url, user, pass);</code></td>
+<td style="text-align:left">Toda la economía pasa por RPC a una wallet externa (<code>@open-rpc/client-js</code>, :5): categoría dependiente, sin cierre propio</td>
+</tr>
+<tr>
+<td style="text-align:left">21</td>
+<td style="text-align:left">K2 · gobernanza abierta en la ejecución</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/tombstone_validator.js#L12">tombstone_validator.js:12</a></td>
+<td style="text-align:left"><code>if (typeof c === 'object' &amp;&amp; c.type === 'tombstone' &amp;&amp; typeof c.target === 'string') {</code></td>
+<td style="text-align:left">Derogar es publicar un tombstone que cada cliente valida por su cuenta (:26 exige mismo autor). Cierre en el log, no en la ejecución</td>
+</tr>
+<tr>
+<td style="text-align:left">22</td>
+<td style="text-align:left">K2 · gobernanza abierta en la ejecución</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L1104">parliament_model.js:1104</a></td>
+<td style="text-align:left"><code>async function enactApprovedChanges(expiringTerm) {</code></td>
+<td style="text-align:left">«Enact» publica mensajes de ley al expirar el mandato; nada fuera de la interfaz obedece. Rama ejecutiva ausente (K5)</td>
+</tr>
+<tr>
+<td style="text-align:left">23</td>
+<td style="text-align:left">K3 · eje radial</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/stats_model.js#L24">stats_model.js:24</a></td>
+<td style="text-align:left"><code>const listPubsFromEbt = () =&gt; {</code></td>
+<td style="text-align:left">El mundo objetivo del nodo son pubs y pares leídos de <code>~/.ssb/ebt</code>: eje radial = infraestructura, no naturaleza</td>
+</tr>
+<tr>
+<td style="text-align:left">24</td>
+<td style="text-align:left">K3 · eje circular</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/backend.js#L7306">backend.js:7306</a></td>
+<td style="text-align:left"><code>.post(&quot;/block/:feed&quot;, koaBody(), async (ctx) =&gt; {</code></td>
+<td style="text-align:left">La frontera del círculo humano se traza por <code>friend.block</code> (:7307), decisión individual sin órgano</td>
+</tr>
+<tr>
+<td style="text-align:left">25</td>
+<td style="text-align:left">K3 · eje circular</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/configs/server-config.json#L25">server-config.json:25</a></td>
+<td style="text-align:left"><code>&quot;autofollow&quot;: {</code></td>
+<td style="text-align:left">El círculo inicial viene de fábrica: feeds seguidos automáticamente por configuración del proyecto upstream</td>
+</tr>
+<tr>
+<td style="text-align:left">26</td>
+<td style="text-align:left">K3 · eje circular</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/tribes_model.js#L11">tribes_model.js:11</a></td>
+<td style="text-align:left"><code>const STRUCTURAL_FIELDS = ['title', 'description', 'image', 'location', 'tags', 'isAnonymous', 'inviteMode', 'status', 'parentTribeId', 'mapUrl'];</code></td>
+<td style="text-align:left"><code>parentTribeId</code> anida círculos: federación de tribus sin órgano federativo (K5 cortical)</td>
+</tr>
+<tr>
+<td style="text-align:left">27</td>
+<td style="text-align:left">K3 · eje angular</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/logs_model.js#L243">logs_model.js:243</a></td>
+<td style="text-align:left"><code>const MAX_ACTIONS = 40;</code></td>
+<td style="text-align:left">La IA narra hasta 40 acciones por clic y las publica como <code>log</code> (:263): sujeto no humano que escribe en el feed. Angular→IA es extensión nuestra (C) [doctrina, sin verbatim]</td>
+</tr>
+<tr>
+<td style="text-align:left">28</td>
+<td style="text-align:left">K3 · eje angular</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/logs_model.js#L137">logs_model.js:137</a></td>
+<td style="text-align:left"><code>const res = await axios.post('http://localhost:4001/ai', { input: prompt, raw: true }, { timeout: 90000 });</code></td>
+<td style="text-align:left">El númen habita en localhost:4001; la relación con él es HTTP sin auth (ver #18)</td>
+</tr>
+<tr>
+<td style="text-align:left">29</td>
+<td style="text-align:left">K3 · eje angular</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/views/AI_view.js#L61">AI_view.js:61</a></td>
+<td style="text-align:left"><code>form({ method: 'POST', action: '/ai/approve', class: 'ai-approve-form' },</code></td>
+<td style="text-align:left">El humano «aprueba» lo que dice la IA antes de publicarlo: único gobierno del eje angular, individual y sin registro</td>
+</tr>
+<tr>
+<td style="text-align:left">30</td>
+<td style="text-align:left">K3 · eje angular</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/larp_model.js#L139">larp_model.js:139</a></td>
+<td style="text-align:left"><code>const SOLAR_AGE_OFFSET = 10000000 - 2026;</code></td>
+<td style="text-align:left">Calendario mítico (año 10.000.000) con nueve casas (<code>HOUSE_KEYS</code>, :9) rotando por mes (:149): estructura numinosa embebida en el código</td>
+</tr>
+<tr>
+<td style="text-align:left">31</td>
+<td style="text-align:left">K3 · eje angular</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/melody_model.js#L124">melody_model.js:124</a></td>
+<td style="text-align:left"><code>function embedTextInWav(wavBuffer, text) {</code></td>
+<td style="text-align:left">Esteganografía LSB en WAV (:140-141): mensajes ocultos para quien sepa leerlos. Comunicación fuera del espacio circular visible</td>
+</tr>
+<tr>
+<td style="text-align:left">32</td>
+<td style="text-align:left">K4/K5 · conjuntiva legislativa</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L1298">parliament_model.js:1298</a></td>
+<td style="text-align:left"><code>async function canPropose() {</code></td>
+<td style="text-align:left">Quién puede proponer ley depende del mandato vigente (<code>getCurrentTermBase</code>): rama legislativa implementada</td>
+</tr>
+<tr>
+<td style="text-align:left">33</td>
+<td style="text-align:left">K4/K5 · conjuntiva judicial</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L139">courts_model.js:139</a></td>
+<td style="text-align:left"><code>const ALLOWED = new Set(['JUDGE', 'DICTATOR', 'POPULAR', 'MEDIATION', 'KARMATOCRACY']);</code></td>
+<td style="text-align:left">Cinco formas de resolver un caso; el veredicto <code>JUDGE</code> solo vale si coincide con <code>judgeId</code> (:363). Rama judicial implementada</td>
+</tr>
+<tr>
+<td style="text-align:left">34</td>
+<td style="text-align:left">K4/K5 · fusión judicial-legislativa</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/courts_model.js#L142-L150">courts_model.js:142</a></td>
+<td style="text-align:left"><code>if (m === 'DICTATOR') {</code></td>
+<td style="text-align:left">El método <code>DICTATOR</code> exige <code>gov.method === 'DICTATORSHIP'</code> (:150) y toma <code>dictatorId</code> del <code>powerId</code> del gobierno (:151): la rama judicial se funde con la conjuntiva bajo dictadura</td>
+</tr>
+<tr>
+<td style="text-align:left">35</td>
+<td style="text-align:left">K4/K5 · basal planificadora</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/industry_model.js#L164">industry_model.js:164</a></td>
+<td style="text-align:left"><code>const steward = rootNode.author</code></td>
+<td style="text-align:left">La instalación industrial tiene un <code>steward</code> único = autor del mensaje raíz; toda mutación exige <code>steward !== ssbClient.id</code> → <code>Unauthorized</code> (:457, :484). Poder basal personal</td>
+</tr>
+<tr>
+<td style="text-align:left">36</td>
+<td style="text-align:left">K4/K5 · basal redistribuidora</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/banking_model.js#L215-L219">banking_model.js:215</a></td>
+<td style="text-align:left"><code>function isPubNode() {</code></td>
+<td style="text-align:left">El nodo que redistribuye es el que se autodeclara en <code>walletPub.pubId === keys.id</code> (:216-218): no hay rama, hay un fichero de config</td>
+</tr>
+<tr>
+<td style="text-align:left">37</td>
+<td style="text-align:left">K4/K5 · basal redistribuidora</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/backend.js#L10273">backend.js:10273</a></td>
+<td style="text-align:left"><code>pubEngineTimer = setInterval(runPubEngineTick, 30 * 60 * 1000);</code></td>
+<td style="text-align:left"><code>executeEpoch</code> + <code>processPendingClaims</code> cada 30 min sin humano (:10265-10269): redistribución automática. Eutaxia o automatismo, a decidir en D02</td>
+</tr>
+<tr>
+<td style="text-align:left">38</td>
+<td style="text-align:left">K4/K5 · cortical militar (técnica)</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/crypto.js#L146">crypto.js:146</a></td>
+<td style="text-align:left"><code>const cipher = crypto.createCipheriv('aes-256-gcm', key, iv);</code></td>
+<td style="text-align:left">Cifrado de tribus AES-256-GCM y reparto de clave con <code>ssbKeys.box</code> (:320): defensa como técnica, no como poder político</td>
+</tr>
+<tr>
+<td style="text-align:left">39</td>
+<td style="text-align:left">K4/K5 · cortical federativa / eutaxia</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/tribes_model.js#L753">tribes_model.js:753</a></td>
+<td style="text-align:left"><code>async rotateTribeKey(tribeId, remainingMembers) {</code></td>
+<td style="text-align:left">Al expulsar se genera clave nueva y se redistribuye (:757-760): frontera de pertenencia que se repara sola. Indicador de eutaxia (B) [doctrina, sin verbatim]</td>
+</tr>
+<tr>
+<td style="text-align:left">40</td>
+<td style="text-align:left">K4/K5 · cortical diplomática</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/backend.js#L4651">backend.js:4651</a></td>
+<td style="text-align:left"><code>.post(&quot;/settings/fediverse&quot;, koaBody(), async (ctx) =&gt; {</code></td>
+<td style="text-align:left">Conectar Mastodon no exige <code>isLoopbackRequest</code> (compárese <code>/update</code>, :9553); la cuenta se guarda en <code>configs/fediverse-accounts.json</code> (<code>fediverse_model.js:5</code>). Diplomacia sin órgano, en manos de cualquier petición</td>
+</tr>
+<tr>
+<td style="text-align:left">41</td>
+<td style="text-align:left">K4/K5 · cortical federativa</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/scripts/oasis-pub.js#L41">oasis-pub.js:41</a></td>
+<td style="text-align:left"><code>const code = await call(ssb.invite.create.bind(ssb.invite), uses);</code></td>
+<td style="text-align:left">Los invites del PUB se crean desde shell (<code>uses</code> por argumento, :40); y el plugin de invite depende de <code>config.pub</code> (<code>SSB_server.js:70</code>). Federación sin rama</td>
+</tr>
+<tr>
+<td style="text-align:left">42</td>
+<td style="text-align:left">K6 · eutaxia (recurrencia)</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L26-L27">parliament_model.js:26</a></td>
+<td style="text-align:left"><code>const TERM_EPOCH = Date.UTC(2020, 0, 1);</code></td>
+<td style="text-align:left">Calendario fijo desde 2020-01-01 en ventanas de <code>TERM_SPAN_MS</code>: el ciclo se recurre sin convocante. Eutaxia como recurrencia (B) [doctrina, sin verbatim]</td>
+</tr>
+<tr>
+<td style="text-align:left">43</td>
+<td style="text-align:left">K6 · eutaxia (retorno a anarquía)</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L373">parliament_model.js:373</a></td>
+<td style="text-align:left"><code>function virtualAnarchyTerm(window = termWindowFor(Date.now())) {</code></td>
+<td style="text-align:left">Si no hay mandato, el ciclo es <code>ANARCHY</code> virtual con <code>powerType: 'none'</code> (:380): la sociedad política persiste sin gobierno, por defecto de código</td>
+</tr>
+<tr>
+<td style="text-align:left">44</td>
+<td style="text-align:left">K6 · distaxia (identidad)</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/exportmode_model.js#L24-L26">exportmode_model.js:24</a></td>
+<td style="text-align:left"><code>if (file === 'secret') {</code></td>
+<td style="text-align:left">El export excluye <code>secret</code>: no hay camino de respaldo de la identidad. <code>STEPS</code> del onboarding incluye <code>backup</code> (<code>onboarding_model.js:5</code>) pero solo escribe un flag de fichero (<code>writeFileSync</code>, :116; <code>markStep</code>, :123-125)</td>
+</tr>
+<tr>
+<td style="text-align:left">45</td>
+<td style="text-align:left">K6 · distaxia (irreversibilidad)</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/backend.js#L8054-L8057">backend.js:8054</a></td>
+<td style="text-align:left"><code>await panicmodeModel.removeSSB();</code></td>
+<td style="text-align:left">Tras borrar, <code>pkill</code> del servidor y <code>process.exit</code> (:8056-8057) sin confirmación en dos pasos. Muerte voluntaria sin fricción</td>
+</tr>
+<tr>
+<td style="text-align:left">46</td>
+<td style="text-align:left">K6 · distaxia (actualización)</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/backend/backend.js#L9556">backend.js:9556</a></td>
+<td style="text-align:left"><code>const { stdout, stderr } = await exec(&quot;git reset --hard &amp;&amp; git pull&quot;, { cwd: repoRoot });</code></td>
+<td style="text-align:left"><code>POST /update</code> hace <code>git reset --hard</code> sobre el repo, que contiene <code>src/configs/*.json</code> (caps, hops, wallet): la actualización destruye la configuración local</td>
+</tr>
+<tr>
+<td style="text-align:left">47</td>
+<td style="text-align:left">K6 · sin medida de tiempo</td>
+<td style="text-align:left">stats_model.js (grep -i uptime: 0 resultados)</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">El nodo mide disco (#3) y pubs (#23) pero no su propia duración: la red no se mide en el tiempo, que es el eje de la eutaxia (B) [doctrina, sin verbatim]</td>
+</tr>
+<tr>
+<td style="text-align:left">48</td>
+<td style="text-align:left">K7 · holización por el log</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/inhabitants_model.js#L87">inhabitants_model.js:87</a></td>
+<td style="text-align:left"><code>const authorsMsgs = (await readTyped(ssbClient, [], { limit: logLimit, withWindow: true })).filter(msg =&gt; !!msg.value?.author &amp;&amp; …</code></td>
+<td style="text-align:left">El censo = conjunto de autores con mensajes no tombstone: un feed, un inhabitant. Holización mínima: demos definido por haber publicado</td>
+</tr>
+<tr>
+<td style="text-align:left">49</td>
+<td style="text-align:left">K7 · holización por el log</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L1191">parliament_model.js:1191</a></td>
+<td style="text-align:left"><code>const population = await inhabitantsCount();</code></td>
+<td style="text-align:left">La población que fija el quórum del mandato sale de ese mismo censo (<code>inhabitantsCount</code>, :244): partes homogéneas contadas</td>
+</tr>
+<tr>
+<td style="text-align:left">50</td>
+<td style="text-align:left">K7 · holización (igualdad formal)</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/views/parliament_view.js#L21">parliament_view.js:21</a></td>
+<td style="text-align:left"><code>if (m === 'DEMOCRACY' || m === 'ANARCHY') return Math.floor(Number(total || 0) / 2) + 1;</code></td>
+<td style="text-align:left">Mayoría = mitad más uno de votos iguales: la forma democrática como aritmética de partes iguales (K7, B)</td>
+</tr>
+<tr>
+<td style="text-align:left">51</td>
+<td style="text-align:left">K7 · des-holización por karma</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L422-L423">parliament_model.js:422</a></td>
+<td style="text-align:left"><code>const maxKarma = Math.max(...tied.map(c =&gt; c.karma));</code></td>
+<td style="text-align:left">Empate electoral resuelto por karma: reintroduce partes heterogéneas (notoriedad) en el demos homogéneo</td>
+</tr>
+<tr>
+<td style="text-align:left">52</td>
+<td style="text-align:left">K7 · des-holización por karma</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/parliament_model.js#L650">parliament_model.js:650</a></td>
+<td style="text-align:left"><code>if (method === 'DICTATORSHIP' || method === 'KARMATOCRACY') {</code></td>
+<td style="text-align:left">Bajo <code>KARMATOCRACY</code> la revocación sigue otro camino: el karma crea un régimen propio, con propuestas ordenadas por karma (:576)</td>
+</tr>
+<tr>
+<td style="text-align:left">53</td>
+<td style="text-align:left">K7 · des-holización por karma</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/inhabitants_model.js#L217-L220">inhabitants_model.js:217</a></td>
+<td style="text-align:left"><code>const karmaBonus = Math.min(20, Math.log10(1 + Math.max(0, karmaScore)) * 5);</code></td>
+<td style="text-align:left">Sugerencias de contacto ponderan follow (20), karma (≤20), skills (4/u) y actividad (5/2/0): la red re-estratifica el círculo</td>
+</tr>
+<tr>
+<td style="text-align:left">54</td>
+<td style="text-align:left">K7 · un sujeto, un voto</td>
+<td style="text-align:left"><a href="https://github.com/epsylon/oasis/blob/9a657b776fcafc7c24bf3ad61825316385ecf513/src/models/polls_model.js#L99">polls_model.js:99</a></td>
+<td style="text-align:left"><code>if (!entry.voters.includes(v.author)) {</code></td>
+<td style="text-align:left">Las opiniones se deduplican por autor de feed: la unidad de cuenta es la clave, no la persona. Holización técnica, no jurídica</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="desajustes-de-numeración-detectados-en-draftsdraftmd-2026-09-09">Desajustes de numeración detectados en <code>drafts/draft.md</code> (2026-09-09)</h2>
+<p>Ambos se han comprobado con <code>sed -n</code>; las líneas del draft apuntan a código cercano pero no al símbolo nombrado.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:left">Dónde (draft.md)</th>
+<th style="text-align:left">Dice</th>
+<th style="text-align:left">Verificado</th>
+<th style="text-align:left">Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">§4.1, fila Planificadora (L315)</td>
+<td style="text-align:left"><code>`steward` único (:163, :462)</code></td>
+<td style="text-align:left"><code>industry_model.js:164</code> (<code>const steward = rootNode.author</code>) y <code>:457</code> (<code>if (g.facility.steward !== ssbClient.id) throw new Error(&quot;Unauthorized&quot;)</code>)</td>
+<td style="text-align:left">:163 es <code>if (!rootNode) return null</code>; :462 es <code>name: patch.name === undefined …</code></td>
+</tr>
+<tr>
+<td style="text-align:left">§4.1, fila Militar (L318)</td>
+<td style="text-align:left"><code>AES-GCM :146, box :319</code></td>
+<td style="text-align:left"><code>crypto.js:146</code> correcto; <code>ssbKeys.box</code> está en <code>:320</code> (<code>:319</code> es la cabecera <code>const boxKeyForMember = …</code>)</td>
+<td style="text-align:left">Ajuste de una línea</td>
+</tr>
+</tbody>
+</table></div>
+<p>Operaciones propuestas (para el integrador; el draft semilla no se reescribe salvo nota al margen, así que se dejan como candidatas a <code>draftv0</code>):</p>
+<pre><code class="language-json">[
+  {&quot;file&quot;: &quot;drafts/draft.md&quot;, &quot;old&quot;: &quot;`steward` único (:163, :462)&quot;, &quot;new&quot;: &quot;`steward` único (:164, :457)&quot;, &quot;motivo&quot;: &quot;industry_model.js:164 es `const steward = rootNode.author`; :457 es el `Unauthorized` del steward. Verificado 2026-09-09.&quot;},
+  {&quot;file&quot;: &quot;drafts/draft.md&quot;, &quot;old&quot;: &quot;AES-GCM :146, box :319&quot;, &quot;new&quot;: &quot;AES-GCM :146, box :320&quot;, &quot;motivo&quot;: &quot;crypto.js:320 es `ssbKeys.box(tribeKeyHex, [memberFeedId])`; :319 es la cabecera de `boxKeyForMember`. Verificado 2026-09-09.&quot;}
+]
+</code></pre>
+<p>Ambos <code>old</code> aparecen exactamente una vez (<code>grep -c</code> = 1). Nota: los <code>old</code> tienen menos de 40 caracteres porque la celda es corta; si el integrador exige el mínimo, ampliar a la fila completa de la tabla (L315 y L318, únicas).</p>
+<h2 id="resumen-por-coordenada">Resumen por coordenada</h2>
+<ul>
+<li><strong>K1 (materialidades)</strong>: M1 = bytes/disco/CO₂ (#1-4); M2 = opiniones tipificadas, tema local, cubos de actividad (#5-8); M3 = constantes y tipos de mensaje (#9-12). La red ejecuta una sola reducción entre géneros, karma − gramos (#13-14).</li>
+<li><strong>K2 (cierres)</strong>: criptografía y replicación cerradas por importación (#15-17); IA abierta (#18-19); banca dependiente (#20); gobernanza cerrada en el log, abierta en la ejecución (#21-22).</li>
+<li><strong>K3 (espacio antropológico)</strong>: radial = pubs y disco (#23); circular = block, autofollow, tribus anidadas (#24-26); angular = IA 42, L.A.R.P., esteganografía (#27-31), gobernado solo por el botón <code>/ai/approve</code>.</li>
+<li><strong>K4/K5 (capas y ramas)</strong>: conjuntiva implementada y fusionable bajo dictadura (#32-34); basal en manos de <code>steward</code> único y nodo autodeclarado pub con motor de 30 min (#35-37); cortical existe como técnica o como shell/config sin órgano (#38-41).</li>
+<li><strong>K6 (eutaxia)</strong>: recurrencia por calendario y anarquía virtual (#42-43); distaxias de identidad, pánico y actualización (#44-46); ausencia de medida de tiempo (#47).</li>
+<li><strong>K7 (holización)</strong>: el log holiza por autoría (#48-50); el karma des-holiza en empates, régimen propio y sugerencias (#51-53); la unidad de cuenta es la clave (#54).</li>
+</ul>
+
+</article>
+      <footer class="site-footer">
+<div class="provenance-footer">
+  <p class="provenance-footer-chain">
+    <a href="https://escrivivir.co">Escrivivir</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://escrivivir.co/2026/06/04/t04x06a-ficha-de-producto-scriptorium-skins-arg/">Scriptorium Skins</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span>Animus Iocandi</span>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Modelador de Redes</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <span title="Frente Aleph de Resistencia Ontológica">F.A.R.O.</span>
+  </p>
+  <p class="provenance-footer-meta">
+    Material transmedia para agentes del juego ARG
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    v0.2.0
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    GPL-3.0-or-later · AIPLv1
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="https://github.com/alephscriptorium-eng/modelador-redes">Repositorio</a>
+    <span class="provenance-sep" aria-hidden="true">·</span>
+    <a href="../../../index.html">Inicio</a>
+  </p>
+</div>      </footer>
+    </main>
+  </div>
+  <script src="../../../assets/theme.js"></script>
+</body>
+</html>

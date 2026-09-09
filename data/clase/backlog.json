@@ -1,10 +1,30 @@
 {
   "modelo": "clase",
-  "latest": "draft",
+  "latest": "draftv0",
   "drafts": [
-    "draft"
+    "draft",
+    "draftv0"
   ],
-  "ops": [],
+  "ops": [
+    {
+      "draft": "draftv0",
+      "id": "OP-01",
+      "titulo": "Trituración por coordenada (carril T)",
+      "resumen": "Documentos de revisión, uno por concepto, con el formato de ficha (tesis, certeza, mapeado/acierto/hueco/contradicción, veredicto). Producen `revision/01-…06-…`."
+    },
+    {
+      "draft": "draftv0",
+      "id": "OP-02",
+      "titulo": "Parches de eutaxia (carril EU)",
+      "resumen": "Especificación de cada EU-n como tarea documental: qué cambia, qué invariante conserva, cómo se verifica. Default del plan: **se documenta, no se implementa**."
+    },
+    {
+      "draft": "draftv0",
+      "id": "OP-03",
+      "titulo": "Verificación y fichas",
+      "resumen": ""
+    }
+  ],
   "tablas": [
     {
       "draft": "draft",
@@ -57,14 +77,353 @@
         ]
       ],
       "avisos": []
+    },
+    {
+      "draft": "draftv0",
+      "seccion": "4. Especificación EU-OASIS: parches de eutaxia",
+      "op": null,
+      "kind": "tk",
+      "carril": "EU",
+      "headers": [
+        "#",
+        "Cambio",
+        "Punto de intervención",
+        "Coordenada que repara"
+      ],
+      "rows": [
+        [
+          "**EU-1**",
+          "**Órgano para la capa cortical.** Las decisiones del operador que afectan a la frontera de la red (conectar o desconectar el Multiverse, crear invites del PUB, cambiar `hops` y `autofollow`) se publican como mensajes `corticalRule` en el log, con firma del operador y, si hay gobierno, del titular del mandato; `POST /settings/fediverse` y `/disconnect` exigen `isLoopbackRequest` y publican el hecho",
+          "`backend.js:4651`, `:4663`, `:170`; `oasis-pub.js:40-41`; `server-config.json:12`, `:25-27`",
+          "K5 (militar, diplomática, federativa: de poder a rama), K6"
+        ],
+        [
+          "**EU-2**",
+          "**Respaldo real de la identidad.** El export incluye `secret` cifrado con passphrase; el paso `backup` del onboarding solo se marca cuando existe un export verificado",
+          "`exportmode_model.js:25-26`; `onboarding_model.js:5`, `:116`, `:123-125`",
+          "K6.b (muerte de identidad por accidente)"
+        ],
+        [
+          "**EU-3**",
+          "**Actualización sin destruir la configuración.** `POST /update` mueve `src/configs/*.json` fuera del árbol de git o los restaura tras el `pull`; token CSRF además del loopback",
+          "`backend.js:9552-9556`",
+          "K6.b (destrucción de config al actualizar)"
+        ],
+        [
+          "**EU-4**",
+          "**Medida del tiempo.** `stats` publica uptime del proceso, edad del feed más antiguo, número de legislaturas transcurridas desde `TERM_EPOCH` y cuántas fueron `ANARCHY` virtual",
+          "`stats_model.js:24`, `:438`; `parliament_model.js:25-26`, `:373`",
+          "K6.a (la red se mide en el tiempo; la eutaxia se vuelve observable)"
+        ],
+        [
+          "**EU-5**",
+          "**Parámetros basales con procedencia.** `carbonGramsFromBytes`, `ECOIN_PER_GRAM_CO2` y `DEFAULT_RULES` pasan a un mensaje `basalRule` con fuente y fecha, modificable por el parlamento con el quórum general; el karma deja de restar gramos y el carbono se cobra como tasa aparte, sin tocar el peso político",
+          "`banking_model.js:14-21`, `:31-37`, `:840`, `:1151`, `:932`",
+          "K1.b (fin de la reducción M3→M1), K5 (redistribuidora con sujeto), K7.b"
+        ],
+        [
+          "**EU-6**",
+          "**Confirmación en dos pasos para el pánico.** Token de un solo uso y ventana de 60 s entre `POST /panic` y `removeSSB`; el export con `secret` (EU-2) se ofrece antes",
+          "`backend.js:8054-8057`; `panicmode_model.js:6-10`",
+          "K6.b (irreversibilidad sin fricción)"
+        ],
+        [
+          "**EU-7**",
+          "**Registro del eje angular.** Cada aprobación en `/ai/approve` se publica como `aiApproval` con el hash de lo aprobado; el servicio de `4001` exige un token local; el calendario de casas se declara en un mensaje `larpCalendar` en lugar de constantes",
+          "`AI_view.js:61`; `ai_service.mjs:89`, `:52`; `larp_model.js:9`, `:139`",
+          "K3.c (eje angular gobernado), K2.b (cierre mínimo de la IA)"
+        ]
+      ],
+      "avisos": []
+    },
+    {
+      "draft": "draftv0",
+      "seccion": "Carril D · Investigación en fuentes de Bueno",
+      "op": null,
+      "kind": "tk",
+      "carril": "D",
+      "headers": [
+        "ID",
+        "Buscar",
+        "Dónde",
+        "Default",
+        "Alternativas",
+        "Desbloquea"
+      ],
+      "rows": [
+        [
+          "TK-D01",
+          "**Nombres exactos y definición de las nueve ramas**; si «ejecutiva» es rama o poder; si la gestora es «gestora» o «económica»",
+          "*Primer ensayo sobre las categorías de las ciencias políticas* (1991)",
+          "Tabla §3.D tal cual (K5 en B)",
+          "otra partición de la basal; ramas no exhaustivas",
+          "TK-T01, TK-EU01"
+        ],
+        [
+          "TK-D02",
+          "**Definición de eutaxia**: ¿duración, recurrencia, prudencia? ¿Es medible? ¿Distingue Bueno eutaxia de estabilidad?",
+          "*Primer ensayo…*",
+          "Eutaxia = capacidad de recurrencia; indicadores de §2.9 y §3.A; el automatismo del PUB cuenta como eutaxia",
+          "eutaxia exige prudencia de un sujeto (el automatismo no cuenta); eutaxia no medible",
+          "TK-T05, TK-EU04, TK-EU02"
+        ],
+        [
+          "TK-D03",
+          "**Holización** y democracia como forma; qué diría Bueno de un demos definido por haber publicado",
+          "*El fundamentalismo democrático* (2010), *Panfleto contra la democracia realmente existente* (2004)",
+          "Holización por el log; karma como des-holización; una persona = una clave es holización técnica, no jurídica",
+          "Bueno exige holización jurídica (persona, no clave); la re-estratificación es inevitable y no crítica",
+          "TK-T06, TK-EU05"
+        ],
+        [
+          "TK-D04",
+          "**Eje angular**: ¿admite Bueno sujetos no humanos artificiales? ¿Es la IA númen o instrumento?",
+          "*El animal divino* (1985), *Ensayos materialistas* (1972)",
+          "IA 42, calendario y esteganografía en el eje angular, marcados C",
+          "IA como instrumento (eje radial); solo el calendario es angular",
+          "TK-T03, TK-EU07"
+        ],
+        [
+          "TK-D05",
+          "¿Es la «gobernanza digital» una categoría del hacer con cierre posible, o una ideología? ¿Qué es una técnica sobre dos ciencias ajenas?",
+          "*TCC* (1992-93), *¿Qué es la ciencia?* (1995)",
+          "Técnica sin cierre; solo criptografía y replicación cerradas",
+          "cierre posible como categoría del hacer; toda la red es ideología",
+          "TK-T02"
+        ],
+        [
+          "TK-D06",
+          "Capa **cortical**, imperio generador / depredador: ¿aplica a puentes con otras redes (Mastodon, Telegram)?",
+          "*España frente a Europa* (1999), *Primer ensayo…*",
+          "Los puentes son diplomacia sin órgano; no se abre la cuestión imperial",
+          "los puentes son absorción (imperio depredador de la red mayor)",
+          "TK-T04, TK-EU01"
+        ],
+        [
+          "TK-D07",
+          "Qué dice Bueno del **operador** de una institución (quien sostiene la basal sin ser parte formal); ¿hay figura para el resto no holizado?",
+          "*Primer ensayo…*; *El fundamentalismo democrático*",
+          "El operador es poder exterior al cuerpo político (C)",
+          "el operador es parte de la basal; el operador es la clase política real",
+          "TK-T01, TK-EU01"
+        ],
+        [
+          "TK-D08",
+          "Rastreo de divulgación y contraste con los libros: fgbueno.es, *El Catoblepas*, Symploké; localizar verbatim para K4-K7",
+          "web",
+          "ninguno: cada K4-K7 conserva B hasta el verbatim",
+          "ascenso a A de las coordenadas con verbatim",
+          "todas D"
+        ]
+      ],
+      "avisos": []
+    },
+    {
+      "draft": "draftv0",
+      "seccion": "OP-01 · Trituración por coordenada (carril T)",
+      "op": "OP-01",
+      "kind": "tk",
+      "carril": "T",
+      "headers": [
+        "ID",
+        "Tarea",
+        "Depende",
+        "Seam",
+        "T",
+        "P"
+      ],
+      "rows": [
+        [
+          "TK-T01",
+          "Nueve ramas en limpio (b1 = `draftv1`): una fila por rama, columna de certeza de la rama y de la lectura, «quién controla» verificado",
+          "D01, D07",
+          "`parliament_model.js:1102`, `:1298`; `courts_model.js:139`; `industry_model.js:164`; `banking_model.js:214`; `backend.js:4651`, `:10265`; `oasis-pub.js:40-41`",
+          "M",
+          "**C**"
+        ],
+        [
+          "TK-T02",
+          "Cierres: ficha por capa (cripto, replicación, gobernanza, banca, IA) con veredicto cerrada / abierta / dependiente",
+          "D05",
+          "`SSB_server.js:56`, `:60-61`; `tombstone_validator.js:12`, `:26`; `wallet_model.js:22-23`; `ai_service.mjs:52`, `:89`",
+          "M",
+          "H"
+        ],
+        [
+          "TK-T03",
+          "Espacio antropológico: radial, circular, angular con las tres piezas del angular y su (no) gobierno",
+          "D04",
+          "`stats_model.js:24`; `backend.js:7306-7307`; `logs_model.js:235-263`; `larp_model.js:9`, `:139`; `melody_model.js:124`; `AI_view.js:61`",
+          "M",
+          "H"
+        ],
+        [
+          "TK-T04",
+          "Capa cortical completa: Multiverse, PUB, hops, caps, autofollow, pánico, update; inventario de lo que decide el operador",
+          "D06, D07",
+          "`backend.js:4651`, `:4663`, `:9556`, `:8054-8057`; `server-config.json:6`, `:12`, `:25-27`; `SSB_server.js:70`, `:88-93`",
+          "M",
+          "H"
+        ],
+        [
+          "TK-T05",
+          "Eutaxia con indicadores: tabla mecanismo / seam / eutaxia o distaxia, base de EU-2…EU-6",
+          "D02",
+          "`parliament_model.js:25-26`, `:373-380`; `tribes_model.js:753-760`; `exportmode_model.js:25-26`; `onboarding_model.js:116`; `backend.js:9556`; `stats_model.js:438`",
+          "M",
+          "**C**"
+        ],
+        [
+          "TK-T06",
+          "Holización y karma: dónde holiza el log, dónde des-holiza el karma; la clave como unidad de cuenta",
+          "D03",
+          "`inhabitants_model.js:87`, `:217-220`; `parliament_model.js:244`, `:422-423`, `:576`, `:650`; `parliament_view.js:21`; `polls_model.js:99`",
+          "M",
+          "H"
+        ],
+        [
+          "TK-T07",
+          "Materialidades y la reducción M3→M1: inventario M1/M2/M3 por módulo (§2) y las dos restas del karma",
+          "—",
+          "`banking_model.js:35`, `:609-617`, `:838-840`, `:1151`; `opinions_model.js:59`; `settings_view.js:24`; `typed_log.js:77`",
+          "S",
+          "H"
+        ]
+      ],
+      "avisos": []
+    },
+    {
+      "draft": "draftv0",
+      "seccion": "OP-02 · Parches de eutaxia (carril EU)",
+      "op": "OP-02",
+      "kind": "tk",
+      "carril": "EU",
+      "headers": [
+        "ID",
+        "Tarea",
+        "Depende",
+        "Seam",
+        "T",
+        "P"
+      ],
+      "rows": [
+        [
+          "TK-EU01",
+          "EU-1: `corticalRule` en el log para Multiverse, invites, hops y autofollow; loopback en `/settings/fediverse*`",
+          "D01, D06, D07, T04",
+          "`backend.js:4651`, `:4663`, `:170`; `oasis-pub.js:40-41`; `server-config.json:12`, `:25-27`",
+          "L",
+          "**C**"
+        ],
+        [
+          "TK-EU02",
+          "EU-2: export con `secret` cifrado por passphrase; `backup` verificado",
+          "D02, T05",
+          "`exportmode_model.js:25-26`; `onboarding_model.js:5`, `:116`, `:123-125`",
+          "M",
+          "**C**"
+        ],
+        [
+          "TK-EU03",
+          "EU-3: `/update` sin `git reset --hard` sobre `src/configs/`; CSRF",
+          "T05",
+          "`backend.js:9552-9556`",
+          "S",
+          "H"
+        ],
+        [
+          "TK-EU04",
+          "EU-4: uptime, edad del feed, legislaturas transcurridas y anárquicas en `stats`",
+          "D02, T05",
+          "`stats_model.js:24`, `:438`; `parliament_model.js:25-26`, `:373`",
+          "M",
+          "H"
+        ],
+        [
+          "TK-EU05",
+          "EU-5: `basalRule` con procedencia; karma sin resta de gramos; carbono como tasa aparte",
+          "D03, T06, T07",
+          "`banking_model.js:14-21`, `:31-37`, `:840`, `:1151`, `:932`",
+          "M",
+          "H"
+        ],
+        [
+          "TK-EU06",
+          "EU-6: dos pasos para el pánico con export previo",
+          "T05, EU02",
+          "`backend.js:8054-8057`; `panicmode_model.js:6-10`",
+          "S",
+          "M"
+        ],
+        [
+          "TK-EU07",
+          "EU-7: `aiApproval` registrado, token local en `4001`, `larpCalendar` como mensaje",
+          "D04, T03",
+          "`AI_view.js:61`; `ai_service.mjs:52`, `:89`; `larp_model.js:9`, `:139`",
+          "M",
+          "M"
+        ]
+      ],
+      "avisos": []
+    },
+    {
+      "draft": "draftv0",
+      "seccion": "OP-03 · Verificación y fichas",
+      "op": "OP-03",
+      "kind": "tk",
+      "carril": "V",
+      "headers": [
+        "ID",
+        "Tarea",
+        "Depende",
+        "Seam",
+        "T",
+        "P"
+      ],
+      "rows": [
+        [
+          "TK-V01",
+          "Script de lectura: cada `fichero:línea` de `modelos/clase/*.md` existe en `vendor/oasis` y la línea contiene el símbolo nombrado",
+          "—",
+          "todos",
+          "S",
+          "H"
+        ],
+        [
+          "TK-V02",
+          "Fichas `revision/01-materialidades.md` … `06-holizacion-democracia.md` con el formato de ficha; cada K con al menos un hueco o un «sin hueco»",
+          "T01-T07",
+          "—",
+          "L",
+          "H"
+        ],
+        [
+          "TK-V03",
+          "Notas al margen (2026-09-09) en `draft.md` con las dos correcciones de línea de §0.5 (`steward` :164/:457, `box` :320)",
+          "—",
+          "`industry_model.js:164`, `:457`; `crypto.js:320`",
+          "S",
+          "M"
+        ]
+      ],
+      "avisos": []
     }
   ],
   "resumen": {
-    "total_tk": 0,
-    "por_carril": {},
-    "por_prioridad": {},
-    "ops_latest": 0,
-    "ops_total": 0,
-    "tablas_total": 1
+    "total_tk": 25,
+    "por_carril": {
+      "D": 8,
+      "EU": 7,
+      "T": 7,
+      "V": 3
+    },
+    "por_prioridad": {
+      "C": 4,
+      "H": 10,
+      "M": 3
+    },
+    "ops_latest": 3,
+    "ops_total": 3,
+    "tablas_total": 6
   }
 }

@@ -32,8 +32,8 @@ Crear un nodo nuevo: `git checkout -b dev/<id> main` → `modelos/<id>/{modelo.j
 | id | Tipo | Rama | Nombre | Draft vigente | Estado |
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | `res_publica` | nodo | `dev/res_publica` | República Pura (Trevijano) sobre Oasis/SSB | `draftv2` | en revisión (8 fichas del Libro III cerradas; carril D pendiente de verificar contra el libro) |
-| `colectivizaciones` | nodo | `dev/colectivizaciones` | Colectivizaciones libertarias 1936-37 sobre Oasis/SSB | `draftv0` | en revisión (auditoría CL-1…11; ficha 01-asamblea) |
-| `clase` | nodo | `dev/clase` | Materialismo filosófico de Gustavo Bueno sobre Oasis | `draft` | semilla (panorámica + plan) |
+| `colectivizaciones` | nodo | `dev/colectivizaciones` | Colectivizaciones libertarias 1936-37 sobre Oasis/SSB | `draftv1` | en revisión (auditoría CL-1…11; fichas 01-07; D'01-04 verificados en fuentes, D'05-08 deuda) |
+| `clase` | nodo | `dev/clase` | Materialismo filosófico de Gustavo Bueno sobre Oasis | `draftv0` | auditoría escrita sin revisar (fichas pendientes) |
 | `res_publica+colectivizaciones` | arista (contraste) | `dev/res_publica+colectivizaciones` | Las dos constituciones sobre el mismo código | `draft` | **pausa** hasta que el nodo `colectivizaciones` tenga auditoría |
 
 Fuente de verdad de esta tabla: `modelos/*/modelo.json` y el disco. Si difieren, manda el disco.

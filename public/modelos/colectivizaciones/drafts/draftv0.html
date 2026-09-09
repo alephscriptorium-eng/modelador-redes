@@ -12,13 +12,14 @@
   <div class="layout">
     <aside class="sidebar">
       <a href="../../../index.html" class="brand">Modelador de Redes</a>
-      <p class="tag">Colectivizaciones libertarias 1936-37 sobre Oasis/SSB · v0.1.0</p>
+      <p class="tag">Colectivizaciones libertarias 1936-37 sobre Oasis/SSB · v0.2.0</p>
       <nav aria-label="Modelo colectivizaciones">
         <a href="../index.html" class="">Estado</a>
         <a href="../backlog.html" class="">Backlog</a>
         <hr>
         <p class="nav-h">Drafts</p>
-        <a href="../drafts/draftv0.html" class="active">draftv0 <span class="badge badge-latest">latest</span></a>
+        <a href="../drafts/draftv1.html" class="">draftv1 <span class="badge badge-latest">latest</span></a>
+        <a href="../drafts/draftv0.html" class="active">draftv0</a>
         <a href="../drafts/draft.html" class="">draft</a>
         <hr>
         <p class="nav-h">Revisión</p>
@@ -29,6 +30,10 @@
         <a href="../revision/05-federacion.html" class="" title="05-federacion">05-federacion</a>
         <a href="../revision/06-intercambio.html" class="" title="06-intercambio">06-intercambio</a>
         <a href="../revision/07-derechos-sociales.html" class="" title="07-derechos-sociales">07-derechos-sociales</a>
+        <a href="../revision/08-fuentes-d01.html" class="" title="Fuentes · TK-D&#39;01">08-fuentes-d01</a>
+        <a href="../revision/09-fuentes-d02.html" class="" title="Fuentes · TK-D&#39;02">09-fuentes-d02</a>
+        <a href="../revision/10-fuentes-d03.html" class="" title="Fuentes · TK-D&#39;03">10-fuentes-d03</a>
+        <a href="../revision/11-fuentes-d04.html" class="" title="Fuentes · TK-D&#39;04">11-fuentes-d04</a>
         <hr>
         <p class="nav-h">Descargas</p>
         <a href="../downloads/colectivizaciones-drafts.zip">drafts.zip</a>
@@ -47,7 +52,7 @@
     <main>
 <div class="doc-head">
   <h1>Colectivizaciones libertarias · Auditoría de OASIS 1.0.7 contra los ocho criterios colectivistas
-<span class="badge">draft</span><span class="badge badge-latest">latest</span>  </h1>
+<span class="badge">draft</span>  </h1>
 <p class="doc-links">
   <a href="https://github.com/alephscriptorium-eng/modelador-redes/blob/main/modelos/colectivizaciones/drafts/draftv0.md" class="ext">Ver en GitHub ↗</a>
   <a href="https://raw.githubusercontent.com/alephscriptorium-eng/modelador-redes/main/modelos/colectivizaciones/drafts/draftv0.md" class="ext">raw ↗</a>
@@ -354,7 +359,7 @@
 <td style="text-align:left">Leval, Souchy; Casanova (Aragón); Simoni (Cretas)</td>
 <td style="text-align:left">Asamblea = todos los miembros de la tribu; quórum = 25 % del censo (el de Oasis) y mayoría simple de votantes. Asamblea ordinaria = ciclo de 60 d del <code>tribeParliamentTerm</code>; extraordinaria convocada por el 10 % de los miembros. Voto público (firmado, visible dentro de la tribu). <strong>La asamblea no puede abdicar</strong>: no elige líder (ver CL-1)</td>
 <td style="text-align:left">quórum del 50 %; voto por hogar (CL-9) en vez de por persona; voto secreto cifrado; consejo delegado revocable</td>
-<td style="text-align:left">CL-1, CL-7, TK-G'01, TK-G'06</td>
+<td style="text-align:left">CL-1, CL-7, TK-G'01, TK-G'06 <em>Verificado 2026-09-09 en <a href="draftv1.html">draftv1</a>: el default cambia.</em></td>
 </tr>
 <tr>
 <td style="text-align:left">TK-D'02</td>
@@ -362,7 +367,7 @@
 <td style="text-align:left">Ovejero; Redalyc; Leval (casos de Aragón y Levante); Souchy (familias de combatientes)</td>
 <td style="text-align:left">coef = 1 + 0,5 por dependiente; menores y mayores de 65 cuentan como dependientes; la escala la fija la asamblea de la tribu. <strong>La necesidad no depende de la aportación</strong>: el hogar cobra aunque ningún miembro haya aportado puntos ni publicado nada en la época. Techo de época = <code>cap_user_epoch × coef(hogar)</code>, suelo = <code>floor_user × miembros</code>. Pago en ECOin al hogar; los vales (TK-E'02) son alternativa, no default</td>
 <td style="text-align:left">escala lineal por miembro; coef por edad en tramos; techo por persona; salario en vales <code>TIME</code> con bienes de primera necesidad a precio 0</td>
-<td style="text-align:left">CL-3, CL-4, CL-9, TK-B'01, TK-B'03, TK-B'06</td>
+<td style="text-align:left">CL-3, CL-4, CL-9, TK-B'01, TK-B'03, TK-B'06 <em>Verificado 2026-09-09 en <a href="draftv1.html">draftv1</a>: el default cambia.</em></td>
 </tr>
 <tr>
 <td style="text-align:left">TK-D'03</td>
@@ -370,7 +375,7 @@
 <td style="text-align:left">Leval, Souchy; Gómez (economía confederal); Casanova (Congreso de Caspe)</td>
 <td style="text-align:left">Vales = <code>transfers</code> <code>TIME</code> dentro de la tribu, <strong>nominativos, con caducidad (<code>deadline</code>) y emitidos por la comisión de abastos (cargo CL-2), sin endoso</strong>; carnet de consumo = <strong>cupo por <code>household</code> (CL-9) retirado del almacén de tribu (TK-E'04), no saldo</strong>; compensación entre tribus = saldo <code>TRUST</code> <strong>agregado por par de tribus y</strong> liquidado por la federación <strong>(hoy <code>transfers</code> no tiene saldo ni admite una tribu como destinatario, <code>transfers_model.js:12</code>; requiere CL-5)</strong>; <strong>con el exterior, Market con precio y tesoro de tribu</strong></td>
 <td style="text-align:left">moneda local ECOin por tribu; vales al portador endosables; sin compensación</td>
-<td style="text-align:left">CL-6, TK-E'01, TK-E'02, TK-E'04, TK-F'02</td>
+<td style="text-align:left">CL-6, TK-E'01, TK-E'02, TK-E'04, TK-F'02 <em>Verificado 2026-09-09 en <a href="draftv1.html">draftv1</a>: el default cambia.</em></td>
 </tr>
 <tr>
 <td style="text-align:left">TK-D'04</td>
@@ -378,7 +383,7 @@
 <td style="text-align:left">Casanova (Consejo de Aragón y Federación Regional de Colectividades); Vela; Leval (Aragón, Levante)</td>
 <td style="text-align:left">Un delegado por tribu hija, mandato firmado por su asamblea, revocable en cualquier momento, voto por colectividad. Los acuerdos federales no vinculan hasta ratificación por las asambleas de las hijas; adhesión y salida = voto de la tribu hija; la federación no interviene en la administración interna; el nivel regional del modelo es la federación de colectividades, no un consejo de gobierno</td>
 <td style="text-align:left">voto ponderado por miembros; delegado rotatorio por sorteo; acuerdos federales ejecutivos con revocación a posteriori</td>
-<td style="text-align:left">CL-8, TK-F'01, TK-F'04, TK-F'05</td>
+<td style="text-align:left">CL-8, TK-F'01, TK-F'04, TK-F'05 <em>Verificado 2026-09-09 en <a href="draftv1.html">draftv1</a>: el default cambia.</em></td>
 </tr>
 <tr>
 <td style="text-align:left">TK-D'05</td>
@@ -796,7 +801,7 @@
   <p class="provenance-footer-meta">
     Material transmedia para agentes del juego ARG
     <span class="provenance-sep" aria-hidden="true">·</span>
-    v0.1.0
+    v0.2.0
     <span class="provenance-sep" aria-hidden="true">·</span>
     GPL-3.0-or-later · AIPLv1
     <span class="provenance-sep" aria-hidden="true">·</span>
