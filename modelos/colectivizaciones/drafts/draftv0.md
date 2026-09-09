@@ -1,0 +1,280 @@
+# Colectivizaciones libertarias · Auditoría de OASIS 1.0.7 contra los ocho criterios colectivistas
+
+**Revisión 0 — 2026-09-09.** La semilla (`draft.md`) fijó el corpus, los ocho criterios y las premisas técnicas. Este documento audita el código real y propone once parches CL-1…CL-11 y un backlog por carriles.
+
+---
+
+## 0. Qué cambia respecto de la semilla
+
+| # | Hallazgo | Consecuencia |
+| :-- | :-- | :-- |
+| 1 | **La asamblea existe en el código y no manda.** Toda tribu nace con un parlamento propio en `ANARCHY`, sin líder, con quórum del 25 %. Pero ese parlamento no gobierna nada de la tribu: ni sus campos, ni sus miembros, ni su dinero (no tiene). | El criterio 1 no se diseña: se **conecta**. Ver §3.B. |
+| 2 | **La tribu es propiedad de su fundador.** Solo el autor invita en modo estricto, no puede irse, y si se le fuerza a irse la tribu muere con él. | Lo contrario del criterio 2. La colectividad digital hoy es una monarquía con cifrado. Ver §3.A. |
+| 3 | **La instalación industrial es una cooperativa de aportantes, no un medio de producción común.** Trabajo, material y ECOin entran en la misma bolsa de puntos y el reparto es estrictamente proporcional, sin suelo ni necesidad. Lo firma una sola persona. | Los criterios 3 y 4 fallan en el único módulo que podía cumplirlos. Ver §3.C. |
+| 4 | **La única renta con suelo es la RBU, y está ponderada por karma.** El peso va de 0,2 a 6: hasta treinta veces más para el notorio que para el silencioso. Sin hogar ni dependientes. | El salario familiar no existe; existe una renta por mérito. Ver §3.D. |
+| 5 | **El precio cero está prohibido** en Market y Shops; el don y el trueque no son representables. | El criterio 7 no tiene dónde apoyarse salvo en `Transfers` (vales de tiempo). Ver §3.E. |
+| 6 | **La semilla anterior de este modelo daba por hechos tres supuestos falsos** (smart contracts en Faircoin, nodo central en SSB, Faircoin vivo). | Corregidos en `draft.md` §3. Nada de este documento depende de ellos. |
+
+**Metodología.** Todo lo que aquí se afirma sobre Oasis está verificado contra el código fuente, no contra su documentación. Árbol auditado: `vendor/oasis` (ignorado por git; clónalo con `git clone --depth 1 https://github.com/epsylon/oasis.git`). Commit auditado: **`9a657b776fcafc7c24bf3ad61825316385ecf513`, "Oasis release 1.0.7", 2026-09-08**. Cada afirmación lleva `fichero:línea`; cuando cito la web y no el disco, lo digo; la doctrina colectivista va marcada **[doctrina, sin verbatim]** hasta que el carril D' la verifique en las fuentes.
+
+---
+
+## 1. Estado del arte verificado
+
+### 1.1 OASIS 1.0.7
+
+- Paquete `@krakenslab/oasis` v1.0.7, AGPL-3.0, Node.js + HTML sin JavaScript en el navegador, sobre SSB. 70 ficheros en [src/models/](vendor/oasis/src/models/) (32.849 líneas).
+- Los módulos que importan a una colectividad son los que la auditoría trevijanista dejó «en una línea»: [tribes_model.js](vendor/oasis/src/models/tribes_model.js) (939 líneas), [industry_model.js](vendor/oasis/src/models/industry_model.js) (991), la parte de reparto de [banking_model.js](vendor/oasis/src/models/banking_model.js) (1.479), el parlamento de tribu de [parliament_model.js](vendor/oasis/src/models/parliament_model.js) (1.615), [votes_model.js](vendor/oasis/src/models/votes_model.js) (390), [polls_model.js](vendor/oasis/src/models/polls_model.js) (440), [market_model.js](vendor/oasis/src/models/market_model.js) (641), [transfers_model.js](vendor/oasis/src/models/transfers_model.js) (428), [jobs_model.js](vendor/oasis/src/models/jobs_model.js) (558), [housing_model.js](vendor/oasis/src/models/housing_model.js) (551), [school_model.js](vendor/oasis/src/models/school_model.js) (1.404) e [inhabitants_model.js](vendor/oasis/src/models/inhabitants_model.js) (505).
+- **Vocabulario.** En 33.000 líneas de modelos y 60 vistas no aparece ni una vez *assembly*, *council*, *delegate*, *recall*, *commons*, *cooperative* ni *mutual aid*. *Federation* significa «conectarse a un PUB». La única aparición de «collective» está en un mensaje automático de [backend.js#L6214](vendor/oasis/src/backend/backend.js#L6214): la instalación «ha sido disuelta por voto colectivo». En cambio *salary* aparece en doce sitios (§2.6). El código habla el idioma del mercado con un acento cooperativo.
+
+### 1.2 La capa económica
+
+- `faircoin/faircoin`: último push 2022-02-05 (verificado vía API de GitHub el 2026-09-09); dominios de FairCoop y Bank of the Commons caídos. Bitcoin 0.12 con Proof-of-Cooperation, **sin contratos**. No es un sustrato vivo.
+- Lo vivo es **ECOin** a través del módulo `Banking`, que habla con la cadena por RPC (`sendtoaddress`, [banking_model.js#L1004](vendor/oasis/src/models/banking_model.js#L1004)) desde la cartera del PUB. La oferta monetaria la lee de fuera; Oasis no emite.
+- Consecuencia: todo reparto colectivista se implementa en Oasis (reglas de `Banking`, `Industry`, `Transfers`), no en la cadena.
+
+### 1.3 El corpus colectivista (recordatorio operativo)
+
+Los ocho criterios de `draft.md` §2, **[doctrina, sin verbatim]**:
+
+1. **Asamblea soberana**: toda decisión nace de la asamblea de miembros; las comisiones ejecutan.
+2. **Cargos rotatorios y revocables**, sin poder propio.
+3. **Propiedad colectiva** de los medios de producción.
+4. **Distribución según necesidades** (salario familiar), no según rendimiento.
+5. **Derechos sociales garantizados**: educación, sanidad, jubilación, jornada.
+6. **Federación de abajo arriba** con delegados mandatados.
+7. **Intercambio sin moneda o con vales**; compensación entre colectividades.
+8. **Voluntariedad** de entrada y salida.
+
+Con estos ocho criterios se puede auditar cualquier institución. Los aplico al código en la §3.
+
+---
+
+## 2. Anatomía de los módulos que importan aquí
+
+### 2.1 Tribes — [tribes_model.js](vendor/oasis/src/models/tribes_model.js) · 939 líneas
+
+**La tribu nace como propiedad de una persona.** `createTribe` inicializa `members: [userId]` e `invites: []` ([L337-L338](vendor/oasis/src/models/tribes_model.js#L337-L338)) y fija `author: userId` ([L345](vendor/oasis/src/models/tribes_model.js#L345)); `parentTribeId` ([L341](vendor/oasis/src/models/tribes_model.js#L341)) permite anidar tribus en jerarquía padre-hijo. Los campos estructurales (`title`, `description`, `inviteMode`, `status`, `parentTribeId`…) están enumerados en `STRUCTURAL_FIELDS` ([L11](vendor/oasis/src/models/tribes_model.js#L11)).
+
+**Quién manda: el autor.** No hay rol de administrador ni de asamblea: hay una comparación `tribe.author !== userId`. En modo estricto solo el autor genera invitaciones ([L554-L556](vendor/oasis/src/models/tribes_model.js#L554-L556), repetido en [L612-L617](vendor/oasis/src/models/tribes_model.js#L612-L617)); en modo abierto, cualquier miembro. **El autor no puede abandonar su tribu** ([L721](vendor/oasis/src/models/tribes_model.js#L721)) y, si se le fuerza y no queda nadie, la tribu recibe un `tombstone` ([L726-L729](vendor/oasis/src/models/tribes_model.js#L726-L729)): la comunidad muere con su fundador. No existe sucesión.
+
+**La pertenencia es una clave.** `updateTribeMembers` ([L533-L541](vendor/oasis/src/models/tribes_model.js#L533-L541)) recalcula altas y bajas y **rota la clave de cifrado** en cada expulsión. Es un buen mecanismo de privacidad y un mal mecanismo político: quien controla la lista controla quién puede leer.
+
+**No hay patrimonio.** Cero apariciones de `treasury`, `wallet`, `balance` o `ecoin` en todo el fichero. La tribu tiene miembros, claves e invitaciones; no tiene nada que repartir.
+
+### 2.2 Industry — [industry_model.js](vendor/oasis/src/models/industry_model.js) · 991 líneas
+
+Tres niveles: **instalación** (medio de producción) → **plano** (`blueprint`) → **lote** (`build`). Políticas de admisión `open | vote | invite` ([L16](vendor/oasis/src/models/industry_model.js#L16)).
+
+**El `steward` es el autor del mensaje raíz** ([L164](vendor/oasis/src/models/industry_model.js#L164)), miembro inamovible ([L187](vendor/oasis/src/models/industry_model.js#L187), [L205](vendor/oasis/src/models/industry_model.js#L205)), el único que edita la instalación ([L457](vendor/oasis/src/models/industry_model.js#L457)), no puede irse ([L510](vendor/oasis/src/models/industry_model.js#L510)), es el único que da por terminado o fallido un lote ([L808-L809](vendor/oasis/src/models/industry_model.js#L808-L809)) y **el único que reparte** ([L980](vendor/oasis/src/models/industry_model.js#L980)). La propiedad del medio de producción se deriva de la autoría de un mensaje.
+
+**Lo que sí es colectivo.** Admisión y disolución se deciden por voto con quórum y mayoría ([L211-L223](vendor/oasis/src/models/industry_model.js#L211-L223)); una instalación con miembros no puede borrarse, «debe disolverse por voto» ([L484-L485](vendor/oasis/src/models/industry_model.js#L484-L485)). `passesThreshold` ([L98-L101](vendor/oasis/src/models/industry_model.js#L98-L101)) exige el máximo entre quórum y mayoría; `clampMajority` acota la mayoría a **[0,5, 1]** ([L23-L27](vendor/oasis/src/models/industry_model.js#L23-L27)): nunca menos de la mitad. Con un solo miembro todo se aprueba solo ([L121](vendor/oasis/src/models/industry_model.js#L121)). Materias votables: `admit, dissolve, pause, bpUpdate, bpDelete, buildUpdate, buildDelete` ([L532](vendor/oasis/src/models/industry_model.js#L532)). Ni el steward ni el reparto están en la lista.
+
+**Cómo se reparte: a cada cual según su aportación.** `computeShares` ([L306-L321](vendor/oasis/src/models/industry_model.js#L306-L321)) convierte trabajo (`hours × laborRate`), material (`value`) y ECOin (`eco`) en **la misma bolsa de puntos**; la participación es `puntos / total`. `laborRate`, la tasa que convierte horas en puntos, la fija el steward al crear la instalación ([L438](vendor/oasis/src/models/industry_model.js#L438)) y solo él la cambia ([L457](vendor/oasis/src/models/industry_model.js#L457)): **la relación entre trabajo y capital es una decisión unipersonal del propietario.** `computeDistributionPlan` ([L960-L970](vendor/oasis/src/models/industry_model.js#L960-L970)) reparte `pot × share` a cada uno, sin suelo, sin tope y sin parte reservada al común; la «tesorería» del lote es solo la suma de aportes ECO ([L378](vendor/oasis/src/models/industry_model.js#L378)). El resultado se publica como `industryAllocation` ([L986](vendor/oasis/src/models/industry_model.js#L986)). El único gesto anticapitalista del fichero es el `license: "copyleft"` por defecto de los planos ([L439](vendor/oasis/src/models/industry_model.js#L439)).
+
+### 2.3 Banking: la renta básica — [banking_model.js](vendor/oasis/src/models/banking_model.js) · 1.479 líneas
+
+**Reglas por defecto** ([L14-L21](vendor/oasis/src/models/banking_model.js#L14-L21)): épocas mensuales, `alpha 0.2`, reserva mínima 500, tope 2.000 por época, tope 50 por persona y época, **suelo 1**, pesos entre 0,2 y 6, 30 días de gracia.
+
+**El fondo** ([L913-L917](vendor/oasis/src/models/banking_model.js#L913-L917)): el 20 % del saldo del PUB, nunca por debajo de la reserva ni por encima del tope de época. El común es la cartera del operador del PUB.
+
+**El reparto** (`computeEpoch`, [L920-L947](vendor/oasis/src/models/banking_model.js#L920-L947)): el peso de cada persona es `1 + karma/100`, acotado a [0,2, 6] ([L932](vendor/oasis/src/models/banking_model.js#L932)); la cantidad bruta es `max(suelo, min(pool × w / W, tope))` ([L941](vendor/oasis/src/models/banking_model.js#L941)); el impuesto de carbono y archivo se descuenta **solo del excedente sobre el suelo** ([L942-L947](vendor/oasis/src/models/banking_model.js#L942-L947)). La interfaz lo declara doctrina: «the base UBI value is set as an immovable minimum» ([banking_views.js#L246](vendor/oasis/src/views/banking_views.js#L246), [L486](vendor/oasis/src/views/banking_views.js#L486)). La misma fórmula de peso se repite en la estimación ([L1300](vendor/oasis/src/models/banking_model.js#L1300)) y en el pago real ([L1413-L1416](vendor/oasis/src/models/banking_model.js#L1413-L1416)). Cada época se sella con un hash ([L960-L962](vendor/oasis/src/models/banking_model.js#L960-L962)).
+
+**El karma** es un escalar único: actividad menos gramos de carbono ([L840](vendor/oasis/src/models/banking_model.js#L840)), publicado en el log ([L501-L506](vendor/oasis/src/models/banking_model.js#L501-L506)); impuestos en [L30-L36](vendor/oasis/src/models/banking_model.js#L30-L36). Es una **renta por notoriedad con suelo**, no una renta por necesidad. No hay hogar, no hay dependientes, no hay edad.
+
+### 2.4 El parlamento de tribu y `canPropose` — [parliament_model.js](vendor/oasis/src/models/parliament_model.js) · 1.615 líneas
+
+**Toda tribu nace en anarquía.** `tribePublishInitialTerm` ([L1354-L1374](vendor/oasis/src/models/parliament_model.js#L1354-L1374)) publica un mandato con `method: 'ANARCHY'` y `leaderId: null` ([L1363-L1364](vendor/oasis/src/models/parliament_model.js#L1363-L1364)). El quórum de la tribu es `max(2, ceil(miembros × 0,25))` ([L1376-L1384](vendor/oasis/src/models/parliament_model.js#L1376-L1384)); si nadie lo alcanza, `chosen = null` ([L1402-L1403](vendor/oasis/src/models/parliament_model.js#L1402-L1403)) y el mandato vuelve a `ANARCHY` ([L1409-L1410](vendor/oasis/src/models/parliament_model.js#L1409-L1410)). `ANARCHY` es un método de voto pero **no es elegible** como candidatura ([L22-L23](vendor/oasis/src/models/parliament_model.js#L22-L23)): solo se llega a ella por ausencia.
+
+**Quién propone.** `canPropose` ([L1298-L1311](vendor/oasis/src/models/parliament_model.js#L1298-L1311)): bajo `ANARCHY`, todos; con gobierno de persona, solo ella; con gobierno de tribu, **todos los miembros de la tribu**. Es lo más parecido a una asamblea que hay en el código, y solo se activa cuando no hay gobierno o cuando gobierna una facción.
+
+**Umbrales generales** ([L240-L242](vendor/oasis/src/models/parliament_model.js#L240-L242)): 80 % / 20 % / mitad más uno; quórum general `max(2, 25 % del censo)` ([L257-L259](vendor/oasis/src/models/parliament_model.js#L257-L259)). La prohibición de autovoto solo aplica a personas ([L756](vendor/oasis/src/models/parliament_model.js#L756)): una tribu puede votarse a sí misma en bloque.
+
+**Lo decisivo:** el parlamento de tribu es un órgano sin competencias. No toca `STRUCTURAL_FIELDS`, no expulsa, no elige steward, no reparte. Vota leyes que son texto.
+
+### 2.5 Votes, Polls y Opinions
+
+- [votes_model.js](vendor/oasis/src/models/votes_model.js): plazo mínimo de 7 días ([L10](vendor/oasis/src/models/votes_model.js#L10)); opciones por defecto `YES, NO, ABSTENTION, CONFUSED, FOLLOW_MAJORITY, NOT_INTERESTED` ([L173](vendor/oasis/src/models/votes_model.js#L173)). **`FOLLOW_MAJORITY` es la única delegación de todo el sistema**, y es una delegación al agregado anónimo, no a una persona revocable. Sin quórum: la votación se cierra por fecha y muestra el recuento.
+- [polls_model.js](vendor/oasis/src/models/polls_model.js): consultas cifrables por tribu ([L45-L60](vendor/oasis/src/models/polls_model.js#L45-L60)), un voto por autor sobreescribible ([L84-L86](vendor/oasis/src/models/polls_model.js#L84-L86)), caducidad ([L143](vendor/oasis/src/models/polls_model.js#L143)). Sin duración mínima, quórum ni umbral.
+- [opinions_model.js](vendor/oasis/src/models/opinions_model.js): una reacción tipificada por persona y objeto, irrevocable ([L59](vendor/oasis/src/models/opinions_model.js#L59), [L67](vendor/oasis/src/models/opinions_model.js#L67)). Alimenta el karma y, por tanto, la renta.
+
+### 2.6 Mercado, trabajo y vivienda
+
+- [market_model.js](vendor/oasis/src/models/market_model.js): `if (p <= 0) throw new Error("Invalid price")` ([L182](vendor/oasis/src/models/market_model.js#L182)); stock también positivo ([L185](vendor/oasis/src/models/market_model.js#L185)). **No se puede publicar un bien gratuito ni un don.** Lo mismo en [shops_model.js#L414-L415](vendor/oasis/src/models/shops_model.js#L414-L415).
+- [transfers_model.js](vendor/oasis/src/models/transfers_model.js): categorías `ECONOMIC, TIME, TRUST` ([L25](vendor/oasis/src/models/transfers_model.js#L25)); importe positivo obligatorio ([L230-L231](vendor/oasis/src/models/transfers_model.js#L230-L231)). `TIME` es el único carril no monetario: vales de tiempo, crédito mutuo.
+- [jobs_model.js](vendor/oasis/src/models/jobs_model.js): tres relaciones de producción, `freelancer | employee | exchange` ([L192](vendor/oasis/src/models/jobs_model.js#L192)); dos son asalariadas y `salary` se propaga a vistas, búsquedas y estadísticas de la red.
+- [housing_model.js](vendor/oasis/src/models/housing_model.js): `sale | rent | couchsurfing` sobre `apartment | house | room | land | other` ([L9-L10](vendor/oasis/src/models/housing_model.js#L9-L10)); solo `couchsurfing` fuerza precio cero ([L317](vendor/oasis/src/models/housing_model.js#L317)). **La tierra es una mercancía** con tres regímenes y ninguno por necesidad.
+
+### 2.7 School e Inhabitants
+
+- [school_model.js](vendor/oasis/src/models/school_model.js): un curso sin precio se guarda como `0.000000` ([L320](vendor/oasis/src/models/school_model.js#L320)) y solo se protege si el precio es positivo o la visibilidad es `INVITE` ([L392-L393](vendor/oasis/src/models/school_model.js#L392-L393)): **la educación gratuita es el caso por defecto**. El certificado solo lo emite el autor del curso ([L1222](vendor/oasis/src/models/school_model.js#L1222)).
+- [inhabitants_model.js](vendor/oasis/src/models/inhabitants_model.js): el censo es el conjunto de autores que han publicado algo ([L86-L88](vendor/oasis/src/models/inhabitants_model.js#L86-L88)). **Un feed, una persona.** No hay hogar, familia ni dependientes en ningún modelo.
+
+### 2.8 Lo demás, en una línea
+
+`Courts` (juicio cifrado, jueces electos, ya auditado en otro nodo), `L.A.R.P.` (turno por casas), `Projects` (financiación con objetivo), `Tasks` (autoasignación), `Events` y `Calendars` (precio 0 posible), `Multiverse` (puentes a Mastodon y Telegram), `AI 42`.
+
+---
+
+## 3. Confrontación: los ocho criterios contra el código
+
+| # | Criterio colectivista | Estado en Oasis 1.0.7 | Veredicto |
+| :-- | :-- | :-- | :-- |
+| 1 | Asamblea soberana | Existe un parlamento de tribu que nace en `ANARCHY` con quórum del 25 % (`parliament_model.js:1354-1384`), pero no gobierna la tribu: campos, miembros y reparto están fuera de su alcance. `Polls` sin quórum ni umbral | ⚠️ **Parcial**: la asamblea existe y no manda |
+| 2 | Cargos rotatorios y revocables | El autor de la tribu y el steward de la instalación son vitalicios e irrevocables (`tribes_model.js:721`, `industry_model.js:510`); no hay ningún cargo electo salvo el gobierno de tribu | ❌ **Falla en la raíz** |
+| 3 | Propiedad colectiva | `Industry` exige voto para admitir y disolver, pero el medio de producción pertenece al autor del mensaje raíz (`industry_model.js:164`) y solo él reparte (`:980`). La tribu no tiene patrimonio | ❌ **Falla**: cooperativa de aportantes con propietario |
+| 4 | Distribución según necesidades | Industria: pro rata a puntos de trabajo *y capital* (`industry_model.js:306-321`, `:960-970`). RBU: suelo 1 y peso por karma de 0,2 a 6 (`banking_model.js:932`, `:941`). Sin hogar ni dependientes | ❌ **Reproduce el mérito**; el suelo es el único gesto de necesidad |
+| 5 | Derechos sociales | Educación gratuita por defecto (`school_model.js:320`); RBU con suelo inmovible; nada sobre enfermedad, jubilación, edad o jornada | ⚠️ **Parcial** |
+| 6 | Federación de abajo arriba | `parentTribeId` (`tribes_model.js:341`) es jerarquía padre-hijo de privacidad; no hay delegados, mandatos ni tesoro federado. «Federación» = conectarse a un PUB | ❌ **Ausente** |
+| 7 | Intercambio sin moneda | Precio > 0 obligatorio en Market y Shops; solo `transfers` `TIME` y `couchsurfing` admiten lo no monetario | ❌ **Falla**, con un carril de escape (`TIME`) |
+| 8 | Voluntariedad | Entrada por invitación o abierta, salida libre para los miembros; **el fundador no puede irse** (`tribes_model.js:721`) y el steward tampoco (`industry_model.js:510`). Censo por actividad, sin coerción | ⚠️ **Parcial**: libre para todos menos para quien fundó |
+
+**Recuento.** 0 cumplen, 3 parciales, 5 fallan. Y sin embargo el sistema tiene, sin proponérselo, la pieza que más cuesta construir: una asamblea que existe por defecto. Los hallazgos que siguen ordenan el diagnóstico.
+
+### A. La tribu es propiedad de su fundador
+
+`tribes_model.js` no tiene ninguna noción de asamblea, junta ni administrador: tiene un `author`. Ese autor genera invitaciones en modo estricto (L554-L556), no puede irse (L721) y su marcha forzada disuelve la comunidad (L726-L729). La rotación de claves al expulsar (L533-L541) convierte la lista de miembros en un dispositivo de lectura: quien la controla, controla quién puede ver. Es una monarquía con cifrado de extremo a extremo. Lo que una colectividad necesita es exactamente lo inverso: que la lista de miembros, los campos estructurales y las expulsiones sean actos de la asamblea.
+
+### B. La asamblea existe y no manda
+
+Cada tribu nace con un `tribeParliamentTerm` en `ANARCHY`, sin líder (L1363-L1364), con quórum del 25 % (L1384) y con retorno automático a la anarquía si nadie lo alcanza (L1402-L1410). Bajo `ANARCHY` todos proponen (L1298-L1311). Eso **es** una asamblea permanente: cualquiera propone, nadie preside, la mayoría decide. Pero sus decisiones son texto en el log. No hay una sola función en `tribes_model.js`, `industry_model.js` ni `banking_model.js` que lea un resultado del parlamento de tribu. La asamblea tiene voz y no tiene manos. El parche no es inventarla: es darle competencias (CL-1, CL-5, CL-7). Y hay un segundo riesgo: el parlamento de tribu admite candidaturas con cualquier método de `METHODS` ([L1443-L1445](vendor/oasis/src/models/parliament_model.js#L1443-L1445)), así que una asamblea puede votarse un dictador de tribu. En la doctrina colectivista la asamblea elige comisiones, no gobiernos: CL-1 cierra esa puerta.
+
+### C. Cooperativa de aportantes: trabajo y capital en la misma bolsa
+
+`computeShares` (L306-L321) es la fórmula de una sociedad de capital: una hora vale `laborRate` puntos, un euro de material vale un punto, un ECOin vale un punto, y quien más puntos tiene más se lleva (L960-L970). El `laborRate` lo fija el propietario (L438, L457). En una colectividad el reparto no sale de la aportación sino de la necesidad, y lo decide la asamblea (crit. 1 y 4). La estructura de votación de `Industry` (L98-L101, L211-L223) es reutilizable; lo que sobra es el steward vitalicio (L164-L205, L510, L980) y lo que falta es una `disposition` de necesidades (CL-2, CL-3).
+
+### D. Renta por mérito, no por necesidad
+
+La RBU es el único mecanismo con suelo y con techo (L941), y por eso es la mejor base para un salario familiar. Pero el peso `1 + karma/100` (L932) multiplica por hasta treinta la diferencia entre el más notorio y el más silencioso, y el karma premia publicar vídeos y comentar (§2.3). Un anciano que no publica cobra el suelo. Un hogar de cinco cobra lo mismo que uno de uno, porque el hogar no existe (L86-L88 de `inhabitants_model.js`). El parche es doble: coeficiente de necesidad en lugar de karma (CL-4) y unidad familiar declarada (CL-9).
+
+### E. El precio cero está prohibido
+
+`market_model.js:182` y `shops_model.js:415` rechazan cualquier precio no positivo. El don, el trueque y el reparto sin contrapartida no tienen representación en los módulos de intercambio. Existen dos grietas: `transfers` con categoría `TIME` (L25) y `couchsurfing` (L317). El criterio 7 se construye ensanchando esas grietas (CL-6), no inventando un módulo.
+
+### F. No hay hogar: un feed, una persona
+
+El censo es la lista de autores con mensajes (L86-L88). Toda la aritmética de reparto (`Banking`, `Industry`) opera sobre feeds. El salario familiar histórico se calculaba por hogar, con escala por edad y dependientes. Sin una unidad familiar declarada y validada por la asamblea, el criterio 4 no puede ni formularse (CL-9).
+
+### G. La anarquía como estado normal (donde el código ya es colectivista)
+
+`ANARCHY` no es elegible (L22-L23) y solo se alcanza por ausencia de quórum. Para un modelo estatal eso es un fallo; para una colectividad es la descripción exacta de su régimen: sin gobierno permanente, con asamblea abierta a todos y decisiones por mayoría. Este nodo **no toca** `ANARCHY` por defecto ni `canPropose` universal bajo `ANARCHY`. Es la única parte del código que ya estaba escrita para nosotros.
+
+---
+
+## 4. Especificación CL-OASIS: la bifurcación colectivista
+
+| # | Cambio | Punto de intervención | Criterio que repara |
+| :-- | :-- | :-- | :-- |
+| **CL-1** | **Gobierno de la tribu por su asamblea.** Edición de `STRUCTURAL_FIELDS`, invitaciones y expulsiones pasan de `tribe.author` a una `tribeParliamentRule` aprobada con el quórum del parlamento de tribu. **La asamblea no puede abdicar**: el parlamento de tribu solo admite `ANARCHY` (se eliminan las candidaturas a líder de tribu, `tribePublishCandidature`); las comisiones son cargos de CL-2, nunca gobierno | `tribes_model.js:11`, `:554-556`, `:612-617`, `:533-541` ← `parliament_model.js:1376-1384`, `:1443-1445` | 1, 2 |
+| **CL-2** | **Steward electo, rotatorio y revocable.** `steward` deja de ser `rootNode.author`; se elige por `passesThreshold` entre los miembros, con mandato de N lotes y revocación por voto (`subject: "steward"`) | `industry_model.js:164`, `:187`, `:205`, `:510`, `:532`, `:980` | 2, 3 |
+| **CL-3** | **Reparto por necesidades, decidido por la asamblea.** `disposition: "needs"` en `computeDistributionPlan`: cada miembro declara su unidad de necesidad (CL-9), la asamblea de la instalación la valida por voto, y el reparto es proporcional a necesidades con suelo; el excedente va al tesoro de la tribu (CL-5). **El plan de reparto es una materia votable** (`subject: "distribute"` en `SUBJECTS`): nadie reparte sin acuerdo de la asamblea, ni siquiera el steward electo | `industry_model.js:960-970`, `:306-321`, `:532`, `:980` | 4, 3, 1 |
+| **CL-4** | **Coeficiente de necesidad en la RBU.** Sustituir `1 + karma/100` por `coef(hogar)` = 1 + 0,5 por dependiente, con edad; el karma sale de la fórmula. Suelo y techo se conservan | `banking_model.js:932`, `:1300`, `:1413` | 4 |
+| **CL-5** | **Tesoro de tribu.** Cartera colectiva multisig k-de-n cuyos firmantes nombra la asamblea; las épocas de reparto las ejecuta la asamblea de la tribu, no el operador del PUB | `banking_model.js:913-917`, `:1004`, `:1413-1416`; `tribes_model.js` (nuevo tipo `tribeTreasury`) | 1, 3 |
+| **CL-6** | **Precio cero, don y trueque.** Admitir `price = 0` y `kind: "gift" \| "barter"` en Market y Shops; vales = `transfers` `TIME`; caja de compensación entre tribus como `transfers` `TRUST` con saldo | `market_model.js:182`, `shops_model.js:415`, `transfers_model.js:25`, `:230-231` | 7 |
+| **CL-7** | **Quórum, umbral y duración mínima en las consultas de tribu.** `polls` y `votes` con `tribeId` heredan el quórum de `tribeElectionQuorum`; resultado vinculante publicado como `tribeParliamentRule` | `polls_model.js:84-86`, `votes_model.js:10`, `:173` ← `parliament_model.js:1376-1384` | 1 |
+| **CL-8** | **Federación con delegados mandatados.** `parentTribeId` deja de ser solo herencia de privacidad: la tribu hija elige un `delegate` con mandato firmado y revocable; la tribu madre solo decide con el voto de los delegados | `tribes_model.js:341`; `parliament_model.js:1354-1374` (mandato de delegado) | 6 |
+| **CL-9** | **Unidad familiar.** Tipo `household` sobre feeds individuales: miembros, edades y dependientes, validado por la asamblea de la tribu; base de CL-3 y CL-4 | `inhabitants_model.js:86-88` (censo) | 4 |
+| **CL-10** | **Derechos sociales.** Cursos con precio 0 por defecto se conservan (`school_model.js:320`); nuevo concepto en `Banking`: `epoch` de enfermedad y jubilación por edad declarada en `household`, pagado del tesoro de tribu (CL-5) | `school_model.js:320`, `:392-393`; `banking_model.js:920-947` | 5 |
+| **CL-11** | **Voluntariedad y salida.** El fundador puede irse con sucesión decidida por la asamblea (`opts.force` deja de ser necesario); el steward puede irse tras elección de sucesor; la disolución solo por voto. Los «individualistas» son feeds fuera de la tribu, sin penalización en la RBU | `tribes_model.js:721`, `:726-729`; `industry_model.js:510` | 8, 2 |
+
+**Lo que no se toca, y por qué.** `ANARCHY` como estado por defecto y `canPropose` universal bajo `ANARCHY` (`parliament_model.js:1298-1311`): es la asamblea permanente. El quórum de tribu `max(2, 25 %)` (`:1376-1384`): un suelo razonable hasta que el carril D' diga otra cosa. El `copyleft` por defecto de los planos industriales. El cifrado de tribu y la rotación de claves como mecanismo (no como poder). El censo por actividad. El suelo inmovible de la RBU (`banking_model.js:941`). Son buena economía moral escrita en aritmética.
+
+---
+
+## 5. Backlog v0
+
+Leyenda: T = tamaño (S/M/L) · P = prioridad (C crítica, H alta, M media). Cada tarea D' tiene **camino por defecto**: si no se investiga, el carril siguiente usa el default; si se investiga y la respuesta difiere, la tarea dice qué cambia aguas abajo.
+
+### Carril D' · Investigación en fuentes
+
+| ID | Buscar | Dónde | Default | Alternativas | Desbloquea |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| TK-D'01 | **Quién forma la asamblea y con qué quórum**: ¿todos los miembros?, ¿cabezas de familia?, ¿mayoría de presentes o de censo?; **convocatoria y periodicidad** (¿ordinaria fija?, ¿quién convoca la extraordinaria?); **voto a mano alzada o secreto**; ¿puede la asamblea delegar en un líder o un consejo? | Leval, Souchy; Casanova (Aragón); Simoni (Cretas) | Asamblea = todos los miembros de la tribu; quórum = 25 % del censo (el de Oasis) y mayoría simple de votantes. Asamblea ordinaria = ciclo de 60 d del `tribeParliamentTerm`; extraordinaria convocada por el 10 % de los miembros. Voto público (firmado, visible dentro de la tribu). **La asamblea no puede abdicar**: no elige líder (ver CL-1) | quórum del 50 %; voto por hogar (CL-9) en vez de por persona; voto secreto cifrado; consejo delegado revocable | CL-1, CL-7, TK-G'01, TK-G'06 |
+| TK-D'02 | **Fórmula del salario familiar**: por miembro, por edad, por dependientes; ¿escala fija o decidida por asamblea? | Ovejero; Redalyc; Leval (casos de Aragón y Levante) | coef = 1 + 0,5 por dependiente; menores y mayores de 65 cuentan como dependientes; la escala la fija la asamblea de la tribu | escala lineal por miembro; coef por edad en tramos | CL-4, CL-9, TK-B'01 |
+| TK-D'03 | **Vales y cajas de compensación**: qué circulaba dentro (carnet de consumo, vales locales) y entre colectividades (compensación comarcal) | Leval, Souchy; Gómez (economía confederal) | Vales = `transfers` `TIME` dentro de la tribu; compensación entre tribus = saldo `TRUST` liquidado por la federación | moneda local ECOin por tribu; sin compensación | CL-6, TK-E'01, TK-F'02 |
+| TK-D'04 | **Delegados comarcales**: mandato imperativo, duración, revocación, ¿voto por colectividad o ponderado por población? | Casanova (Consejo de Aragón); Vela | Un delegado por tribu hija, mandato firmado por su asamblea, revocable en cualquier momento, voto por colectividad | voto ponderado por miembros; delegado rotatorio por sorteo | CL-8, TK-F'01 |
+| TK-D'05 | **Individualistas**: condiciones de permanencia fuera de la colectividad, acceso a servicios, entrada posterior | Casanova; Redalyc (voluntariedad y coerción) | Los feeds fuera de la tribu conservan RBU y servicios de red; pueden pedir admisión por voto | exclusión de servicios de tribu; admisión automática | CL-11, TK-G'04 |
+| TK-D'06 | **Decreto de Colectivizaciones (24-10-1936) frente a la práctica aragonesa**: qué fijaba el decreto (consejos de empresa, control obrero) y qué hacían las colectividades agrarias | Decreto (BOGC); Vela; Casanova | Este nodo modela la práctica agraria (asamblea + comisión), no el decreto industrial catalán | modelar el consejo de empresa del decreto como variante | CL-1, CL-2 |
+| TK-D'07 | **Derechos sociales**: edades de trabajo, jornada, enfermedad y jubilación; ¿quién los pagaba? | Redalyc; Ovejero; Leval | Jubilación y enfermedad pagadas del tesoro de tribu como época especial; edad declarada en `household` | pagadas de la RBU general; sin edad | CL-10, TK-B'03 |
+| TK-D'08 | **Unidad familiar**: cómo se definía el hogar a efectos de reparto | Leval; Ovejero | `household` declarado por un miembro y validado por la asamblea; una persona pertenece a un solo hogar | hogar = feed (sin cambio); hogar autodeclarado sin validación | CL-9, TK-B'02 |
+
+### OP-01 · Autogobierno de la colectividad
+
+La asamblea de tribu recibe competencias sobre lo que hoy decide el fundador: campos, miembros, expulsiones, consultas vinculantes y cargos revocables. Carril G'.
+
+| ID | Tarea | Depende | Seam | T | P |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| TK-G'01 | CL-1: `tribeParliamentRule` gobierna `STRUCTURAL_FIELDS`, invitaciones y expulsiones; `tribe.author` deja de ser autoridad | D'01 | `tribes_model.js:11`, `:554-556`, `:612-617`, `:533-541` | L | **C** |
+| TK-G'02 | CL-7: quórum y umbral en `polls`/`votes` con `tribeId`; resultado publicado como regla | D'01 | `polls_model.js:84-86`, `votes_model.js:10`, `:173` | M | H |
+| TK-G'03 | CL-2: steward electo por `passesThreshold`, mandato de N lotes, `subject: "steward"` revocable | D'06 | `industry_model.js:164`, `:532`, `:510`, `:980` | M | H |
+| TK-G'04 | CL-11: sucesión del fundador por asamblea; salida libre del steward tras elección | D'05 | `tribes_model.js:721`, `:726-729`; `industry_model.js:510` | M | H |
+| TK-G'05 | Publicidad: la deliberación de la asamblea (propuestas y votos) visible a todos los miembros; el cifrado de tribu sigue protegiendo hacia fuera | D'01 | `polls_model.js:45-60` | S | M |
+| TK-G'06 | Convocatoria y periodicidad: asamblea ordinaria = ciclo de 60 d del `tribeParliamentTerm`; `assemblyCall` extraordinaria por el 10 % de los miembros abre una ventana de propuestas; solo `ANARCHY` como método de tribu | D'01 | `parliament_model.js:1354-1374`, `:1443-1445` | M | H |
+
+### OP-02 · Reparto por necesidades
+
+Salario familiar sobre la RBU y sobre la industria; unidad familiar; tesoro de tribu. Carril B'.
+
+| ID | Tarea | Depende | Seam | T | P |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| TK-B'01 | CL-4: `coef(hogar)` sustituye a `1 + karma/100` en los tres cálculos | D'02, B'02 | `banking_model.js:932`, `:1300`, `:1413` | M | **C** |
+| TK-B'02 | CL-9: tipo `household` (miembros, edades, dependientes) validado por la asamblea | D'08 | `inhabitants_model.js:86-88` | M | **C** |
+| TK-B'03 | CL-3: `disposition: "needs"` en `computeDistributionPlan`, excedente al tesoro; `subject: "distribute"` votable | D'02, B'02, G'03, D'01 | `industry_model.js:960-970`, `:306-321`, `:532`, `:980` | M | H |
+| TK-B'04 | CL-5: `tribeTreasury` multisig k-de-n; épocas ejecutadas por la asamblea, no por `isPubNode` | D'01 | `banking_model.js:913-917`, `:1004`, `:1413-1416` | L | H |
+| TK-B'05 | CL-10: épocas de enfermedad y jubilación pagadas del tesoro de tribu | D'07, B'04 | `banking_model.js:920-947` | M | M |
+
+### OP-03 · Intercambio sin precio
+
+Don, trueque y vales dentro de la colectividad. Carril E'.
+
+| ID | Tarea | Depende | Seam | T | P |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| TK-E'01 | CL-6: `price = 0` y `kind: gift \| barter` en Market y Shops | D'03 | `market_model.js:182`, `shops_model.js:415` | S | H |
+| TK-E'02 | CL-6: vales de tiempo = `transfers` `TIME` con carnet de consumo por tribu | D'03 | `transfers_model.js:25`, `:230-231` | M | M |
+| TK-E'03 | Bolsa de trabajo por asamblea: `jobs` con `job_type: "collective"` sin `salary`, asignado por voto | D'02 | `jobs_model.js:192` | M | M |
+
+### OP-04 · Federación
+
+Colectividad → comarcal → regional con delegados mandatados y compensación entre colectividades. Carril F'.
+
+| ID | Tarea | Depende | Seam | T | P |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| TK-F'01 | CL-8: `delegate` con mandato firmado y revocable; la tribu madre decide solo con voto de delegados | D'04, G'01 | `tribes_model.js:341`; `parliament_model.js:1354-1374` | L | H |
+| TK-F'02 | Caja de compensación: saldos `TRUST` entre tribus liquidados por la federación | D'03, B'04 | `transfers_model.js:25` | M | M |
+| TK-F'03 | Tesoro federado: `tribeTreasury` de la tribu madre alimentado por cuotas votadas por las hijas | B'04, F'01 | nuevo | L | M |
+
+### OP-05 · Derechos sociales
+
+| ID | Tarea | Depende | Seam | T | P |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| TK-S'01 | Documentar que la educación gratuita es el caso por defecto y que el certificado lo emite solo el autor: ¿certifica la asamblea? | D'07 | `school_model.js:320`, `:1222` | S | M |
+| TK-S'02 | Jornada y edades de trabajo como reglas de `Industry` (horas máximas por lote y miembro) | D'07 | `industry_model.js:306-321` | M | M |
+
+### OP-06 · Voluntariedad y censo
+
+| ID | Tarea | Depende | Seam | T | P |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| TK-V'01 | Individualistas: feeds fuera de la tribu conservan RBU y servicios de red | D'05 | `banking_model.js:920-947` | S | H |
+| TK-V'02 | Disolución de la tribu solo por voto (nunca por marcha del fundador) | G'04 | `tribes_model.js:726-729` | S | H |
+
+### Resumen de prioridades v0
+
+| Prioridad | Tareas |
+| :-- | :-- |
+| **Crítica** | TK-G'01, TK-B'01, TK-B'02 |
+| **Alta** | TK-G'02, TK-G'03, TK-G'04, TK-G'06, TK-B'03, TK-B'04, TK-E'01, TK-F'01, TK-V'01, TK-V'02 |
+| **Media** | TK-G'05, TK-B'05, TK-E'02, TK-E'03, TK-F'02, TK-F'03, TK-S'01, TK-S'02 |
+
+Mapa de carriles: **D' → G' → B' → E' → F'**; OP-05 y OP-06 corren en paralelo sobre B' y G'. El carril de cadena (Faircoin3 o ECOin) no se abre en este nodo: todo el reparto vive en Oasis.
+
+---
+
+## 6. Fuentes
+
+**Código auditado (disco):** `vendor/oasis` @ `9a657b776fcafc7c24bf3ad61825316385ecf513` (release 1.0.7, 2026-09-08). Clonado con `git clone --depth 1 https://github.com/epsylon/oasis.git`.
+
+**Red:** `faircoin/faircoin` (último push 2022-02-05, API de GitHub, 2026-09-09).
+
+**Doctrina:** `draft.md` §1 (Souchy 1937, Leval 1972, Casanova 1988, Ovejero 2015, Vela 2013, Redalyc 2016). Sin páginas: todo lo doctrinal es **[doctrina, sin verbatim]** hasta que el carril D' lo verifique.
+
+**Grado de certeza.** Cuatro niveles: *verificado en código con fichero y línea* (todo §2 y §3) · *fuente primaria del proyecto, no verificada de forma independiente* (README de Oasis) · *inferido de la actividad del repositorio* (estado de Faircoin) · *paráfrasis marcada, no cita* (criterios 1-8).
