@@ -1,7 +1,0 @@
-{
-  "id": "colectividades",
-  "nombre": "Colectivizaciones 1936-37 frente a la República Pura",
-  "rama": "dev/colectividades",
-  "estado": "semilla",
-  "descripcion": "Contraste entre las colectivizaciones anarcosindicalistas de 1936-37 (Souchy, Leval, Casanova…) y la República Pura de Trevijano, modelado sobre Oasis/SSB y Faircoin. Chuletario de fuentes, tabla de contraste en siete dimensiones y plan para replicar el método de res_publica (carriles D' → G' → B' → E' → F')."
-}

@@ -1,4 +1,4 @@
-> **Nota (2026-09-09, rama `dev/colectividades`).** Draft semilla del modelo `colectividades`. Layout vigente: `modelos/colectividades/drafts/draftvN.md` (el sufijo mayor es el draft vigente) y `modelos/colectividades/revision/NN-*.md`; los ficheros `c0…c3` que propone el plan de abajo se escriben como `draftv0`, `draftv1`, … La rama solo toca `modelos/colectividades/`. Ver `llms.md`.
+> **Nota (2026-09-09, rama `dev/res_publica+colectivizaciones`).** Este documento es la semilla de una **arista** del catálogo: el contraste entre el nodo `res_publica` (Trevijano) y el nodo `colectivizaciones`. Estado: **pausa** hasta que `modelos/colectivizaciones/` tenga su `draftv0` (auditoría pura). El chuletario de fuentes y los criterios colectivistas se han trasladado al nodo puro; aquí queda el Bloque III (contraste) y el plan de `c3-contraste`. Layout: `modelos/res_publica+colectivizaciones/drafts/draftvN.md` + `revision/`. La rama solo toca su carpeta. Ver `llms.md`.
 
 Aquí tienes el **chuletario de referencias** para que tu agente pueda modelizar el contraste entre las colectivizaciones de 1936-37 y la República Pura de Trevijano, usando SolarNET.HuB y Faircoin como infraestructura.
 
@@ -139,11 +139,11 @@ Este chuletario **no es el diseño**, sino el **arsenal de referencias** para qu
 
 ---
 
-# Plan: comprender dev/res_publica y replicar su método en dev/colectividades
+# Plan: comprender dev/res_publica y replicar su método en dev/res_publica+colectivizaciones
 
 ## Contexto
 
-La rama `dev/res_publica` modeliza la **República Pura de Trevijano** sobre **Oasis/SSB** (SolarNET.HuB). El usuario pide, en modo lectura: (1) entender qué se ha hecho con `draft*.md` y cómo se trabaja con `revision/`; (2) entender la petición de usar **la misma tecnología** (el mismo método y el mismo código auditado) para modelar una red distinta, la de las **colectivizaciones libertarias de 1936-37**, cuyo chuletario es `iberian-dev-7.md`, en la rama `dev/colectividades`.
+La rama `dev/res_publica` modeliza la **República Pura de Trevijano** sobre **Oasis/SSB** (SolarNET.HuB). El usuario pide, en modo lectura: (1) entender qué se ha hecho con `draft*.md` y cómo se trabaja con `revision/`; (2) entender la petición de usar **la misma tecnología** (el mismo método y el mismo código auditado) para modelar una red distinta, la de las **colectivizaciones libertarias de 1936-37**, cuyo chuletario es `iberian-dev-7.md`, en la rama `dev/res_publica+colectivizaciones`.
 
 Estado del repo verificado: **cero commits**; HEAD apunta a `dev/res_publica` (rama aún no nacida); todo está untracked; no hay `.gitignore`, así que `vendor/oasis` (clon shallow, commit `9a657b7`, 1.0.7, AGPL-3.0, ~33k líneas en 70 modelos) tampoco está ignorado.
 
@@ -185,23 +185,23 @@ Convenciones: fecha ISO en cabeceras y notas; enlaces relativos con ancla de lí
 
 Es un **chuletario de referencias, no un diseño** (lo dice él mismo). Bloque I: fuentes sobre las colectivizaciones (Souchy 1937, Leval 1972, Casanova 1988, Ovejero 2015, Vela 2013, Decreto de Colectivizaciones 24-10-1936, sucesos de mayo de 1937) y sus características (asamblea soberana, cargos rotatorios y revocables, salario familiar, derechos sociales, espontaneidad). Bloque II: Trevijano (ya cubierto por res_publica). Bloque III: **tabla de contraste** en 7 dimensiones (propiedad, poder, ideología, economía, sujeto, cambio, libertad). Bloque IV: mapeo tecnológico ingenuo. Pregunta de fondo: *¿pueden coexistir la autogestión colectivista y la república constitucional en una misma red técnico-política?*
 
-Lectura: `dev/colectividades` debe producir para el modelo colectivista **lo mismo que res_publica produjo para el trevijanista** (criterios → auditoría → confrontación → parches → backlog → revisión por fuentes). El contraste del Bloque III es un **tercer producto** que solo puede escribirse cuando ambas ramas tengan sus parches: mismo código, dos constituciones.
+Lectura: `dev/res_publica+colectivizaciones` debe producir para el modelo colectivista **lo mismo que res_publica produjo para el trevijanista** (criterios → auditoría → confrontación → parches → backlog → revisión por fuentes). El contraste del Bloque III es un **tercer producto** que solo puede escribirse cuando ambas ramas tengan sus parches: mismo código, dos constituciones.
 
 ---
 
-## 3. Diseño de dev/colectividades
+## 3. Diseño de dev/res_publica+colectivizaciones
 
 ### 3.1 Supuestos (no bloqueantes; el usuario puede cambiarlos)
 
 - La rama nace **desde `dev/res_publica`** y conserva sus ficheros: así `c0` puede enlazar la anatomía ya hecha en `draftv0.md §2` en vez de repetirla, y el contraste final tiene ambos lados a mano.
-- Los documentos nuevos van en carpeta **`modelos/colectividades/`** para no colisionar con `draft*.md` ni con `revision/` y facilitar el merge posterior. `iberian-dev-7.md` se queda en raíz como fuente, sin editar.
+- Los documentos nuevos van en carpeta **`modelos/res_publica+colectivizaciones/`** para no colisionar con `draft*.md` ni con `revision/` y facilitar el merge posterior. `iberian-dev-7.md` se queda en raíz como fuente, sin editar.
 - Mismo vendor, mismo commit `9a657b7`, misma escala de certeza, mismas convenciones.
 - Unidad de `revision/` = **tema** (no capítulo de un libro, porque el corpus es plural): asamblea, cargos, propiedad, salario familiar, federación, intercambio.
 
 ### 3.2 Estructura propuesta
 
 ```
-modelos/colectividades/
+modelos/res_publica+colectivizaciones/
 ├── c0-auditoria.md        ≈ draftv0: criterios CL, anatomía de los módulos NO auditados aún, confrontación, parches CL-n, backlog
 ├── c1-clon-o-parecido.md  ≈ draftv1: elementos del modelo colectivista con certeza, hoy / tras parches, intraducibles
 ├── c2-backlog.md          ≈ draftv2: carriles D' (fuentes) → G' (autogobierno) → B' (reparto) → E' (intercambio) → F' (federación)
@@ -270,22 +270,22 @@ Lo que no se toca: ANARCHY por defecto, `canPropose` para todos bajo ANARCHY, co
 ## 4. Pasos de ejecución (cuando se salga de read-only)
 
 1. **Primer commit en `dev/res_publica`** (hoy no existe la rama porque no hay commits). Añadir `.gitignore` con `vendor/`. Commitear `draft*.md`, `revision/`, `iberian-dev-7.md`, `base_web.md`. Sin esto no se puede ramificar.
-2. `git checkout -b dev/colectividades`.
-3. Escribir `modelos/colectividades/c0-auditoria.md` a partir de §3.3-3.5 de este plan, verificando cada `fichero:línea` contra `vendor/oasis` y enlazando `../draftv0.md#L…` para lo ya auditado.
-4. Escribir `modelos/colectividades/c1-clon-o-parecido.md` (elementos, certeza, hoy/tras CL-n, intraducibles: p. ej. la tierra, la jornada, la guerra como contexto).
-5. Escribir `modelos/colectividades/c2-backlog.md` con carriles D', G', B', E', F'.
-6. Abrir `modelos/colectividades/revision/01-asamblea.md` con el formato de `revision/01-lealtad.md` y seguir por temas.
+2. `git checkout -b dev/res_publica+colectivizaciones`.
+3. Escribir `modelos/res_publica+colectivizaciones/c0-auditoria.md` a partir de §3.3-3.5 de este plan, verificando cada `fichero:línea` contra `vendor/oasis` y enlazando `../draftv0.md#L…` para lo ya auditado.
+4. Escribir `modelos/res_publica+colectivizaciones/c1-clon-o-parecido.md` (elementos, certeza, hoy/tras CL-n, intraducibles: p. ej. la tierra, la jornada, la guerra como contexto).
+5. Escribir `modelos/res_publica+colectivizaciones/c2-backlog.md` con carriles D', G', B', E', F'.
+6. Abrir `modelos/res_publica+colectivizaciones/revision/01-asamblea.md` con el formato de `revision/01-lealtad.md` y seguir por temas.
 7. `c3-contraste.md` al final, cuando ambas ramas tengan parches cerrados.
 
 ## 5. Verificación
 
-- Script de comprobación (lectura): cada `fichero:línea` citado en `modelos/colectividades/*.md` existe en `vendor/oasis` y la línea contiene el símbolo nombrado; IDs `CL-n`, `TK-D'nn` únicos; enlaces relativos `../draftv0.md#L…` resuelven.
-- `git diff dev/res_publica..dev/colectividades` solo añade `modelos/colectividades/`; no toca `draft*.md`, `revision/` ni `iberian-dev-7.md`.
+- Script de comprobación (lectura): cada `fichero:línea` citado en `modelos/res_publica+colectivizaciones/*.md` existe en `vendor/oasis` y la línea contiene el símbolo nombrado; IDs `CL-n`, `TK-D'nn` únicos; enlaces relativos `../draftv0.md#L…` resuelven.
+- `git diff dev/res_publica..dev/res_publica+colectivizaciones` solo añade `modelos/res_publica+colectivizaciones/`; no toca `draft*.md`, `revision/` ni `iberian-dev-7.md`.
 - Cada tabla de `c0 §3` tiene un veredicto por criterio (1-8) y cada `CL-n` nombra el criterio que repara.
 
 ## 6. Preguntas abiertas para el usuario (no bloquean)
 
-- ¿Carpeta `modelos/colectividades/` o ficheros en raíz (`draftc0.md`…)?
+- ¿Carpeta `modelos/res_publica+colectivizaciones/` o ficheros en raíz (`draftc0.md`…)?
 - ¿Revisión por **tema** o por **fuente** (Souchy / Leval / Casanova)?
 - ¿Dónde vive `c3-contraste.md`: en esta rama o en una rama de integración?
 - ¿Se recupera el backlog v3 completo (TK-01…90) que cita `base_web.md` y falta aquí?
