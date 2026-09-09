@@ -1,6 +1,6 @@
 # Revisión · colectivizaciones
 
-**Draft vigente:** [draftv0.md](../drafts/draftv0.md)
+**Draft vigente:** [draftv1.md](../drafts/draftv1.md)
 
 **2026-09-09.** Fichas por **tema** (el corpus es plural, no hay capítulos de un libro): cada ficha reconstruye las tesis del tema con grado de certeza (A/B/C, escala de `draft.md` §2), confirma qué está mapeado en `draftv0.md` (criterios, parches CL-n, tareas) y lista las correcciones aplicadas. **Nada está verificado contra las fuentes** salvo lo que diga el carril D': la certeza es la del revisor. Confirmar en Leval, Souchy y Casanova antes de citar.
 
@@ -12,11 +12,12 @@
 | Salario familiar | [04-salario-familiar.md](04-salario-familiar.md) | Ovejero, Leval | el salario familiar está mapeado en su fórmula (coeficiente de hogar, escala votada) y en su unidad (hogar declarado), no en su condición (cobrar sin aportar y sin reclamar) ni en sus límites (techo por hogar, censo que  | TK-D'02, CL-3, CL-4, hallazgo D, hallazgo F, §2.3, «Lo que no se toca», TK-B'06 |
 | Federación | [05-federacion.md](05-federacion.md) | Casanova (Consejo de Aragón), Vela | la federación está mapeada en su principio (delegados mandatados, voto por colectividad, compensación), no en su dirección: en Oasis la jerarquía de tribus es descendente (el padre crea la hija, la hija hereda su privaci | §2.1, §2.4, §3 fila 6, CL-8, TK-D'04, TK-F'04, TK-F'05, resumen de prioridades |
 | Intercambio sin moneda | [06-intercambio.md](06-intercambio.md) | Leval, Souchy, Gómez | el intercambio sin moneda está mapeado en su prohibición (precio cero, CL-6, TK-E'01) y en su carril de escape (`TIME`), no en su mecánica: el carnet de consumo no tiene costura, la caja de compensación no cabe en `Trans | hallazgo 5, fila 7, hallazgo E, CL-6, TK-D'03, TK-E'01, TK-E'02, TK-E'03, TK-E'04, TK-F'02, resumen de prioridades |
+| Fuentes D'01-D'04 (notas de investigación) | [08-fuentes-d01.md](08-fuentes-d01.md) · [09-fuentes-d02.md](09-fuentes-d02.md) · [10-fuentes-d03.md](10-fuentes-d03.md) · [11-fuentes-d04.md](11-fuentes-d04.md) | en línea (URLs) | Los cuatro defaults cambian; síntesis en [draftv1.md](../drafts/draftv1.md) | CL-1, CL-4, CL-6, CL-8 y aguas abajo |
 | Derechos sociales | [07-derechos-sociales.md](07-derechos-sociales.md) | Redalyc, Ovejero | los derechos sociales están mapeados en su fuente de pago (tesoro de tribu, CL-5/CL-10) y en la gratuidad de la escuela (§2.7), no en su mecánica: quién mantiene al maestro y al médico, qué pasa con la renta que no se re | TK-D'07, CL-10, TK-B'05, TK-S'01, TK-S'02, TK-S'03, §2.6, §2.7, §2.3, §3 fila 5 |
 
 **Estado tras la revisión:** 7 fichas de 7. Veredictos de `draftv0.md` §3: 0 cumplen, 3 parciales, 5 fallan; los parches CL-1…CL-11 se han precisado desde las fichas y la tabla de prioridades se regenera desde las tablas de tareas.
 
 **Deuda pendiente:**
-- Verificar las tesis en Leval, Souchy y Casanova (carril D'; TK-D'01…D'04 en curso, D'05…D'08 con default).
+- **Modo restricción (2026-09-10):** D'01-D'04 verificados (draftv1); D'05-D'08 sin investigar; las operaciones propuestas por los investigadores sobre draftv0 no se han aplicado (draftv1 declara los defaults nuevos). Releer CL-1, CL-4, CL-6 y CL-8 con draftv1 antes de implementar.
 - Las fichas se escribieron en paralelo sobre el mismo draftv0: los cruces entre parches (CL-1/CL-2, CL-3/CL-5) se han resuelto en secuencia; releer §4 de draftv0 de corrido.
 - El carril de cadena no se abre en este nodo; si una arista lo necesita, se hereda del nodo que lo tenga.
