@@ -1,5 +1,7 @@
 # Modelador de Redes
 
+Pruebas de plasticidad, draft: https://claude.ai/code/artifact/3a5c6cd9-2157-4788-a569-5d21804b5930?via=auto_preview
+
 **Catálogo de modelizaciones políticas sobre redes distribuidas** (Oasis/SSB + Faircoin). Cada modelización audita el mismo código (Oasis 1.0.7, commit `9a657b7`) desde una doctrina distinta, avanza por drafts sucesivos, se revisa capítulo a capítulo y deja un backlog. Esta web lo publica todo: en línea, enlazado al repositorio y en zip.
 
 **Web:** https://alephscriptorium-eng.github.io/modelador-redes · **Versión:** 0.2.0 · **Licencia:** GPL-3.0-or-later AND LicenseRef-Animus-Iocandi
