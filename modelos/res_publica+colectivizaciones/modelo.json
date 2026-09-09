@@ -1,0 +1,10 @@
+{
+  "id": "res_publica+colectivizaciones",
+  "tipo": "arista",
+  "nodos": ["res_publica", "colectivizaciones"],
+  "relacion": "contraste",
+  "nombre": "Contraste: República Pura ↔ colectivizaciones 1936-37",
+  "rama": "dev/res_publica+colectivizaciones",
+  "estado": "pausa",
+  "descripcion": "Arista entre el nodo res_publica (Trevijano) y el nodo colectivizaciones: las dos constituciones sobre el mismo código. Chuletario de contraste en siete dimensiones y plan para replicar el método. En pausa hasta que el nodo colectivizaciones tenga su auditoría propia; el material doctrinal puro vive allí."
+}
