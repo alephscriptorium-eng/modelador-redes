@@ -64,14 +64,13 @@ Ver [draftv1 L3](../drafts/draftv1.md#L3) y [draftv1](../drafts/draftv1.md).
 """
 
 
-def crear_modelo(base: Path, mid: str = "prueba", con_indice: bool = True) -> Path:
+def crear_modelo(base: Path, mid: str = "prueba", con_indice: bool = True, extra: dict | None = None) -> Path:
     d = base / mid
     (d / "drafts").mkdir(parents=True)
     (d / "revision").mkdir()
-    (d / "modelo.json").write_text(
-        json.dumps({"id": mid, "nombre": "Modelo de prueba", "rama": f"dev/{mid}", "estado": "test", "descripcion": "desc"}),
-        encoding="utf-8",
-    )
+    meta = {"id": mid, "nombre": "Modelo de prueba", "rama": f"dev/{mid}", "estado": "test", "descripcion": "desc"}
+    meta.update(extra or {})
+    (d / "modelo.json").write_text(json.dumps(meta), encoding="utf-8")
     (d / "drafts" / "draftv0.md").write_text(DRAFT_A, encoding="utf-8")
     (d / "drafts" / "draftv1.md").write_text(DRAFT_B, encoding="utf-8")
     if con_indice:
@@ -84,4 +83,14 @@ def crear_modelo(base: Path, mid: str = "prueba", con_indice: bool = True) -> Pa
 def modelos_dir(tmp_path: Path) -> Path:
     base = tmp_path / "modelos"
     crear_modelo(base)
+    return base
+
+
+@pytest.fixture
+def grafo_dir(tmp_path: Path) -> Path:
+    """Dos nodos y una arista en pausa."""
+    base = tmp_path / "modelos"
+    crear_modelo(base, "alfa")
+    crear_modelo(base, "beta")
+    crear_modelo(base, "alfa+beta", extra={"tipo": "arista", "nodos": ["alfa", "beta"], "relacion": "contraste", "estado": "pausa", "rama": "dev/alfa+beta"})
     return base

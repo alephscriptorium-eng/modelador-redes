@@ -4,11 +4,12 @@
 <h1>DevOps y ramas</h1>
 <h2>Una rama por modelo</h2>
 <div class="table-wrap"><table>
-<thead><tr><th>Rama</th><th>Toca</th><th>Modelo</th></tr></thead>
+<thead><tr><th>Rama</th><th>Toca</th><th>Tipo</th><th>Modelo</th></tr></thead>
 <tbody>
-{% for m in modelos %}<tr><td><code>{{ m.rama }}</code></td><td><code>modelos/{{ m.id }}/</code></td><td><a href="../modelos/{{ m.id }}/index.html">{{ m.nombre }}</a></td></tr>{% endfor %}
+{% for m in modelos %}<tr><td><code>{{ m.rama }}</code></td><td><code>modelos/{{ m.id }}/</code></td><td>{{ m.tipo }}{% if m.tipo == 'arista' %} ({{ m.nodos | join(' ↔ ') }}){% endif %}</td><td><a href="../modelos/{{ m.id }}/index.html">{{ m.nombre }}</a></td></tr>{% endfor %}
 <tr><td><code>main</code></td><td>todo lo demás + <code>public/</code> + <code>data/</code></td><td>integración y publicación</td></tr>
 </tbody></table></div>
+<p>Los modelos son <strong>nodos</strong> (doctrina pura) o <strong>aristas</strong> (híbrido o contraste entre dos nodos). El id de una arista es <code>nodoA+nodoB</code>; carpeta <code>modelos/nodoA+nodoB/</code> y rama <code>dev/nodoA+nodoB</code>. Una arista se crea desde <code>main</code> y nunca reescribe a sus nodos.</p>
 <p>Cada rama <code>dev/&lt;modelo&gt;</code> solo modifica su carpeta, así <code>main</code> las integra con <code>git merge --no-ff</code> sin conflictos. El generador, las plantillas, la documentación y <code>public/</code> se tocan únicamente en <code>main</code>.</p>
 
 <h2>Ciclo operativo</h2>

@@ -13,7 +13,7 @@
   {% for m in modelos %}
   <div class="card">
     <h3><a href="../modelos/{{ m.id }}/index.html">{{ m.nombre }}</a></h3>
-    <p>rama <code>{{ m.rama }}</code> · draft vigente <code>{{ m.latest }}</code> · {{ m.estado }}</p>
+    <p>{{ m.tipo }}{% if m.tipo == 'arista' %} ({{ m.nodos | join(' ↔ ') }}){% endif %} · rama <code>{{ m.rama }}</code> · draft vigente <code>{{ m.latest }}</code> · {{ m.estado }}</p>
   </div>
   {% endfor %}
 </div>

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "modelador-redes"
-version = "0.1.0"
+version = "0.2.0"
 description = "Modelador de Redes — catálogo de modelizaciones políticas sobre redes distribuidas (Oasis/SSB + Faircoin): drafts, revisiones y backlogs publicados como web estática"
 readme = "README.md"
 license = { text = "GPL-3.0-or-later AND LicenseRef-Animus-Iocandi" }

@@ -12,7 +12,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from modelador_redes import __version__
 from modelador_redes.modelos.backlog import extraer
-from modelador_redes.modelos.catalogo import Modelo, cargar_todos
+from modelador_redes.modelos.catalogo import Modelo, aristas_de, cargar_todos, grafo
 from modelador_redes.modelos.enlaces import reescribir_para_web
 from modelador_redes.modelos.markdown import render, render_inline, titulo
 from modelador_redes.paths import (
@@ -29,6 +29,7 @@ from modelador_redes.paths import (
 )
 from modelador_redes.site.brand import brand_context
 from modelador_redes.site.contexto import doc_links, hrefs
+from modelador_redes.site.grafo import grafo_svg
 from modelador_redes.site.packs import KINDS, generar_packs_modelo, nombre_zip
 
 
@@ -63,10 +64,14 @@ def _rama_actual() -> str:
         return ""
 
 
-def _resumen_modelo(m: Modelo, backlog: dict) -> dict:
+def _resumen_modelo(m: Modelo, backlog: dict, modelos: list[Modelo]) -> dict:
     return {
         "id": m.id,
         "nombre": m.nombre,
+        "tipo": m.tipo,
+        "nodos": list(m.nodos),
+        "relacion": m.relacion,
+        "aristas": [{"id": a.id, "nombre": a.nombre, "relacion": a.relacion, "estado": a.estado} for a in aristas_de(m.id, modelos)],
         "rama": m.rama,
         "estado": m.estado,
         "descripcion": m.descripcion,
@@ -97,7 +102,7 @@ def _documento(env: Environment, m: Modelo, src: Path, tipo: str, out_html: Path
     _write(out_html, env.get_template("documento.html").render(**ctx))
 
 
-def build_modelo(m: Modelo, public_dir: Path, data_dir: Path) -> int:
+def build_modelo(m: Modelo, public_dir: Path, data_dir: Path, modelos: list[Modelo]) -> int:
     env = _jinja_env("modelo")
     out = public_dir / "modelos" / m.id
     for sub in ("drafts", "revision", "downloads"):
@@ -113,7 +118,15 @@ def build_modelo(m: Modelo, public_dir: Path, data_dir: Path) -> int:
         "fichas": [{"nombre": f.stem, "titulo": titulo(f.read_text(encoding="utf-8")) or f.stem} for f in m.fichas],
         "zips": [{"kind": k, "nombre": nombre_zip(m.id, k)} for k in KINDS],
     }
-    comun = {"modelo": m, "nav": nav, "modelo_github": GITHUB_TREE + m.rel_dir, "resumen": backlog["resumen"]}
+    por_id = {x.id: x for x in modelos}
+    comun = {
+        "modelo": m,
+        "nav": nav,
+        "modelo_github": GITHUB_TREE + m.rel_dir,
+        "resumen": backlog["resumen"],
+        "nodos_de_arista": [por_id[n] for n in m.nodos if n in por_id],
+        "aristas_del_nodo": aristas_de(m.id, modelos),
+    }
     paginas = 0
 
     # Estado (índice de revisión renderizado en la raíz del modelo)
@@ -149,9 +162,26 @@ def build_modelo(m: Modelo, public_dir: Path, data_dir: Path) -> int:
     return paginas
 
 
-def build_root(modelos: list[Modelo], resumenes: list[dict], public_dir: Path) -> None:
+def build_root(modelos: list[Modelo], resumenes: list[dict], public_dir: Path, data_dir: Path) -> None:
     env = _jinja_env("root")
-    _write(public_dir / "index.html", env.get_template("index.html").render(**_ctx(0, modelos=resumenes)))
+    g = grafo(modelos)
+    catalogo = {
+        "generador": f"modelador-redes {__version__}",
+        "oasis": {"repo": OASIS_REPO, "sha": OASIS_SHA},
+        "convencion": {"nodo": "modelos/<id>/", "arista": "modelos/<nodoA>+<nodoB>/", "rama": "dev/<id>"},
+        "nodos": g["nodos"],
+        "aristas": g["aristas"],
+        "modelos": resumenes,
+    }
+    texto = json.dumps(catalogo, ensure_ascii=False, indent=2) + "\n"
+    _write(data_dir / "catalogo.json", texto)
+    _write(public_dir / "catalogo.json", texto)
+    nodos = [r for r in resumenes if r["tipo"] == "nodo"]
+    aristas = [r for r in resumenes if r["tipo"] == "arista"]
+    _write(
+        public_dir / "index.html",
+        env.get_template("index.html").render(**_ctx(0, modelos=resumenes, nodos=nodos, aristas=aristas, grafo=g, grafo_svg=grafo_svg(g, ""))),
+    )
 
 
 def build_foss(resumenes: list[dict], public_dir: Path) -> int:
@@ -178,15 +208,15 @@ def run_build(target: str = "all", public_dir: Path | None = None, data_dir: Pat
         raise FileNotFoundError("No hay modelos en modelos/")
     public_dir.mkdir(parents=True, exist_ok=True)
     _copiar_assets(public_dir)
-    resumenes = [_resumen_modelo(m, extraer(m)) for m in modelos]
+    resumenes = [_resumen_modelo(m, extraer(m), modelos) for m in modelos]
     conteo = {"paginas": 0, "zips": 0, "modelos": len(modelos)}
     if target in ("all", "catalogo"):
-        build_root(modelos, resumenes, public_dir)
+        build_root(modelos, resumenes, public_dir, data_dir)
         conteo["paginas"] += 1
         for m in modelos:
-            conteo["paginas"] += build_modelo(m, public_dir, data_dir)
+            conteo["paginas"] += build_modelo(m, public_dir, data_dir, modelos)
             conteo["zips"] += len(KINDS)
-            print(f"  modelo {m.id}: latest={m.latest}, {len(m.drafts)} drafts, {len(m.fichas)} fichas")
+            print(f"  {m.tipo} {m.id}: latest={m.latest}, {len(m.drafts)} drafts, {len(m.fichas)} fichas, estado={m.estado}")
     if target in ("all", "foss"):
         conteo["paginas"] += build_foss(resumenes, public_dir)
     print(f"Generado en {public_dir}: {conteo['paginas']} páginas, {conteo['zips']} zips, {conteo['modelos']} modelos")

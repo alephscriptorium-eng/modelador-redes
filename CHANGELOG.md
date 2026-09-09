@@ -2,6 +2,18 @@
 
 All notable changes to **Modelador de Redes** follow [Semantic Versioning](https://semver.org/).
 
+## [0.2.0] - 2026-09-09
+
+### Added
+
+- El catálogo es un **grafo**: los modelos son `nodo` (doctrina pura) o `arista` (híbrido o contraste entre dos nodos, id `nodoA+nodoB`, carpeta y rama propias). `modelo.json` gana `tipo`, `nodos` y `relacion`; `modelador check` valida el grafo.
+- Portada con SVG del grafo, secciones Nodos y Aristas, y `catalogo.json` (también en `data/`).
+- Nodo puro **colectivizaciones** (1936-37): semilla, auditoría `draftv0` de Oasis contra ocho criterios colectivistas (parches CL-1…CL-11, backlog por carriles D'→G'→B'→E'→F') y ficha `01-asamblea`.
+
+### Changed
+
+- El antiguo modelo `colectividades` pasa a ser la arista `res_publica+colectivizaciones` (contraste), en pausa.
+
 ## [0.1.0] - 2026-09-09
 
 ### Added

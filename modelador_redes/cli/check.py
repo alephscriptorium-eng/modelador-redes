@@ -8,7 +8,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from modelador_redes.modelos.catalogo import cargar_todos
+from modelador_redes.modelos.catalogo import cargar_todos, validar_grafo
 from modelador_redes.modelos.indice import validar
 from modelador_redes.paths import MAX_PUBLIC_FILE_BYTES, MODELOS_DIR, PUBLIC_DIR
 
@@ -72,8 +72,10 @@ def check(public_dir: Path | None = None, modelos_dir: Path | None = None) -> li
     public_dir = public_dir or PUBLIC_DIR
     errores: list[str] = []
     try:
-        for m in cargar_todos(modelos_dir or MODELOS_DIR):
+        modelos = cargar_todos(modelos_dir or MODELOS_DIR)
+        for m in modelos:
             errores.extend(validar(m))
+        errores.extend(validar_grafo(modelos))
     except (ValueError, OSError) as e:
         errores.append(f"modelos: {e}")
     if not public_dir.is_dir():

@@ -5,7 +5,13 @@
   <p class="lead">{{ modelo.descripcion }}</p>
 </div>
 <dl class="meta-box">
-  <div><dt>Estado</dt><dd>{{ modelo.estado }}</dd></div>
+  <div><dt>Tipo</dt><dd>{{ modelo.tipo }}{% if modelo.es_arista and modelo.relacion %} · {{ modelo.relacion }}{% endif %}</dd></div>
+  {% if modelo.es_arista %}
+  <div><dt>Combina</dt><dd>{% for n in nodos_de_arista %}<a href="../{{ n.id }}/index.html">{{ n.id }}</a>{{ ' ↔ ' if not loop.last }}{% endfor %}</dd></div>
+  {% elif aristas_del_nodo %}
+  <div><dt>Aristas</dt><dd>{% for a in aristas_del_nodo %}<a href="../{{ a.id }}/index.html">{{ a.id }}</a>{{ ', ' if not loop.last }}{% endfor %}</dd></div>
+  {% endif %}
+  <div><dt>Estado</dt><dd>{{ modelo.estado }}{% if modelo.estado == 'pausa' %} <span class="badge badge-pausa">pausa</span>{% endif %}</dd></div>
   <div><dt>Rama</dt><dd><code>{{ modelo.rama }}</code></dd></div>
   <div><dt>Draft vigente</dt><dd>{% if modelo.latest %}<a href="drafts/{{ modelo.latest }}.html">{{ modelo.latest }}.md</a>{% else %}—{% endif %}</dd></div>
   <div><dt>Drafts</dt><dd>{{ nav.drafts | length }}</dd></div>

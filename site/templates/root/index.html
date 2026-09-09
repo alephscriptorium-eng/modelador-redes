@@ -27,12 +27,17 @@
       <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Modo claro</button>
     </header>
     <p class="lead">{{ brand.producto.etiqueta }}. Juguete-pasatiempo de la serie {{ brand.serie.nombre }}, {{ brand.serie.descripcion | lower }}. Cada modelización audita el mismo código (Oasis 1.0.7, commit <code>{{ oasis_short }}</code>) desde una doctrina distinta y crece en su propia rama.</p>
-    <section class="catalogo" aria-label="Catálogo de modelizaciones">
-      {% for m in modelos %}
-      <article class="modelo-card">
-        <h2><a href="modelos/{{ m.id }}/index.html">{{ m.nombre }}</a> {% if m.latest %}<span class="badge badge-latest">{{ m.latest }}</span>{% endif %}</h2>
+    {% macro tarjeta(m) %}
+      <article class="modelo-card {{ 'arista-card' if m.tipo == 'arista' }}">
+        <h2><a href="modelos/{{ m.id }}/index.html">{{ m.nombre }}</a> <span class="badge">{{ m.tipo }}</span>{% if m.estado == 'pausa' %} <span class="badge badge-pausa">pausa</span>{% endif %}{% if m.latest %} <span class="badge badge-latest">{{ m.latest }}</span>{% endif %}</h2>
+        {% if m.tipo == 'arista' %}
+        <p class="modelo-meta">combina <a href="modelos/{{ m.nodos[0] }}/index.html"><code>{{ m.nodos[0] }}</code></a> ↔ <a href="modelos/{{ m.nodos[1] }}/index.html"><code>{{ m.nodos[1] }}</code></a>{% if m.relacion %} · relación: {{ m.relacion }}{% endif %}</p>
+        {% endif %}
         <p>{{ m.descripcion }}</p>
         <p class="modelo-meta">estado: {{ m.estado }} · rama <code>{{ m.rama }}</code> · {{ m.n_drafts }} draft{{ 's' if m.n_drafts != 1 }} · {{ m.n_fichas }} ficha{{ 's' if m.n_fichas != 1 }} de revisión · {{ m.total_tk }} tareas · {{ m.ops }} oportunidades en el draft vigente</p>
+        {% if m.tipo == 'nodo' and m.aristas %}
+        <p class="modelo-meta">aristas: {% for a in m.aristas %}<a href="modelos/{{ a.id }}/index.html"><code>{{ a.id }}</code></a>{{ ', ' if not loop.last }}{% endfor %}</p>
+        {% endif %}
         <p class="modelo-actions">
           <a href="modelos/{{ m.id }}/index.html">Estado</a>
           <a href="modelos/{{ m.id }}/backlog.html">Backlog</a>
@@ -41,7 +46,19 @@
           <a href="{{ m.github }}">GitHub ↗</a>
         </p>
       </article>
-      {% endfor %}
+    {% endmacro %}
+    <section class="grafo" aria-label="Grafo de modelizaciones">
+      <h2 class="seccion-h">Grafo</h2>
+      <p class="modelo-meta">Un <strong>nodo</strong> es una doctrina pura auditada contra el mismo código. Una <strong>arista</strong> es un modelo híbrido o de contraste que combina dos nodos; su id es <code>nodoA+nodoB</code> y tiene carpeta y rama propias. Datos: <a href="catalogo.json">catalogo.json</a>.</p>
+      {{ grafo_svg | safe }}
+    </section>
+    <section class="catalogo" aria-label="Nodos">
+      <h2 class="seccion-h">Nodos</h2>
+      {% for m in nodos %}{{ tarjeta(m) }}{% endfor %}
+    </section>
+    <section class="catalogo" aria-label="Aristas">
+      <h2 class="seccion-h">Aristas</h2>
+      {% if aristas %}{% for m in aristas %}{{ tarjeta(m) }}{% endfor %}{% else %}<p class="modelo-meta">Todavía no hay aristas.</p>{% endif %}
     </section>
     <nav class="portals" aria-label="Portales">
       <a class="portal" href="foss/index.html">

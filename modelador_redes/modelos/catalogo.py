@@ -23,6 +23,8 @@ DRAFT_RE = re.compile(r"^draft(?:v(\d+))?$")
 FICHA_GLOB = "[0-9][0-9]-*.md"
 INDICE_NOMBRE = "00-indice.md"
 CAMPOS = ("id", "nombre", "rama", "estado", "descripcion")
+TIPOS = ("nodo", "arista")
+SEP_ARISTA = "+"
 
 
 @dataclass
@@ -33,9 +35,16 @@ class Modelo:
     estado: str
     descripcion: str
     dir: Path
+    tipo: str = "nodo"
+    nodos: list[str] = field(default_factory=list)
+    relacion: str = ""
     drafts: list[Path] = field(default_factory=list)
     fichas: list[Path] = field(default_factory=list)
     indice: Path | None = None
+
+    @property
+    def es_arista(self) -> bool:
+        return self.tipo == "arista"
 
     @property
     def latest(self) -> str | None:
@@ -88,6 +97,20 @@ def cargar_modelo(modelo_id: str, modelos_dir: Path | None = None) -> Modelo:
         raise ValueError(f"{meta_path}: faltan campos {faltan}")
     if meta["id"] != modelo_id:
         raise ValueError(f"{meta_path}: id {meta['id']!r} no coincide con la carpeta {modelo_id!r}")
+    tipo = meta.get("tipo", "nodo")
+    if tipo not in TIPOS:
+        raise ValueError(f"{meta_path}: tipo {tipo!r} no es {TIPOS}")
+    nodos = list(meta.get("nodos", []))
+    if tipo == "arista":
+        if len(nodos) != 2 or any(not isinstance(n, str) or not n for n in nodos):
+            raise ValueError(f"{meta_path}: una arista necesita exactamente dos nodos")
+        if meta["id"] != SEP_ARISTA.join(nodos):
+            raise ValueError(f"{meta_path}: el id de una arista es '{SEP_ARISTA.join(nodos)}'")
+    else:
+        if nodos:
+            raise ValueError(f"{meta_path}: un nodo no declara 'nodos'")
+        if SEP_ARISTA in meta["id"]:
+            raise ValueError(f"{meta_path}: el id de un nodo no lleva '{SEP_ARISTA}'")
     rev = base / "revision"
     fichas = sorted(rev.glob(FICHA_GLOB)) if rev.is_dir() else []
     indice = rev / INDICE_NOMBRE
@@ -98,6 +121,9 @@ def cargar_modelo(modelo_id: str, modelos_dir: Path | None = None) -> Modelo:
         estado=meta["estado"],
         descripcion=meta["descripcion"],
         dir=base,
+        tipo=tipo,
+        nodos=nodos,
+        relacion=str(meta.get("relacion", "")),
         drafts=listar_drafts(base / "drafts"),
         fichas=[f for f in fichas if f.name != INDICE_NOMBRE],
         indice=indice if indice.is_file() else None,
@@ -106,3 +132,42 @@ def cargar_modelo(modelo_id: str, modelos_dir: Path | None = None) -> Modelo:
 
 def cargar_todos(modelos_dir: Path | None = None) -> list[Modelo]:
     return [cargar_modelo(i, modelos_dir) for i in listar_modelos(modelos_dir)]
+
+
+def aristas_de(nodo_id: str, modelos: list[Modelo]) -> list[Modelo]:
+    return [m for m in modelos if m.es_arista and nodo_id in m.nodos]
+
+
+def validar_grafo(modelos: list[Modelo]) -> list[str]:
+    ids_nodos = {m.id for m in modelos if not m.es_arista}
+    errores: list[str] = []
+    for m in modelos:
+        if m.es_arista:
+            for n in m.nodos:
+                if n not in ids_nodos:
+                    errores.append(f"{m.id}: la arista apunta al nodo {n!r}, que no existe")
+            if m.nodos[0] == m.nodos[1]:
+                errores.append(f"{m.id}: una arista une dos nodos distintos")
+    return errores
+
+
+def grafo(modelos: list[Modelo]) -> dict:
+    """Representación serializable del catálogo como grafo."""
+    nodos = [
+        {
+            "id": m.id,
+            "nombre": m.nombre,
+            "rama": m.rama,
+            "estado": m.estado,
+            "latest": m.latest,
+            "aristas": [a.id for a in aristas_de(m.id, modelos)],
+        }
+        for m in modelos
+        if not m.es_arista
+    ]
+    aristas = [
+        {"id": m.id, "nombre": m.nombre, "nodos": list(m.nodos), "relacion": m.relacion, "rama": m.rama, "estado": m.estado, "latest": m.latest}
+        for m in modelos
+        if m.es_arista
+    ]
+    return {"nodos": nodos, "aristas": aristas}

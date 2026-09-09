@@ -29,3 +29,21 @@ def test_build_es_determinista(modelos_dir, tmp_path):
     run_build("all", public_dir=public, data_dir=data, modelos_dir=modelos_dir)
     despues = {p: p.read_bytes() for p in public.rglob("*") if p.is_file()}
     assert antes == despues
+
+
+def test_build_grafo(grafo_dir, tmp_path):
+    public = tmp_path / "public"
+    data = tmp_path / "data"
+    conteo = run_build("all", public_dir=public, data_dir=data, modelos_dir=grafo_dir)
+    assert conteo["modelos"] == 3
+    assert (public / "catalogo.json").is_file() and (data / "catalogo.json").is_file()
+    import json
+
+    cat = json.loads((public / "catalogo.json").read_text())
+    assert [n["id"] for n in cat["nodos"]] == ["alfa", "beta"] and cat["aristas"][0]["id"] == "alfa+beta"
+    portada = (public / "index.html").read_text()
+    assert portada.count("<circle") == 2 and portada.count("<line") == 1
+    assert "badge-pausa" in portada
+    arista = (public / "modelos" / "alfa+beta" / "index.html").read_text()
+    assert 'href="../alfa/index.html"' in arista and "contraste" in arista
+    assert check(public_dir=public, modelos_dir=grafo_dir) == []

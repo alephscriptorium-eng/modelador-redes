@@ -2,7 +2,7 @@
 
 **Catálogo de modelizaciones políticas sobre redes distribuidas** (Oasis/SSB + Faircoin). Cada modelización audita el mismo código (Oasis 1.0.7, commit `9a657b7`) desde una doctrina distinta, avanza por drafts sucesivos, se revisa capítulo a capítulo y deja un backlog. Esta web lo publica todo: en línea, enlazado al repositorio y en zip.
 
-**Web:** https://alephscriptorium-eng.github.io/modelador-redes · **Versión:** 0.1.0 · **Licencia:** GPL-3.0-or-later AND LicenseRef-Animus-Iocandi
+**Web:** https://alephscriptorium-eng.github.io/modelador-redes · **Versión:** 0.2.0 · **Licencia:** GPL-3.0-or-later AND LicenseRef-Animus-Iocandi
 
 > [!WARNING]
 > **GitHub queda *deprecated* como remoto canónico.** El original de este repo pasará a [Radicle](https://radicle.xyz) (git distribuido P2P, sin servidor central), semillado por un nodo propio en `rad.escrivivir.co`.
@@ -11,13 +11,16 @@
 
 No se implementa ningún producto. El repo es documentación de backlog y el generador que la publica.
 
-## Modelos
+## Modelos: nodos y aristas
 
-| Modelo | Rama | Qué modela |
-| :-- | :-- | :-- |
-| `res_publica` | `dev/res_publica` | La República Constitucional de Trevijano (*Teoría pura de la República*) sobre Oasis |
-| `colectividades` | `dev/colectividades` | Las colectivizaciones de 1936-37 en contraste con la República Pura |
-| `clase` | `dev/clase` | El materialismo filosófico de Gustavo Bueno (M₁/M₂/M₃, cierre categorial, eutaxia) sobre Oasis |
+El catálogo es un grafo. Un **nodo** es una doctrina pura auditada contra el mismo código. Una **arista** es un modelo híbrido o de contraste que combina dos nodos; su id es `nodoA+nodoB`, con carpeta `modelos/nodoA+nodoB/` y rama `dev/nodoA+nodoB`. Vendrán más nodos y más aristas; `public/catalogo.json` los lista.
+
+| Modelo | Tipo | Rama | Qué modela |
+| :-- | :-- | :-- | :-- |
+| `res_publica` | nodo | `dev/res_publica` | La República Constitucional de Trevijano (*Teoría pura de la República*) sobre Oasis |
+| `colectivizaciones` | nodo | `dev/colectivizaciones` | Las colectivizaciones libertarias de 1936-37 (asamblea soberana, salario familiar, federación) sobre Oasis |
+| `clase` | nodo | `dev/clase` | El materialismo filosófico de Gustavo Bueno (M₁/M₂/M₃, cierre categorial, eutaxia) sobre Oasis |
+| `res_publica+colectivizaciones` | arista (contraste, en pausa) | `dev/res_publica+colectivizaciones` | Las dos constituciones sobre el mismo código |
 
 ## Convención
 
