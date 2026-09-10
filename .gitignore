@@ -1,4 +1,3 @@
-vendor/
 __pycache__/
 *.py[cod]
 *$py.class
@@ -10,3 +9,5 @@ venv/
 dist/
 build/
 .env
+!vendor/NEXT_VENDOR_REFACTOR.md
+vendor

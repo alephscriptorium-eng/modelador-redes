@@ -48,10 +48,6 @@ python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"
 
 `.github/workflows/pages.yml` sube el `public/` commiteado en `main` a GitHub Pages; no construye nada.
 
-## Oasis
-
-El código auditado es AGPL-3.0 y **no se commitea**: se clona en `vendor/oasis` (ignorado). Ver `THIRD_PARTY.md`.
-
 ## Agentes
 
 Leer `llms.md` antes de tocar nada.
